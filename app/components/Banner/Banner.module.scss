@@ -1,0 +1,103 @@
+@use "../../styles/utils/variables.scss" as var;
+
+.banner {
+  flex: 0.5;
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (max-width: var.$breakpoint-sup) {
+    display: none;
+  }
+
+  .logo {
+    width: 8rem;
+    height: 8rem;
+    z-index: 3;
+    margin-bottom: 5rem;
+    animation: jug 1.5s 0.5s ease-in-out forwards;
+    filter: brightness(2) grayscale(90%);
+
+    @media screen and (max-width: var.$breakpoint-mobile) {
+      display: none;
+    }
+
+    & .logoImg {
+      border-radius: var.$radius--circle;
+      width: 8rem;
+      height: 8rem;
+    }
+  }
+
+  .rain {
+    opacity: 0;
+    animation: rain 2s 1.2s ease-in both infinite;
+    width: 8.8rem;
+    height: 55rem;
+    margin-left: 0.4rem;
+
+    & .bannerbg {
+      margin-left: 1rem;
+      object-fit: cover;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .pot {
+    width: 14.3rem;
+    height: auto;
+    animation: bascule 3.5s 2.3s ease-in-out infinite;
+    filter: brightness(1.8) grayscale(90%);
+
+    & .PotImg {
+      margin-top: 2rem;
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+@keyframes jug {
+  0% {
+    transform: rotate(0deg);
+    filter: brightness(2) grayscale(90%);
+  }
+  100% {
+    transform: rotate(35deg);
+    filter: brightness(2) grayscale(90%);
+  }
+}
+
+@keyframes rain {
+  0% {
+    opacity: 0;
+    transform: translateY(-10rem);
+  }
+  25% {
+    opacity: 0.5;
+    transform: translateY(-9rem);
+  }
+  50% {
+    opacity: 1;
+    filter: brightness(1.8);
+  }
+  100% {
+    opacity: 0.5;
+    transform: translateY(18rem);
+  }
+}
+
+@keyframes bascule {
+  0% {
+    transform: rotate(10deg);
+    filter: brightness(1.8) grayscale(90%);
+  }
+  50% {
+    transform: rotate(-10deg);
+    filter: grayscale(90%) brightness(1.8);
+  }
+  100% {
+    transform: rotate(10deg);
+    filter: brightness(1.8) grayscale(90%);
+  }
+}

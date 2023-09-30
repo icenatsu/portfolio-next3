@@ -1,0 +1,36 @@
+@use "../../styles/utils/functions.scss" as fct;
+@use "../../styles/utils/variables.scss" as var;
+
+.bubble {
+  position: absolute;
+  top: -20rem;
+  left: -3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.2;
+
+  @media screen and (max-width: var.$breakpoint-tablette) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+  }
+
+  @media screen and (max-width: var.$breakpoint-mobile) {
+    display: none;
+  }
+
+  &--dark {
+    fill: fct.map-deep-get(var.$shape--dark, "colors", "shape");
+    filter: brightness(150%);
+  }
+
+  &--light {
+    fill: fct.map-deep-get(var.$shape--light, "colors", "shape");
+  }
+}
+
+.blob-motion {
+  width: 80rem;
+}

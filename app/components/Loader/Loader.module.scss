@@ -1,0 +1,25 @@
+@use "../../styles/utils/functions.scss" as fct;
+@use "../../styles/utils/variables.scss" as var;
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  .icon {
+    font-size: fct.map-deep-get(var.$loader, "fontSize", "icon");
+  }
+
+  &--dark {
+    .icon {
+      color: fct.map-deep-get(var.$loader--dark, "colors", "icon");
+    }
+  }
+
+  &--light {
+    .icon {
+      color: fct.map-deep-get(var.$loader--light, "colors", "icon");
+    }
+  }
+}

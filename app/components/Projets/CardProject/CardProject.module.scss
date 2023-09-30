@@ -1,0 +1,280 @@
+@use "../../../styles/utils/functions.scss" as fct;
+@use "../../../styles/utils/variables.scss" as var;
+
+.flip-card {
+  width: 35.5rem;
+  height: 25.8rem;
+  perspective: 100rem;
+  border-radius: var.$radius--10;
+  overflow: hidden;
+  font-size: fct.map-deep-get(var.$cardProject, "fontSize", "flip-card");
+  background-color: fct.map-deep-get(
+    var.$cardProject,
+    "colors",
+    "flip-card--bg"
+  );
+
+  @media screen and (max-width: "1320px") {
+    width: 30rem;
+    height: 24rem;
+  }
+
+  @media screen and (max-width: var.$breakpoint-tablette) {
+    width: 30rem;
+    height: 24rem;
+  }
+
+  @media screen and (max-width: var.$breakpoint-mobile) {
+    width: 100%;
+    height: 36.8rem;
+  }
+
+  &--dark {
+    border: 0.1rem solid
+      fct.map-deep-get(var.$cardProject--dark, "colors", "flip-card--border");
+
+    .flip-card-back {
+      background-color: fct.map-deep-get(
+        var.$cardProject--dark,
+        "colors",
+        "flip-card-back--bg"
+      );
+    }
+  }
+
+  &--light {
+    border: 0.1rem solid
+      fct.map-deep-get(var.$cardProject--light, "colors", "flip-card--border");
+
+    .flip-card-back {
+      background-color: fct.map-deep-get(
+        var.$cardProject--light,
+        "colors",
+        "flip-card-back--bg"
+      );
+    }
+  }
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: fct.map-deep-get(
+    var.$cardProject,
+    "colors",
+    "flip-card-inner--bg"
+  );
+  border-radius: var.$radius--10;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+  border-radius: var.$radius--10;
+}
+
+.flip-card-front {
+  color: fct.map-deep-get(var.$cardProject, "colors", "flip-card-front");
+
+  &__image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.flip-card-back {
+  color: white;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: center;
+
+  @media screen and (max-width: var.$breakpoint-tablette) {
+    gap: 0.1rem;
+  }
+
+  @media screen and (max-width: var.$breakpoint-mobile) {
+    gap: 3rem;
+  }
+
+  &__sourcesAndTitle {
+    display: flex;
+    justify-content: space-around;
+    z-index: 1;
+
+    &__sources {
+      & a {
+        padding-right: 0.5rem;
+        font-size: fct.map-deep-get(
+          var.$cardProject,
+          "fontSize",
+          "source--desktop"
+        );
+
+        @media screen and (max-width: var.$breakpoint-mobile) {
+          padding-right: 1.5rem;
+          font-size: fct.map-deep-get(
+            var.$cardProject,
+            "fontSize",
+            "source--mobile"
+          );
+        }
+      }
+    }
+
+    &__title {
+      border-radius: var.$radius--5;
+      padding: 0.5rem;
+      opacity: 0.9;
+      font-size: fct.map-deep-get(
+        var.$cardProject,
+        "fontSize",
+        "title--desktop"
+      );
+      font-family: var(--font--archivo);
+
+      @media screen and (max-width: 1400px) {
+        font-size: fct.map-deep-get(
+          var.$cardProject,
+          "fontSize",
+          "title--1400"
+        );
+      }
+
+      @media screen and (max-width: var.$breakpoint-mobile) {
+        font-size: fct.map-deep-get(
+          var.$cardProject,
+          "fontSize",
+          "title--mobile"
+        );
+      }
+    }
+  }
+
+  &__description {
+    padding: 1rem;
+    font-family: fct.map-deep-get(
+      var.$cardProject,
+      "fontFamily",
+      "description"
+    );
+    font-size: fct.map-deep-get(
+      var.$cardProject,
+      "fontSize",
+      "description--desktop"
+    );
+    color: fct.map-deep-get(var.$cardProject, "colors", "description");
+    background-color: fct.map-deep-get(
+      var.$cardProject,
+      "colors",
+      "description--bg"
+    );
+    opacity: 0.8;
+    margin: 1rem 0;
+    border-top: 0.1rem solid
+      fct.map-deep-get(var.$cardProject, "colors", "description--borderTop");
+    border-bottom: 0.1rem solid
+      fct.map-deep-get(var.$cardProject, "colors", "description--borderBottom");
+
+    @media screen and (max-width: 1400px) {
+      margin: 0 0;
+      font-size: fct.map-deep-get(
+        var.$cardProject,
+        "fontSize",
+        "description--1400"
+      );
+    }
+
+    @media screen and (max-width: var.$breakpoint-mobile) {
+      font-size: fct.map-deep-get(
+        var.$cardProject,
+        "fontSize",
+        "description--mobile"
+      );
+    }
+  }
+
+  &__technologies {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    text-align: center;
+
+    .technologies {
+      &__icones {
+        font-size: fct.map-deep-get(
+          var.$cardProject,
+          "fontSize",
+          "technologies--desktop"
+        );
+
+        @media screen and (max-width: var.$breakpoint-tablette) {
+          font-size: fct.map-deep-get(
+            var.$cardProject,
+            "fontSize",
+            "technologies--tablet"
+          );
+        }
+
+        @media screen and (max-width: var.$breakpoint-mobile) {
+          font-size: fct.map-deep-get(
+            var.$cardProject,
+            "fontSize",
+            "technologies--mobile"
+          );
+        }
+      }
+    }
+  }
+}
+
+.go-back {
+  position: absolute;
+  font-size: fct.map-deep-get(var.$cardProject, "fontSize", "go-back");
+  top: 0.5rem;
+  right: 0.5rem;
+  color: fct.map-deep-get(var.$cardProject, "colors", "go-back");
+  cursor: pointer;
+  background-color: white;
+  border-radius: var.$radius--circle;
+}
+
+.curve {
+  opacity: 0.2;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.curve svg {
+  position: relative;
+  display: block;
+  width: calc(300% + 0.13rem);
+  height: 23rem;
+}
+
+.curve .shape-fill {
+  fill: fct.map-deep-get(var.$cardProject, "colors", "curve");
+}
+
+.active {
+  color: red;
+}

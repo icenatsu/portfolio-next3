@@ -1,0 +1,53 @@
+@use "../../styles/utils/functions.scss" as fct;
+@use "../../styles/utils/variables.scss" as var;
+
+.container {
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 5rem 0 2rem 0;
+
+  @media screen and (max-width: var.$breakpoint-tablette) {
+    padding: 5rem 0 0 0;
+  }
+
+  .button {
+    border: none;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+    font-size: fct.map-deep-get(var.$downloadbutton, "fontSize", "button");
+    font-family: fct.map-deep-get(var.$downloadbutton, "fontFamily", "button");
+    background-color: fct.map-deep-get(
+      var.$downloadbutton,
+      "colors",
+      "button--bg"
+    );
+  }
+
+  .icone {
+    font-size: fct.map-deep-get(var.$downloadbutton, "fontSize", "icon");
+    filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.6));
+  }
+
+  &--dark {
+    .button {
+      color: fct.map-deep-get(var.$downloadbutton--dark, "colors", "button");
+    }
+
+    .icone {
+      color: fct.map-deep-get(var.$downloadbutton--dark, "colors", "icon");
+    }
+  }
+
+  &--light {
+    .button {
+      color: fct.map-deep-get(var.$downloadbutton--light, "colors", "button");
+    }
+
+    .icone {
+      color: fct.map-deep-get(var.$downloadbutton--light, "colors", "icon");
+    }
+  }
+}

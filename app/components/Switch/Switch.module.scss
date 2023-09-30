@@ -1,0 +1,136 @@
+@use "../../styles/utils/functions.scss" as fct;
+@use "../../styles/utils/variables.scss" as var;
+
+.switch {
+  position: relative;
+  z-index: 3;
+  display: inline-block;
+  width: 5.6rem;
+  height: 2.9rem;
+
+  @media screen and (max-width: var.$breakpoint-tablette) {
+    width: 5.3rem;
+    height: 2.7rem;
+    margin-top: 0.8rem;
+  }
+
+  @media screen and (max-width: var.$breakpoint-mobile) {
+    width: 4.5rem;
+    height: 2.5rem;
+  }
+}
+
+.input {
+  width: 0;
+  height: 0;
+  opacity: 0;
+
+  &:checked {
+    & + .sunmoon {
+      transition: 0.4s;
+
+      &::before {
+        transform: translateX(2.5rem);
+
+        @media screen and (max-width: var.$breakpoint-tablette) {
+          transform: translateX(2.3rem);
+        }
+
+        @media screen and (max-width: var.$breakpoint-mobile) {
+          justify-content: left;
+          transform: translateX(2rem);
+        }
+      }
+    }
+  }
+}
+
+.sunmoon {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  cursor: pointer;
+  border-radius: var.$radius--20;
+  color: fct.map-deep-get(var.$switch, "colors", "sunmoon");
+
+  & svg {
+    position: absolute;
+    top: 0.7rem;
+    z-index: 1;
+    font-size: fct.map-deep-get(var.$switch, "fontSize", "icone--desktop");
+
+    @media screen and (max-width: var.$breakpoint-tablette) {
+      top: 0.7rem;
+      font-size: fct.map-deep-get(var.$switch, "fontSize", "icone--tablet");
+    }
+
+    @media screen and (max-width: var.$breakpoint-mobile) {
+      top: 0.7rem;
+      font-size: fct.map-deep-get(var.$switch, "fontSize", "icone--mobile");
+    }
+
+    &:nth-child(1) {
+      left: 0.5rem;
+
+      @media screen and (max-width: var.$breakpoint-mobile) {
+        left: 0.4rem;
+      }
+    }
+    &:nth-child(2) {
+      top: 0.6rem;
+      right: 0.9rem;
+
+      @media screen and (max-width: var.$breakpoint-mobile) {
+        right: 0.5rem;
+        top: 0.5rem;
+      }
+    }
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    bottom: 0.3rem;
+    left: 0.3rem;
+    width: calc(50% - 0.6rem);
+    height: calc(100% - 0.6rem);
+    border-radius: var.$radius--20;
+    transition: 0.4s;
+    z-index: 2;
+  }
+
+  &--dark {
+    border: 0.1rem outset black;
+    background-color: fct.map-deep-get(
+      var.$switch--dark,
+      "colors",
+      "sunmoon--bg"
+    );
+
+    &::before {
+      background-color: fct.map-deep-get(
+        var.$switch--dark,
+        "colors",
+        "sunmoon--icone"
+      );
+    }
+  }
+
+  &--light {
+    background-color: fct.map-deep-get(
+      var.$switch--light,
+      "colors",
+      "sunmoon--bg"
+    );
+
+    &::before {
+      background-color: fct.map-deep-get(
+        var.$switch--light,
+        "colors",
+        "sunmoon--icone"
+      );
+    }
+  }
+}

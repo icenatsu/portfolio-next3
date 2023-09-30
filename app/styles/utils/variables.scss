@@ -1,0 +1,565 @@
+// Repeated Color
+/**************/
+// $primary-color: #6c6e8d;
+$primary-color: #6c6e8d;
+$second-color: #4e148c;
+$third-color: #70c197;
+$four-color: #7d90ae;
+$five-color: #1e4481;
+$light-color: white;
+$dark-color: black;
+$transparent-color: transparent;
+
+$h2-title-desktop: 4.8rem;
+$h2-title-tablet: 3.5rem;
+$h2-title-mobile: 3.4rem;
+
+// FontFamily
+/**************/
+$archivo: var(--font--archivo);
+$oswald: var(--font--oswald);
+$inter: var(--font--inter);
+
+// global.scss
+/**************/
+$global--dark: (
+  colors: (
+    background--desktop: $dark-color,
+    color--desktop: $light-color,
+  ),
+);
+
+$global--light: (
+  colors: (
+    background--desktop: $light-color,
+    color--desktop: $primary-color,
+  ),
+);
+
+/**************************************************************************************
+// Component navBar
+/*******************/
+$navbar: (
+  fontSize: (
+    link: 1.7rem,
+  ),
+  fontFamily: (
+    link: $archivo,
+  ),
+  fontWeight: (
+    link: bold,
+  ),
+);
+
+$navbar--dark: (
+  colors: (
+    container: $dark-color,
+    container--bg: $primary-color,
+    container--filter: $primary-color,
+    link: $light-color,
+    link--before: $four-color,
+    burger: $dark-color,
+  ),
+);
+
+$navbar--light: (
+  colors: (
+    container: $light-color,
+    container--bg: $four-color,
+    container--filter: $four-color,
+    link: $light-color,
+    link--before: $five-color,
+    burger: $light-color,
+  ),
+);
+
+/**************************************************************************************
+// Component Switch
+/******************/
+
+$switch: (
+  colors: (
+    sunmoon: $dark-color,
+  ),
+  fontSize: (
+    icone--desktop: 1.6rem,
+    icone--tablet: 1.5rem,
+    icone--mobile: 1.4rem,
+  ),
+);
+
+$switch--dark: (
+  colors: (
+    sunmoon--bg: $light-color,
+    sunmoon--icone: $primary-color,
+  ),
+);
+
+$switch--light: (
+  colors: (
+    sunmoon--bg: $light-color,
+    sunmoon--icone: $four-color,
+  ),
+);
+
+/**************************************************************************************
+// Composant header
+/*******************/
+$header: (
+  fontSize: (
+    profession: 1.6rem,
+    title--desktop: 8rem,
+    title--tablette: 6.4rem,
+    button: 2rem,
+    button-icon: 3rem,
+  ),
+  fontFamily: (
+    button: $archivo,
+    profession: $archivo,
+    title: $oswald,
+  ),
+  fontWeight: (
+    button: bold,
+    title: 300,
+  ),
+);
+
+$header--dark: (
+  colors: (
+    header--bg: $dark-color,
+    profession--color: $light-color,
+    profession--border: $light-color,
+    title: $light-color,
+    button--bg: $primary-color,
+    button: $light-color,
+    wave: $primary-color,
+  ),
+);
+
+$header--light: (
+  colors: (
+    header--bg: $light-color,
+    profession--color: $five-color,
+    profession--border: $five-color,
+    title: $five-color,
+    button--bg: $four-color,
+    button: $light-color,
+    wave: $four-color,
+  ),
+);
+
+/**************************************************************************************
+// Composant shape
+/******************/
+$shape--dark: (
+  colors: (
+    shape: $primary-color,
+  ),
+);
+
+$shape--light: (
+  colors: (
+    shape: $primary-color,
+  ),
+);
+
+/**************************************************************************************
+// Composant About
+/*****************/
+$about: (
+  fontSize: (
+    title--desktop: $h2-title-desktop,
+    title--tablet: $h2-title-tablet,
+    title--mobile: $h2-title-mobile,
+    presentation--desktop: 2.2rem,
+    presentation--tablet: 2.1rem,
+    presentation--mobile: 1.9rem,
+  ),
+  fontFamily: (
+    title: $oswald,
+    presentation: $inter,
+  ),
+  fontWeight: (
+    title: 300,
+  ),
+);
+
+$about--dark: (
+  colors: (
+    container--bg: $primary-color,
+    about: $dark-color,
+    presentation: $light-color,
+  ),
+);
+
+$about--light: (
+  colors: (
+    container--bg: $four-color,
+    about: $light-color,
+    presentation: $light-color,
+  ),
+);
+
+/***************************************************************************************/
+// Composant Projets
+/******************/
+$projets: (
+  fontSize: (
+    title--desktop: $h2-title-desktop,
+    title--tablet: $h2-title-tablet,
+    title--mobile: $h2-title-mobile,
+    touch: 3rem,
+    error: 2.5rem,
+  ),
+  fontFamily: (
+    title: $oswald,
+  ),
+  fontWeight: (
+    title: 300,
+  ),
+);
+
+$projets--dark: (
+  colors: (
+    projects--bg: $dark-color,
+    title: $four-color,
+    touch: $light-color,
+    error: $light-color,
+  ),
+);
+
+$projets--light: (
+  colors: (
+    projects--bg: $light-color,
+    title: $four-color,
+    touch: $four-color,
+    error: $primary-color,
+  ),
+);
+/**************************************************************************************
+// Component CardProject
+/************************/
+
+$cardProject: (
+  colors: (
+    flip-card--bg: $transparent-color,
+    flip-card-inner--bg: $light-color,
+    flip-card-front: $dark-color,
+    flip-card-back: $light-color,
+    description: $dark-color,
+    description--bg: $light-color,
+    description--borderTop: $dark-color,
+    description--borderBottom: $dark-color,
+    go-back: $dark-color,
+    curve: $light-color,
+  ),
+  fontSize: (
+    flip-card: 1.55rem,
+    source--desktop: 3rem,
+    source--mobile: 3.2rem,
+    title--desktop: 2.5rem,
+    title--1400: 2rem,
+    title--mobile: 3.2rem,
+    description--desktop: 1.8rem,
+    description--1400: 1.5rem,
+    description--mobile: 1.8rem,
+    technologies--desktop: 3rem,
+    technologies--tablet: 3rem,
+    technologies--mobile: 3.2rem,
+    go-back: 2rem,
+  ),
+  fontFamily: (
+    description: var(--font--inter),
+  ),
+);
+
+$cardProject--dark: (
+  colors: (
+    flip-card--border: $light-color,
+    flip-card-back--bg: $primary-color,
+  ),
+);
+
+$cardProject--light: (
+  colors: (
+    flip-card--border: $four-color,
+    flip-card-back--bg: $four-color,
+  ),
+);
+
+/***************************************************************************************/
+// Component Loader
+/*******************/
+$loader: (
+  colors: (),
+  fontSize: (
+    icon: 8rem,
+  ),
+);
+
+$loader--dark: (
+  colors: (
+    icon: $light-color,
+  ),
+);
+
+$loader--light: (
+  colors: (
+    icon: $primary-color,
+  ),
+);
+
+/***************************************************************************************
+// Composant Skills
+/*******************/
+
+$skills: (
+  fontSize: (
+    title--desktop: $h2-title-desktop,
+    title--tablet: $h2-title-tablet,
+    title--mobile: $h2-title-mobile,
+  ),
+  fontFamily: (
+    title: $oswald,
+  ),
+  fontWeight: (
+    title: 300,
+  ),
+);
+
+$skills--dark: (
+  colors: (
+    container--bg: $primary-color,
+    title: $dark-color,
+  ),
+);
+
+$skills--light: (
+  colors: (
+    container--bg: $four-color,
+    title: $light-color,
+  ),
+);
+
+/***************************************************************************************/
+// Components DownloadButton
+/***************************/
+$downloadbutton: (
+  colors: (
+    button--bg: transparent,
+  ),
+  fontSize: (
+    button: 2rem,
+    icon: 4rem,
+  ),
+  fontFamily: (
+    button: $inter,
+  ),
+);
+
+$downloadbutton--dark: (
+  colors: (
+    button: $light-color,
+    icon: $light-color,
+  ),
+);
+
+$downloadbutton--light: (
+  colors: (
+    button: $light-color,
+    icon: $light-color,
+  ),
+);
+
+/***************************************************************************************
+// Components CardSkill
+/***********************/
+
+$cardSkill: (
+  fontSize: (
+    nameTechno--desktop: 1.8rem,
+    nameTechno--tablet: 1.4rem,
+    nameTechno--mobile: 1.3rem,
+    iconTechno--desktop: 5.5rem,
+    iconTechno--tablet: 5rem,
+    iconTechno--mobile: 4rem,
+    descriptionTechno--tablet: 1.5rem,
+    descriptionTechno--mobile: 1.4rem,
+    iconArrow--desktop: 2.3rem,
+    iconArrow--tablet: 2.2rem,
+    iconArrow--mobile: 2.1rem,
+  ),
+  fontFamily: (
+    nameTechno: $inter,
+    descriptionTechno: $inter,
+  ),
+);
+
+$cardSkill--dark: (
+  colors: (
+    techno--bg: #242424,
+    chevron: $light-color,
+    dividingBorder: $light-color,
+    descriptionTechno: $light-color,
+    iconArrow: $primary-color,
+    iconTechno: $four-color,
+    nameTechno: $light-color,
+  ),
+);
+
+$cardSkill--light: (
+  colors: (
+    techno--bg: $light-color,
+    chevron: $primary-color,
+    dividingBorder: $primary-color,
+    descriptionTechno: $dark-color,
+    iconArrow: $four-color,
+    iconTechno: $primary-color,
+    nameTechno: $dark-color,
+  ),
+);
+
+$html: rgb(211, 100, 60);
+$css: rgb(26, 99, 208);
+$sass: rgb(170, 80, 139);
+$github: rgb(198, 209, 226);
+$seo: rgb(200, 111, 169);
+$javascript: rgb(230, 212, 8);
+$nodejs: rgb(31, 162, 57);
+$react: rgb(60, 147, 218);
+$typescript: rgb(60, 147, 218);
+$mongodb: #228a66;
+$nextjs: #64b297;
+
+/**************************************************************************************
+// Composant Contact
+/*******************/
+
+$contact: (
+  fontSize: (
+    title--desktop: $h2-title-desktop,
+    title--tablet: $h2-title-tablet,
+    title--mobile: $h2-title-mobile,
+    label--desktop: 2rem,
+    label--tablet: 1.8rem,
+    placeHolder: 1.5rem,
+    send--desktop: 2.2rem,
+    send--mobile: 1.8rem,
+    errors: 1.6rem,
+  ),
+  fontWeight: (
+    title: 300,
+  ),
+  fontFamily: (
+    title: $oswald,
+    send: $oswald,
+  ),
+);
+
+$contact--dark: (
+  colors: (
+    contact--bg: $dark-color,
+    title: $four-color,
+    label: $four-color,
+    errors: $light-color,
+    input: $dark-color,
+    input--bg: $primary-color,
+    send--bg: $four-color,
+    send: $light-color,
+    placeHolder: $light-color,
+    elipse: $primary-color,
+  ),
+);
+
+$contact--light: (
+  colors: (
+    contact--bg: $light-color,
+    title: $four-color,
+    label: $dark-color,
+    errors: $dark-color,
+    input: $light-color,
+    input--bg: $four-color,
+    send--bg: $primary-color,
+    send: $light-color,
+    placeHolder: $light-color,
+    elipse: $four-color,
+  ),
+);
+
+/**************************************************************************************
+// Components Notify
+/*******************/
+
+$notify: (
+  colors: (
+    notify--boxShadow:
+      rgba(
+        $color: $dark-color,
+        $alpha: 0.4,
+      ),
+    notify--bg: $light-color,
+    text: $dark-color,
+    close--error: tomato,
+    close--success: green,
+    bar--error--bg: tomato,
+    bar--success--bg: green,
+  ),
+  fontSize: (
+    text--desktop: 1.4rem,
+    text--tablet: 1.3rem,
+    text--mobile: 1.3rem,
+    close: 3rem,
+  ),
+  fontFamily: (
+    text: $inter,
+  ),
+);
+
+/***************************************************************************************/
+// Component Footer
+/******************/
+
+$footer: (
+  fontSize: (
+    infos: 1.5rem,
+  ),
+  fontFamily: (
+    infos: $inter,
+  ),
+);
+
+$footer--dark: (
+  colors: (
+    infos: $light-color,
+    wave: $primary-color,
+  ),
+);
+
+$footer--light: (
+  colors: (
+    infos: $dark-color,
+    wave: $four-color,
+  ),
+);
+
+/***************************************************************************************/
+// -- Radius -- //
+/****************/
+$radius--5: 0.5rem;
+$radius--10: 1rem;
+$radius--15: 1.5rem;
+$radius--20: 2rem;
+$radius--30: 3rem;
+$radius--circle: 50%;
+
+// -- Breackpoints -- //
+/**********************/
+$breakpoint-sup: 1350px;
+$breakpoint-tablette: 992px;
+$breakpoint-mobile: 768px;
+
+// -- Screens Width Size -- //
+/****************************/
+$maxWidth: 1600px;
+$mediumWidth: 992px;
+$minWidth: 768px;
