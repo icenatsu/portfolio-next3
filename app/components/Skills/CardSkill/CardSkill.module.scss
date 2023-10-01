@@ -25,20 +25,16 @@
       max-height: 6.5rem;
     }
 
-    // @media (hover: hover) and (pointer: fine) {
-    &:hover {
-      max-height: 35rem;
+    // &:hover {
+    //   max-height: 35rem;
 
-      & > .descriptionTechno {
-        opacity: 1;
-      }
+    //   & > .descriptionTechno {
+    //     opacity: 1;
+    //   }
 
-      & > .container {
-        .slideToBottom {
-          transform: rotate(180deg);
-        }
-      }
-    }
+    //   & .slideToBottom {
+    //     transform: rotate(180deg);
+    //   }
     // }
 
     .container {
@@ -308,3 +304,16 @@
 @include CardSkillStyle("nodejs");
 @include CardSkillStyle("react");
 @include CardSkillStyle("typescript");
+
+.visible {
+  color: red;
+  max-height: 35rem;
+
+  & > .descriptionTechno {
+    opacity: 1;
+  }
+
+  & .slideToBottom {
+    transform: rotate(180deg);
+  }
+}

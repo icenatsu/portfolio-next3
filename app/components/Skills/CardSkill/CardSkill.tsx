@@ -24,11 +24,10 @@ const CardSkill = ({
   const { windowWidth } = useWindowSizeResize();
 
   const cardSkill = useRef<HTMLDivElement>(null)
-  const paragraphs = useRef<HTMLParagraphElement>(null)
 
-
+  const [showSkillDetails, setShowSkillDetails] = useState<boolean>(false)
   const [toggleShowSkillDetails, setTooggleShowSkillDetails] = useState<boolean>(false)
-  const [rotateArrow, setRotateArrow] = useState<1 | 3>(1)
+
 
   // Application du dark/light mode
   useEffect(() => {
@@ -45,32 +44,45 @@ const CardSkill = ({
   }, [themeContext, isDarkMode, inClassList]);
 
   // Gestion des états controlés par chaque évenements selon le format destinée à l'affichage des descriptions des compétences
-  // const addEventdependingOnTheMedia = () => {
-  //   if (typeof window !== 'undefined' && cardSkill.current !== null) {
-  //     cardSkill.current.addEventListener("click", () => {
-  //       if (window.matchMedia("(max-width: 992px)").matches) {
-  //         setTooggleShowSkillDetails((current) => !current)
-  //       }
-  //     })
-  //   }
-  // }
+  const addEventdependingOnTheMedia = () => {
+    if (typeof window !== 'undefined' && cardSkill.current !== null) {
+      // cardSkill.current.addEventListener("mouseenter", () => {
+      //   if (window.matchMedia("(min-width: 993px)").matches) {
+      //     setShowSkillDetails(true)
+      //   }
+      // })
+      // cardSkill.current.addEventListener("mouseleave", () => {
+      //   if (window.matchMedia("(min-width: 993px)").matches) {
+      //     setShowSkillDetails(false)
+      //   }
+      // })
+      cardSkill.current.addEventListener("click", () => {
+        if (window.matchMedia("(max-width: 992px)").matches) {
+          console.log('coucou');
 
-  // useEffect(() => {
-  //   if (typeof window !== 'undefined') {
-  //     addEventdependingOnTheMedia()
-  //   }
-  // }, []);
+          setTooggleShowSkillDetails((current) => !current)
+        }
+      })
+    }
+  }
+
+  console.log('toggleShow', inClassList, toggleShowSkillDetails);
+
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      addEventdependingOnTheMedia()
+    }
+  }, []);
 
 
   // const applyStyleAccordeon = (elem: boolean) => {
+  //   console.log('elem', elem);
+
   //   if (elem) {
-  //     setRotateArrow(1)
   //     cardSkill.current?.classList.add(styles.visible);
-  //     paragraphs.current?.classList.add(styles.opacity)
   //   } else {
-  //     setRotateArrow(3)
   //     cardSkill.current?.classList.remove(styles.visible);
-  //     paragraphs.current?.classList.remove(styles.opacity)
   //   }
   // }
 
@@ -80,6 +92,20 @@ const CardSkill = ({
   //   }
   // }, [toggleShowSkillDetails]);
 
+  // useEffect(() => {
+  //   if (cardSkill.current !== null) {
+  //     applyStyleAccordeon(showSkillDetails)
+  //   }
+  // }, [showSkillDetails]);
+
+  // const closeSkillDetails = () => {
+  //   cardSkill.current?.classList.remove(styles.visible);
+  // }
+
+  // useEffect(() => {
+  //   closeSkillDetails()
+  // }, [windowWidth]);
+
 
   // Animation gsap
   useEffect(() => {
@@ -87,7 +113,7 @@ const CardSkill = ({
   }, []);
 
   return (
-    <div id={inClassList} className={styles[inClassList]}>
+    <div id={inClassList} className={styles[inClassList]} ref={cardSkill}>
       <div className={styles.container}>
         {Object.entries(inIcones).map(([key, value], index) => (
           <figure className={styles["container__icones"]} key={index}>

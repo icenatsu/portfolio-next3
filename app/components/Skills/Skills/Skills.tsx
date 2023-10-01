@@ -142,7 +142,6 @@ const Skills = (): JSX.Element => {
   const dataFirstBlockAccordeon = [];
   const dataSecondBlockAccordeon = [];
 
-  console.log(dataSkills.length / 2);
   for (let index = 0; index < dataSkills.length; index++) {
     if (index < dataSkills.length / 2) {
       dataFirstBlockAccordeon.push(dataSkills[index]);
