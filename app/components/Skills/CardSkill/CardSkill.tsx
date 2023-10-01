@@ -20,7 +20,15 @@ const CardSkill = ({
 }: CardSkill): JSX.Element => {
   const themeContext = useContext(ThemeContext);
   const isDarkMode = themeContext!.isDarkMode;
-  console.log(Object.entries(inIcones));
+
+  const { windowWidth } = useWindowSizeResize();
+
+  const cardSkill = useRef<HTMLDivElement>(null)
+  const paragraphs = useRef<HTMLParagraphElement>(null)
+
+  const [showSkillDetails, setShowSkillDetails] = useState<boolean>(false)
+  const [toggleShowSkillDetails, setTooggleShowSkillDetails] = useState<boolean>(false)
+  const [rotateArrow, setRotateArrow] = useState<1 | 3>(1)
 
   // Application du dark/light mode
   useEffect(() => {
@@ -35,6 +43,43 @@ const CardSkill = ({
       themeContext?.changeDarkLightMode(componentForCssChange);
     }
   }, [themeContext, isDarkMode, inClassList]);
+
+  // Gestion des états controlés par chaque évenements selon le format destinée à l'affichage des descriptions des compétences
+  const addEventdependingOnTheMedia = () => {
+    if (typeof window !== 'undefined' && cardSkill.current !== null) {
+      cardSkill.current.addEventListener("click", () => {
+        if (window.matchMedia("(max-width: 992px)").matches) {
+          setTooggleShowSkillDetails((current) => !current)
+        }
+      })
+    }
+  }
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      addEventdependingOnTheMedia()
+    }
+  }, []);
+
+
+  const applyStyleAccordeon = (elem: boolean) => {
+    if (elem) {
+      setRotateArrow(1)
+      cardSkill.current?.classList.add(styles.visible);
+      paragraphs.current?.classList.add(styles.opacity)
+    } else {
+      setRotateArrow(3)
+      cardSkill.current?.classList.remove(styles.visible);
+      paragraphs.current?.classList.remove(styles.opacity)
+    }
+  }
+
+  useEffect(() => {
+    if (cardSkill.current !== null) {
+      applyStyleAccordeon(toggleShowSkillDetails)
+    }
+  }, [toggleShowSkillDetails]);
+
 
   // Animation gsap
   useEffect(() => {
