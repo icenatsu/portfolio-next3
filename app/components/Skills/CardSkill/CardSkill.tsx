@@ -72,7 +72,6 @@ const CardSkill = ({
 
     const handleClick = () => {
       if (window.matchMedia("(max-width: 992px)").matches) {
-        console.log('coucou');
         setTooggleShowSkillDetails((current) => !current);
       }
     };
