@@ -24,15 +24,13 @@ $inter: var(--font--inter);
 /**************/
 $global--dark: (
   colors: (
-    background--desktop: $dark-color,
-    color--desktop: $light-color,
+    background: $dark-color,
   ),
 );
 
 $global--light: (
   colors: (
-    background--desktop: $light-color,
-    color--desktop: $primary-color,
+    background: $light-color,
   ),
 );
 

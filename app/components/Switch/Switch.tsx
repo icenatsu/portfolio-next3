@@ -1,32 +1,42 @@
 import styles from "./Switch.module.scss";
-import { useContext, useEffect } from "react";
-import { ThemeContext } from "@context/ThemeContext/ThemeContext";
 import { Icon } from "@iconify/react";
+import { useState, useEffect } from "react";
 
 const Switch = (): JSX.Element => {
-  const themeContext = useContext(ThemeContext);
-  const isDarkMode = themeContext!.isDarkMode;
+
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(
+    typeof window !== "undefined" && window.matchMedia("(prefers-color-scheme: dark)").matches
+  );
+
+  const switchTheme = () => {
+    setIsDarkMode((curr) => (curr = !curr));
+  };
+
+  if (typeof window !== "undefined") {
+    window
+      .matchMedia("(prefers-color-scheme: dark)")
+      .addEventListener("change", (e) => {
+        setIsDarkMode(e.matches);
+      });
+  }
 
   useEffect(() => {
-    if (document.getElementById("sunmoon") !== null) {
-      const componentForCssChange = [
-        {
-          htmlElement: document.getElementById("sunmoon"),
-          name: "sunmoon",
-          scss: styles,
-        },
-      ];
-      themeContext?.changeDarkLightMode(componentForCssChange);
+    if (isDarkMode) {
+      document.body.classList.add("dark");
+      document.body.classList.remove("light");
+    } else {
+      document.body.classList.add("light");
+      document.body.classList.remove("dark");
     }
-  }, [themeContext, isDarkMode]);
+  }, [isDarkMode]);
 
   return (
     <label className={styles.switch} htmlFor="switch">
       <input
         className={styles.input}
         type="checkbox"
-        checked={!themeContext?.isDarkMode}
-        onChange={themeContext?.switchTheme}
+        checked={!isDarkMode}
+        onChange={switchTheme}
         id="switch"
         name="switch"
         aria-label="switch theme"

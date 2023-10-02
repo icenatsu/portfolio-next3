@@ -7,6 +7,7 @@
   padding: 15rem 20rem 7rem 20rem;
   justify-content: space-between;
   align-items: center;
+  background-color: var(--header--bg--color);
 
   @media screen and (max-width: 1400px) {
     padding: 10rem 10rem;
@@ -39,8 +40,10 @@
     }
 
     .profession {
-      font-size: fct.map-deep-get(var.$header, "fontSize", "profession");
-      font-family: fct.map-deep-get(var.$header, "fontFamily", "profession");
+      font-size: var(--header--profession--fontSize);
+      font-family: var(--font--archivo);
+      color: var(--header--profession--color);
+      border: 0.1rem solid var(--header--profession--border);
       border-radius: var.$radius--30;
       width: 20rem;
       padding: 1.5rem;
@@ -54,12 +57,13 @@
     .title {
       display: flex;
       flex-wrap: wrap;
-      font-family: fct.map-deep-get(var.$header, "fontFamily", "title");
-      font-weight: fct.map-deep-get(var.$header, "fontWeight", "title");
-      font-size: fct.map-deep-get(var.$header, "fontSize", "title--desktop");
+      font-family: var(--font--oswald);
+      font-size: var(--header--title--fontSize--desktop);
+      font-weight: var(--header--title--fontWeight);
+      color: var(--header--title);
 
       @media screen and (max-width: var.$breakpoint-tablette) {
-        font-size: fct.map-deep-get(var.$header, "fontSize", "title--tablette");
+        font-size: var(--header--title--fontSize--tablet);
       }
 
       @media screen and (max-width: var.$breakpoint-mobile) {
@@ -79,9 +83,11 @@
         display: flex;
         align-items: center;
         justify-content: space-evenly;
-        font-family: fct.map-deep-get(var.$header, "fontFamily", "button");
-        font-size: fct.map-deep-get(var.$header, "fontSize", "button");
-        font-weight: fct.map-deep-get(var.$header, "fontWeight", "button");
+        color: var(--header--button);
+        background-color: var(--header--button--bg);
+        font-family: var(--font--archivo);
+        font-size: var(--header--button--fontSize);
+        font-weight: var(--header--button--fontWeight);
         border-radius: var.$radius--30;
         border: none;
         width: 19rem;
@@ -94,7 +100,7 @@
         }
 
         .icon {
-          font-size: fct.map-deep-get(var.$header, "fontSize", "button-icon");
+          font-size: var(--header--button-icon--fontWeight);
         }
       }
     }
@@ -104,6 +110,7 @@
     position: absolute;
     bottom: 0;
     left: 0;
+    fill: var(--header--wave);
     width: 100%;
     overflow: hidden;
     line-height: 0;
@@ -124,81 +131,6 @@
     @media screen and (max-width: var.$breakpoint-tablette) {
       width: calc(100% + 0.13rem);
       height: 7rem;
-    }
-
-    // @media screen and (max-width: var.$breakpoint-mobile) {
-    //   width: calc(180% + 0.13rem);
-    //   height: 6rem;
-    // }
-  }
-
-  &--dark {
-    background-color: fct.map-deep-get(
-      var.$header--dark,
-      "colors",
-      "header--bg"
-    );
-
-    .profession {
-      color: fct.map-deep-get(var.$header--dark, "colors", "profession--color");
-      border: 0.1rem solid
-        fct.map-deep-get(var.$header--dark, "colors", "profession--border");
-
-      &:hover {
-        filter: brightness(160%);
-      }
-    }
-
-    .title {
-      color: fct.map-deep-get(var.$header--dark, "colors", "title");
-    }
-
-    .button {
-      color: fct.map-deep-get(var.$header--dark, "colors", "button");
-      background-color: fct.map-deep-get(
-        var.$header--dark,
-        "colors",
-        "button--bg"
-      );
-    }
-
-    .wave .shape-fill {
-      fill: fct.map-deep-get(var.$header--dark, "colors", "wave");
-    }
-  }
-
-  &--light {
-    background-color: fct.map-deep-get(
-      var.$header--light,
-      "colors",
-      "header--bg"
-    );
-
-    .profession {
-      color: fct.map-deep-get(
-        var.$header--light,
-        "colors",
-        "profession--color"
-      );
-      border: 0.1rem solid
-        fct.map-deep-get(var.$header--light, "colors", "profession--border");
-    }
-
-    .title {
-      color: fct.map-deep-get(var.$header--light, "colors", "title");
-    }
-
-    .button {
-      color: fct.map-deep-get(var.$header--light, "colors", "button");
-      background-color: fct.map-deep-get(
-        var.$header--light,
-        "colors",
-        "button--bg"
-      );
-    }
-
-    .wave .shape-fill {
-      fill: fct.map-deep-get(var.$header--light, "colors", "wave");
     }
   }
 }

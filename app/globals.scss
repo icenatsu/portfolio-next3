@@ -20,38 +20,51 @@ a {
   color: inherit;
 }
 
+:root,
 .light {
-  background-color: fct.map-deep-get(
-    var.$global--light,
-    "colors",
-    "background--desktop"
-  );
+  --body--bg--color: #{var.$light-color};
+  --header--bg--color: #{var.$light-color};
+  --header--profession--color: #{var.$five-color};
+  --header--profession--border: #{var.$five-color};
+  --header--profession--fontSize: 1.6rem;
+  --header--title: #{var.$five-color};
+  --header--title--fontSize--desktop: 8rem;
+  --header--title--fontSize--tablet: 6.4rem;
+  --header--title--fontWeight: 300;
+  --header--button--bg: #{var.$four-color};
+  --header--button: #{var.$light-color};
+  --header--button--fontSize: 2rem;
+  --header--button-icon--fontSize: 3rem;
+  --header--button-icon--fontWeight: bold;
+  --header--wave: #{var.$four-color};
 }
 
 .dark {
-  background-color: fct.map-deep-get(
-    var.$global--dark,
-    "colors",
-    "background--desktop"
-  );
-}
-
-@media (prefers-color-scheme: light) {
-  body {
-    background-color: fct.map-deep-get(
-      var.$global--light,
-      "colors",
-      "background--desktop"
-    );
-  }
+  --body--bg--color: #{var.$dark-color};
+  --header--bg--color: #{var.$dark-color};
+  --header--profession--color: #{var.$light-color};
+  --header--profession--border: #{var.$light-color};
+  --header--title: #{var.$light-color};
+  --header--button--bg: #{var.$primary-color};
+  --header--button: #{var.$light-color};
+  --header--wave: #{var.$primary-color};
 }
 
 @media (prefers-color-scheme: dark) {
   body {
-    background-color: fct.map-deep-get(
-      var.$global--dark,
-      "colors",
-      "background--desktop"
-    );
+    :root {
+      --body--bg--color: #{var.$dark-color};
+      --header--bg--color: #{var.$light-color};
+      --header--profession--color: #{var.$light-color};
+      --header--profession--border: #{var.$light-color};
+      --header--title: #{var.$light-color};
+      --header--button--bg: #{var.$primary-color};
+      --header--button: #{var.$light-color};
+      --header--wave: #{var.$primary-color};
+    }
   }
+}
+
+body {
+  background-color: var(--body--bg--color);
 }

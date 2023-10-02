@@ -1,7 +1,6 @@
 "use client";
 import styles from "./Header.module.scss";
-import { useContext, useEffect, useRef } from "react";
-import { ThemeContext } from "@context/ThemeContext/ThemeContext";
+import { useEffect } from "react";
 import { Icon } from "@iconify/react";
 import Banner from "@components/Banner/Banner";
 import Shape from "@components/Shape/Shape";
@@ -9,21 +8,6 @@ import Link from "next/link";
 import { animationSlideToBottom } from "@animation/gsapAnimation";
 
 const Header = (): JSX.Element => {
-  const themeContext = useContext(ThemeContext);
-  const isDarkMode = themeContext!.isDarkMode;
-
-  useEffect(() => {
-    if (document.getElementById("header") !== null) {
-      const componentForCssChange = [
-        {
-          htmlElement: document.getElementById("header"),
-          name: "header",
-          scss: styles,
-        },
-      ];
-      themeContext?.changeDarkLightMode(componentForCssChange);
-    }
-  }, [themeContext, isDarkMode]);
 
   const scrollToAnchor = () => {
     const projets = document.getElementById("projets");
