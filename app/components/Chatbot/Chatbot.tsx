@@ -1,11 +1,10 @@
-import React from 'react';
+'use client'
+import { useRef, useState, useEffect } from "react";
+import styles from "./Chatbot.module.scss"
 
 const Chatbot = (): JSX.Element => {
-    return (
-        <div>
-            test
-        </div>
-    );
-};
+
+
+}
 
 export default Chatbot;

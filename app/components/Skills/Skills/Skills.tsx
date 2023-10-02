@@ -13,18 +13,12 @@ import {
 interface IntSkill {
   name: string;
   paragraphs: string[];
-  icones: { [key: string]: string };
+  icones: iconeDetails[];
   classList: string;
 }
-interface SkillDetails {
-  htmlCss: IntSkill;
-  css: IntSkill;
-  github: IntSkill;
-  seo: IntSkill;
-  javascript: IntSkill;
-  nodejs: IntSkill;
-  react: IntSkill;
-  typescript: IntSkill;
+interface iconeDetails {
+  name: string;
+  img: string;
 }
 
 const Skills = (): JSX.Element => {
@@ -53,10 +47,17 @@ const Skills = (): JSX.Element => {
         "Intégrer du contenu conformément à une maquette",
         "Implémenter une interface responsive",
       ],
-      icones: {
-        html: "icomoon-free:html-five",
-        css: "uiw:css3",
-      },
+      icones: [
+        {
+
+          name: "html",
+          img: "icomoon-free:html-five",
+        },
+        {
+          name: "css",
+          img: "uiw:css3",
+        },
+      ],
       classList: "html-css",
     },
     {
@@ -67,10 +68,16 @@ const Skills = (): JSX.Element => {
         "Mettre en place une structure de navigation pour un site web",
         "Utilisation du préprocesseur Sass",
       ],
-      icones: {
-        css: "uiw:css3",
-        sass: "fa6-brands:sass",
-      },
+      icones: [
+        {
+          name: "css",
+          img: "uiw:css3",
+        },
+        {
+          name: "sass",
+          img: "fa6-brands:sass",
+        }
+      ],
       classList: "css",
     },
     {
@@ -78,7 +85,12 @@ const Skills = (): JSX.Element => {
       paragraphs: [
         "Utiliser un système de gestion de versions pour le suivi du projet et son hébergement",
       ],
-      icones: { github: "uil:github" },
+      icones: [
+        {
+          name: "github",
+          img: "uil:github",
+        }
+      ],
       classList: "github",
     },
     {
@@ -88,7 +100,12 @@ const Skills = (): JSX.Element => {
         "Optimiser la taille et la vitesse d’un site web",
         "Optimiser le référencement d'un site web",
       ],
-      icones: { seo: "icon-park-outline:seo" },
+      icones: [
+        {
+          name: "seo",
+          img: "icon-park-outline:seo",
+        }
+      ],
       classList: "seo",
     },
     {
@@ -99,7 +116,12 @@ const Skills = (): JSX.Element => {
         "Interagir avec un web service avec JavaScript",
         "Gérer des événements JavaScript",
       ],
-      icones: { javascript: "akar-icons:javascript-fill" },
+      icones: [
+        {
+          name: "javascript",
+          img: "akar-icons:javascript-fill",
+        }
+      ],
       classList: "javascript",
     },
     {
@@ -111,7 +133,16 @@ const Skills = (): JSX.Element => {
         "Authentifier un utilisateur et maintenir sa session",
         "Implémenter un stockage de données sécurisé en utilisant une base de données noSQL",
       ],
-      icones: { nodejs: "mdi:nodejs", mongodb: "bxl:mongodb" },
+      icones: [
+        {
+          name: "nodejs",
+          img: "mdi:nodejs",
+        },
+        {
+          name: "mongodb",
+          img: "bxl:mongodb",
+        }
+      ],
       classList: "nodejs",
     },
     {
@@ -121,10 +152,16 @@ const Skills = (): JSX.Element => {
         "Configurer la navigation entre les pages de l'application avec React Router",
         "Développer des éléments de l'interface d'un site web grâce à des composants React",
       ],
-      icones: {
-        react: "akar-icons:react-fill",
-        nextjs: "teenyicons:nextjs-outline",
-      },
+      icones: [
+        {
+          name: "react",
+          img: "akar-icons:react-fill",
+        },
+        {
+          name: "nextjs",
+          img: "teenyicons:nextjs-outline",
+        }
+      ],
       classList: "react",
     },
     {
@@ -133,7 +170,12 @@ const Skills = (): JSX.Element => {
         "Arborer un typage statique pour détecter et prévenir les erreurs de type",
         "Améliorer la robustesse et la maintenabilité du code JavaScript",
       ],
-      icones: { typescript: "akar-icons:typescript-fill" },
+      icones: [
+        {
+          name: "typescript",
+          img: "akar-icons:typescript-fill",
+        }
+      ],
       classList: "typescript",
     },
   ];
@@ -168,6 +210,8 @@ const Skills = (): JSX.Element => {
       <div className={styles["container__Accordeons"]}>
         <div className={styles.dataAccordeon}>
           {dataFirstBlockAccordeon.map((value) => {
+            console.log(value.icones);
+
             return (
               <CardSkill
                 key={value.name}

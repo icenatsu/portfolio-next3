@@ -9,8 +9,13 @@ import { useWindowSizeResize } from "@Hooks/Window/useWindowSizeResize";
 
 interface CardSkill {
   inParagraphs: string[];
-  inIcones: { [key: string]: string };
+  inIcones: iconeDetails[];
   inClassList: string;
+}
+
+interface iconeDetails {
+  name: string;
+  img: string;
 }
 
 const CardSkill = ({
@@ -35,7 +40,7 @@ const CardSkill = ({
       const componentForCssChange = [
         {
           htmlElement: document.getElementById(inClassList),
-          name: inClassList,
+          name: "cardSkill",
           scss: styles,
         },
       ];
@@ -44,67 +49,74 @@ const CardSkill = ({
   }, [themeContext, isDarkMode, inClassList]);
 
   // Gestion des états controlés par chaque évenements selon le format destinée à l'affichage des descriptions des compétences
-  const addEventdependingOnTheMedia = () => {
-    if (typeof window !== 'undefined' && cardSkill.current !== null) {
-      // cardSkill.current.addEventListener("mouseenter", () => {
-      //   if (window.matchMedia("(min-width: 993px)").matches) {
-      //     setShowSkillDetails(true)
-      //   }
-      // })
-      // cardSkill.current.addEventListener("mouseleave", () => {
-      //   if (window.matchMedia("(min-width: 993px)").matches) {
-      //     setShowSkillDetails(false)
-      //   }
-      // })
-      cardSkill.current.addEventListener("click", () => {
-        if (window.matchMedia("(max-width: 992px)").matches) {
-          console.log('coucou');
-
-          setTooggleShowSkillDetails((current) => !current)
-        }
-      })
-    }
-  }
-
-  console.log('toggleShow', inClassList, toggleShowSkillDetails);
-
-
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      addEventdependingOnTheMedia()
-    }
+    const addEventdependingOnTheMedia = () => {
+      if (typeof window !== 'undefined' && cardSkill.current !== null) {
+        cardSkill.current.addEventListener("mouseenter", handleMouseEnter);
+        cardSkill.current.addEventListener("mouseleave", handleMouseLeave);
+        cardSkill.current.addEventListener("click", handleClick);
+      }
+    };
+
+    const handleMouseEnter = () => {
+      if (window.matchMedia("(min-width: 993px)").matches) {
+        setShowSkillDetails(true);
+      }
+    };
+
+    const handleMouseLeave = () => {
+      if (window.matchMedia("(min-width: 993px)").matches) {
+        setShowSkillDetails(false);
+      }
+    };
+
+    const handleClick = () => {
+      if (window.matchMedia("(max-width: 992px)").matches) {
+        console.log('coucou');
+        setTooggleShowSkillDetails((current) => !current);
+      }
+    };
+
+    addEventdependingOnTheMedia();
+
+    // Fonction de nettoyage
+    return () => {
+      if (cardSkill.current !== null) {
+        cardSkill.current.removeEventListener("mouseenter", handleMouseEnter);
+        cardSkill.current.removeEventListener("mouseleave", handleMouseLeave);
+        cardSkill.current.removeEventListener("click", handleClick);
+      }
+    };
   }, []);
 
 
-  // const applyStyleAccordeon = (elem: boolean) => {
-  //   console.log('elem', elem);
+  const applyStyleAccordeon = (elem: boolean) => {
+    if (elem) {
+      cardSkill.current?.classList.add(styles.visible);
+    } else {
+      cardSkill.current?.classList.remove(styles.visible);
+    }
+  }
 
-  //   if (elem) {
-  //     cardSkill.current?.classList.add(styles.visible);
-  //   } else {
-  //     cardSkill.current?.classList.remove(styles.visible);
-  //   }
-  // }
+  useEffect(() => {
+    if (cardSkill.current !== null) {
+      applyStyleAccordeon(toggleShowSkillDetails)
+    }
+  }, [toggleShowSkillDetails]);
 
-  // useEffect(() => {
-  //   if (cardSkill.current !== null) {
-  //     applyStyleAccordeon(toggleShowSkillDetails)
-  //   }
-  // }, [toggleShowSkillDetails]);
+  useEffect(() => {
+    if (cardSkill.current !== null) {
+      applyStyleAccordeon(showSkillDetails)
+    }
+  }, [showSkillDetails]);
 
-  // useEffect(() => {
-  //   if (cardSkill.current !== null) {
-  //     applyStyleAccordeon(showSkillDetails)
-  //   }
-  // }, [showSkillDetails]);
 
-  // const closeSkillDetails = () => {
-  //   cardSkill.current?.classList.remove(styles.visible);
-  // }
-
-  // useEffect(() => {
-  //   closeSkillDetails()
-  // }, [windowWidth]);
+  useEffect(() => {
+    const closeSkillDetails = () => {
+      cardSkill.current?.classList.remove(styles.visible);
+    }
+    closeSkillDetails()
+  }, [windowWidth]);
 
 
   // Animation gsap
@@ -113,16 +125,16 @@ const CardSkill = ({
   }, []);
 
   return (
-    <div id={inClassList} className={styles[inClassList]} ref={cardSkill}>
+    <div id={inClassList} className={styles["cardSkill"]} ref={cardSkill}>
       <div className={styles.container}>
-        {Object.entries(inIcones).map(([key, value], index) => (
+        {inIcones.map((value, index) => (
           <figure className={styles["container__icones"]} key={index}>
             <Icon
               aria-label="icone technologie"
-              icon={value}
+              icon={value.img}
               className={styles.icone}
             ></Icon>
-            <span className={styles.nameTechno}>{key}</span>
+            <span className={styles.nameTechno}>{value.name}</span>
           </figure>
         ))}
         <Icon
