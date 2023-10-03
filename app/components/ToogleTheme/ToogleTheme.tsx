@@ -1,17 +1,13 @@
 import { useState, useEffect } from "react";
 
 export const Toogletheme = () => {
-    const [isDarkMode, setIsDarkMode] = useState<boolean>(
-        typeof window !== "undefined" && window.matchMedia("(prefers-color-scheme: dark)").matches
-    );
+    const [isDarkMode, setIsDarkMode] = useState<boolean>(window.matchMedia("(prefers-color-scheme: dark)").matches);
 
-    if (typeof window !== "undefined") {
-        window
-            .matchMedia("(prefers-color-scheme: dark)")
-            .addEventListener("change", (e) => {
-                setIsDarkMode(e.matches);
-            });
-    }
+    window
+        .matchMedia("(prefers-color-scheme: dark)")
+        .addEventListener("change", (e) => {
+            setIsDarkMode(e.matches);
+        });
 
     useEffect(() => {
         if (isDarkMode) {
