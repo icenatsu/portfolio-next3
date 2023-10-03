@@ -1,8 +1,7 @@
 "use client";
 
 import styles from "./Contact.module.scss";
-import { ThemeContext } from "@context/ThemeContext/ThemeContext";
-import { RefObject, useContext, useEffect, useRef } from "react";
+import { RefObject, useEffect, useRef } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
@@ -22,22 +21,7 @@ interface FormValues {
 const Contact = (): JSX.Element => {
   const { showNotification, NotificationComponent } = useNotify();
 
-  const themeContext = useContext(ThemeContext);
   const form: RefObject<HTMLFormElement> = useRef<HTMLFormElement>(null);
-  const isDarkMode = themeContext!.isDarkMode;
-
-  useEffect(() => {
-    if (document.getElementById("contact") !== null) {
-      const componentForCssChange = [
-        {
-          htmlElement: document.getElementById("contact"),
-          name: "contact",
-          scss: styles,
-        },
-      ];
-      themeContext?.changeDarkLightMode(componentForCssChange);
-    }
-  }, [themeContext, isDarkMode]);
 
   const schema = yup
     .object({

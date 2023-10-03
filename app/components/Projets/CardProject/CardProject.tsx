@@ -2,8 +2,6 @@ import styles from "./CardProject.module.scss";
 import { Icon } from "@iconify/react";
 import Image from "next/image";
 import Link from "next/link";
-import { useContext, useEffect } from "react";
-import { ThemeContext } from "@context/ThemeContext/ThemeContext";
 import { useWindowSizeResize } from "@Hooks/Window/useWindowSizeResize";
 
 interface IntData {
@@ -30,52 +28,38 @@ const CardProject = ({
   inActive,
   inVisible,
 }: CardProjectProps): JSX.Element => {
-  const themeContext = useContext(ThemeContext);
-  const isDarkMode = themeContext!.isDarkMode;
-
   const { windowWidth } = useWindowSizeResize();
+
+
+  const darkModeActive = document.body.classList.contains("dark")
+
 
   const isMobile = windowWidth <= 768;
 
-  // Gestion du Dark/Light mode
-  useEffect(() => {
-    if (document.getElementById(inData.title) !== null) {
-      const componentForCssChange = [
-        {
-          htmlElement: document.getElementById(inData.title),
-          name: "flip-card",
-          scss: styles,
-        },
-      ];
-      themeContext?.changeDarkLightMode(componentForCssChange);
-    }
-  }, [themeContext, isDarkMode, inData.title]);
-
   // Application du style de la card en fonction du light mode et de la carte active
-  const getDynamicStyles = (inActive: boolean, isDarkMode: boolean) => {
+  const getDynamicStyles = (inActive: boolean, darkModeActive: boolean) => {
     if (windowWidth > 992) {
-      return {
-        filter:
-          isDarkMode && inActive
-            ? "drop-shadow(5px 5px 5px rgba(255, 255, 255, 0.5))"
-            : !isDarkMode && inActive
-            ? "drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5))"
-            : isDarkMode && !inActive
-            ? "drop-shadow(5px 5px 5px rgba(255, 255, 255, 0.5)) grayscale(100%)"
-            : !isDarkMode && !inActive
-            ? "drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5)) grayscale(100%)"
-            : "none",
-      };
+      if (darkModeActive && inActive)
+        return { filter: "drop-shadow(5px 5px 5px rgba(255, 255, 255, 0.5))" }
+      else if (!darkModeActive && inActive)
+        return { filter: "drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5))" }
+      else if (darkModeActive && !inActive)
+        return { filter: "drop-shadow(5px 5px 5px rgba(255, 255, 255, 0.5)) grayscale(100%)" }
+      else if (!darkModeActive && !inActive)
+        return { filter: "drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5)) grayscale(100%)" }
+      else
+        return { filter: "none" }
+
     } else {
       return {
-        filter: isDarkMode
+        filter: darkModeActive
           ? "drop-shadow(5px 5px 5px rgba(255, 255, 255, 0.5))"
           : "drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5))",
       };
     }
   };
 
-  const dynamicStyles = getDynamicStyles(inActive, isDarkMode);
+  const dynamicStyles = getDynamicStyles(inActive, darkModeActive);
 
   return (
     <article

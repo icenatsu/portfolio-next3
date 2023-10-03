@@ -14,6 +14,9 @@
   align-items: center;
   padding: 0 1rem;
   transition: min-height 0.8s ease-in-out;
+  color: var(--navbar--container--color);
+  background-color: var(--navbar--container--bg);
+  filter: drop-shadow(0 0.3rem 0.3rem var(----navbar--container--filter));
 
   @media screen and (max-width: var.$breakpoint-tablette) {
     padding-top: 1rem;
@@ -38,9 +41,11 @@
 
     &__item {
       padding: 0 2rem;
-      font-size: fct.map-deep-get(var.$navbar, "fontSize", "link");
-      font-family: fct.map-deep-get(var.$navbar, "fontFamily", "link");
-      font-weight: fct.map-deep-get(var.$navbar, "fontWeight", "link");
+      font-size: var(--navbar--link--fontSize);
+      font-family: var(--fontFamily--archivo);
+      font-weight: var(--navbar--link--fontWeight);
+      color: var(--navbar--link--color);
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
 
       @media screen and (max-width: var.$breakpoint-tablette) {
         padding: 0.5rem 0;
@@ -48,6 +53,8 @@
 
       &:before {
         content: "\269D";
+        color: var(--navbar--stars--color);
+        text-shadow: 0.1rem 0.1rem 0.1rem var(--navbar--stars--textShadow);
         margin-right: 1rem;
         font-size: 1.9rem;
       }
@@ -65,63 +72,8 @@
     padding: 0.5rem 0;
 
     @media screen and (max-width: var.$breakpoint-tablette) {
+      color: var(--navbar--burger--color);
       display: block;
-    }
-  }
-
-  &--dark {
-    color: fct.map-deep-get(var.$navbar--dark, "colors", "container");
-    background-color: fct.map-deep-get(
-      var.$navbar--dark,
-      "colors",
-      "container--bg"
-    );
-    filter: drop-shadow(
-      0 0.3rem 0.3rem
-        fct.map-deep-get(var.$navbar--dark, "colors", "container--filter")
-    );
-
-    .list {
-      &__item {
-        color: fct.map-deep-get(var.$navbar--light, "colors", "link");
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
-        &:before {
-          color: fct.map-deep-get(var.$navbar--dark, "colors", "link--before");
-          text-shadow: 0.1rem 0.1rem 0.1rem rgb(0, 0, 0);
-        }
-      }
-    }
-
-    @media screen and (max-width: var.$breakpoint-tablette) {
-      color: fct.map-deep-get(var.$navbar--dark, "colors", "burger");
-    }
-  }
-
-  &--light {
-    color: fct.map-deep-get(var.$navbar--light, "colors", "container");
-    background-color: fct.map-deep-get(
-      var.$navbar--light,
-      "colors",
-      "container--bg"
-    );
-    filter: drop-shadow(
-      0 0.3rem 0.3rem
-        fct.map-deep-get(var.$navbar--light, "colors", "container--filter")
-    );
-
-    .list {
-      &__item {
-        color: fct.map-deep-get(var.$navbar--light, "colors", "link");
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
-        &:before {
-          color: fct.map-deep-get(var.$navbar--light, "colors", "link--before");
-          text-shadow: 0.1rem 0rem 0.1rem rgb(255, 255, 255);
-        }
-      }
-    }
-
-    @media screen and (max-width: var.$breakpoint-tablette) {
-      color: fct.map-deep-get(var.$navbar--light, "colors", "burger");
     }
   }
 }

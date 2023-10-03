@@ -1,8 +1,7 @@
 "use client";
 
 import styles from "./Project.module.scss";
-import { ThemeContext } from "@context/ThemeContext/ThemeContext";
-import { useContext, useEffect } from "react";
+import { useEffect } from "react";
 import { useFetch } from "@Hooks/Fetch/useFetch";
 import Loader from "@components/Loader/Loader";
 import CardProject from "@/app/components/Projets/CardProject/CardProject";
@@ -31,38 +30,7 @@ interface IntItems {
 }
 
 const Project = () => {
-  const themeContext = useContext(ThemeContext);
-  const isDarkMode = themeContext!.isDarkMode;
-
   const { items, error } = useFetch<IntItems[]>();
-
-  // Application du light/dark mode
-  useEffect(() => {
-    if (
-      (document.getElementById("projets") !== null &&
-        document.getElementById("caroussel") !== null) ||
-      document.getElementById("errors") !== null
-    ) {
-      const componentForCssChange = [
-        {
-          htmlElement: document.getElementById("projets"),
-          name: "projects",
-          scss: styles,
-        },
-        {
-          htmlElement: document.getElementById("caroussel"),
-          name: "projects__caroussel",
-          scss: styles,
-        },
-        {
-          htmlElement: document.getElementById("errors"),
-          name: "error",
-          scss: styles,
-        },
-      ];
-      themeContext?.changeDarkLightMode(componentForCssChange);
-    }
-  }, [themeContext, isDarkMode]);
 
   //Animations gsap
   // animationSlideScrollToBottom(delay, durée, yfrom, topscroll, bottom scroll)
@@ -79,13 +47,13 @@ const Project = () => {
   }, []);
 
   return (
-    <section id="projets" className={styles.projects}>
-      <h2 id="projetTitle" className={styles["projects__title"]}>
+    <section id="projets" className={styles.container}>
+      <h2 id="projetTitle" className={styles["container__title"]}>
         {" "}
         Mes projets
       </h2>
       {error === undefined ? (
-        <div id="caroussel" className={styles["projects__caroussel"]}>
+        <div id="caroussel" className={styles["container__caroussel"]}>
           {items ? (
             <Swiper
               watchSlidesProgress={true}

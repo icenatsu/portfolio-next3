@@ -53,22 +53,37 @@
   right: 0;
   cursor: pointer;
   border-radius: var.$radius--20;
-  color: fct.map-deep-get(var.$switch, "colors", "sunmoon");
+  color: var(--switch--sunmoon--color);
+  background-color: var(--switch--sunmoon--bg);
+  border: 0.1rem outset var(--switch--border--color);
+
+  &:before {
+    position: absolute;
+    content: "";
+    bottom: 0.3rem;
+    left: 0.3rem;
+    width: calc(50% - 0.6rem);
+    height: calc(100% - 0.6rem);
+    border-radius: var.$radius--20;
+    transition: 0.4s;
+    z-index: 3;
+    background-color: var(--switch--bg--toogle);
+  }
 
   & svg {
     position: absolute;
     top: 0.7rem;
-    z-index: 1;
-    font-size: fct.map-deep-get(var.$switch, "fontSize", "icone--desktop");
+    z-index: 2;
+    font-size: var(--switch--fontSize--icon--desktop);
 
     @media screen and (max-width: var.$breakpoint-tablette) {
       top: 0.7rem;
-      font-size: fct.map-deep-get(var.$switch, "fontSize", "icone--tablet");
+      font-size: var(--switch--fontSize--icon--tablet);
     }
 
     @media screen and (max-width: var.$breakpoint-mobile) {
       top: 0.7rem;
-      font-size: fct.map-deep-get(var.$switch, "fontSize", "icone--mobile");
+      font-size: var(--switch--fontSize--icon--mobile);
     }
 
     &:nth-child(1) {
@@ -86,51 +101,6 @@
         right: 0.5rem;
         top: 0.5rem;
       }
-    }
-  }
-
-  &::before {
-    position: absolute;
-    content: "";
-    bottom: 0.3rem;
-    left: 0.3rem;
-    width: calc(50% - 0.6rem);
-    height: calc(100% - 0.6rem);
-    border-radius: var.$radius--20;
-    transition: 0.4s;
-    z-index: 2;
-  }
-
-  &--dark {
-    border: 0.1rem outset black;
-    background-color: fct.map-deep-get(
-      var.$switch--dark,
-      "colors",
-      "sunmoon--bg"
-    );
-
-    &::before {
-      background-color: fct.map-deep-get(
-        var.$switch--dark,
-        "colors",
-        "sunmoon--icone"
-      );
-    }
-  }
-
-  &--light {
-    background-color: fct.map-deep-get(
-      var.$switch--light,
-      "colors",
-      "sunmoon--bg"
-    );
-
-    &::before {
-      background-color: fct.map-deep-get(
-        var.$switch--light,
-        "colors",
-        "sunmoon--icone"
-      );
     }
   }
 }

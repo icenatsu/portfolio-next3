@@ -4,6 +4,7 @@
 .container {
   display: flex;
   flex-direction: column;
+  background-color: var(--skills--container--bg);
 
   padding: 10rem 20rem 2rem 20rem;
 
@@ -21,16 +22,17 @@
   }
 
   .title {
-    font-size: fct.map-deep-get(var.$skills, "fontSize", "title--desktop");
-    font-family: fct.map-deep-get(var.$skills, "fontFamily", "title");
-    font-weight: fct.map-deep-get(var.$skills, "fontWeight", "title");
+    font-size: var(--skills--title--fontSize--desktop);
+    font-family: var(--fontFamily--oswald);
+    font-weight: var(--skills--title--fontWeight);
+    color: var(--skills--title--color);
 
     @media screen and (max-width: var.$breakpoint-tablette) {
-      font-size: fct.map-deep-get(var.$skills, "fontSize", "title--tablet");
+      font-size: var(--skills--title--fontSize--tablet);
     }
 
     @media screen and (max-width: var.$breakpoint-mobile) {
-      font-size: fct.map-deep-get(var.$skills, "fontSize", "title--mobile");
+      font-size: var(--skills--title--fontSize--mobile);
       text-align: center;
     }
   }
@@ -66,28 +68,6 @@
       flex-direction: column;
       height: auto;
       gap: 2rem;
-    }
-  }
-
-  &--dark {
-    background-color: fct.map-deep-get(
-      var.$skills--dark,
-      "colors",
-      "container--bg"
-    );
-    .title {
-      color: fct.map-deep-get(var.$skills--dark, "colors", "title");
-    }
-  }
-
-  &--light {
-    background-color: fct.map-deep-get(
-      var.$skills--light,
-      "colors",
-      "container--bg"
-    );
-    .title {
-      color: fct.map-deep-get(var.$skills--light, "colors", "title");
     }
   }
 }

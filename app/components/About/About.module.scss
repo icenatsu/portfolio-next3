@@ -4,6 +4,7 @@
 .container {
   display: flex;
   padding: 10rem 20rem;
+  background-color: var(--about--container--bg);
 
   @media screen and (max-width: 1400px) {
     padding: 10rem 10rem;
@@ -19,34 +20,33 @@
     padding: 5rem 1rem;
   }
 
-  .about {
+  .title {
     flex: 1;
-    font-family: fct.map-deep-get(var.$about, "fontFamily", "title");
-    font-size: fct.map-deep-get(var.$about, "fontSize", "title--desktop");
-    font-weight: fct.map-deep-get(var.$about, "fontWeight", "title");
+    font-family: var(--fontFamily--oswald);
+    font-size: var(--about--title--fontSize--desktop);
+    font-weight: var(--about--title--fontWeight);
+    color: var(--about--title--color);
 
     @media screen and (max-width: var.$breakpoint-tablette) {
-      font-size: fct.map-deep-get(var.$about, "fontSize", "title--tablet");
+      font-size: var(--about--title--fontSize--tablet);
       padding-bottom: 2rem;
     }
 
     @media screen and (max-width: var.$breakpoint-mobile) {
       text-align: center;
-      font-size: fct.map-deep-get(var.$about, "fontSize", "title--mobile");
+      font-size: var(--about--title--fontSize--mobile);
       padding-bottom: 3rem;
     }
   }
 
   .presentation {
     flex: 1;
-    font-family: fct.map-deep-get(var.$about, "fontFamily", "presentation");
-    font-size: fct.map-deep-get(
-      var.$about,
-      "fontSize",
-      "presentation--desktop"
-    );
+    font-family: var(--fontFamily--inter);
+    font-size: var(--about--presentation--fontSize--desktop);
     border-radius: var.$radius--5;
     padding: 4rem 2rem;
+    color: var(--about--presentation--color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
 
     & p {
       max-width: 95%;
@@ -55,58 +55,12 @@
       @media screen and (max-width: var.$breakpoint-tablette) {
         margin: 0;
         max-width: 100%;
-        font-size: fct.map-deep-get(
-          var.$about,
-          "fontSize",
-          "presentation--tablet"
-        );
+        font-size: var(--about--presentation--fontSize--tablet);
       }
 
       @media screen and (max-width: var.$breakpoint-mobile) {
         text-align: center;
-        font-size: fct.map-deep-get(
-          var.$about,
-          "fontSize",
-          "presentation--mobile"
-        );
-      }
-    }
-  }
-
-  &--dark {
-    background-color: fct.map-deep-get(
-      var.$about--dark,
-      "colors",
-      "container--bg"
-    );
-
-    .about {
-      color: fct.map-deep-get(var.$about--dark, "colors", "about");
-    }
-
-    .presentation {
-      & p {
-        color: fct.map-deep-get(var.$about--dark, "colors", "presentation");
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
-      }
-    }
-  }
-
-  &--light {
-    background-color: fct.map-deep-get(
-      var.$about--light,
-      "colors",
-      "container--bg"
-    );
-
-    .about {
-      color: fct.map-deep-get(var.$about--light, "colors", "about");
-    }
-
-    .presentation {
-      & p {
-        color: fct.map-deep-get(var.$about--light, "colors", "presentation");
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+        font-size: var(--about--presentation--fontSize--mobile);
       }
     }
   }

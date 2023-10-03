@@ -1,12 +1,13 @@
 @use "../../../styles/utils/functions.scss" as fct;
 @use "../../../styles/utils/variables.scss" as var;
-.projects {
+.container {
   display: flex;
   flex-direction: column;
   background-repeat: no-repeat;
   background-size: 80% 90%;
   max-height: 60rem;
   padding: 10rem 20rem;
+  background-color: var(--project--container--bg);
 
   @media screen and (max-width: 1400px) {
     padding: 10rem 10rem;
@@ -26,18 +27,19 @@
   }
 
   &__title {
-    font-size: fct.map-deep-get(var.$projets, "fontSize", "title--desktop");
-    font-family: fct.map-deep-get(var.$projets, "fontFamily", "title");
-    font-weight: fct.map-deep-get(var.$projets, "fontWeight", "title");
+    font-size: var(--project--title--fontSize--desktop);
+    font-family: var(--fontFamily--oswald);
+    font-weight: var(--project--title--fontWeight);
+    color: var(--project--title--color);
     padding: 0 0 5rem 0;
 
     @media screen and (max-width: var.$breakpoint-tablette) {
-      font-size: fct.map-deep-get(var.$projets, "fontSize", "title--tablet");
+      font-size: var(--project--title--fontSize--tablet);
     }
 
     @media screen and (max-width: var.$breakpoint-mobile) {
       text-align: center;
-      font-size: fct.map-deep-get(var.$projets, "fontSize", "title--mobile");
+      font-size: var(--project--title--fontSize--mobile);
     }
   }
 
@@ -69,42 +71,11 @@
   .touch {
     text-align: center;
     padding: 3rem 0 0 0;
-    font-size: fct.map-deep-get(var.$projets, "fontSize", "touch");
+    font-size: var(--project--touch--fontSize);
+    color: var(--project--touch--color);
 
     @media screen and (max-width: var.$breakpoint-tablette) {
       display: block;
-    }
-  }
-
-  &--dark {
-    background-color: fct.map-deep-get(
-      var.$projets--dark,
-      "colors",
-      "projects--bg"
-    );
-
-    .projects__title {
-      color: fct.map-deep-get(var.$projets--dark, "colors", "title");
-    }
-
-    .touch {
-      color: fct.map-deep-get(var.$projets--dark, "colors", "touch");
-    }
-  }
-
-  &--light {
-    background-color: fct.map-deep-get(
-      var.$projets--light,
-      "colors",
-      "projects--bg"
-    );
-
-    .projects__title {
-      color: fct.map-deep-get(var.$projets--light, "colors", "title");
-    }
-
-    .touch {
-      color: fct.map-deep-get(var.$projets--light, "colors", "touch");
     }
   }
 }
@@ -115,13 +86,6 @@
   justify-content: center;
   flex-wrap: wrap;
   padding-bottom: 10rem;
-  font-size: fct.map-deep-get(var.$projets, "fontSize", "error");
-
-  &--dark {
-    color: fct.map-deep-get(var.$projets--dark, "colors", "error");
-  }
-
-  &--light {
-    color: fct.map-deep-get(var.$projets--light, "colors", "error");
-  }
+  font-size: var(--project--error--fontSize);
+  color: var(--project--error--color);
 }

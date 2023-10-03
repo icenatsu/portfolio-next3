@@ -41,7 +41,7 @@
 
     .profession {
       font-size: var(--header--profession--fontSize);
-      font-family: var(--font--archivo);
+      font-family: var(--fontFamily--archivo);
       color: var(--header--profession--color);
       border: 0.1rem solid var(--header--profession--border);
       border-radius: var.$radius--30;
@@ -57,7 +57,7 @@
     .title {
       display: flex;
       flex-wrap: wrap;
-      font-family: var(--font--oswald);
+      font-family: var(--fontFamily--oswald);
       font-size: var(--header--title--fontSize--desktop);
       font-weight: var(--header--title--fontWeight);
       color: var(--header--title);
@@ -85,7 +85,7 @@
         justify-content: space-evenly;
         color: var(--header--button);
         background-color: var(--header--button--bg);
-        font-family: var(--font--archivo);
+        font-family: var(--fontFamily--archivo);
         font-size: var(--header--button--fontSize);
         font-weight: var(--header--button--fontWeight);
         border-radius: var.$radius--30;

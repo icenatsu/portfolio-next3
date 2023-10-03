@@ -1,25 +1,7 @@
 "use client";
 import styles from "./Footer.module.scss";
-import { useContext, useEffect } from "react";
-import { ThemeContext } from "@context/ThemeContext/ThemeContext";
 
 const Footer = (): JSX.Element => {
-  const themeContext = useContext(ThemeContext);
-  const isDarkMode = themeContext!.isDarkMode;
-
-  useEffect(() => {
-    if (document.getElementById("footer") !== null) {
-      const componentForCssChange = [
-        {
-          htmlElement: document.getElementById("footer"),
-          name: "footer",
-          scss: styles,
-        },
-      ];
-      themeContext?.changeDarkLightMode(componentForCssChange);
-    }
-  }, [themeContext, isDarkMode]);
-
   return (
     <footer id="footer" className={styles.footer}>
       <p className={styles.infos}>@Design fait maison - Marseille</p>

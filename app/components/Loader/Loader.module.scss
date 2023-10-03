@@ -8,18 +8,7 @@
   width: 100%;
 
   .icon {
-    font-size: fct.map-deep-get(var.$loader, "fontSize", "icon");
-  }
-
-  &--dark {
-    .icon {
-      color: fct.map-deep-get(var.$loader--dark, "colors", "icon");
-    }
-  }
-
-  &--light {
-    .icon {
-      color: fct.map-deep-get(var.$loader--light, "colors", "icon");
-    }
+    font-size: var(--loader--icon--fontSize);
+    color: fct.map-deep-get(--loader--icon--colors);
   }
 }

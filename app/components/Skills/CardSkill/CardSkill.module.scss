@@ -12,6 +12,7 @@
   transition: max-height 0.8s ease-in-out;
   border-radius: var.$radius--10;
   padding: 1rem;
+  background-color: var(--cardSkill--bg);
 
   @media screen and (max-width: var.$breakpoint-tablette) {
     max-height: 7rem;
@@ -24,18 +25,6 @@
     max-height: 6.5rem;
   }
 
-  // &:hover {
-  //   max-height: 35rem;
-
-  //   & > .descriptionTechno {
-  //     opacity: 1;
-  //   }
-
-  //   & .slideToBottom {
-  //     transform: rotate(180deg);
-  //   }
-  // }
-
   .container {
     display: flex;
     padding-bottom: 0.5rem;
@@ -46,6 +35,7 @@
     .slideToBottom {
       font-size: 3rem;
       cursor: pointer;
+      color: var(--cardSkill--chevron--color);
     }
 
     &__icones {
@@ -54,57 +44,31 @@
 
       .icone {
         padding: 0 0.5rem 0.5rem 0;
-        font-size: fct.map-deep-get(
-          var.$cardSkill,
-          "fontSize",
-          "iconTechno--desktop"
-        );
+        font-size: var(--cardSkill--icon--fontSize--desktop);
+        color: var(--cardSkill--iconTechno--color);
 
         @media screen and (max-width: var.$breakpoint-tablette) {
-          font-size: fct.map-deep-get(
-            var.$cardSkill,
-            "fontSize",
-            "iconTechno--tablet"
-          );
+          font-size: var(--cardSkill--icon--fontSize--tablet);
         }
 
         @media screen and (max-width: var.$breakpoint-mobile) {
           padding-left: 0.5rem;
-          font-size: fct.map-deep-get(
-            var.$cardSkill,
-            "fontSize",
-            "iconTechno--mobile"
-          );
+          font-size: var(--cardSkill--icon--fontSize--mobile);
         }
       }
 
       .nameTechno {
         padding-left: 2rem;
-        font-family: fct.map-deep-get(
-          var.$cardSkill,
-          "fontFamily",
-          "nameTechno"
-        );
-        font-size: fct.map-deep-get(
-          var.$cardSkill,
-          "fontSize",
-          "nameTechno--desktop"
-        );
+        font-family: var(--fontFamily--inter);
+        font-size: var(--cardSkill--nameTechno--fontSize--desktop);
+        color: var(--cardSkill--nameTechno--color);
 
         @media screen and (max-width: var.$breakpoint-tablette) {
-          font-size: fct.map-deep-get(
-            var.$cardSkill,
-            "fontSize",
-            "nameTechno--tablet"
-          );
+          font-size: var(--cardSkill--nameTechno--fontSize--tablet);
         }
 
         @media screen and (max-width: var.$breakpoint-mobile) {
-          font-size: fct.map-deep-get(
-            var.$cardSkill,
-            "fontSize",
-            "nameTechno--mobile"
-          );
+          font-size: var(--cardSkill--nameTechno--fontSize--mobile);
         }
       }
     }
@@ -113,23 +77,12 @@
   .descriptionTechno {
     opacity: 0;
     transition: opacity 1s ease-in-out;
-    font-size: fct.map-deep-get(
-      var.$cardSkill,
-      "fontSize",
-      "descriptionTechno--tablet"
-    );
-    font-family: fct.map-deep-get(
-      var.$cardSkill,
-      "fontFamily",
-      "descriptionTechno"
-    );
+    font-size: var(--cardSkill--description--fontSize--desktop);
+    font-family: var(--fontFamily--inter);
+    color: var(--cardSkill--descriptionTechno--color);
 
     @media screen and (max-width: var.$breakpoint-mobile) {
-      font-size: fct.map-deep-get(
-        var.$cardSkill,
-        "fontSize",
-        "descriptionTechno--mobile"
-      );
+      font-size: var(--cardSkill--description--fontSize--mobile);
     }
 
     .tilt {
@@ -163,131 +116,28 @@
 
     &:first-of-type {
       padding: 1rem 0 0 0.5rem;
+      border-top: 0.1rem solid var(--cardSkill--dividingBorder);
     }
 
     &::before {
       font-family: var(--font--noto);
       content: "\2BB1";
       padding-right: 0.5rem;
-      font-size: fct.map-deep-get(
-        var.$cardSkill,
-        "fontSize",
-        "iconArrow--desktop"
-      );
+      font-size: var(--cardSkill--iconArrow--fontSize--desktop);
+      color: var(--cardSkill--iconArrow--color);
 
       @media screen and (max-width: var.$breakpoint-tablette) {
-        font-size: fct.map-deep-get(
-          var.$cardSkill,
-          "fontSize",
-          "iconArrow--tablet"
-        );
+        font-size: var(--cardSkill--iconArrow--fontSize--tablet);
       }
 
       @media screen and (max-width: var.$breakpoint-mobile) {
-        font-size: fct.map-deep-get(
-          var.$cardSkill,
-          "fontSize",
-          "iconArrow--mobile"
-        );
-      }
-    }
-  }
-
-  &--dark {
-    background-color: fct.map-deep-get(
-      var.$cardSkill--dark,
-      "colors",
-      "techno--bg"
-    );
-
-    .descriptionTechno {
-      color: fct.map-deep-get(
-        var.$cardSkill--dark,
-        "colors",
-        "descriptionTechno"
-      );
-    }
-
-    & p {
-      &:first-of-type {
-        border-top: 0.1rem solid
-          fct.map-deep-get(var.$cardSkill--dark, "colors", "dividingBorder");
-      }
-      &::before {
-        color: fct.map-deep-get(var.$cardSkill--dark, "colors", "iconArrow");
-      }
-    }
-
-    .container {
-      .slideToBottom {
-        color: fct.map-deep-get(var.$cardSkill--dark, "colors", "chevron");
-      }
-
-      &__icones {
-        .icone {
-          color: fct.map-deep-get(var.$cardSkill--dark, "colors", "iconTechno");
-        }
-
-        .nameTechno {
-          color: fct.map-deep-get(var.$cardSkill--dark, "colors", "nameTechno");
-        }
-      }
-    }
-  }
-
-  &--light {
-    background-color: fct.map-deep-get(
-      var.$cardSkill--light,
-      "colors",
-      "techno--bg"
-    );
-
-    .descriptionTechno {
-      color: fct.map-deep-get(
-        var.$cardSkill--light,
-        "colors",
-        "descriptionTechno"
-      );
-    }
-
-    & p {
-      &:first-of-type {
-        border-top: 0.1rem solid
-          fct.map-deep-get(var.$cardSkill--light, "colors", "dividingBorder");
-      }
-      &::before {
-        color: fct.map-deep-get(var.$cardSkill--light, "colors", "iconArrow");
-      }
-    }
-
-    .container {
-      .slideToBottom {
-        color: fct.map-deep-get(var.$cardSkill--light, "colors", "chevron");
-      }
-
-      &__icones {
-        .icone {
-          color: fct.map-deep-get(
-            var.$cardSkill--light,
-            "colors",
-            "iconTechno"
-          );
-        }
-
-        .nameTechno {
-          color: fct.map-deep-get(
-            var.$cardSkill--light,
-            "colors",
-            "nameTechno"
-          );
-        }
+        font-size: var(--cardSkill--iconArrow--fontSize--mobile);
       }
     }
   }
 }
 
 .visible {
-  color: red;
   max-height: 35rem;
 
   & > .descriptionTechno {
