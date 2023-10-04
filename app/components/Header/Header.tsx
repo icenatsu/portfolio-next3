@@ -8,7 +8,6 @@ import Link from "next/link";
 import { animationSlideToBottom } from "@animation/gsapAnimation";
 
 const Header = (): JSX.Element => {
-
   const scrollToAnchor = () => {
     const projets = document.getElementById("projets");
     projets?.scrollIntoView({ behavior: "smooth" });
@@ -19,38 +18,23 @@ const Header = (): JSX.Element => {
   const headerTitle = useRef<HTMLHeadingElement>(null);
   const headerButton = useRef<HTMLDivElement>(null);
 
-  // Animations gsap
-  /******************/
-
+  // Animations
+  /************/
   useEffect(() => {
     if (headerRef.current !== null) {
-      headerRef.current?.classList.add(styles.active)
+      headerRef.current?.classList.add(styles.active);
     }
-
-    // const animationFrameId = requestAnimationFrame(() => {
-    // });
-    // // Nettoyez l'animationFrameId lorsque le composant est démonté
-    // return () => cancelAnimationFrame(animationFrameId);
   }, []);
-
-
-  // useEffect(() => {
-  //   animationSlideToBottom("headerProfession", 0.6, 0.3, 10);
-  // }, []);
-
-  // useEffect(() => {
-  //   animationSlideToBottom("headerTitle", 0.7, 0.3, 10);
-  // }, []);
-
-  // useEffect(() => {
-  //   animationSlideToBottom("headerLink", 0.8, 0.3, 10);
-  // }, []);
 
   return (
     <header ref={headerRef} id="header" className={styles.header}>
       <Banner />
       <div className={styles["text"]}>
-        <p ref={headerProfession} id="headerProfession" className={styles.profession}>
+        <p
+          ref={headerProfession}
+          id="headerProfession"
+          className={styles.profession}
+        >
           Développeuse Web
         </p>
         <h1 ref={headerTitle} id="headerTitle" className={styles.title}>
