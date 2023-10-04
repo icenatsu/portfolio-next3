@@ -21,13 +21,13 @@ const Header = (): JSX.Element => {
   useEffect(() => {
     const headerElement = headerRef.current;
 
-    const animationFrameId = requestAnimationFrame(() => {
-      if (headerRef.current !== null) {
-        headerRef.current.classList.add(styles.active)
-      }
-    });
-    // Nettoyez l'animationFrameId lorsque le composant est démonté
-    return () => cancelAnimationFrame(animationFrameId);
+    if (headerRef.current !== null) {
+      headerRef.current.classList.add(styles.active)
+    }
+    // const animationFrameId = requestAnimationFrame(() => {
+    // });
+    // // Nettoyez l'animationFrameId lorsque le composant est démonté
+    // return () => cancelAnimationFrame(animationFrameId);
   }, []);
 
 
