@@ -32,7 +32,7 @@ const CardSkill = ({
   // Gestion des états controlés par chaque évenements selon le format destinée à l'affichage des descriptions des compétences
   useEffect(() => {
     const addEventdependingOnTheMedia = () => {
-      if (typeof window !== 'undefined' && cardSkill.current !== null) {
+      if (cardSkill.current !== null) {
         cardSkill.current.addEventListener("mouseenter", handleMouseEnter);
         cardSkill.current.addEventListener("mouseleave", handleMouseLeave);
         cardSkill.current.addEventListener("click", handleClick);
