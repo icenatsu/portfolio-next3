@@ -15,14 +15,18 @@ const Header = (): JSX.Element => {
   };
 
   const headerRef = useRef<HTMLElement>(null);
+  const headerProfession = useRef<HTMLParagraphElement>(null);
+  const headerTitle = useRef<HTMLHeadingElement>(null);
+  const headerButton = useRef<HTMLAnchorElement>(null);
   // Animations gsap
   /******************/
 
   useEffect(() => {
-    const headerElement = headerRef.current;
 
-    if (headerRef.current !== null) {
-      headerRef.current.classList.add(styles.active)
+    if (headerProfession.current !== null && headerTitle.current !== null && headerButton.current !== null) {
+      headerProfession.current.classList.add(styles.active)
+      headerTitle.current.classList.add(styles.active)
+      headerButton.current.classList.add(styles.active)
     }
     // const animationFrameId = requestAnimationFrame(() => {
     // });
@@ -47,10 +51,10 @@ const Header = (): JSX.Element => {
     <header ref={headerRef} id="header" className={styles.header}>
       <Banner />
       <div className={styles["text"]}>
-        <p id="headerProfession" className={styles.profession}>
+        <p ref={headerProfession} id="headerProfession" className={styles.profession}>
           Développeuse Web
         </p>
-        <h1 id="headerTitle" className={styles.title}>
+        <h1 ref={headerTitle} id="headerTitle" className={styles.title}>
           Gaëlle Blanchard
         </h1>
         <div id="headerLink" className={styles.link}>
@@ -63,6 +67,7 @@ const Header = (): JSX.Element => {
             Voir projets
           </Link>
           <Link
+            ref={headerButton}
             className={styles.button}
             href="https://www.linkedin.com/in/icenatsu/"
           >
