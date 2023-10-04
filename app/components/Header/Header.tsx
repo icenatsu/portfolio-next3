@@ -17,17 +17,20 @@ const Header = (): JSX.Element => {
   const headerRef = useRef<HTMLElement>(null);
   const headerProfession = useRef<HTMLParagraphElement>(null);
   const headerTitle = useRef<HTMLHeadingElement>(null);
-  const headerButton = useRef<HTMLAnchorElement>(null);
+  const headerButton = useRef<HTMLDivElement>(null);
+
   // Animations gsap
   /******************/
 
   useEffect(() => {
-
     if (headerProfession.current !== null && headerTitle.current !== null && headerButton.current !== null) {
+      console.log(headerButton);
+
       headerProfession.current.classList.add(styles.active)
       headerTitle.current.classList.add(styles.active)
       headerButton.current.classList.add(styles.active)
     }
+
     // const animationFrameId = requestAnimationFrame(() => {
     // });
     // // Nettoyez l'animationFrameId lorsque le composant est démonté
@@ -57,7 +60,7 @@ const Header = (): JSX.Element => {
         <h1 ref={headerTitle} id="headerTitle" className={styles.title}>
           Gaëlle Blanchard
         </h1>
-        <div id="headerLink" className={styles.link}>
+        <div ref={headerButton} id="headerLink" className={styles.link}>
           <Link
             className={styles.button}
             onClick={scrollToAnchor}
@@ -67,7 +70,6 @@ const Header = (): JSX.Element => {
             Voir projets
           </Link>
           <Link
-            ref={headerButton}
             className={styles.button}
             href="https://www.linkedin.com/in/icenatsu/"
           >
