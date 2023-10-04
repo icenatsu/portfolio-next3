@@ -24,7 +24,7 @@ const Banner = (): JSX.Element => {
         />
       </div>
       <div className={styles.pot}>
-        <Image className={styles.PotImg} src={jarre} alt="Dessin d'une jarre" />
+        <Image className={styles.PotImg} src={jarre} alt="Dessin d'une jarre" priority={true} />
       </div>
     </div>
   );
