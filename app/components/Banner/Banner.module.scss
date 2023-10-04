@@ -60,11 +60,9 @@
 @keyframes jug {
   0% {
     transform: rotate(0deg);
-    filter: brightness(2) grayscale(90%);
   }
   100% {
     transform: rotate(35deg);
-    filter: brightness(2) grayscale(90%);
   }
 }
 
@@ -90,14 +88,11 @@
 @keyframes bascule {
   0% {
     transform: rotate(10deg);
-    filter: brightness(1.8) grayscale(90%);
   }
   50% {
     transform: rotate(-10deg);
-    filter: grayscale(90%) brightness(1.8);
   }
   100% {
     transform: rotate(10deg);
-    filter: brightness(1.8) grayscale(90%);
   }
 }
