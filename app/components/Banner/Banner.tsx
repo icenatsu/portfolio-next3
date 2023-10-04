@@ -12,6 +12,7 @@ const Banner = (): JSX.Element => {
           className={styles.logoImg}
           src={Logo}
           alt="Dessin d'une cruche inclinée"
+          priority={true}
         />
       </div>
       <div className={styles.rain}>
@@ -21,10 +22,16 @@ const Banner = (): JSX.Element => {
           alt="Image animée de code"
           width={80}
           height={80}
+          priority={true}
         />
       </div>
       <div className={styles.pot}>
-        <Image className={styles.PotImg} src={jarre} alt="Dessin d'une jarre" priority={true} />
+        <Image
+          className={styles.PotImg}
+          src={jarre}
+          alt="Dessin d'une jarre"
+          priority={true}
+        />
       </div>
     </div>
   );
