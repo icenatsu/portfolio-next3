@@ -26,7 +26,7 @@ const oswald = Oswald({
   fallback: ["Arial", "sans serif"],
   preload: true,
   adjustFontFallback: false,
-  display: "block",
+  display: "swap",
 });
 
 const inter = Inter({
@@ -59,9 +59,7 @@ export default function RootLayout({
       lang="fr"
       className={`${inter.variable} ${archivo.variable} ${oswald.variable} ${noto.variable}`}
     >
-      <body>
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
