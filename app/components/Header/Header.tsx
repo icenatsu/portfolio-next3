@@ -25,17 +25,17 @@ const Header = (): JSX.Element => {
     }
   }, []);
 
-  // useEffect(() => {
-  //   animationSlideToBottom("headerProfession", 0.1, 0.1, 10);
-  // }, []);
+  useEffect(() => {
+    animationSlideToBottom("headerProfession", 0.1, 0.1, 10);
+  }, []);
 
-  // useEffect(() => {
-  //   animationSlideToBottom("headerTitle", 0.2, 0.1, 10);
-  // }, []);
+  useEffect(() => {
+    animationSlideToBottom("headerTitle", 0.2, 0.1, 10);
+  }, []);
 
-  // useEffect(() => {
-  //   animationSlideToBottom("headerLink", 0.3, 0.1, 10);
-  // }, []);
+  useEffect(() => {
+    animationSlideToBottom("headerLink", 0.3, 0.1, 10);
+  }, []);
 
   return (
     <header ref={headerRef} id="header" className={styles.header}>
