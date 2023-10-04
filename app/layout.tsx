@@ -26,7 +26,7 @@ const oswald = Oswald({
   fallback: ["Arial", "sans serif"],
   preload: true,
   adjustFontFallback: false,
-  display: "swap",
+  display: "block",
 });
 
 const inter = Inter({

@@ -16,16 +16,20 @@ const Header = (): JSX.Element => {
 
   // Animations gsap
   /******************/
+
   useEffect(() => {
-    animationSlideToBottom("headerProfession", 0.1, 0.3, 10);
+    animationSlideToBottom("header", 0, 0.1, 10);
+  }, []);
+  useEffect(() => {
+    animationSlideToBottom("headerProfession", 0.1, 0.1, 10);
   }, []);
 
   useEffect(() => {
-    animationSlideToBottom("headerTitle", 0.2, 0.3, 10);
+    animationSlideToBottom("headerTitle", 0.2, 0.1, 10);
   }, []);
 
   useEffect(() => {
-    animationSlideToBottom("headerLink", 0.3, 0.3, 10);
+    animationSlideToBottom("headerLink", 0.3, 0.1, 10);
   }, []);
 
   return (
