@@ -18,12 +18,24 @@ const Header = (): JSX.Element => {
   // Animations gsap
   /******************/
 
-
   useEffect(() => {
-    if (headerRef.current !== null) {
-      headerRef.current.classList.add(styles.active)
-    }
+    const headerElement = headerRef.current;
+
+    const animationFrameId = requestAnimationFrame(() => {
+      if (headerRef.current !== null) {
+        headerRef.current.classList.add(styles.active)
+      }
+    });
+
+    // Nettoyez l'animationFrameId lorsque le composant est démonté
+    return () => cancelAnimationFrame(animationFrameId);
   }, []);
+
+  // useEffect(() => {
+  //   if (headerRef.current !== null) {
+  //     headerRef.current.classList.add(styles.active)
+  //   }
+  // }, []);
 
   useEffect(() => {
     animationSlideToBottom("headerProfession", 0.1, 0.1, 10);
