@@ -23,12 +23,8 @@ const Header = (): JSX.Element => {
   /******************/
 
   useEffect(() => {
-    if (headerProfession.current !== null && headerTitle.current !== null && headerButton.current !== null) {
-      console.log(headerButton);
-
-      headerProfession.current.classList.add(styles.active)
-      headerTitle.current.classList.add(styles.active)
-      headerButton.current.classList.add(styles.active)
+    if (headerRef.current !== null) {
+      headerRef.current?.classList.add(styles.active)
     }
 
     // const animationFrameId = requestAnimationFrame(() => {
