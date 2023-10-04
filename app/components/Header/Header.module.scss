@@ -10,7 +10,7 @@
   // background-color: var(--header--bg--color);
   // transform: translateY(-100%);
   transition: all 1.2s ease-in-out;
-  transform: translateX(-90%);
+  transform: translateY(-99%);
 
   @media screen and (max-width: 1400px) {
     padding: 10rem 10rem;
@@ -140,5 +140,5 @@
 
 .active {
   opacity: 1;
-  transform: translateX(0);
+  transform: translateY(0);
 }

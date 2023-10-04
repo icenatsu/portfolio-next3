@@ -26,27 +26,21 @@ const Header = (): JSX.Element => {
         headerRef.current.classList.add(styles.active)
       }
     });
-
     // Nettoyez l'animationFrameId lorsque le composant est démonté
     return () => cancelAnimationFrame(animationFrameId);
   }, []);
 
-  // useEffect(() => {
-  //   if (headerRef.current !== null) {
-  //     headerRef.current.classList.add(styles.active)
-  //   }
-  // }, []);
 
   useEffect(() => {
-    animationSlideToBottom("headerProfession", 0.1, 0.1, 10);
+    animationSlideToBottom("headerProfession", 0.7, 0.3, 10);
   }, []);
 
   useEffect(() => {
-    animationSlideToBottom("headerTitle", 0.2, 0.1, 10);
+    animationSlideToBottom("headerTitle", 0.8, 0.3, 10);
   }, []);
 
   useEffect(() => {
-    animationSlideToBottom("headerLink", 0.3, 0.1, 10);
+    animationSlideToBottom("headerLink", 0.9, 0.3, 10);
   }, []);
 
   return (
