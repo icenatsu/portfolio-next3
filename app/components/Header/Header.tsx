@@ -1,6 +1,6 @@
 "use client";
 import styles from "./Header.module.scss";
-import { useEffect } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
 import { Icon } from "@iconify/react";
 import Banner from "@components/Banner/Banner";
 import Shape from "@components/Shape/Shape";
@@ -14,12 +14,18 @@ const Header = (): JSX.Element => {
     projets?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const headerRef = useRef<HTMLElement>(null);
   // Animations gsap
   /******************/
 
+
   useEffect(() => {
-    animationSlideToBottom("header", 0, 0.1, 10);
+    if (headerRef.current !== null) {
+      headerRef.current.classList.add(styles.active)
+    }
+    animationSlideToBottom("header", 0, 1, 0);
   }, []);
+
   useEffect(() => {
     animationSlideToBottom("headerProfession", 0.1, 0.1, 10);
   }, []);
@@ -33,7 +39,7 @@ const Header = (): JSX.Element => {
   }, []);
 
   return (
-    <header id="header" className={styles.header}>
+    <header ref={headerRef} id="header" className={styles.header}>
       <Banner />
       <div className={styles["text"]}>
         <p id="headerProfession" className={styles.profession}>

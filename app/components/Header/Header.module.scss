@@ -8,7 +8,7 @@
   justify-content: space-between;
   align-items: center;
   // background-color: var(--header--bg--color);
-  opacity: 0;
+  visibility: hidden;
 
   @media screen and (max-width: 1400px) {
     padding: 10rem 10rem;
@@ -134,4 +134,8 @@
       height: 7rem;
     }
   }
+}
+
+.active {
+  visibility: visible;
 }
