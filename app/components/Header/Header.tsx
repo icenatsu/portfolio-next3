@@ -23,7 +23,6 @@ const Header = (): JSX.Element => {
     if (headerRef.current !== null) {
       headerRef.current.classList.add(styles.active)
     }
-    animationSlideToBottom("header", 0, 1, 0);
   }, []);
 
   useEffect(() => {
