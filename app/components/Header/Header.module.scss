@@ -9,8 +9,8 @@
   align-items: center;
   // background-color: var(--header--bg--color);
   // transform: translateY(-100%);
-  // transition: all 1.2s ease-in-out;
-  opacity: 0;
+  transition: all 1.2s ease-in-out;
+  transform: translateX(-90%);
 
   @media screen and (max-width: 1400px) {
     padding: 10rem 10rem;
@@ -140,5 +140,5 @@
 
 .active {
   opacity: 1;
-  // transform: translateY(0);
+  transform: translateX(0);
 }
