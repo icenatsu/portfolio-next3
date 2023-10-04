@@ -53,7 +53,7 @@
       justify-content: center;
       z-index: 1;
       transition: filter 1s;
-      animation: translateBottom 0.8s 0.5s ease-in-out forwards;
+      animation: translateBottom 0.8s 0.5s ease-in-out both;
     }
 
     .title {
@@ -63,7 +63,7 @@
       font-size: var(--header--title--fontSize--desktop);
       font-weight: var(--header--title--fontWeight);
       color: var(--header--title);
-      animation: translateBottom 0.9s 0.5s ease-in-out forwards;
+      animation: translateBottom 0.9s 0.5s ease-in-out both;
 
       @media screen and (max-width: var.$breakpoint-tablette) {
         font-size: var(--header--title--fontSize--tablet);
@@ -80,7 +80,7 @@
       align-items: center;
       justify-content: center;
       z-index: 2;
-      animation: translateBottom 1s 0.5s ease-in-out forwards;
+      animation: translateBottom 1s 0.5s ease-in-out both;
 
       .button {
         cursor: pointer;
