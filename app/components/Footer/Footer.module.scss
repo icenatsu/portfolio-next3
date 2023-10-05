@@ -23,57 +23,9 @@
 
   .infos {
     text-align: center;
-    font-size: fct.map-deep-get(var.$footer, "fontSize", "infos");
-    font-family: fct.map-deep-get(var.$footer, "fontFamily", "infos");
-  }
-
-  .wave {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-    transform: rotate(180deg);
-    opacity: 0.2;
-  }
-
-  .wave svg {
-    position: relative;
-    display: block;
-    width: calc(100% + 0.13rem);
-    height: 9rem;
-
-    @media screen and (max-width: var.$breakpoint-tablette) {
-      width: calc(100% + 0.13rem);
-      height: 7rem;
-    }
-
-    @media screen and (max-width: var.$breakpoint-mobile) {
-      width: 170%;
-      height: 6rem;
-    }
-  }
-
-  &--dark {
-    .infos {
-      color: fct.map-deep-get(var.$footer--dark, "colors", "infos");
-      font-weight: 500;
-    }
-
-    .wave .shape-fill {
-      fill: fct.map-deep-get(var.$footer--dark, "colors", "wave");
-    }
-  }
-
-  &--light {
-    .infos {
-      color: fct.map-deep-get(var.$footer--light, "colors", "infos");
-      font-weight: 700;
-    }
-
-    .wave .shape-fill {
-      fill: fct.map-deep-get(var.$footer--light, "colors", "wave");
-    }
+    font-size: var(--footer--infos--fontSize);
+    font-family: var(--fontFamily--inter);
+    color: var(--footer--infos--color);
+    font-weight: var(--footer--infos--fontWeight);
   }
 }

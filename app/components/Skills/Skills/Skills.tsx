@@ -1,8 +1,7 @@
 "use client";
 
 import styles from "./Skills.module.scss";
-import { ThemeContext } from "@context/ThemeContext/ThemeContext";
-import { useContext, useEffect } from "react";
+import { useEffect } from "react";
 import CardSkill from "@components/Skills/CardSkill/CardSkill";
 import DownloadButton from "@components/DownloadButton/DownloadButton";
 import {
@@ -22,23 +21,6 @@ interface iconeDetails {
 }
 
 const Skills = (): JSX.Element => {
-  const themeContext = useContext(ThemeContext);
-  const isDarkMode = themeContext!.isDarkMode;
-
-  // Application du dark/light mode
-  useEffect(() => {
-    if (document.getElementById("skills") !== null) {
-      const componentForCssChange = [
-        {
-          htmlElement: document.getElementById("skills"),
-          name: "container",
-          scss: styles,
-        },
-      ];
-      themeContext?.changeDarkLightMode(componentForCssChange);
-    }
-  }, [themeContext, isDarkMode]);
-
   // Données des compétences
   const dataSkills: IntSkill[] = [
     {
@@ -210,8 +192,6 @@ const Skills = (): JSX.Element => {
       <div className={styles["container__Accordeons"]}>
         <div className={styles.dataAccordeon}>
           {dataFirstBlockAccordeon.map((value) => {
-            console.log(value.icones);
-
             return (
               <CardSkill
                 key={value.name}

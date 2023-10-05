@@ -9,6 +9,8 @@
   align-items: center;
   justify-content: center;
   opacity: 0.2;
+  fill: var(--shape--bubble--fill);
+  filter: var(--shape--brightness);
 
   @media screen and (max-width: var.$breakpoint-tablette) {
     top: 50%;
@@ -19,15 +21,6 @@
 
   @media screen and (max-width: var.$breakpoint-mobile) {
     display: none;
-  }
-
-  &--dark {
-    fill: fct.map-deep-get(var.$shape--dark, "colors", "shape");
-    filter: brightness(150%);
-  }
-
-  &--light {
-    fill: fct.map-deep-get(var.$shape--light, "colors", "shape");
   }
 }
 

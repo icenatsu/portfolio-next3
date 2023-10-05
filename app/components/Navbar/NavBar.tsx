@@ -1,35 +1,18 @@
 "use client";
 import styles from "./NavBar.module.scss";
 import Link from "next/link";
-import { useContext, useEffect, useRef, useState } from "react";
-import { ThemeContext } from "@context/ThemeContext/ThemeContext";
+import { useEffect, useRef, useState } from "react";
 import { Icon } from "@iconify/react";
 import { useWindowSizeResize } from "@Hooks/Window/useWindowSizeResize";
 import Switch from "../Switch/Switch";
 
 const NavBar = (): JSX.Element => {
-  const themeContext = useContext(ThemeContext);
-  const isDarkMode = themeContext!.isDarkMode;
   const windowSize = useWindowSizeResize();
 
   const [showMenu, setShowMenu] = useState<boolean>(false);
 
   const container = useRef<HTMLElement>(null);
   const list = useRef<HTMLUListElement>(null);
-
-  // Application du dark/light mode
-  useEffect(() => {
-    if (document.getElementById("navBar") !== null) {
-      const componentForCssChange = [
-        {
-          htmlElement: document.getElementById("navBar"),
-          name: "container",
-          scss: styles,
-        },
-      ];
-      themeContext?.changeDarkLightMode(componentForCssChange);
-    }
-  }, [themeContext, isDarkMode]);
 
   // Déroulement de la navbar en version mobile et tablette
   const handleClick = () => {
@@ -43,12 +26,12 @@ const NavBar = (): JSX.Element => {
       typeof window !== "undefined"
     ) {
       if (showMenu) {
-        container.current.style.minHeight = "210px";
+        container.current.style.minHeight = "21rem";
         list.current.style.transition = "opacity 1s 0.8s";
         list.current.style.opacity = "1";
       } else {
         list.current.style.transition = "none";
-        container.current.style.minHeight = "60px";
+        container.current.style.minHeight = "6rem";
         list.current.style.opacity = "0";
       }
     }

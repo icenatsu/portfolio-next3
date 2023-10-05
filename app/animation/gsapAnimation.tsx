@@ -1,27 +1,31 @@
 import { gsap } from "gsap";
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-
 
 const typeOfElementDetect = (elem: HTMLElement | string) => {
     let typeOfElem: HTMLElement | null = null;
 
     if (elem !== null) {
-        if (typeof elem === 'string') {
-            typeOfElem = document.getElementById(elem)
+        if (typeof elem === "string") {
+            typeOfElem = document.getElementById(elem);
         }
         if (elem instanceof HTMLElement) {
-            typeOfElem = elem
+            typeOfElem = elem;
         }
         return typeOfElem;
     }
-}
+};
 
-
-export const animationSlideScrollToBottom = (elem: HTMLElement | string, delay: number, duration: number, yfrom: number, topScroll: number, bottomScroll: number) => {
-    gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
+export const animationSlideScrollToBottom = (
+    elem: HTMLElement | string,
+    delay: number,
+    duration: number,
+    yfrom: number,
+    topScroll: number,
+    bottomScroll: number
+) => {
+    gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
     const typeOfElem = typeOfElementDetect(elem);
-
 
     if (typeOfElem !== null && typeOfElem !== undefined) {
         let ctx = gsap.context(() => {
@@ -39,18 +43,23 @@ export const animationSlideScrollToBottom = (elem: HTMLElement | string, delay: 
                     scrollTrigger: {
                         trigger: typeOfElem,
                         start: `top ${topScroll}%`,
-                        end: `bottom ${bottomScroll}%`
+                        end: `bottom ${bottomScroll}%`,
                     },
                 }
-            )
-        })
+            );
+        });
         return () => {
             ctx.revert();
         };
     }
-}
+};
 
-export const animationSlideScrollToRight = (elem: HTMLElement | string, delay: number, duration: number, xfrom: number) => {
+export const animationSlideScrollToRight = (
+    elem: HTMLElement | string,
+    delay: number,
+    duration: number,
+    xfrom: number
+) => {
     gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
     const typeOfElem = typeOfElementDetect(elem);
@@ -74,17 +83,20 @@ export const animationSlideScrollToRight = (elem: HTMLElement | string, delay: n
                         end: "bottom 25%",
                     },
                 }
-            )
-        })
+            );
+        });
         return () => {
             ctx.revert();
         };
     }
-}
+};
 
-
-export const animationSlideToBottom = (elem: string | HTMLElement, delay: number, duration: number, yfrom: number) => {
-
+export const animationSlideToBottom = (
+    elem: string | HTMLElement,
+    delay: number,
+    duration: number,
+    yfrom: number
+) => {
     const typeOfElem = typeOfElementDetect(elem);
 
     if (typeOfElem !== null && typeOfElem !== undefined) {
@@ -101,10 +113,10 @@ export const animationSlideToBottom = (elem: string | HTMLElement, delay: number
                     delay: delay,
                     duration: duration,
                 }
-            )
-        })
+            );
+        });
         return () => {
             ctx.revert();
         };
     }
-}
+};

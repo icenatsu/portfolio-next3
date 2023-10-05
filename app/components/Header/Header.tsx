@@ -1,7 +1,6 @@
 "use client";
 import styles from "./Header.module.scss";
-import { useContext, useEffect, useRef } from "react";
-import { ThemeContext } from "@context/ThemeContext/ThemeContext";
+import { useEffect, useLayoutEffect, useRef } from "react";
 import { Icon } from "@iconify/react";
 import Banner from "@components/Banner/Banner";
 import Shape from "@components/Shape/Shape";
@@ -9,52 +8,39 @@ import Link from "next/link";
 import { animationSlideToBottom } from "@animation/gsapAnimation";
 
 const Header = (): JSX.Element => {
-  const themeContext = useContext(ThemeContext);
-  const isDarkMode = themeContext!.isDarkMode;
-
-  useEffect(() => {
-    if (document.getElementById("header") !== null) {
-      const componentForCssChange = [
-        {
-          htmlElement: document.getElementById("header"),
-          name: "header",
-          scss: styles,
-        },
-      ];
-      themeContext?.changeDarkLightMode(componentForCssChange);
-    }
-  }, [themeContext, isDarkMode]);
-
   const scrollToAnchor = () => {
     const projets = document.getElementById("projets");
     projets?.scrollIntoView({ behavior: "smooth" });
   };
 
-  // Animations gsap
-  /******************/
-  useEffect(() => {
-    animationSlideToBottom("headerProfession", 0.1, 0.3, 10);
-  }, []);
+  const headerRef = useRef<HTMLElement>(null);
+  const headerProfession = useRef<HTMLParagraphElement>(null);
+  const headerTitle = useRef<HTMLHeadingElement>(null);
+  const headerButton = useRef<HTMLDivElement>(null);
 
+  // Animations
+  /************/
   useEffect(() => {
-    animationSlideToBottom("headerTitle", 0.2, 0.3, 10);
-  }, []);
-
-  useEffect(() => {
-    animationSlideToBottom("headerLink", 0.3, 0.3, 10);
+    if (headerRef.current !== null) {
+      headerRef.current?.classList.add(styles.active);
+    }
   }, []);
 
   return (
-    <header id="header" className={styles.header}>
+    <header ref={headerRef} id="header" className={styles.header}>
       <Banner />
       <div className={styles["text"]}>
-        <p id="headerProfession" className={styles.profession}>
+        <p
+          ref={headerProfession}
+          id="headerProfession"
+          className={styles.profession}
+        >
           Développeuse Web
         </p>
-        <h1 id="headerTitle" className={styles.title}>
+        <h1 ref={headerTitle} id="headerTitle" className={styles.title}>
           Gaëlle Blanchard
         </h1>
-        <div id="headerLink" className={styles.link}>
+        <div ref={headerButton} id="headerLink" className={styles.link}>
           <Link
             className={styles.button}
             onClick={scrollToAnchor}

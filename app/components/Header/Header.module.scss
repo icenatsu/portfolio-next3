@@ -2,11 +2,13 @@
 @use "../../styles/utils/variables.scss" as var;
 
 .header {
-  height: 100vh;
+  height: 94vh;
   display: flex;
-  padding: 15rem 20rem 7rem 20rem;
+  padding: 1rem 20rem 1rem 20rem;
   justify-content: space-between;
   align-items: center;
+  opacity: 0;
+  // background-color: var(--header--bg--color);
 
   @media screen and (max-width: 1400px) {
     padding: 10rem 10rem;
@@ -39,8 +41,10 @@
     }
 
     .profession {
-      font-size: fct.map-deep-get(var.$header, "fontSize", "profession");
-      font-family: fct.map-deep-get(var.$header, "fontFamily", "profession");
+      font-size: var(--header--profession--fontSize);
+      font-family: var(--fontFamily--archivo);
+      color: var(--header--profession--color);
+      border: 0.1rem solid var(--header--profession--border);
       border-radius: var.$radius--30;
       width: 20rem;
       padding: 1.5rem;
@@ -49,17 +53,20 @@
       justify-content: center;
       z-index: 1;
       transition: filter 1s;
+      animation: translateBottom 0.8s 0.5s ease-in-out backwards;
     }
 
     .title {
       display: flex;
       flex-wrap: wrap;
-      font-family: fct.map-deep-get(var.$header, "fontFamily", "title");
-      font-weight: fct.map-deep-get(var.$header, "fontWeight", "title");
-      font-size: fct.map-deep-get(var.$header, "fontSize", "title--desktop");
+      font-family: var(--fontFamily--oswald);
+      font-size: var(--header--title--fontSize--desktop);
+      font-weight: var(--header--title--fontWeight);
+      color: var(--header--title);
+      animation: translateBottom 0.9s 0.5s ease-in-out forwards;
 
       @media screen and (max-width: var.$breakpoint-tablette) {
-        font-size: fct.map-deep-get(var.$header, "fontSize", "title--tablette");
+        font-size: var(--header--title--fontSize--tablet);
       }
 
       @media screen and (max-width: var.$breakpoint-mobile) {
@@ -73,15 +80,18 @@
       align-items: center;
       justify-content: center;
       z-index: 2;
+      animation: translateBottom 1s 0.5s ease-in-out forwards;
 
       .button {
         cursor: pointer;
         display: flex;
         align-items: center;
         justify-content: space-evenly;
-        font-family: fct.map-deep-get(var.$header, "fontFamily", "button");
-        font-size: fct.map-deep-get(var.$header, "fontSize", "button");
-        font-weight: fct.map-deep-get(var.$header, "fontWeight", "button");
+        color: var(--header--button);
+        background-color: var(--header--button--bg);
+        font-family: var(--fontFamily--archivo);
+        font-size: var(--header--button--fontSize);
+        font-weight: var(--header--button--fontWeight);
         border-radius: var.$radius--30;
         border: none;
         width: 19rem;
@@ -90,20 +100,22 @@
         transition: filter 0.6s;
 
         &:hover {
-          filter: brightness(110%);
+          // filter: brightness(110%);
+          background-color: var(--header--button--bg--hover);
         }
 
         .icon {
-          font-size: fct.map-deep-get(var.$header, "fontSize", "button-icon");
+          font-size: var(--header--button-icon--fontSize);
         }
       }
     }
   }
 
   .wave {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
+    fill: var(--header--wave);
     width: 100%;
     overflow: hidden;
     line-height: 0;
@@ -125,80 +137,18 @@
       width: calc(100% + 0.13rem);
       height: 7rem;
     }
-
-    // @media screen and (max-width: var.$breakpoint-mobile) {
-    //   width: calc(180% + 0.13rem);
-    //   height: 6rem;
-    // }
   }
+}
 
-  &--dark {
-    background-color: fct.map-deep-get(
-      var.$header--dark,
-      "colors",
-      "header--bg"
-    );
+.active {
+  opacity: 1;
+}
 
-    .profession {
-      color: fct.map-deep-get(var.$header--dark, "colors", "profession--color");
-      border: 0.1rem solid
-        fct.map-deep-get(var.$header--dark, "colors", "profession--border");
-
-      &:hover {
-        filter: brightness(160%);
-      }
-    }
-
-    .title {
-      color: fct.map-deep-get(var.$header--dark, "colors", "title");
-    }
-
-    .button {
-      color: fct.map-deep-get(var.$header--dark, "colors", "button");
-      background-color: fct.map-deep-get(
-        var.$header--dark,
-        "colors",
-        "button--bg"
-      );
-    }
-
-    .wave .shape-fill {
-      fill: fct.map-deep-get(var.$header--dark, "colors", "wave");
-    }
+@keyframes translateBottom {
+  to {
+    transform: translateY(0px);
   }
-
-  &--light {
-    background-color: fct.map-deep-get(
-      var.$header--light,
-      "colors",
-      "header--bg"
-    );
-
-    .profession {
-      color: fct.map-deep-get(
-        var.$header--light,
-        "colors",
-        "profession--color"
-      );
-      border: 0.1rem solid
-        fct.map-deep-get(var.$header--light, "colors", "profession--border");
-    }
-
-    .title {
-      color: fct.map-deep-get(var.$header--light, "colors", "title");
-    }
-
-    .button {
-      color: fct.map-deep-get(var.$header--light, "colors", "button");
-      background-color: fct.map-deep-get(
-        var.$header--light,
-        "colors",
-        "button--bg"
-      );
-    }
-
-    .wave .shape-fill {
-      fill: fct.map-deep-get(var.$header--light, "colors", "wave");
-    }
+  from {
+    transform: translateY(-40px);
   }
 }

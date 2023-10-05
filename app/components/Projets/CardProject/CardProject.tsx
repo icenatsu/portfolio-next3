@@ -2,9 +2,8 @@ import styles from "./CardProject.module.scss";
 import { Icon } from "@iconify/react";
 import Image from "next/image";
 import Link from "next/link";
-import { useContext, useEffect } from "react";
-import { ThemeContext } from "@context/ThemeContext/ThemeContext";
 import { useWindowSizeResize } from "@Hooks/Window/useWindowSizeResize";
+import { useEffect, useRef } from "react";
 
 interface IntData {
   id: number;
@@ -20,7 +19,6 @@ interface IntData {
 interface CardProjectProps {
   inData: IntData;
   inId: string;
-
   inActive: boolean;
   inVisible: boolean;
 }
@@ -30,59 +28,27 @@ const CardProject = ({
   inActive,
   inVisible,
 }: CardProjectProps): JSX.Element => {
-  const themeContext = useContext(ThemeContext);
-  const isDarkMode = themeContext!.isDarkMode;
-
   const { windowWidth } = useWindowSizeResize();
 
   const isMobile = windowWidth <= 768;
+  const flipCard = useRef<HTMLElement>(null);
 
-  // Gestion du Dark/Light mode
   useEffect(() => {
-    if (document.getElementById(inData.title) !== null) {
-      const componentForCssChange = [
-        {
-          htmlElement: document.getElementById(inData.title),
-          name: "flip-card",
-          scss: styles,
-        },
-      ];
-      themeContext?.changeDarkLightMode(componentForCssChange);
+    if (flipCard.current !== null) {
+      if (windowWidth > 992) {
+        if (!inActive) {
+          flipCard.current.classList.add(styles.active);
+        } else {
+          flipCard.current.classList.remove(styles.active);
+        }
+      } else {
+        flipCard.current.classList.remove(styles.active);
+      }
     }
-  }, [themeContext, isDarkMode, inData.title]);
-
-  // Application du style de la card en fonction du light mode et de la carte active
-  const getDynamicStyles = (inActive: boolean, isDarkMode: boolean) => {
-    if (windowWidth > 992) {
-      return {
-        filter:
-          isDarkMode && inActive
-            ? "drop-shadow(5px 5px 5px rgba(255, 255, 255, 0.5))"
-            : !isDarkMode && inActive
-            ? "drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5))"
-            : isDarkMode && !inActive
-            ? "drop-shadow(5px 5px 5px rgba(255, 255, 255, 0.5)) grayscale(100%)"
-            : !isDarkMode && !inActive
-            ? "drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5)) grayscale(100%)"
-            : "none",
-      };
-    } else {
-      return {
-        filter: isDarkMode
-          ? "drop-shadow(5px 5px 5px rgba(255, 255, 255, 0.5))"
-          : "drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5))",
-      };
-    }
-  };
-
-  const dynamicStyles = getDynamicStyles(inActive, isDarkMode);
+  }, [inActive, windowWidth]);
 
   return (
-    <article
-      id={inData.title}
-      className={styles["flip-card"]}
-      style={dynamicStyles}
-    >
+    <article ref={flipCard} id={inData.title} className={styles["flip-card"]}>
       <div className={styles["flip-card-inner"]}>
         <div className={styles["flip-card-front"]}>
           <picture className={styles["flip-card-front__image"]}>

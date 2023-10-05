@@ -20,38 +20,305 @@ a {
   color: inherit;
 }
 
+:root,
 .light {
-  background-color: fct.map-deep-get(
-    var.$global--light,
-    "colors",
-    "background--desktop"
-  );
+  --fontFamily--oswald: #{var.$oswald};
+  --fontFamily--inter: #{var.$inter};
+  --fontFamily--archivo: #{var.$archivo};
+  /* body */
+  --body--bg--color: #{var.$light-color};
+  /* Header */
+  --header--bg--color: #{var.$light-color};
+  --header--profession--color: #{var.$five-color};
+  --header--profession--border: #{var.$five-color};
+  --header--profession--fontSize: 1.6rem;
+  --header--title: #{var.$five-color};
+  --header--title--fontSize--desktop: 8rem;
+  --header--title--fontSize--tablet: 6.4rem;
+  --header--title--fontWeight: 300;
+  --header--button--bg: #{var.$four-color};
+  --header--button--bg--hover: #6b788e;
+  --header--button: #{var.$light-color};
+  --header--button--fontSize: 2.5rem;
+  --header--button-icon--fontSize: 3.2rem;
+  --header--button-icon--fontWeight: bold;
+  --header--wave: #{var.$four-color};
+  /* Navbar */
+  --navbar--container--color: #{var.$light-color};
+  --navbar--container--bg: #{var.$four-color};
+  --navbar--container--filter: #{var.$four-color};
+  --navbar--link--fontSize: 1.7rem;
+  --navbar--link--fontWeight: bold;
+  --navbar--link--color: #{var.$light-color};
+  --navbar--stars--color: #{var.$five-color};
+  --navbar--stars--textShadow: #{var.$light-color};
+  --navbar--burger--color: #{var.$light-color};
+  /* Switch */
+  --switch--fontSize--icon--desktop: 1.6rem;
+  --switch--fontSize--icon--tablet: 1.5rem;
+  --switch--fontSize--icon--mobile: 1.4rem;
+  --switch--sunmoon--color: #{var.$dark-color};
+  --switch--sunmoon--bg: #{var.$light-color};
+  --switch--bg--toogle: #{var.$four-color};
+  /* About */
+  --about--container--bg: #{var.$four-color};
+  --about--title--fontSize--desktop: #{var.$h2-title-desktop};
+  --about--title--fontSize--tablet: #{var.$h2-title-tablet};
+  --about--title--fontSize--mobile: #{var.$h2-title-mobile};
+  --about--title--fontWeight: 300;
+  --about--title--color: #{var.$light-color};
+  --about--presentation--fontSize--desktop: 2.2rem;
+  --about--presentation--fontSize--tablet: 2.2rem;
+  --about--presentation--fontSize--mobile: 2.2rem;
+  --about--presentation--color: #{var.$light-color};
+  /* Projets Caroussel */
+  --project--container--bg: #{var.$light-color};
+  --project--title--color: #{var.$four-color};
+  --project--title--fontSize--desktop: #{var.$h2-title-desktop};
+  --project--title--fontSize--tablet: #{var.$h2-title-tablet};
+  --project--title--fontSize--mobile: #{var.$h2-title-mobile};
+  --project--title--fontWeight: 300;
+  --project--touch--fontSize: 3rem;
+  --project--touch--color: #{var.$four-color};
+  --project--error--fontSize: 2.5rem;
+  --project--error--color: #{var.$primary-color};
+  /* CardProject */
+  --cardProject--bg: #{var.$transparent-color};
+  --cardProject--flip-card--borderColor: #{var.$four-color};
+  --cardProject--flip-card--filterDropShadow: rgba(0, 0, 0, 0.5);
+  --cardProject--flip-card-back--bg: #{var.$transparent-color};
+  --cardProject--flip-card-front: #{var.$dark-color};
+  --cardProject--flip-card-inner--bg: #{var.$light-color};
+  --cardProject--flip-card-back--bg: #{var.$four-color};
+  --cardProject--source--fontSize--desktop: 3rem;
+  --cardProject--source--fontSize--mobile: 3.2rem;
+  --cardProject--title--fontSize--desktop: 2.5rem;
+  --cardProject--title--fontSize--1400: 2rem;
+  --cardProject--title--fontSize--mobile: 3.2rem;
+  --cardProject--description--fontSize--desktop: 1.8rem;
+  --cardProject--description--color: #{var.$dark-color};
+  --cardProject--description--bg: #{var.$light-color};
+  --cardProject--borderTop--color: #{var.$dark-color};
+  --cardProject--borderBottom--color: #{var.$dark-color};
+  --cardProject--description--fontSize--1400: 1.5rem;
+  --cardProject--description--fontSize--mobile: 1.8rem;
+  --cardProject--iconeTechno--fontSize--desktop: 3rem;
+  --cardProject--iconeTechno--fontSize--tablet: 3rem;
+  --cardProject--iconeTechno--fontSize--mobile: 3.2rem;
+  --cardProject--goBack--fontSize: 2rem;
+  --cardProject--goBack--color: #{var.$dark-color};
+  --cardProject--curve--fill: #{var.$light-color};
+  /* Skills */
+  --skills--container--bg: #{var.$four-color};
+  --skills--title--fontSize--desktop: #{var.$h2-title-desktop};
+  --skills--title--fontSize--tablet: #{var.$h2-title-tablet};
+  --skills--title--fontSize--mobile: #{var.$h2-title-mobile};
+  --skills--title--fontWeight: 300;
+  --skills--title--color: #{var.$light-color};
+  /* CardSkill */
+  --cardSkill--bg: #{var.$light-color};
+  --cardSkill--chevron--color: #{var.$primary-color};
+  --cardSkill--icon--fontSize--desktop: 5.5rem;
+  --cardSkill--icon--fontSize--tablet: 5rem;
+  --cardSkill--icon--fontSize--mobile: 4rem;
+  --cardSkill--iconTechno--color: #{var.$primary-color};
+  --cardSkill--nameTechno--fontSize--desktop: 1.8rem;
+  --cardSkill--nameTechno--fontSize--tablet: 1.4rem;
+  --cardSkill--nameTechno--fontSize--mobile: 1.3rem;
+  --cardSkill--nameTechno--color: #{var.$dark-color};
+  --cardSkill--description--fontSize--desktop: 1.5rem;
+  --cardSkill--description--fontSize--mobile: 1.4rem;
+  --cardSkill--descriptionTechno--color: #{var.$dark-color};
+  --cardSkill--dividingBorder: #{var.$primary-color};
+  --cardSkill--iconArrow--fontSize--desktop: 2.3rem;
+  --cardSkill--iconArrow--fontSize--tablet: 2.2rem;
+  --cardSkill--iconArrow--fontSize--mobile: 2.1rem;
+  --cardSkill--iconArrow--color: #{var.$four-color};
+  /* Contact */
+  --contact--bg: #{var.$light-color};
+  --contact--title--fontSize--desktop: #{var.$h2-title-desktop};
+  --contact--title--fontSize--tablet: #{var.$h2-title-tablet};
+  --contact--title--fontSize--mobile: #{var.$h2-title-mobile};
+  --contact--title--fontWeight: 300;
+  --contact--title--color: #{var.$four-color};
+  --contact--label--fontSize--desktop: 2rem;
+  --contact--label--fontSize--tablet: 1.8rem;
+  --contact--label--color: #{var.$dark-color};
+  --contact--errors--fontSize: 1.6rem;
+  --contact--errors--color: #{var.$dark-color};
+  --contact--input--color: #{var.$light-color};
+  --contact--placeHolder--fontSize: 1.5rem;
+  --contact--placeHolder--color: #{var.$light-color};
+  --contact--send--fontSize--desktop: 2.2rem;
+  --contact--send--fontSize--mobile: 1.8rem;
+  --contact--send--bg: #{var.$four-color};
+  --contact--send--color: #{var.$light-color};
+  --contact--elipse--borderColor: #{var.$four-color};
+  /* Download Button cv */
+  --downloadbutton--button--fontSize: 2rem;
+  --downloadbutton--button--bg: #{var.$transparent-color};
+  --downloadbutton--button--color: #{var.$light-color};
+  --downloadbutton--icon--fontSize: 4rem;
+  /* Footer */
+  --downloadbutton--icon--color: #{var.$light-color};
+  --footer--infos--fontSize: 1.5rem;
+  --footer--infos--color: #{var.$dark-color};
+  --footer--infos--fontWeight: 600;
+  /* Shape */
+  --shape--bubble--fill: #{var.$primary-color};
+  /* Notification du contact */
+  --notify--boxShadow--color: rgba(0, 0, 0, 0.4);
+  --notify--bg: #{var.$light-color};
+  --notify--text--color: #{var.$dark-color};
+  --notify--text--fontSize--desktop: 1.4rem;
+  --notify--text--fontSize--tablet: 1.3rem;
+  --notify--text--fontSize--mobile: 1.3rem;
+  --notify--close--fontSize: 3rem;
+  --notify--closeError--color: tomato;
+  --notify--closeSuccess--color: green;
+  --notify--barError--bg: tomato;
+  --notify--barSuccess--bg: green:
+  /* Loader */
+  --loader--icon--fontSize: 8rem;
+  --loader--icon--colors: #{var.$primary-color};
 }
 
 .dark {
-  background-color: fct.map-deep-get(
-    var.$global--dark,
-    "colors",
-    "background--desktop"
-  );
-}
-
-@media (prefers-color-scheme: light) {
-  body {
-    background-color: fct.map-deep-get(
-      var.$global--light,
-      "colors",
-      "background--desktop"
-    );
-  }
+  /* Body */
+  --body--bg--color: #{var.$dark-color};
+  /* Header */
+  --header--bg--color: #{var.$dark-color};
+  --header--profession--color: #{var.$light-color};
+  --header--profession--border: #{var.$light-color};
+  --header--title: #{var.$light-color};
+  --header--button--bg: #{var.$primary-color};
+  --header--button--bg--hover: #5a5c70;
+  --header--button: #{var.$light-color};
+  --header--wave: #{var.$primary-color};
+  /* Navbar */
+  --navbar--container--color: #{var.$dark-color};
+  --navbar--container--bg: #{var.$primary-color};
+  --navbar--container--filter: #{var.$primary-color};
+  --navbar--link--color: #{var.$light-color};
+  --navbar--stars--color: #{var.$dark-color};
+  --navbar--stars--textShadow: #{var.$light-color};
+  --navbar--burger--color: #{var.$dark-color};
+  /* Switch */
+  --switch--sunmoon--bg: #{var.$light-color};
+  --switch--bg--toogle: #{var.$primary-color};
+  --switch--border--color: #{var.$dark-color};
+  /* About */
+  --about--container--bg: #{var.$primary-color};
+  --about--title--color: #{var.$dark-color};
+  --about--presentation--color: #{var.$light-color};
+  /* Projets Caroussel */
+  --project--container--bg: #{var.$dark-color};
+  --project--title--color: #{var.$four-color};
+  --project--touch--color: #{var.$light-color};
+  --project--error--color: #{var.$light-color};
+  /* CardProject */
+  --cardProject--flip-card--filterDropShadow: rgba(255, 255, 255, 0.5);
+  --cardProject--flip-card--borderColor: #{var.$light-color};
+  --cardProject--flip-card-back--bg: #{var.$primary-color};
+  /* Skills */
+  --skills--container--bg: #{var.$primary-color};
+  --skills--title--color: #{var.$dark-color};
+  /* CardSkill */
+  --cardSkill--bg: #242424;
+  --cardSkill--chevron--color: #{var.$light-color};
+  --cardSkill--iconTechno--color: #{var.$four-color};
+  --cardSkill--nameTechno--color: #{var.$light-color};
+  --cardSkill--descriptionTechno--color: #{var.$light-color};
+  --cardSkill--dividingBorder: #{var.$light-color};
+  --cardSkill--iconArrow--color: #{var.$primary-color};
+  /* Contact */
+  --contact--bg: #{var.$dark-color};
+  --contact--title--color: #{var.$four-color};
+  --contact--label--color: #{var.$four-color};
+  --contact--errors--color: #{var.$light-color};
+  --contact--input--color: #{var.$dark-color};
+  --contact--input--bg: #{var.$four-color};
+  --contact--placeHolder--color: #{var.$light-color};
+  --contact--send--bg: #{var.$four-color};
+  --contact--send--color: #{var.$light-color};
+  --contact--elipse--borderColor: #{var.$light-color};
+  /* Footer */
+  --footer--infos--color: #{var.$light-color};
+  --footer--infos--fontWeight: 500;
+  /* Shape */
+  --shape--brightness: brightness(150%);
+  --loader--icon--colors: #{var.$dark-color};
 }
 
 @media (prefers-color-scheme: dark) {
-  body {
-    background-color: fct.map-deep-get(
-      var.$global--dark,
-      "colors",
-      "background--desktop"
-    );
+  :root {
+  /* Body */
+  --body--bg--color: #{var.$dark-color};
+  /* Header */
+  --header--bg--color: #{var.$dark-color};
+  --header--profession--color: #{var.$light-color};
+  --header--profession--border: #{var.$light-color};
+  --header--title: #{var.$light-color};
+  --header--button--bg: #{var.$primary-color};
+  --header--button--bg--hover: #5a5c70;
+  --header--button: #{var.$light-color};
+  --header--wave: #{var.$primary-color};
+  /* Navbar */
+  --navbar--container--color: #{var.$dark-color};
+  --navbar--container--bg: #{var.$primary-color};
+  --navbar--container--filter: #{var.$primary-color};
+  --navbar--link--color: #{var.$light-color};
+  --navbar--stars--color: #{var.$dark-color};
+  --navbar--stars--textShadow: #{var.$light-color};
+  --navbar--burger--color: #{var.$dark-color};
+  /* Switch */
+  --switch--sunmoon--bg: #{var.$light-color};
+  --switch--bg--toogle: #{var.$primary-color};
+  --switch--border--color: #{var.$dark-color};
+  /* About */
+  --about--container--bg: #{var.$primary-color};
+  --about--title--color: #{var.$dark-color};
+  --about--presentation--color: #{var.$light-color};
+  /* Projets Caroussel */
+  --project--container--bg: #{var.$dark-color};
+  --project--title--color: #{var.$four-color};
+  --project--touch--color: #{var.$light-color};
+  --project--error--color: #{var.$light-color};
+  /* CardProject */
+  --cardProject--flip-card--filterDropShadow: rgba(255, 255, 255, 0.5);
+  --cardProject--flip-card--borderColor: #{var.$light-color};
+  --cardProject--flip-card-back--bg: #{var.$primary-color};
+  /* Skills */
+  --skills--container--bg: #{var.$primary-color};
+  --skills--title--color: #{var.$dark-color};
+  /* CardSkill */
+  --cardSkill--bg: #242424;
+  --cardSkill--chevron--color: #{var.$light-color};
+  --cardSkill--iconTechno--color: #{var.$four-color};
+  --cardSkill--nameTechno--color: #{var.$light-color};
+  --cardSkill--descriptionTechno--color: #{var.$light-color};
+  --cardSkill--dividingBorder: #{var.$light-color};
+  --cardSkill--iconArrow--color: #{var.$primary-color};
+  /* Contact */
+  --contact--bg: #{var.$dark-color};
+  --contact--title--color: #{var.$four-color};
+  --contact--label--color: #{var.$four-color};
+  --contact--errors--color: #{var.$light-color};
+  --contact--input--color: #{var.$dark-color};
+  --contact--input--bg: #{var.$four-color};
+  --contact--placeHolder--color: #{var.$light-color};
+  --contact--send--bg: #{var.$four-color};
+  --contact--send--color: #{var.$light-color};
+  --contact--elipse--borderColor: #{var.$light-color};
+  /* Footer */
+  --footer--infos--color: #{var.$light-color};
+  --footer--infos--fontWeight: 500;
+  /* Shape */
+  --shape--brightness: brightness(150%);
+  --loader--icon--colors: #{var.$dark-color};
   }
+}
+
+body {
+  background-color: var(--body--bg--color);
 }

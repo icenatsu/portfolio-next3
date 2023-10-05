@@ -1,8 +1,7 @@
 "use client";
 
 import styles from "./CardSkill.module.scss";
-import { ThemeContext } from "@context/ThemeContext/ThemeContext";
-import { useContext, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Icon } from "@iconify/react";
 import { animationSlideScrollToBottom } from "@animation/gsapAnimation";
 import { useWindowSizeResize } from "@Hooks/Window/useWindowSizeResize";
@@ -23,9 +22,6 @@ const CardSkill = ({
   inIcones,
   inClassList,
 }: CardSkill): JSX.Element => {
-  const themeContext = useContext(ThemeContext);
-  const isDarkMode = themeContext!.isDarkMode;
-
   const { windowWidth } = useWindowSizeResize();
 
   const cardSkill = useRef<HTMLDivElement>(null)
@@ -33,25 +29,10 @@ const CardSkill = ({
   const [showSkillDetails, setShowSkillDetails] = useState<boolean>(false)
   const [toggleShowSkillDetails, setTooggleShowSkillDetails] = useState<boolean>(false)
 
-
-  // Application du dark/light mode
-  useEffect(() => {
-    if (document.getElementById(inClassList)) {
-      const componentForCssChange = [
-        {
-          htmlElement: document.getElementById(inClassList),
-          name: "cardSkill",
-          scss: styles,
-        },
-      ];
-      themeContext?.changeDarkLightMode(componentForCssChange);
-    }
-  }, [themeContext, isDarkMode, inClassList]);
-
   // Gestion des états controlés par chaque évenements selon le format destinée à l'affichage des descriptions des compétences
   useEffect(() => {
     const addEventdependingOnTheMedia = () => {
-      if (typeof window !== 'undefined' && cardSkill.current !== null) {
+      if (cardSkill.current !== null) {
         cardSkill.current.addEventListener("mouseenter", handleMouseEnter);
         cardSkill.current.addEventListener("mouseleave", handleMouseLeave);
         cardSkill.current.addEventListener("click", handleClick);

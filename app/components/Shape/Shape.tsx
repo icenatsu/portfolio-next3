@@ -1,26 +1,7 @@
 'use client'
 import styles from "./Shape.module.scss";
-import { ThemeContext } from "@context/ThemeContext/ThemeContext";
-import { useContext, useEffect } from "react";
 
 const Shape = () => {
-
-    const themeContext = useContext(ThemeContext);
-    const isDarkMode = themeContext!.isDarkMode;
-
-    useEffect(() => {
-        if (document.getElementById("bubble") !== null) {
-            const componentForCssChange = [
-                {
-                    htmlElement: document.getElementById("bubble"),
-                    name: 'bubble',
-                    scss: styles
-                },
-            ]
-            themeContext?.changeDarkLightMode(componentForCssChange)
-        }
-    }, [themeContext, isDarkMode])
-
     return (
         <div id="bubble" className={styles.bubble}>
             <svg
