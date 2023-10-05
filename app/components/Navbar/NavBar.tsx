@@ -26,12 +26,12 @@ const NavBar = (): JSX.Element => {
       typeof window !== "undefined"
     ) {
       if (showMenu) {
-        container.current.style.minHeight = "210px";
+        container.current.style.minHeight = "21rem";
         list.current.style.transition = "opacity 1s 0.8s";
         list.current.style.opacity = "1";
       } else {
         list.current.style.transition = "none";
-        container.current.style.minHeight = "60px";
+        container.current.style.minHeight = "6rem";
         list.current.style.opacity = "0";
       }
     }

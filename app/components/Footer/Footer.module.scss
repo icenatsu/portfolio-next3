@@ -28,33 +28,4 @@
     color: var(--footer--infos--color);
     font-weight: var(--footer--infos--fontWeight);
   }
-
-  .wave {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-    transform: rotate(180deg);
-    opacity: 0.2;
-  }
-
-  .wave svg {
-    position: relative;
-    display: block;
-    width: calc(100% + 0.13rem);
-    height: 9rem;
-    fill: var(--footer--fill--wave);
-
-    @media screen and (max-width: var.$breakpoint-tablette) {
-      width: calc(100% + 0.13rem);
-      height: 7rem;
-    }
-
-    @media screen and (max-width: var.$breakpoint-mobile) {
-      width: 170%;
-      height: 6rem;
-    }
-  }
 }
