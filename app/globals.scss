@@ -78,6 +78,7 @@ a {
   --project--error--color: #{var.$primary-color};
   --cardProject--bg: #{var.$transparent-color};
   --cardProject--flip-card--borderColor: #{var.$four-color};
+  --cardProject--flip-card--filterDropShadow: rgba(0, 0, 0, 0.5);
   --cardProject--flip-card-back--bg: #{var.$transparent-color};
   --cardProject--flip-card-front: #{var.$dark-color};
   --cardProject--flip-card-inner--bg: #{var.$light-color};
@@ -94,9 +95,9 @@ a {
   --cardProject--borderBottom--color: #{var.$dark-color};
   --cardProject--description--fontSize--1400: 1.5rem;
   --cardProject--description--fontSize--mobile: 1.8rem;
-  --iconeTechno--fontSize--desktop: 3rem;
-  --iconeTechno--fontSize--tablet: 3rem;
-  --iconeTechno--fontSize--mobile: 3.2rem;
+  --cardProject--iconeTechno--fontSize--desktop: 3rem;
+  --cardProject--iconeTechno--fontSize--tablet: 3rem;
+  --cardProject--iconeTechno--fontSize--mobile: 3.2rem;
   --cardProject--goBack--fontSize: 2rem;
   --cardProject--goBack--color: #{var.$dark-color};
   --cardProject--curve--fill: #{var.$light-color};
@@ -194,6 +195,7 @@ a {
   --project--title--color: #{var.$four-color};
   --project--touch--color: #{var.$light-color};
   --project--error--color: #{var.$light-color};
+  --cardProject--flip-card--filterDropShadow:rgba(255, 255, 255, 0.5);
   --cardProject--flip-card--borderColor: #{var.$light-color};
   --cardProject--flip-card-back--bg: #{var.$primary-color};
   --skills--container--bg: #{var.$primary-color};
@@ -248,6 +250,7 @@ a {
     --project--title--color: #{var.$four-color};
     --project--touch--color: #{var.$light-color};
     --project--error--color: #{var.$light-color};
+    --cardProject--flip-card--filterDropShadow: rgba(255, 255, 255, 0.5);
     --cardProject--flip-card--borderColor: #{var.$light-color};
     --cardProject--flip-card-back--bg: #{var.$primary-color};
     --skills--container--bg: #{var.$primary-color};

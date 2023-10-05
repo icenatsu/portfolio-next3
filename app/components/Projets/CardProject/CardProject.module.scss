@@ -10,6 +10,9 @@
   font-size: var(--fontFamily--inter);
   background-color: var(--cardProject--bg);
   border: 0.1rem solid var(--cardProject--flip-card--borderColor);
+  filter: drop-shadow(
+    5px 5px 5px (var(--cardProject--flip-card--filterDropShadow))
+  );
 
   @media screen and (max-width: "1320px") {
     width: 30rem;
@@ -142,14 +145,14 @@
 
     .technologies {
       &__icones {
-        font-size: var(--iconeTechno--fontSize--desktop);
+        font-size: var(--cardProject--iconeTechno--fontSize--desktop);
 
         @media screen and (max-width: var.$breakpoint-tablette) {
-          font-size: var(--iconeTechno--fontSize--tablet);
+          font-size: var(--cardProject--iconeTechno--fontSize--tablet);
         }
 
         @media screen and (max-width: var.$breakpoint-mobile) {
-          font-size: var(--iconeTechno--fontSize--mobile);
+          font-size: var(--cardProject--iconeTechno--fontSize--mobile);
         }
       }
     }

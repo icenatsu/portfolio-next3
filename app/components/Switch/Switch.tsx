@@ -3,8 +3,9 @@ import { Icon } from "@iconify/react";
 import Toogletheme from "@components/ToogleTheme/ToogleTheme";
 
 const Switch = (): JSX.Element => {
-  const { switchTheme } = Toogletheme()
-  const darkModeActive = typeof document !== 'undefined' && document.body.classList.contains("dark")
+  const { switchTheme } = Toogletheme();
+  const darkModeActive =
+    typeof document !== "undefined" && document.body.classList.contains("dark");
 
   return (
     <label className={styles.switch} htmlFor="switch">

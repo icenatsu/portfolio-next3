@@ -3,6 +3,7 @@ import { Icon } from "@iconify/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useWindowSizeResize } from "@Hooks/Window/useWindowSizeResize";
+import { useRef } from "react";
 
 interface IntData {
   id: number;
@@ -18,7 +19,6 @@ interface IntData {
 interface CardProjectProps {
   inData: IntData;
   inId: string;
-
   inActive: boolean;
   inVisible: boolean;
 }
@@ -30,43 +30,24 @@ const CardProject = ({
 }: CardProjectProps): JSX.Element => {
   const { windowWidth } = useWindowSizeResize();
 
-
-  const darkModeActive = document.body.classList.contains("dark")
-
+  const darkModeActive = document.body.classList.contains("dark");
 
   const isMobile = windowWidth <= 768;
+  const flipCard = useRef<HTMLElement>(null);
 
   // Application du style de la card en fonction du light mode et de la carte active
-  const getDynamicStyles = (inActive: boolean, darkModeActive: boolean) => {
-    if (windowWidth > 992) {
-      if (darkModeActive && inActive)
-        return { filter: "drop-shadow(5px 5px 5px rgba(255, 255, 255, 0.5))" }
-      else if (!darkModeActive && inActive)
-        return { filter: "drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5))" }
-      else if (darkModeActive && !inActive)
-        return { filter: "drop-shadow(5px 5px 5px rgba(255, 255, 255, 0.5)) grayscale(100%)" }
-      else if (!darkModeActive && !inActive)
-        return { filter: "drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5)) grayscale(100%)" }
-      else
-        return { filter: "none" }
+  // const getDynamicStyles = (inActive: boolean) => {
+  //   if (windowWidth > 992 && flipCard.current !== null) {
+  //     !inActive
+  // ? (flipCard.current.style.filter += "grayscale(100%)")
+  //       : (flipCard.current.style.filter += "grayscale(0%)");
+  //   }
+  // };
 
-    } else {
-      return {
-        filter: darkModeActive
-          ? "drop-shadow(5px 5px 5px rgba(255, 255, 255, 0.5))"
-          : "drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5))",
-      };
-    }
-  };
-
-  const dynamicStyles = getDynamicStyles(inActive, darkModeActive);
+  // const dynamicStyles = getDynamicStyles(inActive);
 
   return (
-    <article
-      id={inData.title}
-      className={styles["flip-card"]}
-      style={dynamicStyles}
-    >
+    <article ref={flipCard} id={inData.title} className={styles["flip-card"]}>
       <div className={styles["flip-card-inner"]}>
         <div className={styles["flip-card-front"]}>
           <picture className={styles["flip-card-front__image"]}>
