@@ -2,7 +2,7 @@
 @use "../../styles/utils/variables.scss" as var;
 
 .container {
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   max-width: 100dvw;
