@@ -35,13 +35,17 @@ const CardProject = ({
 
   useEffect(() => {
     if (flipCard.current !== null) {
-      if (inActive) {
-        flipCard.current.classList.add(styles.active);
+      if (windowWidth > 992) {
+        if (!inActive) {
+          flipCard.current.classList.add(styles.active);
+        } else {
+          flipCard.current.classList.remove(styles.active);
+        }
       } else {
         flipCard.current.classList.remove(styles.active);
       }
     }
-  }, [inActive]);
+  }, [inActive, windowWidth]);
 
   return (
     <article ref={flipCard} id={inData.title} className={styles["flip-card"]}>

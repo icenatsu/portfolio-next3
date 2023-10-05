@@ -11,9 +11,8 @@
   background-color: var(--cardProject--bg);
   border: 0.1rem solid var(--cardProject--flip-card--borderColor);
   filter: drop-shadow(
-      5px 5px 5px (var(--cardProject--flip-card--filterDropShadow))
-    )
-    grayscale(100%);
+    5px 5px 5px (var(--cardProject--flip-card--filterDropShadow))
+  );
 
   @media screen and (max-width: "1320px") {
     width: 30rem;
@@ -197,5 +196,5 @@
   filter: drop-shadow(
       5px 5px 5px (var(--cardProject--flip-card--filterDropShadow))
     )
-    grayscale(0%);
+    grayscale(100%);
 }
