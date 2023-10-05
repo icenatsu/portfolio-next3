@@ -3,7 +3,7 @@ import { Icon } from "@iconify/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useWindowSizeResize } from "@Hooks/Window/useWindowSizeResize";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
 interface IntData {
   id: number;
@@ -30,21 +30,18 @@ const CardProject = ({
 }: CardProjectProps): JSX.Element => {
   const { windowWidth } = useWindowSizeResize();
 
-  const darkModeActive = document.body.classList.contains("dark");
-
   const isMobile = windowWidth <= 768;
   const flipCard = useRef<HTMLElement>(null);
 
-  // Application du style de la card en fonction du light mode et de la carte active
-  // const getDynamicStyles = (inActive: boolean) => {
-  //   if (windowWidth > 992 && flipCard.current !== null) {
-  //     !inActive
-  // ? (flipCard.current.style.filter += "grayscale(100%)")
-  //       : (flipCard.current.style.filter += "grayscale(0%)");
-  //   }
-  // };
-
-  // const dynamicStyles = getDynamicStyles(inActive);
+  useEffect(() => {
+    if (flipCard.current !== null) {
+      if (inActive) {
+        flipCard.current.classList.add(styles.active);
+      } else {
+        flipCard.current.classList.remove(styles.active);
+      }
+    }
+  }, [inActive]);
 
   return (
     <article ref={flipCard} id={inData.title} className={styles["flip-card"]}>

@@ -11,8 +11,9 @@
   background-color: var(--cardProject--bg);
   border: 0.1rem solid var(--cardProject--flip-card--borderColor);
   filter: drop-shadow(
-    5px 5px 5px (var(--cardProject--flip-card--filterDropShadow))
-  );
+      5px 5px 5px (var(--cardProject--flip-card--filterDropShadow))
+    )
+    grayscale(100%);
 
   @media screen and (max-width: "1320px") {
     width: 30rem;
@@ -190,4 +191,11 @@
 
 .curve .shape-fill {
   fill: var(--cardProject--curve--fill);
+}
+
+.active {
+  filter: drop-shadow(
+      5px 5px 5px (var(--cardProject--flip-card--filterDropShadow))
+    )
+    grayscale(0%);
 }
