@@ -19,8 +19,8 @@
 
     .tuyau {
       width: 15rem;
-      height: 11rem;
-      filter: grayscale(90%) brightness(120%) contrast(150%)
+      height: 10rem;
+      filter: brightness(120%) grayscale(10%)
         drop-shadow(0 0.3rem 0.3rem var(--banner--tuyau--filterDropSHadow));
 
       & .tuyauImg {
@@ -31,9 +31,9 @@
 
     .roue {
       position: absolute;
-      top: 1rem;
-      left: 4rem;
-      width: 7rem;
+      top: 0.8rem;
+      left: 4.5rem;
+      width: 6rem;
       height: 7rem;
       animation: roue 1s ease-in-out infinite;
       filter: grayscale(90%) contrast(180%);
@@ -62,13 +62,14 @@
     }
 
     .pot {
-      width: 14.3rem;
+      width: 9rem;
       height: auto;
       animation: bascule 3.5s 2.3s ease-in-out infinite;
       margin-top: 17rem;
-      margin-left: 0.5rem;
-      filter: grayscale(90%) brightness(120%) contrast(150%)
+      margin-left: 3rem;
+      filter: contrast(100%)
         drop-shadow(0 0.3rem 0.3rem var(--banner--pot--filterDropSHadow));
+      z-index: 1;
 
       & .PotImg {
         width: 100%;
