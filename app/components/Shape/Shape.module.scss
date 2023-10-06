@@ -19,9 +19,7 @@
   }
 
   @media screen and (max-width: var.$breakpoint-mobile) {
-    top: -29rem;
-    left: -2rem;
-    width: 50rem;
+    display: none;
   }
 }
 
