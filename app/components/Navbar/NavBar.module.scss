@@ -16,7 +16,7 @@
   transition: min-height 0.8s ease-in-out;
   color: var(--navbar--container--color);
   background-color: var(--navbar--container--bg);
-  filter: drop-shadow(0 0.3rem 0.3rem var(----navbar--container--filter));
+  filter: drop-shadow(0 0.3rem 0.3rem var(--navbar--container--filter));
 
   @media screen and (max-width: var.$breakpoint-tablette) {
     padding-top: 1rem;
