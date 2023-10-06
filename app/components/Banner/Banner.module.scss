@@ -2,28 +2,26 @@
 
 .test {
   width: 16rem;
-  height: 90%;
+  height: 94%;
   display: flex;
   align-self: self-start;
   overflow: hidden;
-  // border: 1px solid red;
+
+  @media screen and (max-width: var.$breakpoint-sup) {
+    display: none;
+  }
 
   .banner {
-    flex: 0.5;
     display: flex;
     flex-direction: column;
     height: 98%;
     position: relative;
 
-    @media screen and (max-width: var.$breakpoint-sup) {
-      display: none;
-    }
-
     .tuyau {
       width: 15rem;
       height: 11rem;
       filter: grayscale(90%) brightness(120%) contrast(150%)
-        drop-shadow(0 0.3rem 0.3rem var(--navbar--container--filter));
+        drop-shadow(0 0.3rem 0.3rem var(--banner--tuyau--filterDropSHadow));
 
       & .tuyauImg {
         width: 100%;
@@ -41,26 +39,6 @@
       filter: grayscale(90%) contrast(180%);
 
       & .roueImg {
-        width: 100%;
-        height: 100%;
-      }
-    }
-
-    .logo {
-      display: none;
-      z-index: -3;
-      margin-top: 1rem;
-      margin-bottom: 5rem;
-      animation: jug 2s 0.5s ease-in-out forwards;
-      width: 9.2rem;
-      height: 6.2rem;
-      filter: contrast(140%);
-
-      @media screen and (max-width: var.$breakpoint-mobile) {
-        display: none;
-      }
-
-      & .logoImg {
         width: 100%;
         height: 100%;
       }
@@ -87,10 +65,10 @@
       width: 14.3rem;
       height: auto;
       animation: bascule 3.5s 2.3s ease-in-out infinite;
-      margin-top: 13.2rem;
+      margin-top: 17rem;
       margin-left: 0.5rem;
       filter: grayscale(90%) brightness(120%) contrast(150%)
-        drop-shadow(0 0.3rem 0.3rem var(--navbar--container--filter));
+        drop-shadow(0 0.3rem 0.3rem var(--banner--pot--filterDropSHadow));
 
       & .PotImg {
         width: 100%;
@@ -148,7 +126,7 @@
   }
   100% {
     opacity: 0.5;
-    transform: translateY(20rem);
+    transform: translateY(28rem);
   }
 }
 

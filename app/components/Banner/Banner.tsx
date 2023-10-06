@@ -25,15 +25,6 @@ const Banner = (): JSX.Element => {
             alt="Dessin d'une roue"
           />
         </div>
-
-        {/* <div className={styles.logo}>
-          <Image
-            className={styles.logoImg}
-            src={Logo}
-            alt="Dessin d'une cruche inclinée"
-          />
-        </div> */}
-
         <div className={styles.rain}>
           <Image
             className={styles.bannerbg}

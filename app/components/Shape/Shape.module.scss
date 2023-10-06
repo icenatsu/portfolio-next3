@@ -3,24 +3,25 @@
 
 .bubble {
   position: absolute;
-  top: -20rem;
-  left: -3rem;
+  top: -28rem;
+  left: -20rem;
+  width: 60rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0.2;
+  opacity: var(--shape--bubble--opacity);
   fill: var(--shape--bubble--fill);
   filter: var(--shape--brightness);
 
   @media screen and (max-width: var.$breakpoint-tablette) {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
+    top: -28rem;
+    left: -15rem;
   }
 
   @media screen and (max-width: var.$breakpoint-mobile) {
-    display: none;
+    top: -29rem;
+    left: -2rem;
+    width: 50rem;
   }
 }
 
