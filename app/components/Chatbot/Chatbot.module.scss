@@ -1,8 +1,15 @@
+@use "../../styles/utils/variables.scss" as var;
+
 .chatbot {
   position: absolute;
   bottom: 0;
   right: 0;
   font-family: var(--fontFamily--archivo);
+
+  @media screen and (max-width: 1530px) {
+    position: static;
+    display: flex;
+  }
 
   &-container {
     max-width: 40rem;

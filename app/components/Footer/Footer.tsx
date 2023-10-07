@@ -5,8 +5,8 @@ import ChatBot from "@components/Chatbot/Chatbot";
 const Footer = (): JSX.Element => {
   return (
     <footer id="footer" className={styles.footer}>
-      <p className={styles.infos}>@Design fait maison - Marseille</p>
       <ChatBot />
+      <p className={styles.infos}>@Design fait maison - Marseille</p>
     </footer>
   );
 };
