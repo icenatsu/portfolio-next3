@@ -5,7 +5,6 @@ import { Icon } from "@iconify/react";
 import Banner from "@components/Banner/Banner";
 import Shape from "@components/Shape/Shape";
 import Link from "next/link";
-import { animationSlideToBottom } from "@animation/gsapAnimation";
 
 const Header = (): JSX.Element => {
   const scrollToAnchor = () => {
