@@ -1,7 +1,6 @@
 import styles from "./Banner.module.scss";
 import BannerBg from "@public/img/banner_bg.webp";
 import Jarre from "@public/img/jarre.svg";
-// import Logo from "@public/img/logo.svg";
 import Image from "next/image";
 import Flaque from "@public/img/flaque.svg";
 import Roue from "@public/img/roue.svg";
@@ -9,7 +8,7 @@ import Tuyau from "@public/img/tuyau.svg";
 
 const Banner = (): JSX.Element => {
   return (
-    <div className={styles.test}>
+    <div className={styles.container}>
       <div id="banner" className={styles.banner}>
         <div className={styles.tuyau}>
           <Image
@@ -34,6 +33,11 @@ const Banner = (): JSX.Element => {
             height={80}
           />
         </div>
+        <div className={styles.bubbles}>
+          <div className={styles.bubble}></div>
+          <div className={styles.bubble}></div>
+        </div>
+        <div className={styles.drop}></div>
         <div className={styles.pot}>
           <Image
             className={styles.PotImg}
