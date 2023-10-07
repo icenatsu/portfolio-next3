@@ -1,11 +1,19 @@
 import styles from "./Switch.module.scss";
 import { Icon } from "@iconify/react";
+import { useState, useEffect } from "react";
 import Toogletheme from "@components/ToogleTheme/ToogleTheme";
 
 const Switch = (): JSX.Element => {
   const { switchTheme } = Toogletheme();
-  const darkModeActive =
-    typeof document !== "undefined" && document.body.classList.contains("dark");
+  const [darkModeActive, setDarkModeActive] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (document.body.classList.contains("dark")) {
+      setDarkModeActive(true);
+    } else {
+      setDarkModeActive(false);
+    }
+  }, [switchTheme]);
 
   return (
     <label className={styles.switch} htmlFor="switch">
