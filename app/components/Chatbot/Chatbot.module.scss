@@ -5,6 +5,7 @@
   bottom: 0;
   right: 0;
   font-family: var(--fontFamily--archivo);
+  overflow: hidden;
 
   @media screen and (max-width: 1530px) {
     position: static;
@@ -23,11 +24,20 @@
     background-color: var(--chatbot--container--bg);
   }
 
-  &-message {
+  &-title {
+    color: var(--chatbot--title--color);
+  }
+
+  &-messages {
     margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
   }
 
   .message {
+    display: flex;
+    flex-wrap: wrap;
     padding: 1rem;
     margin: 0.5rem 0;
     border-radius: 0.5rem;
@@ -38,7 +48,6 @@
     background-color: var(--chatbot--userQuestion--bg);
     color: var(--chatbot--userQuestion--color);
     align-self: flex-end;
-    text-align: end;
   }
 
   .bot {

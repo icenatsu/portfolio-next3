@@ -102,6 +102,7 @@ const ChatBot: React.FC = () => {
   return (
     <div className={styles["chatbot"]}>
       <div className={styles["chatbot-container"]}>
+        <h2 className={styles["chatbot-title"]}>ChatBot</h2>
         <div className={styles["chatbot-messages"]}>
           {messages.map((message, index) => (
             <div
