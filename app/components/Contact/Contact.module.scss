@@ -13,6 +13,7 @@
   @media screen and (max-width: var.$breakpoint-tablette) {
     flex-direction: column;
     padding: 10rem 5rem 3rem 5rem;
+    scroll-margin: 18rem;
   }
 
   @media screen and (max-width: var.$breakpoint-mobile) {

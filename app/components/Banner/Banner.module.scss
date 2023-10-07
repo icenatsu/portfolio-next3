@@ -1,6 +1,6 @@
 @use "../../styles/utils/variables.scss" as var;
 
-.test {
+.container {
   width: 16rem;
   height: 94%;
   display: flex;
@@ -36,7 +36,7 @@
       width: 6rem;
       height: 7rem;
       animation: roue 1s ease-in-out infinite;
-      filter: grayscale(90%) contrast(180%);
+      filter: grayscale(50%) contrast(200%);
 
       & .roueImg {
         width: 100%;
@@ -46,7 +46,7 @@
 
     .rain {
       opacity: 0;
-      animation: rain 2s 1.2s ease-in both infinite;
+      animation: rain 2s 1.2s ease-in-out both infinite;
       width: 8.5rem;
       max-height: 59.2rem;
       min-height: 0.1rem;
@@ -61,10 +61,47 @@
       }
     }
 
+    .bubble:nth-child(1) {
+      position: absolute;
+      bottom: 10rem;
+      left: 5.5rem;
+      width: 1rem;
+      height: 1rem;
+      background: #80d5ff;
+      border-radius: 100%;
+      transform: scale(1);
+      z-index: 2;
+      animation: bubble-1 2s 0.8s ease-in-out infinite;
+    }
+    .bubble:nth-child(2) {
+      position: absolute;
+      bottom: 10rem;
+      left: 9rem;
+      width: 1rem;
+      height: 1rem;
+      background: #80d5ff;
+      border-radius: 100%;
+      transform: scale(1);
+      z-index: 2;
+      animation: bubble-2 2s 0.8s ease-in-out infinite;
+    }
+
+    .drop {
+      position: absolute;
+      bottom: 11rem;
+      left: 7.3rem;
+      width: 8px;
+      height: 8px;
+      border-radius: 100%;
+      background: #80d5ff;
+      animation: drop 2s 1.2s ease-in-out infinite;
+      z-index: 3;
+    }
+
     .pot {
       width: 9rem;
       height: auto;
-      animation: bascule 3.5s 2.3s ease-in-out infinite;
+      // animation: bascule 3.5s 2.3s ease-in-out infinite;
       margin-top: 17rem;
       margin-left: 3rem;
       filter: contrast(100%)
@@ -136,10 +173,69 @@
     transform: rotate(5deg);
   }
   50% {
-    // filter: brightness(1.1);
     transform: rotate(-5deg);
   }
   100% {
     transform: rotate(5deg);
+  }
+}
+
+@keyframes drop {
+  0% {
+    transform: scale(0) translate(0, 24px);
+  }
+  7% {
+    transform: scale(0) translate(0, 24px);
+  }
+  15.44% {
+    transform: scale(1) translate(0, -36px);
+  }
+  27.8% {
+    transform: scale(0) translate(0, 24px);
+  }
+  100% {
+    transform: scale(0) translate(0, 24px);
+  }
+}
+
+@keyframes bubble-1 {
+  0% {
+    transform: scale(0) translate(0, 0);
+  }
+  45.9% {
+    transform: scale(0) translate(-8px, -16px);
+  }
+  46% {
+    transform: scale(0.2) translate(-8px, -16px);
+  }
+  50% {
+    transform: scale(0.8) translate(-17px, -33px);
+  }
+  50.1% {
+    transform: scale(0) translate(-17px, +33px);
+  }
+  100% {
+    transform: scale(0) translate(0, 0);
+  }
+}
+
+@keyframes bubble-2 {
+  0% {
+    transform: scale(0) translate(0, 0);
+  }
+  45.9% {
+    transform: scale(0) translate(8px, -16px);
+  }
+  46% {
+    transform: scale(0.2) translate(8px, -16px);
+  }
+  50% {
+    transform: scale(0.8) translate(17px, -33px);
+  }
+  50.1% {
+    transform: scale(0) translate(17px, -33px);
+  }
+  100% {
+    transform: scale(0) translate(0, 0);
   }
 }
