@@ -103,6 +103,8 @@
     font-size: 1.4rem;
     border: 0.1rem solid var(--chatbot--inputQuestion--borderColor);
     border-radius: 0.5rem;
+    -webkit-appearance: none; /* Réinitialiser l'apparence de l'élément input sur Safari */
+    appearance: none;
   }
 
   .chatbot-form button {
