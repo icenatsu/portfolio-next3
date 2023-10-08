@@ -1,6 +1,4 @@
-@use "./styles/utils/functions.scss" as fct;
 @use "./styles/utils/variables.scss" as var;
-@use "./styles/utils/mixins.scss" as mix;
 
 *,
 ::before,
@@ -19,6 +17,7 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
 
 :root,
 .light {
@@ -150,11 +149,12 @@ a {
   --contact--errors--fontSize: 1.6rem;
   --contact--errors--color: #{var.$dark-color};
   --contact--input--color: #{var.$light-color};
+  --contact--input--bg: #{var.$primary-color};
   --contact--placeHolder--fontSize: 1.5rem;
   --contact--placeHolder--color: #{var.$light-color};
   --contact--send--fontSize--desktop: 2.2rem;
   --contact--send--fontSize--mobile: 1.8rem;
-  --contact--send--bg: #{var.$four-color};
+  --contact--send--bg: #{var.$primary-color};
   --contact--send--color: #{var.$light-color};
   --contact--elipse--borderColor: #{var.$four-color};
   /* Download Button cv */
@@ -164,7 +164,7 @@ a {
   --downloadbutton--icon--fontSize: 4rem;
   /* Footer */
   --downloadbutton--icon--color: #{var.$light-color};
-  --footer--infos--fontSize: 1.5rem;
+  --footer--infos--fontSize: 1.7rem;
   --footer--infos--color: #{var.$dark-color};
   --footer--infos--fontWeight: 600;
   /* Shape */
@@ -185,6 +185,26 @@ a {
   /* Loader */
   --loader--icon--fontSize: 8rem;
   --loader--icon--colors: #{var.$primary-color};
+  /* Chatbot */
+  --chatbot--container--boxShadow: rgba(0, 0, 0, 0.5);
+  --chatbot--container--borderColor: #ccc;
+  --chatbot--container--boxShadow--color: rgba(0, 0, 0, 0.1);
+  --chatbot--container--bg: #{var.$transparent-color};
+  --chatbot-entilted--color: #{var.$dark-color};
+  --chatbot-entilted__icon--fontSize: 4rem;
+  --chatbot--messagesScrollbar--handle: #{var.$four-color};
+  --chatbot--messagesScrollbar--bg: #{var.$light-color};
+  --chatbot--messageUserBot-fontSize: 1.5rem;
+  --chatbot--userQuestion--bg: #{var.$primary-color};
+  --chatbot--userQuestion--color: #{var.$light-color};
+  --chatbot--botResponse--bg: #{var.$four-color};
+  --chatbot--botResponse--color: #{var.$light-color};
+  --chatbot--inputQuestion--borderColor: #ccc;
+  --chatbot--inputAndFocus--fontSize: 1.6rem;
+  --chatbot--sendButton--fontSize: 1.6rem;
+  --chatbot--sendButton--bg: #{var.$five-color};
+  --chatbot--sendButton--color:#{var.$light-color};
+  --chatbot--sendButton--hover--bg: #3160ac;
 }
 
 .dark {
@@ -255,79 +275,91 @@ a {
   /* Shape */
   --shape--bubble--opacity: 0.2;
   --shape--brightness: brightness(150%);
+  /* Loader */
   --loader--icon--colors: #{var.$dark-color};
+  /* Chatbot */
+  --chatbot--container--boxShadow: #{var.$primary-color};
+  --chatbot--container--borderColor: #{var.$primary-color};
+  --chatbot--container--bg: rgba(255,255,255,0.1);
+  --chatbot-entilted--color: #{var.$light-color};
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-  /* Body */
-  --body--bg--color: #{var.$dark-color};
-  /* Navbar */
-  --navbar--container--color: #{var.$dark-color};
-  --navbar--container--bg: #{var.$primary-color};
-  --navbar--container--filterDropSHadow: #{var.$primary-color};
-  --navbar--link--color: #{var.$light-color};
-  --navbar--stars--color: #{var.$dark-color};
-  --navbar--stars--textShadow: #{var.$light-color};
-  --navbar--burger--color: #{var.$dark-color};
-  /* Switch */
-  --switch--sunmoon--bg: #{var.$light-color};
-  --switch--bg--toogle: #{var.$primary-color};
-  --switch--border--color: #{var.$dark-color};
-  /* Header */
-  --header--bg--color: #{var.$dark-color};
-  --header--profession--color: #{var.$light-color};
-  --header--profession--border: #{var.$light-color};
-  --header--title: #{var.$light-color};
-  --header--button--bg: #{var.$primary-color};
-  --header--button--bg--hover: #5a5c70;
-  --header--button: #{var.$light-color};
-  --header--wave: #{var.$primary-color};
-  /* Banner */
-  --banner--tuyau--filterDropSHadow: #{var.$primary-color};
-  --banner--pot--filterDropSHadow: #{var.$primary-color};
-  /* About */
-  --about--container--bg: #{var.$primary-color};
-  --about--title--color: #{var.$dark-color};
-  --about--presentation--color: #{var.$light-color};
-  /* Projets Caroussel */
-  --project--container--bg: #{var.$dark-color};
-  --project--title--color: #{var.$four-color};
-  --project--touch--color: #{var.$light-color};
-  --project--error--color: #{var.$light-color};
-  /* CardProject */
-  --cardProject--flip-card--filterDropShadow: rgba(255, 255, 255, 0.5);
-  --cardProject--flip-card--borderColor: #{var.$light-color};
-  --cardProject--flip-card-back--bg: #{var.$primary-color};
-  /* Skills */
-  --skills--container--bg: #{var.$primary-color};
-  --skills--title--color: #{var.$dark-color};
-  /* CardSkill */
-  --cardSkill--bg: #242424;
-  --cardSkill--chevron--color: #{var.$light-color};
-  --cardSkill--iconTechno--color: #{var.$four-color};
-  --cardSkill--nameTechno--color: #{var.$light-color};
-  --cardSkill--descriptionTechno--color: #{var.$light-color};
-  --cardSkill--dividingBorder: #{var.$light-color};
-  --cardSkill--iconArrow--color: #{var.$primary-color};
-  /* Contact */
-  --contact--bg: #{var.$dark-color};
-  --contact--title--color: #{var.$four-color};
-  --contact--label--color: #{var.$four-color};
-  --contact--errors--color: #{var.$light-color};
-  --contact--input--color: #{var.$dark-color};
-  --contact--input--bg: #{var.$four-color};
-  --contact--placeHolder--color: #{var.$light-color};
-  --contact--send--bg: #{var.$four-color};
-  --contact--send--color: #{var.$light-color};
-  --contact--elipse--borderColor: #{var.$light-color};
-  /* Footer */
-  --footer--infos--color: #{var.$light-color};
-  --footer--infos--fontWeight: 500;
-  /* Shape */
-  --shape--bubble--opacity: 0.2;
-  --shape--brightness: brightness(150%);
-  --loader--icon--colors: #{var.$dark-color};
+    /* Body */
+    --body--bg--color: #{var.$dark-color};
+    /* Navbar */
+    --navbar--container--color: #{var.$dark-color};
+    --navbar--container--bg: #{var.$primary-color};
+    --navbar--container--filterDropSHadow: #{var.$primary-color};
+    --navbar--link--color: #{var.$light-color};
+    --navbar--stars--color: #{var.$dark-color};
+    --navbar--stars--textShadow: #{var.$light-color};
+    --navbar--burger--color: #{var.$dark-color};
+    /* Switch */
+    --switch--sunmoon--bg: #{var.$light-color};
+    --switch--bg--toogle: #{var.$primary-color};
+    --switch--border--color: #{var.$dark-color};
+    /* Header */
+    --header--bg--color: #{var.$dark-color};
+    --header--profession--color: #{var.$light-color};
+    --header--profession--border: #{var.$light-color};
+    --header--title: #{var.$light-color};
+    --header--button--bg: #{var.$primary-color};
+    --header--button--bg--hover: #5a5c70;
+    --header--button: #{var.$light-color};
+    --header--wave: #{var.$primary-color};
+    /* Banner */
+    --banner--tuyau--filterDropSHadow: #{var.$primary-color};
+    --banner--pot--filterDropSHadow: #{var.$primary-color};
+    /* About */
+    --about--container--bg: #{var.$primary-color};
+    --about--title--color: #{var.$dark-color};
+    --about--presentation--color: #{var.$light-color};
+    /* Projets Caroussel */
+    --project--container--bg: #{var.$dark-color};
+    --project--title--color: #{var.$four-color};
+    --project--touch--color: #{var.$light-color};
+    --project--error--color: #{var.$light-color};
+    /* CardProject */
+    --cardProject--flip-card--filterDropShadow: rgba(255, 255, 255, 0.5);
+    --cardProject--flip-card--borderColor: #{var.$light-color};
+    --cardProject--flip-card-back--bg: #{var.$primary-color};
+    /* Skills */
+    --skills--container--bg: #{var.$primary-color};
+    --skills--title--color: #{var.$dark-color};
+    /* CardSkill */
+    --cardSkill--bg: #242424;
+    --cardSkill--chevron--color: #{var.$light-color};
+    --cardSkill--iconTechno--color: #{var.$four-color};
+    --cardSkill--nameTechno--color: #{var.$light-color};
+    --cardSkill--descriptionTechno--color: #{var.$light-color};
+    --cardSkill--dividingBorder: #{var.$light-color};
+    --cardSkill--iconArrow--color: #{var.$primary-color};
+    /* Contact */
+    --contact--bg: #{var.$dark-color};
+    --contact--title--color: #{var.$four-color};
+    --contact--label--color: #{var.$four-color};
+    --contact--errors--color: #{var.$light-color};
+    --contact--input--color: #{var.$dark-color};
+    --contact--input--bg: #{var.$four-color};
+    --contact--placeHolder--color: #{var.$light-color};
+    --contact--send--bg: #{var.$four-color};
+    --contact--send--color: #{var.$light-color};
+    --contact--elipse--borderColor: #{var.$light-color};
+    /* Footer */
+    --footer--infos--color: #{var.$light-color};
+    --footer--infos--fontWeight: 500;
+    /* Shape */
+    --shape--bubble--opacity: 0.2;
+    --shape--brightness: brightness(150%);
+    /* Loader */
+    --loader--icon--colors: #{var.$dark-color};
+    /* Chatbot */
+    --chatbot--container--boxShadow: #{var.$primary-color};
+    --chatbot--container--borderColor: #{var.$primary-color};
+    --chatbot--container--bg: rgba(255,255,255,0.1) ;
+    --chatbot-entilted--color: #{var.$light-color};
   }
 }
 
