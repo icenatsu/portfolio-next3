@@ -18,7 +18,6 @@ a {
   color: inherit;
 }
 
-
 :root,
 .light {
   --fontFamily--oswald: #{var.$oswald};
@@ -181,7 +180,7 @@ a {
   --notify--closeError--color: tomato;
   --notify--closeSuccess--color: green;
   --notify--barError--bg: tomato;
-  --notify--barSuccess--bg: green:
+  --notify--barSuccess--bg: green;
   /* Loader */
   --loader--icon--fontSize: 8rem;
   --loader--icon--colors: #{var.$primary-color};
@@ -203,7 +202,7 @@ a {
   --chatbot--inputAndFocus--fontSize: 1.6rem;
   --chatbot--sendButton--fontSize: 1.6rem;
   --chatbot--sendButton--bg: #{var.$five-color};
-  --chatbot--sendButton--color:#{var.$light-color};
+  --chatbot--sendButton--color: #{var.$light-color};
   --chatbot--sendButton--hover--bg: #3160ac;
 }
 
@@ -280,7 +279,7 @@ a {
   /* Chatbot */
   --chatbot--container--boxShadow: #{var.$primary-color};
   --chatbot--container--borderColor: #{var.$primary-color};
-  --chatbot--container--bg: rgba(255,255,255,0.1);
+  --chatbot--container--bg: rgba(255, 255, 255, 0.1);
   --chatbot-entilted--color: #{var.$light-color};
 }
 
@@ -358,7 +357,7 @@ a {
     /* Chatbot */
     --chatbot--container--boxShadow: #{var.$primary-color};
     --chatbot--container--borderColor: #{var.$primary-color};
-    --chatbot--container--bg: rgba(255,255,255,0.1) ;
+    --chatbot--container--bg: rgba(255, 255, 255, 0.1);
     --chatbot-entilted--color: #{var.$light-color};
   }
 }
