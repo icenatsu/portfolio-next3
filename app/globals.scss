@@ -18,6 +18,7 @@ a {
   color: inherit;
 }
 
+
 :root,
 .light {
   --fontFamily--oswald: #{var.$oswald};
@@ -148,11 +149,12 @@ a {
   --contact--errors--fontSize: 1.6rem;
   --contact--errors--color: #{var.$dark-color};
   --contact--input--color: #{var.$light-color};
+  --contact--input--bg: #{var.$primary-color};
   --contact--placeHolder--fontSize: 1.5rem;
   --contact--placeHolder--color: #{var.$light-color};
   --contact--send--fontSize--desktop: 2.2rem;
   --contact--send--fontSize--mobile: 1.8rem;
-  --contact--send--bg: #{var.$four-color};
+  --contact--send--bg: #{var.$primary-color};
   --contact--send--color: #{var.$light-color};
   --contact--elipse--borderColor: #{var.$four-color};
   /* Download Button cv */
