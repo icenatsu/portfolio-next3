@@ -45,7 +45,7 @@
     }
 
     .rain {
-      opacity: 0;
+      // opacity: 0;
       animation: rain 1.9s 0.1s linear infinite;
       width: 8.5rem;
       max-height: 59.2rem;
@@ -191,7 +191,7 @@
     transform: scale(0.6) translate(-17px, -33px);
   }
   50.1% {
-    transform: scale(0) translate(-17px, +33px);
+    transform: scale(0) translate(-17px, -33px);
   }
   100% {
     transform: scale(0) translate(0, 0);

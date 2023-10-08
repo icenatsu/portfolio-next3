@@ -65,8 +65,28 @@ const ChatBot: React.FC = () => {
     ) {
       response =
         "Bonjour et enchantée, bienvenue sur mon portfolio, si vous avez des questions n'hésitez pas";
-    }
-    if (
+    } else if (
+      normalizedInput.includes("teletravail") ||
+      normalizedInput.includes("presentiel")
+    ) {
+      response =
+        "Je suis ouverte à travailler aussi bien en présentiel qu'en télétravail.";
+    } else if (
+      normalizedInput.includes("habite") ||
+      normalizedInput.includes("reside")
+    ) {
+      response = "J'habite à Marseille.";
+    } else if (normalizedInput.includes("age")) {
+      response = "J'ai 38ans.";
+    } else if (
+      normalizedInput.includes("mobilite") ||
+      normalizedInput.includes("demenagement") ||
+      normalizedInput.includes("deplace") ||
+      normalizedInput.includes("emplacement")
+    ) {
+      response =
+        "Si le travail se fait en présentiel, je suis particulièrement intéressé(e) par des opportunités à Marseille. C'est là que je souhaite travailler.";
+    } else if (
       normalizedInput.includes("appelle") ||
       normalizedInput.includes("nomme")
     ) {
