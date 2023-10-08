@@ -47,9 +47,18 @@
     flex-direction: column;
     max-height: 300px;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     scrollbar-color: var.$four-color white; // firefox
     scrollbar-width: thin;
     padding: 1rem;
+
+    @media not all and (min-resolution: 0.001dpcm) {
+      @supports (-webkit-appearance: none) {
+        .chatbot-messages {
+          scrollbar-width: thin; /* Définir la largeur de la barre de défilement pour Safari */
+        }
+      }
+    }
 
     &::-webkit-scrollbar {
       width: 0.4rem;
