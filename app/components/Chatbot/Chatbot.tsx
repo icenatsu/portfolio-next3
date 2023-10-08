@@ -1,6 +1,7 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import styles from "./Chatbot.module.scss";
+import { Icon } from "@iconify/react";
 
 interface Message {
   text: string;
@@ -10,6 +11,14 @@ interface Message {
 const ChatBot: React.FC = () => {
   const [input, setInput] = useState<string>("");
   const [messages, setMessages] = useState<Message[]>([]);
+
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  const scrollToBottom = () => {
+    if (messagesEndRef.current !== null) {
+      messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInput(e.target.value);
@@ -34,13 +43,16 @@ const ChatBot: React.FC = () => {
   };
 
   useEffect(() => {
-    // Ajouter le message d'accueil au début
     const welcomeMessage: Message = {
       text: "Bonjour, Je serai ravie de répondre à toutes les questions que vous pourriez avoir à mon sujet.",
       type: "bot",
     };
     setMessages([welcomeMessage]);
   }, []);
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
 
   const handleBotResponse = (input: string) => {
     const normalizedInput = normalizeString(input);
@@ -91,6 +103,13 @@ const ChatBot: React.FC = () => {
     ) {
       response =
         "J'ai suivi des études en informatique et acquis de l'expérience dans le domaine technique. Durant mon dernier emploi, j'avais la responsabilité d'un enfant en situation de handicap. Bien que ce travail fût enrichissant, mon désir de stimuler mon esprit et d'acquérir de nouvelles compétences était plus fort. C'est cette aspiration qui a motivé ma décision de me tourner vers le développement web.";
+    } else if (
+      normalizedInput.includes("salaire") ||
+      normalizedInput.includes("pretention") ||
+      normalizedInput.includes("salarial")
+    ) {
+      response =
+        "Avant d'aborder le sujet du salaire, je tiens à souligner mon profond intérêt pour rejoindre votre entreprise. Mon aspiration principale est de partager mes connaissances, d'apprendre continuellement et surtout de mettre mes compétences au service de votre entreprise pour y épanouir mon potentiel. Je suis passionnée par le travail d'équipe et je crois fermement en l'importance de collaborer harmonieusement. Cependant, comme tout individu, il est essentiel de trouver un équilibre entre passion et réalité financière. C'est pourquoi ma proposition salariale s'élève à 24 000 euros brut par an. Je suis convaincue que cette démarche nous permettra de bâtir une collaboration fructueuse et enrichissante pour les deux parties.";
     } else {
       response = "Je ne comprends pas la question.";
     }
@@ -102,7 +121,13 @@ const ChatBot: React.FC = () => {
   return (
     <div className={styles["chatbot"]}>
       <div className={styles["chatbot-container"]}>
-        <h2 className={styles["chatbot-title"]}>ChatBot</h2>
+        <div className={styles["chatbot-entilted"]}>
+          <Icon
+            className={styles["chatbot-entilted__icon"]}
+            icon="tabler:message-chatbot"
+          />
+          <h2 className={styles["chatbot-entilted__title"]}>ChatBot</h2>
+        </div>
         <div className={styles["chatbot-messages"]}>
           {messages.map((message, index) => (
             <div
@@ -114,6 +139,7 @@ const ChatBot: React.FC = () => {
               {message.text}
             </div>
           ))}
+          <div ref={messagesEndRef}></div>
         </div>
         <form onSubmit={handleFormSubmit} className={styles["chatbot-form"]}>
           <input

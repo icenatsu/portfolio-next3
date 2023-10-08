@@ -184,10 +184,12 @@ a {
   --loader--icon--fontSize: 8rem;
   --loader--icon--colors: #{var.$primary-color};
   /* Chatbot */
+  --chatbot--container--boxShadow: rgba(0, 0, 0, 0.5);
   --chatbot--container--borderColor: #ccc;
   --chatbot--container--boxShadow--color: rgba(0, 0, 0, 0.1);
   --chatbot--container--bg: #{var.$transparent-color};
-  --chatbot--title--color: #{var.$dark-color};
+  --chatbot-entilted--color: #{var.$dark-color};
+  --chatbot-entilted__icon--fontSize: 4rem;
   --chatbot--messageUserBot-fontSize: 1.5rem;
   --chatbot--userQuestion--bg: #{var.$primary-color};
   --chatbot--userQuestion--color: #{var.$light-color};
@@ -270,9 +272,10 @@ a {
   /* Loader */
   --loader--icon--colors: #{var.$dark-color};
   /* Chatbot */
+  --chatbot--container--boxShadow: #{var.$primary-color};
   --chatbot--container--borderColor: #{var.$primary-color};
-  --chatbot--container--bg: rgba(255,255,255,0.1) ;
-  --chatbot--title--color: #{var.$light-color};
+  --chatbot--container--bg: rgba(255,255,255,0.1);
+  --chatbot-entilted--color: #{var.$light-color};
 }
 
 @media (prefers-color-scheme: dark) {
@@ -347,9 +350,10 @@ a {
     /* Loader */
     --loader--icon--colors: #{var.$dark-color};
     /* Chatbot */
+    --chatbot--container--boxShadow: #{var.$primary-color};
     --chatbot--container--borderColor: #{var.$primary-color};
     --chatbot--container--bg: rgba(255,255,255,0.1) ;
-    --chatbot--title--color: #{var.$light-color};
+    --chatbot-entilted--color: #{var.$light-color};
   }
 }
 

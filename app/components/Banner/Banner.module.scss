@@ -46,7 +46,7 @@
 
     .rain {
       opacity: 0;
-      animation: rain 2s 1.2s ease-in-out both infinite;
+      animation: rain 1.9s linear infinite;
       width: 8.5rem;
       max-height: 59.2rem;
       min-height: 0.1rem;
@@ -63,7 +63,7 @@
 
     .bubble:nth-child(1) {
       position: absolute;
-      bottom: 10rem;
+      bottom: 9rem;
       left: 5.5rem;
       width: 1rem;
       height: 1rem;
@@ -71,11 +71,11 @@
       border-radius: 100%;
       transform: scale(1);
       z-index: 2;
-      animation: bubble-1 2s 0.8s ease-in-out infinite;
+      animation: bubble-1 2s linear both infinite;
     }
     .bubble:nth-child(2) {
       position: absolute;
-      bottom: 10rem;
+      bottom: 9rem;
       left: 9rem;
       width: 1rem;
       height: 1rem;
@@ -83,18 +83,18 @@
       border-radius: 100%;
       transform: scale(1);
       z-index: 2;
-      animation: bubble-2 2s 0.8s ease-in-out infinite;
+      animation: bubble-2 2s linear both infinite;
     }
 
     .drop {
       position: absolute;
-      bottom: 11rem;
+      bottom: 9rem;
       left: 7.3rem;
       width: 8px;
       height: 8px;
       border-radius: 100%;
       background: #80d5ff;
-      animation: drop 2s 1.2s ease-in-out infinite;
+      animation: drop 2s 0.7s linear both infinite;
       z-index: 3;
     }
 
@@ -102,7 +102,7 @@
       width: 9rem;
       height: auto;
       // animation: bascule 3.5s 2.3s ease-in-out infinite;
-      margin-top: 17rem;
+      margin-top: 19rem;
       margin-left: 3rem;
       filter: contrast(100%)
         drop-shadow(0 0.3rem 0.3rem var(--banner--pot--filterDropSHadow));
@@ -117,7 +117,7 @@
 
     .flaque {
       position: absolute;
-      bottom: -1.8rem;
+      bottom: -2.6rem;
       left: 0.5rem;
       z-index: -1;
       overflow: hidden;
@@ -140,15 +140,6 @@
   }
 }
 
-@keyframes jug {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(35deg);
-  }
-}
-
 @keyframes rain {
   0% {
     opacity: 0;
@@ -164,7 +155,7 @@
   }
   100% {
     opacity: 0.5;
-    transform: translateY(28rem);
+    transform: translateY(52rem);
   }
 }
 
@@ -209,7 +200,7 @@
     transform: scale(0.2) translate(-8px, -16px);
   }
   50% {
-    transform: scale(0.8) translate(-17px, -33px);
+    transform: scale(0.6) translate(-17px, -33px);
   }
   50.1% {
     transform: scale(0) translate(-17px, +33px);
@@ -230,7 +221,7 @@
     transform: scale(0.2) translate(8px, -16px);
   }
   50% {
-    transform: scale(0.8) translate(17px, -33px);
+    transform: scale(0.6) translate(17px, -33px);
   }
   50.1% {
     transform: scale(0) translate(17px, -33px);
