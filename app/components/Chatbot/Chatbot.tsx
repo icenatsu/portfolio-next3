@@ -15,8 +15,8 @@ const ChatBot: React.FC = () => {
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
-    if (messagesEndRef.current !== null) {
-      messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
+    if (messagesEndRef.current) {
+      messagesEndRef.current.scrollTop = messagesEndRef.current.scrollHeight;
     }
   };
 
@@ -62,11 +62,11 @@ const ChatBot: React.FC = () => {
       normalizedInput.includes("appelle") ||
       normalizedInput.includes("nomme")
     ) {
-      response = "Je m'appelle Gaëlle Blanchard.";
+      response = "Enchantée, Je m'appelle Gaëlle Blanchard.";
     } else if (normalizedInput.includes("prenom")) {
-      response = "Je me nomme Gaëlle.";
+      response = "Enchantée, je me nomme Gaëlle.";
     } else if (normalizedInput.includes("nom")) {
-      response = "Mon nom est Blanchard.";
+      response = "Enchantée, mon nom de famille est Blanchard.";
     } else if (
       normalizedInput.includes("contrat") ||
       normalizedInput.includes("emploi")
@@ -128,7 +128,7 @@ const ChatBot: React.FC = () => {
           />
           <h2 className={styles["chatbot-entilted__title"]}>ChatBot</h2>
         </div>
-        <div className={styles["chatbot-messages"]}>
+        <div className={styles["chatbot-messages"]} ref={messagesEndRef}>
           {messages.map((message, index) => (
             <div
               key={index}
@@ -139,7 +139,6 @@ const ChatBot: React.FC = () => {
               {message.text}
             </div>
           ))}
-          <div ref={messagesEndRef}></div>
         </div>
         <form onSubmit={handleFormSubmit} className={styles["chatbot-form"]}>
           <input
