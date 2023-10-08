@@ -190,12 +190,15 @@ a {
   --chatbot--container--bg: #{var.$transparent-color};
   --chatbot-entilted--color: #{var.$dark-color};
   --chatbot-entilted__icon--fontSize: 4rem;
+  --chatbot--messagesScrollbar--handle: #{var.$four-color};
+  --chatbot--messagesScrollbar--bg: #{var.$light-color};
   --chatbot--messageUserBot-fontSize: 1.5rem;
   --chatbot--userQuestion--bg: #{var.$primary-color};
   --chatbot--userQuestion--color: #{var.$light-color};
   --chatbot--botResponse--bg: #{var.$four-color};
   --chatbot--botResponse--color: #{var.$light-color};
   --chatbot--inputQuestion--borderColor: #ccc;
+  --chatbot--inputAndFocus--fontSize: 1.6rem;
   --chatbot--sendButton--bg: #{var.$five-color};
   --chatbot--sendButton--color:#{var.$light-color};
   --chatbot--sendButton--hover--bg: #3160ac;
