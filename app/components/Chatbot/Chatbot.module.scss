@@ -105,6 +105,10 @@
     border-radius: 0.5rem;
     -webkit-appearance: none; /* Réinitialiser l'apparence de l'élément input sur Safari */
     appearance: none;
+
+    &:focus {
+      transform: scale(1);
+    }
   }
 
   .chatbot-form button {
