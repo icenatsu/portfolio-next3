@@ -59,6 +59,14 @@ const ChatBot: React.FC = () => {
 
     let response: string;
     if (
+      normalizedInput.includes("bonjour") ||
+      normalizedInput.includes("salut") ||
+      normalizedInput.includes("coucou")
+    ) {
+      response =
+        "Bonjour et enchantée, bienvenue sur mon portfolio, si vous avez des questions n'hésitez pas";
+    }
+    if (
       normalizedInput.includes("appelle") ||
       normalizedInput.includes("nomme")
     ) {

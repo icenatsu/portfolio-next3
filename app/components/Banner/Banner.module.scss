@@ -46,7 +46,7 @@
 
     .rain {
       opacity: 0;
-      animation: rain 1.9s linear infinite;
+      animation: rain 1.9s 0.1s linear infinite;
       width: 8.5rem;
       max-height: 59.2rem;
       min-height: 0.1rem;
@@ -73,6 +73,7 @@
       z-index: 2;
       animation: bubble-1 2s linear both infinite;
     }
+
     .bubble:nth-child(2) {
       position: absolute;
       bottom: 9rem;
@@ -101,7 +102,6 @@
     .pot {
       width: 9rem;
       height: auto;
-      // animation: bascule 3.5s 2.3s ease-in-out infinite;
       margin-top: 19rem;
       margin-left: 3rem;
       filter: contrast(100%)
@@ -158,18 +158,6 @@
     transform: translateY(52rem);
   }
 }
-
-// @keyframes bascule {
-//   0% {
-//     transform: rotate(5deg);
-//   }
-//   50% {
-//     transform: rotate(-5deg);
-//   }
-//   100% {
-//     transform: rotate(5deg);
-//   }
-// }
 
 @keyframes drop {
   0% {
