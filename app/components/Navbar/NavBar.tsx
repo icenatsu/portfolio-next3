@@ -11,8 +11,8 @@ const NavBar = (): JSX.Element => {
 
   const [showMenu, setShowMenu] = useState<boolean>(false);
 
-  const container = useRef<HTMLElement>(null);
-  const list = useRef<HTMLUListElement>(null);
+  const container = useRef<HTMLDivElement>(null);
+  const navbar = useRef<HTMLElement>(null);
 
   // Déroulement de la navbar en version mobile et tablette
   const handleClick = () => {
@@ -22,31 +22,26 @@ const NavBar = (): JSX.Element => {
   useEffect(() => {
     if (
       container.current !== null &&
-      list.current !== null &&
+      navbar.current !== null &&
       typeof window !== "undefined"
     ) {
-      if (showMenu) {
-        container.current.style.minHeight = "21rem";
-        list.current.style.transition = "opacity 1s 0.8s";
-        list.current.style.opacity = "1";
+      if (windowSize.windowWidth <= 992) {
+        if (showMenu) {
+          container.current.style.minHeight = "21rem";
+          navbar.current.style.transition = "opacity 1s 0.8s";
+          navbar.current.style.opacity = "1";
+        } else {
+          navbar.current.style.transition = "none";
+          container.current.style.minHeight = "6rem";
+          navbar.current.style.opacity = "0";
+        }
       } else {
-        list.current.style.transition = "none";
+        setShowMenu(false);
+        navbar.current.style.opacity = "1";
         container.current.style.minHeight = "6rem";
-        list.current.style.opacity = "0";
       }
     }
-  }, [showMenu]);
-
-  useEffect(() => {
-    setShowMenu(false);
-    if (list.current !== null) {
-      if (windowSize.windowWidth > 992) {
-        list.current.style.opacity = "1";
-      } else {
-        list.current.style.opacity = "0";
-      }
-    }
-  }, [windowSize.windowWidth]);
+  }, [showMenu, windowSize.windowWidth]);
 
   const scrollToAnchor = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -54,37 +49,39 @@ const NavBar = (): JSX.Element => {
   };
 
   return (
-    <nav id="navBar" className={styles.container} ref={container}>
+    <div id="navBar" className={styles.container} ref={container}>
       <Switch />
-      <ul className={styles.list} ref={list}>
-        <li className={styles.list__item}>
-          <Link
-            onClick={() => scrollToAnchor("projets")}
-            scroll={false}
-            href="/#projets"
-          >
-            Projets
-          </Link>
-        </li>
-        <li className={styles.list__item}>
-          <Link
-            onClick={() => scrollToAnchor("skills")}
-            href="/#skills"
-            scroll={false}
-          >
-            Compétences
-          </Link>
-        </li>
-        <li className={styles.list__item}>
-          <Link
-            onClick={() => scrollToAnchor("contact")}
-            href="/#contact"
-            scroll={false}
-          >
-            Contact
-          </Link>
-        </li>
-      </ul>
+      <nav className={styles.navbar} ref={navbar}>
+        <ul className={styles.list}>
+          <li className={styles.list__item}>
+            <Link
+              onClick={() => scrollToAnchor("projets")}
+              scroll={false}
+              href="/#projets"
+            >
+              Projets
+            </Link>
+          </li>
+          <li className={styles.list__item}>
+            <Link
+              onClick={() => scrollToAnchor("skills")}
+              href="/#skills"
+              scroll={false}
+            >
+              Compétences
+            </Link>
+          </li>
+          <li className={styles.list__item}>
+            <Link
+              onClick={() => scrollToAnchor("contact")}
+              href="/#contact"
+              scroll={false}
+            >
+              Contact
+            </Link>
+          </li>
+        </ul>
+      </nav>
       <div className={styles.burger} onClick={handleClick}>
         <Icon
           aria-label="Afficher le menu"
@@ -92,7 +89,7 @@ const NavBar = (): JSX.Element => {
           hFlip={true}
         />
       </div>
-    </nav>
+    </div>
   );
 };
 

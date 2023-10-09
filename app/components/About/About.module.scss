@@ -58,7 +58,7 @@
       }
 
       @media screen and (max-width: var.$breakpoint-mobile) {
-        text-align: center;
+        // text-align: center;
         font-size: var(--about--presentation--fontSize--mobile);
       }
     }
