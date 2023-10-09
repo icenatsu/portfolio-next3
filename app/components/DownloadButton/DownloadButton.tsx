@@ -28,7 +28,9 @@ const DownloadButton = (): JSX.Element => {
         onClick={handleDownload}
         icon="line-md:download-loop"
       />
-      <button className={styles.button}>Télécharger mon CV</button>
+      <button onClick={handleDownload} className={styles.button}>
+        Télécharger mon CV
+      </button>
     </div>
   );
 };
