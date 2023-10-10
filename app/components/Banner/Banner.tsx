@@ -9,84 +9,98 @@ import { gsap } from "gsap";
 import { useRef, useEffect } from "react";
 
 const Banner = (): JSX.Element => {
-  // const roueRef = useRef(null);
-  // const bubble1Ref = useRef(null);
-  // const bubble2Ref = useRef(null);
-  // const dropRef = useRef(null);
-  // const rainRef = useRef(null);
+  const roueRef = useRef<HTMLDivElement>(null);
+  const bubble1Ref = useRef<HTMLDivElement>(null);
+  const bubble2Ref = useRef<HTMLDivElement>(null);
+  const dropRef = useRef<HTMLDivElement>(null);
+  const rainRef = useRef<HTMLDivElement>(null);
 
-  // useEffect(() => {
-  //   const roue = roueRef.current;
-  //   const bubble1 = bubble1Ref.current;
-  //   const bubble2 = bubble2Ref.current;
-  //   const drop = dropRef.current;
-  //   const rain = rainRef.current;
+  useEffect(() => {
+    const roue = gsap.to(roueRef.current, {
+      duration: 1.2,
+      rotation: "+=360",
+      ease: "power1.easeinOut",
+    });
 
-  //   console.log(bubble1);
+    const drop = gsap.to(dropRef.current, {
+      keyframes: {
+        "0%": { y: "2.4rem", scale: 0 },
+        "7%": { y: "2.4rem", scale: 0 },
 
-  //   // Animation de la roue
-  //   let tl = gsap.timeline();
-  //   tl.to(roue, {
-  //     duration: 1.2,
-  //     repeat: -1,
-  //     rotation: "+=360", // Rotation de 360 degrés
-  //     ease: "power1.easeinOut", // Ease in out pour une transition plus fluide
-  //   }).to(rain, {
-  //     keyframes: {
-  //       "0%": { x: 100, y: -80 },
-  //       "25%": { x: 0, y: -90 },
-  //       "50%": { x: 0, y: -90 }, // finetune with individual eases
-  //       "100%": { x: 50, y: 50 },
-  //       easeEach: "expo.inOut", // ease between keyframes
-  //     },
-  //     ease: "none", // ease the entire keyframe block
-  //     duration: 2,
-  //   });
-  //   // .to(bubble1, {
-  //   //   duration: 1.9,
-  //   //   x: 0,
-  //   //   y: 0,
-  //   //   scale: 3,
-  //   //   // ease: "power1.linear",
-  //   //   // keyframes: [
-  //   //   //   { x: 0, y: 0, scale: 0 },
-  //   //   //   { x: 8, y: 16, scale: 0 },
-  //   //   //   { x: 8, y: 16, scale: 0.2 },
-  //   //   //   { x: 17, y: 33, scale: 0.6 },
-  //   //   //   { x: 17, y: 33, scale: 0 },
-  //   //   //   { x: 0, y: 0, scale: 0 },
-  //   //   // ],
-  //   //   // repeat: -1, // Répétez l'animation indéfiniment
-  //   // });
+        "15.44%": { y: "-3.6rem", scale: 1 },
 
-  //   // // Animation de la goutte
-  //   // gsap.fromTo(
-  //   //   drop,
-  //   //   { scale: 0, y: 24 },
-  //   //   {
-  //   //     scale: 1,
-  //   //     y: -36,
-  //   //     transformOrigin: "center",
-  //   //     repeat: -1,
-  //   //     yoyo: true,
-  //   //     duration: 0.5,
-  //   //   }
-  //   // );
+        "27.8%": { y: "2.4rem", scale: 0 },
 
-  //   // // Animation de la pluie
-  //   // gsap.fromTo(
-  //   //   rain,
-  //   //   { opacity: 0, y: -80 },
-  //   //   {
-  //   //     opacity: 1,
-  //   //     y: 52 * 16,
-  //   //     duration: 1.9,
-  //   //     delay: 0.1,
-  //   //     ease: "linear",
-  //   //     repeat: -1,
-  //   //   }
-  //   // );
-  // }, []); // Le tableau vide signifie que ce useEffect ne s'exécutera qu'une seule fois après le premier rendu
+        "100%": { y: "2.4rem", scale: 0 },
+
+        easeEach: "expo.linear",
+      },
+      duration: 2,
+    });
+
+    const rain = gsap.to(rainRef.current, {
+      keyframes: {
+        "0%": { y: "-80rem", opacity: 0 },
+        "25%": { opacity: 0.5 },
+        "50%": { opacity: 1, filter: "brightness(1.8)" },
+        "100%": { y: "63rem", opacity: 0.5 },
+        easeEach: "expo.easeinOut",
+      },
+      duration: 2.5,
+    });
+
+    const bubble1 = gsap.to(bubble1Ref.current, {
+      keyframes: {
+        "0%": { x: "1rem", y: "1rem", scale: 0 },
+        "45.9%": { x: "-0.8rem", y: "-1.6rem", scale: 0 },
+
+        "46%": { x: "-0.8rem", y: "-1.6rem", scale: 0.2 },
+
+        "50%": { x: "-1.7rem", y: "-3.3rem", scale: 0.6 },
+
+        "50.1%": { x: "-1.7rem", y: "-3.3rem", scale: 0.6 },
+
+        "100%": { x: "0rem", y: "0rem", scale: 0 },
+
+        easeEach: "expo.linear",
+      },
+      duration: 0.9,
+    });
+
+    const bubble2 = gsap.to(bubble2Ref.current, {
+      keyframes: {
+        "0%": { x: "1rem", y: "1rem", scale: 0 },
+        "45.9%": { x: "0.8rem", y: "-1.6rem", scale: 0 },
+
+        "46%": { x: "0.8rem", y: "-1.6rem", scale: 0.2 },
+
+        "50%": { x: "1.7rem", y: "-3.3rem", scale: 0.6 },
+
+        "50.1%": { x: "1.7rem", y: "-3.3rem", scale: 0.6 },
+
+        "100%": { x: "0rem", y: "0rem", scale: 0 },
+
+        easeEach: "expo.linear",
+      },
+      // repeat: -1,
+      duration: 0.9,
+    });
+
+    let ctx = gsap.context(() => {
+      let tl = gsap
+        .timeline({ repeat: -1 })
+        .add(roue)
+        .add(drop, 1.3)
+        .add(bubble1, 1.1)
+        .add(bubble2, 1.1)
+        .add(rain, 0.2);
+
+      tl.play();
+    });
+    return () => {
+      ctx.revert();
+    };
+  }, []);
 
   return (
     <div className={styles.container}>
@@ -98,15 +112,14 @@ const Banner = (): JSX.Element => {
             alt="Dessin d'un tuyau"
           />
         </div>
-        <div className={styles.roue}>
+        <div ref={roueRef} className={styles.roue}>
           <Image
-            // ref={roueRef}
             className={styles.roueImg}
             src={Roue}
             alt="Dessin d'une roue"
           />
         </div>
-        <div className={styles.rain}>
+        <div ref={rainRef} className={styles.rain}>
           <Image
             className={styles.bannerbg}
             src={BannerBg}
@@ -116,10 +129,10 @@ const Banner = (): JSX.Element => {
           />
         </div>
         <div className={styles.bubbles}>
-          <div className={styles.bubble}></div>
-          <div className={styles.bubble}></div>
+          <div id="bubble1" ref={bubble1Ref} className={styles.bubble1}></div>
+          <div id="bubble2" ref={bubble2Ref} className={styles.bubble2}></div>
         </div>
-        <div className={styles.drop}></div>
+        <div ref={dropRef} className={styles.drop}></div>
         <div className={styles.pot}>
           <Image
             className={styles.PotImg}
