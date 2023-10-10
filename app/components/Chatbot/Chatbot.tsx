@@ -169,12 +169,15 @@ const ChatBot: React.FC = () => {
           ))}
         </div>
         <form onSubmit={handleFormSubmit} className={styles["chatbot-form"]}>
-          <input
-            type="text"
-            value={input}
-            onChange={handleInputChange}
-            placeholder="Posez votre question..."
-          />
+          <label id="label1">
+            <input
+              aria-labelledby="label1"
+              type="text"
+              value={input}
+              onChange={handleInputChange}
+              placeholder="Posez votre question..."
+            />
+          </label>
           <button type="submit">Envoyer</button>
         </form>
       </div>
