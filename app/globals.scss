@@ -194,9 +194,9 @@ a {
   --chatbot--messagesScrollbar--handle: #{var.$four-color};
   --chatbot--messagesScrollbar--bg: #{var.$light-color};
   --chatbot--messageUserBot-fontSize: 1.5rem;
-  --chatbot--userQuestion--bg: #{var.$primary-color};
+  --chatbot--userQuestion--bg: #{var.$four-color};
   --chatbot--userQuestion--color: #{var.$light-color};
-  --chatbot--botResponse--bg: #{var.$four-color};
+  --chatbot--botResponse--bg: #{var.$primary-color};
   --chatbot--botResponse--color: #{var.$light-color};
   --chatbot--inputQuestion--borderColor: #ccc;
   --chatbot--inputAndFocus--fontSize: 1.6rem;
@@ -265,7 +265,7 @@ a {
   --contact--input--color: #{var.$dark-color};
   --contact--input--bg: #{var.$four-color};
   --contact--placeHolder--color: #{var.$light-color};
-  --contact--send--bg: #{var.$four-color};
+  --contact--send--bg: #{var.$primary-color};
   --contact--send--color: #{var.$light-color};
   --contact--elipse--borderColor: #{var.$light-color};
   /* Footer */
