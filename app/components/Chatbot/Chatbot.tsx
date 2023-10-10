@@ -169,9 +169,9 @@ const ChatBot: React.FC = () => {
           ))}
         </div>
         <form onSubmit={handleFormSubmit} className={styles["chatbot-form"]}>
-          <span id="label1"></span>
+          <span id="label"></span>
           <input
-            aria-labelledby="label1"
+            aria-labelledby="label"
             type="text"
             value={input}
             onChange={handleInputChange}
