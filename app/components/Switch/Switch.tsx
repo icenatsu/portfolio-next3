@@ -16,10 +16,8 @@ const Switch = (): JSX.Element => {
   }, [switchTheme]);
 
   return (
-    <label className={styles.switch} htmlFor="switch">
-      <span id="label"></span>
+    <label className={styles.switch} htmlFor="switch" aria-label="switch">
       <input
-        aria-labelledby="label"
         className={styles.input}
         type="checkbox"
         checked={!darkModeActive}

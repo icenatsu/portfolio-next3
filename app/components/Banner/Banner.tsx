@@ -82,7 +82,6 @@ const Banner = (): JSX.Element => {
 
         easeEach: "expo.linear",
       },
-      // repeat: -1,
       duration: 0.9,
     });
 
@@ -124,21 +123,15 @@ const Banner = (): JSX.Element => {
             className={styles.bannerbg}
             src={BannerBg}
             alt="Image animée de code"
-            width={80}
-            height={80}
           />
         </div>
         <div className={styles.bubbles}>
-          <div id="bubble1" ref={bubble1Ref} className={styles.bubble1}></div>
-          <div id="bubble2" ref={bubble2Ref} className={styles.bubble2}></div>
+          <div ref={bubble1Ref} className={styles.bubble1}></div>
+          <div ref={bubble2Ref} className={styles.bubble2}></div>
         </div>
         <div ref={dropRef} className={styles.drop}></div>
         <div className={styles.pot}>
-          <Image
-            className={styles.PotImg}
-            src={Jarre}
-            alt="Dessin d'une jarre"
-          />
+          <Image className={styles.PotImg} src={Jarre} alt="Dessin d'un saut" />
         </div>
         <div className={styles.flaque}>
           <Image
