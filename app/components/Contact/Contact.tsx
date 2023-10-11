@@ -199,7 +199,7 @@ const Contact = (): JSX.Element => {
             )}
           </label>
           <button className={styles.send} type="submit" onClick={sendEmail}>
-            <Icon icon="cib:telegram-plane" />
+            <Icon icon="cib:telegram-plane" aria-label="Envoyer" />
           </button>
           <div className={styles.elipse}></div>
         </form>
