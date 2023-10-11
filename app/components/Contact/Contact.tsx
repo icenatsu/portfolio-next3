@@ -198,8 +198,13 @@ const Contact = (): JSX.Element => {
               <span className={styles.errors}>{errors.message.message}</span>
             )}
           </label>
-          <button className={styles.send} type="submit" onClick={sendEmail}>
-            <Icon icon="cib:telegram-plane" aria-label="Envoyer" />
+          <button
+            className={styles.send}
+            type="submit"
+            onClick={sendEmail}
+            aria-label="Envoyer"
+          >
+            <Icon icon="cib:telegram-plane" aria-label="Mail" />
           </button>
           <div className={styles.elipse}></div>
         </form>
