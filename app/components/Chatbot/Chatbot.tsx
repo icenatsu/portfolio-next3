@@ -142,7 +142,7 @@ const ChatBot: React.FC = () => {
       normalizedInput.includes("salarial")
     ) {
       response =
-        "Avant d'aborder le sujet du salaire, je tiens à souligner mon profond intérêt pour rejoindre une entreprise. Mon aspiration principale est de partager mes connaissances, d'apprendre continuellement et surtout de mettre mes compétences au service d'une entreprise pour y épanouir mon potentiel. Je suis passionnée par le travail d'équipe et je crois fermement en l'importance de collaborer harmonieusement. Cependant, comme tout individu, il est essentiel de trouver un équilibre entre passion et réalité financière. C'est donc pourquoi c'est un sujet qu'il vaut mieux aborder lors de l'entretien. Je suis convaincue que cette démarche nous permettra de bâtir une collaboration fructueuse et enrichissante pour les deux parties.";
+        "Avant d'aborder le sujet du salaire, je tiens à souligner mon profond intérêt pour rejoindre une entreprise. Mon aspiration principale est de partager mes connaissances, d'apprendre continuellement et surtout de mettre mes compétences au service d'une entreprise pour y épanouir mon potentiel. Je suis passionnée par le travail d'équipe et je crois fermement en l'importance de collaborer harmonieusement. Cependant, comme tout individu, il est essentiel de trouver un équilibre entre passion et réalité financière. C'est donc pourquoi c'est un sujet qu'il vaudra mieux aborder lors de l'entretien. Je suis convaincue que cette démarche nous permettra de bâtir une collaboration fructueuse et enrichissante pour les deux parties.";
     } else {
       response = "Je ne comprends pas la question.";
     }
