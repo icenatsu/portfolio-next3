@@ -157,7 +157,7 @@
       }
 
       .send {
-        width: 15%;
+        width: 20%;
         height: 4rem;
         font-family: var(--fontFamily--oswald);
         font-size: var(--contact--send--fontSize--desktop);
@@ -175,8 +175,13 @@
           filter: brightness(120%);
         }
 
+        @media screen and (max-width: var.$breakpoint-tablette) {
+          width: 30%;
+        }
+
         @media screen and (max-width: var.$breakpoint-mobile) {
           font-size: var(--contact--send--fontSize--mobile);
+          width: 40%;
         }
       }
     }
