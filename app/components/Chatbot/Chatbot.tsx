@@ -102,6 +102,11 @@ const ChatBot: React.FC = () => {
       response =
         "Je recherche un emploi en développement web, de préférence un CDI mais ne suis pas contre un CDD, du moment que je peux vous être utile :)";
     } else if (
+      normalizedInput.includes("ville") ||
+      normalizedInput.includes("habite")
+    ) {
+      response = "J'habite à Marseille.";
+    } else if (
       normalizedInput.includes("technologie") ||
       normalizedInput.includes("stack") ||
       normalizedInput.includes("competence") ||

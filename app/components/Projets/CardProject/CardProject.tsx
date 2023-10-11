@@ -37,12 +37,12 @@ const CardProject = ({
     if (flipCard.current !== null) {
       if (windowWidth > 992) {
         if (!inActive) {
-          flipCard.current.classList.add(styles.active);
+          flipCard.current.classList.add(styles.notActive);
         } else {
-          flipCard.current.classList.remove(styles.active);
+          flipCard.current.classList.remove(styles.notActive);
         }
       } else {
-        flipCard.current.classList.remove(styles.active);
+        flipCard.current.classList.remove(styles.notActive);
       }
     }
   }, [inActive, windowWidth]);

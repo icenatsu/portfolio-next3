@@ -191,7 +191,7 @@
   fill: var(--cardProject--curve--fill);
 }
 
-.active {
+.notActive {
   filter: drop-shadow(
       5px 5px 5px (var(--cardProject--flip-card--filterDropShadow))
     )

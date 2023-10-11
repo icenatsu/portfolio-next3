@@ -8,6 +8,7 @@ import * as yup from "yup";
 import emailjs from "@emailjs/browser";
 import useNotify from "@components/Notify/UseNotify";
 import { animationSlideScrollToBottom } from "@animation/gsapAnimation";
+import { Icon } from "@iconify/react";
 
 interface FormValues {
   firstname: string;
@@ -198,7 +199,7 @@ const Contact = (): JSX.Element => {
             )}
           </label>
           <button className={styles.send} type="submit" onClick={sendEmail}>
-            Envoyer
+            <Icon icon="cib:telegram-plane" />
           </button>
           <div className={styles.elipse}></div>
         </form>
