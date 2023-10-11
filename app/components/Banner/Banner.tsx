@@ -43,7 +43,7 @@ const Banner = (): JSX.Element => {
         "0%": { y: "-80rem", opacity: 0 },
         "25%": { opacity: 0.5 },
         "50%": { opacity: 1, filter: "brightness(1.8)" },
-        "100%": { y: "63rem", opacity: 0.5 },
+        "100%": { y: "66rem", opacity: 0.5 },
         easeEach: "expo.easeinOut",
       },
       duration: 2.5,
