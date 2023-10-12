@@ -27,9 +27,7 @@ const ChatBot: React.FC = () => {
         if (lastBotMessageHeight > containerHeight) {
           messagesEndRef.current.scrollTop =
             lastBotMessage.offsetTop -
-            (lastBotMessage.offsetHeight -
-              messagesEndRef.current.offsetHeight +
-              50);
+            (lastBotMessage.offsetHeight - messagesEndRef.current.offsetHeight);
         } else {
           messagesEndRef.current.scrollTop =
             messagesEndRef.current.scrollHeight - containerHeight;

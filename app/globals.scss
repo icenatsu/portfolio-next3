@@ -5,6 +5,7 @@
 ::after {
   margin: 0;
   padding: 0;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   list-style: none;
 }
@@ -58,6 +59,9 @@ a {
   --header--button-icon--fontSize: 3.2rem;
   --header--button-icon--fontWeight: bold;
   --header--wave: #{var.$four-color};
+  /* Shape */
+  --shape--bubble--opacity: 0.3;
+  --shape--bubble--fill: #{var.$primary-color};
   /* Banner */
   --banner--tuyau--filterDropSHadow: #{var.$four-color};
   --banner--pot--filterDropSHadow: #{var.$four-color};
@@ -166,9 +170,6 @@ a {
   --footer--infos--fontSize: 1.7rem;
   --footer--infos--color: #{var.$dark-color};
   --footer--infos--fontWeight: 600;
-  /* Shape */
-  --shape--bubble--opacity: 0.3;
-  --shape--bubble--fill: #{var.$primary-color};
   /* Notification du contact */
   --notify--boxShadow--color: rgba(0, 0, 0, 0.4);
   --notify--bg: #{var.$light-color};
@@ -229,7 +230,11 @@ a {
   --header--button--bg: #{var.$primary-color};
   --header--button--bg--hover: #5a5c70;
   --header--button: #{var.$light-color};
-  --header--wave: #{var.$primary-color};
+  --header--wave: #{var.$four-color};
+  /* Shape */
+  --shape--bubble--opacity: 0.2;
+  --shape--brightness: brightness(150%);
+  --shape--bubble--fill: #{var.$four-color};
   /* Banner */
   --banner--tuyau--filterDropSHadow: #{var.$primary-color};
   --banner--pot--filterDropSHadow: #{var.$primary-color};
@@ -271,9 +276,6 @@ a {
   /* Footer */
   --footer--infos--color: #{var.$light-color};
   --footer--infos--fontWeight: 500;
-  /* Shape */
-  --shape--bubble--opacity: 0.2;
-  --shape--brightness: brightness(150%);
   /* Loader */
   --loader--icon--colors: #{var.$dark-color};
   /* Chatbot */
@@ -308,6 +310,9 @@ a {
     --header--button--bg--hover: #5a5c70;
     --header--button: #{var.$light-color};
     --header--wave: #{var.$primary-color};
+    /* Shape */
+    --shape--bubble--opacity: 0.2;
+    --shape--brightness: brightness(150%);
     /* Banner */
     --banner--tuyau--filterDropSHadow: #{var.$primary-color};
     --banner--pot--filterDropSHadow: #{var.$primary-color};
@@ -349,9 +354,6 @@ a {
     /* Footer */
     --footer--infos--color: #{var.$light-color};
     --footer--infos--fontWeight: 500;
-    /* Shape */
-    --shape--bubble--opacity: 0.2;
-    --shape--brightness: brightness(150%);
     /* Loader */
     --loader--icon--colors: #{var.$dark-color};
     /* Chatbot */
