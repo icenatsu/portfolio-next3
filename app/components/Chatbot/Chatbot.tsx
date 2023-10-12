@@ -107,7 +107,7 @@ const ChatBot: React.FC = () => {
       normalizedInput.includes("emplacement")
     ) {
       response =
-        "Si le travail se fait en présentiel, je suis particulièrement intéressé(e) par des opportunités à Marseille. C'est là que je souhaite travailler.";
+        "Si le travail se fait en présentiel, je suis particulièrement intéressée par des opportunités à Marseille. C'est là que je souhaite travailler.";
     } else if (
       normalizedInput.includes("appelle") ||
       normalizedInput.includes("nomme")
