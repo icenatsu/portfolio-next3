@@ -95,7 +95,10 @@ const ChatBot: React.FC = () => {
       normalizedInput.includes("reside")
     ) {
       response = "J'habite à Marseille.";
-    } else if (normalizedInput.includes("age")) {
+    } else if (
+      normalizedInput.includes("age") &&
+      !normalizedInput.includes("demenagement")
+    ) {
       response = "J'ai 38ans.";
     } else if (
       normalizedInput.includes("mobilite") ||
