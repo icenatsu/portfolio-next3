@@ -24,18 +24,21 @@ const CardSkill = ({
 }: CardSkill): JSX.Element => {
   const { windowWidth } = useWindowSizeResize();
 
-  const cardSkill = useRef<HTMLDivElement>(null)
+  const cardSkill = useRef<HTMLDivElement>(null);
 
-  const [showSkillDetails, setShowSkillDetails] = useState<boolean>(false)
-  const [toggleShowSkillDetails, setTooggleShowSkillDetails] = useState<boolean>(false)
+  const [showSkillDetails, setShowSkillDetails] = useState<boolean>(false);
+  const [toggleShowSkillDetails, setTooggleShowSkillDetails] =
+    useState<boolean>(false);
 
   // Gestion des états controlés par chaque évenements selon le format destinée à l'affichage des descriptions des compétences
   useEffect(() => {
+    const currentCardSkill = cardSkill.current;
+
     const addEventdependingOnTheMedia = () => {
-      if (cardSkill.current !== null) {
-        cardSkill.current.addEventListener("mouseenter", handleMouseEnter);
-        cardSkill.current.addEventListener("mouseleave", handleMouseLeave);
-        cardSkill.current.addEventListener("click", handleClick);
+      if (currentCardSkill !== null) {
+        currentCardSkill.addEventListener("mouseenter", handleMouseEnter);
+        currentCardSkill.addEventListener("mouseleave", handleMouseLeave);
+        currentCardSkill.addEventListener("click", handleClick);
       }
     };
 
@@ -61,14 +64,13 @@ const CardSkill = ({
 
     // Fonction de nettoyage
     return () => {
-      if (cardSkill.current !== null) {
-        cardSkill.current.removeEventListener("mouseenter", handleMouseEnter);
-        cardSkill.current.removeEventListener("mouseleave", handleMouseLeave);
-        cardSkill.current.removeEventListener("click", handleClick);
+      if (currentCardSkill !== null) {
+        currentCardSkill.removeEventListener("mouseenter", handleMouseEnter);
+        currentCardSkill.removeEventListener("mouseleave", handleMouseLeave);
+        currentCardSkill.removeEventListener("click", handleClick);
       }
     };
   }, []);
-
 
   const applyStyleAccordeon = (elem: boolean) => {
     if (elem) {
@@ -76,33 +78,31 @@ const CardSkill = ({
     } else {
       cardSkill.current?.classList.remove(styles.visible);
     }
-  }
+  };
 
   useEffect(() => {
     if (cardSkill.current !== null) {
-      applyStyleAccordeon(toggleShowSkillDetails)
+      applyStyleAccordeon(toggleShowSkillDetails);
     }
   }, [toggleShowSkillDetails]);
 
   useEffect(() => {
     if (cardSkill.current !== null) {
-      applyStyleAccordeon(showSkillDetails)
+      applyStyleAccordeon(showSkillDetails);
     }
   }, [showSkillDetails]);
-
 
   useEffect(() => {
     const closeSkillDetails = () => {
       cardSkill.current?.classList.remove(styles.visible);
-    }
-    closeSkillDetails()
+    };
+    closeSkillDetails();
   }, [windowWidth]);
 
-
-  // Animation gsap
+  // Animation gsapp
   useEffect(() => {
     animationSlideScrollToBottom(inClassList, 0.3, 0.5, 100, 75, 20);
-  }, []);
+  }, [inClassList]);
 
   return (
     <div id={inClassList} className={styles["cardSkill"]} ref={cardSkill}>

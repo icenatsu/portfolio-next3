@@ -2,6 +2,11 @@
   "name": "portfolio-next3",
   "version": "0.1.0",
   "private": true,
+  "browserslist": [
+    ">0.3%",
+    "not dead",
+    "not op_mini all"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -15,6 +20,7 @@
     "gsap": "^3.12.2",
     "next": "latest",
     "normalize.css": "^8.0.1",
+    "postcss-loader": "^7.3.3",
     "react": "latest",
     "react-dom": "latest",
     "react-hook-form": "^7.46.2",
@@ -26,8 +32,11 @@
     "@types/node": "latest",
     "@types/react": "^18.2.23",
     "@types/react-dom": "^18.2.8",
+    "autoprefixer": "^10.4.16",
     "eslint": "latest",
     "eslint-config-next": "latest",
+    "postcss": "^8.4.31",
+    "postcss-preset-env": "^9.2.0",
     "sass": "^1.69.0",
     "typescript": "latest"
   }

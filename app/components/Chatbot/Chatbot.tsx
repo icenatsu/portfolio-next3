@@ -6,6 +6,7 @@ import { Icon } from "@iconify/react";
 interface Message {
   text: string;
   type: "user" | "bot";
+  id: string;
 }
 
 const ChatBot: React.FC = () => {
@@ -16,7 +17,24 @@ const ChatBot: React.FC = () => {
 
   const scrollToBottom = () => {
     if (messagesEndRef.current) {
-      messagesEndRef.current.scrollTop = messagesEndRef.current.scrollHeight;
+      const lastBotMessage: HTMLDivElement | null = document.querySelector(
+        `.${styles.bot}:last-child`
+      );
+      if (lastBotMessage) {
+        const containerHeight = messagesEndRef.current.clientHeight;
+        const lastBotMessageHeight = lastBotMessage.scrollHeight;
+
+        if (lastBotMessageHeight > containerHeight) {
+          messagesEndRef.current.scrollTop =
+            lastBotMessage.offsetTop -
+            (lastBotMessage.offsetHeight -
+              messagesEndRef.current.offsetHeight +
+              50);
+        } else {
+          messagesEndRef.current.scrollTop =
+            messagesEndRef.current.scrollHeight - containerHeight;
+        }
+      }
     }
   };
 
@@ -35,7 +53,11 @@ const ChatBot: React.FC = () => {
     e.preventDefault();
     if (input.trim() === "") return;
 
-    const userMessage: Message = { text: input, type: "user" };
+    const userMessage: Message = {
+      text: input,
+      type: "user",
+      id: new Date().toISOString(),
+    };
     setMessages((prevMessages) => [...prevMessages, userMessage]);
     setInput("");
 
@@ -46,13 +68,10 @@ const ChatBot: React.FC = () => {
     const welcomeMessage: Message = {
       text: "Bonjour, Je serai ravie de répondre à toutes les questions que vous pourriez avoir à mon sujet.",
       type: "bot",
+      id: new Date().toISOString(),
     };
     setMessages([welcomeMessage]);
   }, []);
-
-  useEffect(() => {
-    scrollToBottom();
-  }, [messages]);
 
   const handleBotResponse = (input: string) => {
     const normalizedInput = normalizeString(input);
@@ -147,9 +166,17 @@ const ChatBot: React.FC = () => {
       response = "Je ne comprends pas la question.";
     }
 
-    const botMessage: Message = { text: response, type: "bot" };
+    const botMessage: Message = {
+      text: response,
+      type: "bot",
+      id: new Date().toISOString(),
+    };
     setMessages((prevMessages) => [...prevMessages, botMessage]);
   };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
 
   return (
     <div className={styles["chatbot"]}>
@@ -168,6 +195,7 @@ const ChatBot: React.FC = () => {
               className={[styles["message"], styles[`${message.type}`]].join(
                 " "
               )}
+              data-id={index}
             >
               {message.text}
             </div>
