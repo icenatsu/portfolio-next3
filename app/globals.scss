@@ -89,7 +89,7 @@ a {
   --project--error--color: #{var.$primary-color};
   /* CardProject */
   --cardProject--bg: #{var.$transparent-color};
-  --cardProject--flip-card--borderColor: #{var.$four-color};
+  --cardProject--flip-card--borderColor: #{var.$transparent-color};
   --cardProject--flip-card--filterDropShadow: rgba(0, 0, 0, 0.5);
   --cardProject--flip-card-back--bg: #{var.$transparent-color};
   --cardProject--flip-card-front: #{var.$dark-color};
@@ -249,7 +249,7 @@ a {
   --project--error--color: #{var.$light-color};
   /* CardProject */
   --cardProject--flip-card--filterDropShadow: rgba(255, 255, 255, 0.5);
-  --cardProject--flip-card--borderColor: #{var.$light-color};
+  --cardProject--flip-card--borderColor: #{var.$transparent-color};
   --cardProject--flip-card-back--bg: #{var.$primary-color};
   /* Skills */
   --skills--container--bg: #{var.$primary-color};

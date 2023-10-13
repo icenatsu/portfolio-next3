@@ -18,6 +18,7 @@ import "swiper/scss";
 import "swiper/scss/navigation";
 import "swiper/scss/pagination";
 import { animationSlideScrollToBottom } from "@animation/gsapAnimation";
+import { useWindowSizeResize } from "@Hooks/Window/useWindowSizeResize";
 
 interface IntItems {
   id: number;
@@ -31,6 +32,9 @@ interface IntItems {
 
 const Project = () => {
   const { items, error } = useFetch<IntItems[]>();
+  const { windowWidth } = useWindowSizeResize();
+
+  const touchDevice = windowWidth <= 992;
 
   //Animations gsap
   // animationSlideScrollToBottom(delay, durée, yfrom, topscroll, bottom scroll)
@@ -98,7 +102,11 @@ const Project = () => {
                 </SwiperSlide>
               ))}
               <div className={styles["touch"]}>
-                <Icon icon="icon-park-solid:move" aria-label="touch" />
+                {touchDevice ? (
+                  <Icon icon="icon-park-solid:move" aria-label="touch" />
+                ) : (
+                  <Icon icon="fa6-solid:computer-mouse" aria-label="mouse" />
+                )}
               </div>
             </Swiper>
           ) : (
