@@ -147,7 +147,7 @@ const ChatBot: React.FC = () => {
       normalizedInput.includes("faible")
     ) {
       response =
-        "Je suis passionnée par le développement web et j'apprécie particulièrement résoudre des problèmes. Je considère que cette qualité est essentielle dans notre domaine. Cependant, parfois, cette passion peut devenir accablante. Si je ne parviens pas à résoudre un problème à la fin de la journée, il occupe mes pensées et peut même me hanter pendant la nuit. Je suis consciente qu'il est parfois nécessaire de prendre du recul pour mieux aborder les défis, mais cela peut être difficile pour moi. Néanmoins, je travaille constamment sur cette capacité d'accepter les situations et de trouver un équilibre entre la persévérance et le lâcher-prise. Je suis également perfectionniste, une caractéristique que je possède, bien que cela puisse parfois être un défaut. Pour remédier à cela, j'apprends à évaluer les priorités afin de ne pas investir inutilement du temps sur des détails moins importants.";
+        "Je suis passionnée par le développement web et j'apprécie particulièrement résoudre des problèmes. Je considère que cette qualité est essentielle dans notre domaine.\n Cependant, parfois, cette passion peut devenir accablante.\n Si je ne parviens pas à résoudre un problème à la fin de la journée, il occupe mes pensées et peut même me hanter pendant la nuit. Je suis consciente qu'il est parfois nécessaire de prendre du recul pour mieux aborder les défis, mais cela peut être difficile pour moi.\n Néanmoins, je travaille constamment sur cette capacité d'accepter les situations et de trouver un équilibre entre la persévérance et le lâcher-prise.\n Je suis également perfectionniste, une caractéristique que je possède, bien que cela puisse parfois être un défaut.\n Pour remédier à cela, j'apprends à évaluer les priorités afin de ne pas investir inutilement du temps sur des détails moins importants.";
     } else if (
       normalizedInput.includes("parcour") ||
       normalizedInput.includes("parlez") ||
@@ -155,14 +155,14 @@ const ChatBot: React.FC = () => {
       normalizedInput.includes("precedent")
     ) {
       response =
-        "J'ai suivi des études en informatique et acquis de l'expérience dans le domaine technique. Durant mon dernier emploi, j'avais la responsabilité d'un enfant en situation de handicap. Bien que ce travail fût enrichissant, mon désir de stimuler mon esprit et d'acquérir de nouvelles compétences était plus fort. C'est cette aspiration qui a motivé ma décision de me tourner vers le développement web.";
+        "J'ai suivi des études en informatique et acquis de l'expérience dans le domaine technique. Durant mon dernier emploi, j'avais la responsabilité d'un enfant en situation de handicap. Bien que ce travail fût enrichissant, mon désir de stimuler mon esprit et d'acquérir de nouvelles compétences était plus fort.\n C'est cette aspiration qui a motivé ma décision de me tourner vers le développement web.";
     } else if (
       normalizedInput.includes("salaire") ||
       normalizedInput.includes("pretention") ||
       normalizedInput.includes("salarial")
     ) {
       response =
-        "Avant d'aborder le sujet du salaire, je tiens à souligner mon profond intérêt pour rejoindre une entreprise. Mon aspiration principale est de partager mes connaissances, d'apprendre continuellement et surtout de mettre mes compétences au service d'une entreprise pour y épanouir mon potentiel. Je suis passionnée par le travail d'équipe et je crois fermement en l'importance de collaborer harmonieusement. Cependant, comme tout individu, il est essentiel de trouver un équilibre entre passion et réalité financière. C'est donc pourquoi c'est un sujet qu'il vaudra mieux aborder lors de l'entretien. Je suis convaincue que cette démarche nous permettra de bâtir une collaboration fructueuse et enrichissante pour les deux parties.";
+        "Avant d'aborder le sujet du salaire, je tiens à souligner mon profond intérêt pour rejoindre une entreprise.\n Mon aspiration principale est de partager mes connaissances, d'apprendre continuellement et surtout de mettre mes compétences au service d'une entreprise pour y épanouir mon potentiel.\n Je suis passionnée par le travail d'équipe et je crois fermement en l'importance de collaborer harmonieusement.\n Cependant, comme tout individu, il est essentiel de trouver un équilibre entre passion et réalité financière. C'est donc pourquoi c'est un sujet qu'il vaudra mieux aborder lors de l'entretien.\n Je suis convaincue que cette démarche nous permettra de bâtir une collaboration fructueuse et enrichissante pour les deux parties.";
     } else {
       response = "Je ne comprends pas la question.";
     }
