@@ -31,7 +31,6 @@ const Skills = (): JSX.Element => {
       ],
       icones: [
         {
-
           name: "html",
           img: "icomoon-free:html-five",
         },
@@ -58,7 +57,7 @@ const Skills = (): JSX.Element => {
         {
           name: "sass",
           img: "fa6-brands:sass",
-        }
+        },
       ],
       classList: "css",
     },
@@ -71,7 +70,7 @@ const Skills = (): JSX.Element => {
         {
           name: "github",
           img: "uil:github",
-        }
+        },
       ],
       classList: "github",
     },
@@ -86,7 +85,7 @@ const Skills = (): JSX.Element => {
         {
           name: "seo",
           img: "icon-park-outline:seo",
-        }
+        },
       ],
       classList: "seo",
     },
@@ -102,7 +101,7 @@ const Skills = (): JSX.Element => {
         {
           name: "javascript",
           img: "akar-icons:javascript-fill",
-        }
+        },
       ],
       classList: "javascript",
     },
@@ -123,7 +122,7 @@ const Skills = (): JSX.Element => {
         {
           name: "mongodb",
           img: "bxl:mongodb",
-        }
+        },
       ],
       classList: "nodejs",
     },
@@ -142,7 +141,7 @@ const Skills = (): JSX.Element => {
         {
           name: "nextjs",
           img: "teenyicons:nextjs-outline",
-        }
+        },
       ],
       classList: "react",
     },
@@ -156,7 +155,7 @@ const Skills = (): JSX.Element => {
         {
           name: "typescript",
           img: "akar-icons:typescript-fill",
-        }
+        },
       ],
       classList: "typescript",
     },
@@ -175,9 +174,9 @@ const Skills = (): JSX.Element => {
   }
 
   // Animations gsap
-  useEffect(() => {
-    animationSlideScrollToBottom("skills", 0, 0.1, 20, 85, 40);
-  }, []);
+  // useEffect(() => {
+  //   animationSlideScrollToBottom("skills", 0, 0.1, 20, 85, 40);
+  // }, []);
 
   useEffect(() => {
     animationSlideScrollToBottom("skillsTitle", 0.1, 0.3, 0, 75, 25);
@@ -185,6 +184,20 @@ const Skills = (): JSX.Element => {
 
   return (
     <section id="skills" className={styles.container}>
+      <div className={styles.background}></div>
+      <div className={styles.shape}>
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+            className={styles["shape-fill"]}
+          ></path>
+        </svg>
+      </div>
       <h2 id="skillsTitle" className={styles.title}>
         Mes compétences
       </h2>

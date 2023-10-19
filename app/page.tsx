@@ -5,6 +5,7 @@ import Contact from "@components/Contact/Contact";
 import Header from "@components/Header/Header";
 import Footer from "@components/Footer/Footer";
 import NavBar from "@components/Navbar/NavBar";
+import ChatBot from "@components/Chatbot/Chatbot";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
         <Skills />
         <Contact />
       </main>
+      {/* <ChatBot /> */}
       <Footer />
     </>
   );

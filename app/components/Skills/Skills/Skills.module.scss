@@ -1,24 +1,25 @@
 @use "../../../styles/utils/variables.scss" as var;
 
 .container {
+  position: relative;
   display: flex;
   flex-direction: column;
   background-color: var(--skills--container--bg);
-
-  padding: 10rem 20rem 2rem 20rem;
+  padding: 15em 20rem 2rem 20rem;
+  margin-top: -1rem;
 
   @media screen and (max-width: 1400px) {
-    padding: 10rem 10rem 1rem 10rem;
+    padding: 10rem 10rem 2rem 10rem;
   }
 
   @media screen and (max-width: var.$breakpoint-tablette) {
     flex-direction: column;
-    padding: 10rem 5rem 1rem 5rem;
+    padding: 15rem 5rem 3rem 5rem;
     scroll-margin: 18rem;
   }
 
   @media screen and (max-width: var.$breakpoint-mobile) {
-    padding: 5rem 0 3rem 0;
+    padding: 15rem 0rem 3rem 0rem;
   }
 
   .title {
@@ -70,4 +71,27 @@
       gap: 2rem;
     }
   }
+}
+
+.shape {
+  position: absolute;
+  top: 0rem;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.shape svg {
+  position: relative;
+  display: block;
+  width: calc(110% + 1.3px);
+  height: 120px;
+  transform: rotateY(180deg);
+  filter: drop-shadow(0rem 0.1rem 0.2rem rgba(0, 0, 0, 0.3));
+}
+
+.shape .shape-fill {
+  fill: var(--skills--waveFill);
 }

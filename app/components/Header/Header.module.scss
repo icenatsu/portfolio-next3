@@ -8,8 +8,12 @@
   align-items: center;
   opacity: 0;
 
+  @media screen and (max-width: 1400px) {
+    padding: 0rem 0rem 1rem 0rem;
+  }
+
   @media screen and (max-width: var.$breakpoint-tablette) {
-    padding: 10rem 10rem;
+    padding: 0rem 0rem 1rem 0rem;
   }
 
   @media screen and (max-width: var.$breakpoint-mobile) {
@@ -18,22 +22,78 @@
     align-items: center;
     gap: 3rem;
     height: 90rem;
-    padding: 5rem 1rem;
+    padding: 0rem 0rem 1rem 0rem;
   }
 
   .text {
     position: relative;
-    max-width: 90rem;
-    margin: auto;
+    flex: 2;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 5rem;
+    padding: 8rem;
+    margin-top: 15rem;
+    gap: 8rem;
+    height: 70rem;
+    opacity: 0.7;
+
+    @media screen and (max-width: var.$breakpoint-mobile) {
+      margin-top: 0rem;
+      gap: 10rem;
+    }
+
+    .background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url("../../../public/img/circuit.svg") no-repeat;
+      background-position-x: 49%; /* Position horizontale au centre de l'élément */
+      background-position-y: -20%;
+      background-size: 110rem;
+
+      @media screen and (max-width: var.$breakpoint-tablette) {
+        background-size: 100rem;
+        background-position-x: 52%; /* Position horizontale au centre de l'élément */
+        background-position-y: -5%;
+      }
+
+      @media screen and (max-width: var.$breakpoint-mobile) {
+        display: none;
+        background-size: 60rem;
+        background-position-x: 50%; /* Position horizontale au centre de l'élément */
+        background-position-y: 0cqh;
+      }
+
+      &:hover {
+        animation: IntegratedCircuit 1s both linear;
+      }
+    }
+
+    // border: 1px solid red;
 
     @media screen and (max-width: var.$breakpoint-mobile) {
       align-items: center;
     }
+
+    // .background {
+    //   border: 1px solid green;
+    //   position: absolute;
+    //   top: -15rem;
+    //   left: -11rem;
+    //   width: 110rem;
+    //   height: 110rem;
+    //   opacity: 0.7;
+    //   background: url("../../../public/img/circuit.svg") no-repeat;
+
+    //   @media screen and (max-width: var.$breakpoint-tablette) {
+    //     width: 70rem;
+    //     height: 70rem;
+    //   }
+
+    // }
 
     .profession {
       font-size: var(--header--profession--fontSize);
@@ -41,14 +101,22 @@
       color: var(--header--profession--color);
       border: 0.1rem solid var(--header--profession--border);
       border-radius: var.$radius--30;
+      background-color: white;
       width: 20rem;
       padding: 1.5rem;
       display: flex;
       align-items: center;
       justify-content: center;
+      margin-top: 15rem;
       z-index: 1;
       transition: filter 1s;
       animation: translateBottom 0.8s 0.5s ease-in-out backwards;
+
+      // @media screen and (max-width: var.$breakpoint-mobile) {
+      //   // font-size: var(--header--profession--fontSize);
+      //   border: none;
+      //   font-size: 1.5rem;
+      // }
     }
 
     .title {
@@ -59,6 +127,8 @@
       font-weight: var(--header--title--fontWeight);
       color: var(--header--title);
       animation: translateBottom 0.9s 0.5s ease-in-out forwards;
+      z-index: 1;
+      margin: 1.5rem 0;
 
       @media screen and (max-width: var.$breakpoint-tablette) {
         font-size: var(--header--title--fontSize--tablet);
@@ -77,6 +147,10 @@
       z-index: 2;
       animation: translateBottom 1s 0.5s ease-in-out forwards;
 
+      @media screen and (max-width: var.$breakpoint-mobile) {
+        gap: 2rem;
+      }
+
       .button {
         cursor: pointer;
         display: flex;
@@ -89,10 +163,10 @@
         font-weight: var(--header--button--fontWeight);
         border-radius: var.$radius--30;
         border: none;
-        width: 19rem;
-        height: 5.5rem;
-        margin: 2rem 1rem;
-        transition: filter 0.6s;
+        width: 18rem;
+        height: 5rem;
+        margin: 0.2rem;
+        transition: all 0.6s;
 
         &:hover {
           // filter: brightness(110%);
@@ -103,34 +177,6 @@
           font-size: var(--header--button-icon--fontSize);
         }
       }
-    }
-  }
-
-  .wave {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    fill: var(--header--wave);
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-    transform: rotate(180deg);
-    opacity: 0.2;
-
-    @media screen and (max-width: var.$breakpoint-mobile) {
-      display: none;
-    }
-  }
-
-  .wave svg {
-    position: relative;
-    display: block;
-    width: calc(100% + 0.13rem);
-    height: 9rem;
-
-    @media screen and (max-width: var.$breakpoint-tablette) {
-      width: calc(100% + 0.13rem);
-      height: 7rem;
     }
   }
 }
@@ -145,5 +191,15 @@
   }
   from {
     transform: translateY(-40px);
+  }
+}
+
+@keyframes IntegratedCircuit {
+  16.65% {
+    filter: hue-rotate(200deg);
+  }
+
+  83.25% {
+    filter: hue-rotate(10deg);
   }
 }

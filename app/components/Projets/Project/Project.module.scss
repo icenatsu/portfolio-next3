@@ -1,29 +1,32 @@
 @use "../../../styles/utils/variables.scss" as var;
 .container {
+  position: relative;
   display: flex;
   flex-direction: column;
   background-repeat: no-repeat;
   background-size: 80% 90%;
   max-height: 60rem;
-  padding: 10rem 20rem;
+  padding: 5em 20rem 0rem 20rem;
   background-color: var(--project--container--bg);
+  z-index: 1;
+  margin-top: -0.1rem;
 
   @media screen and (max-width: 1400px) {
-    padding: 10rem 10rem;
+    padding: 5em 20rem 0rem 20rem;
   }
 
   @media screen and (max-width: var.$breakpoint-tablette) {
     filter: none;
     max-width: 100%;
     max-height: 70rem;
-    padding: 10rem 5rem;
+    padding: 0em 5rem 0rem 5rem;
     scroll-margin: 18rem;
   }
 
   @media screen and (max-width: var.$breakpoint-mobile) {
     flex-direction: column;
     max-height: 70rem;
-    padding: 5rem 1rem;
+    padding: 5rem 0rem 0rem 0rem;
   }
 
   &__title {
@@ -89,3 +92,28 @@
   font-size: var(--project--error--fontSize);
   color: var(--project--error--color);
 }
+
+// .shape {
+//   position: absolute;
+//   bottom: 0rem;
+//   left: 0;
+//   width: 100%;
+//   overflow: hidden;
+//   line-height: 0;
+// }
+
+// .shape svg {
+//   position: relative;
+//   display: block;
+//   width: calc(110% + 1.3px);
+//   height: 120px;
+//   transform: rotateX(180deg);
+//   filter: drop-shadow(
+//     0rem 0.1rem 0.2rem var(--navbar--container--filterDropSHadow)
+//   );
+//   // border: 1px solid red;
+// }
+
+// .shape .shape-fill {
+//   fill: var.$white-color;
+// }

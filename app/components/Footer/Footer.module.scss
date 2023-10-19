@@ -1,6 +1,7 @@
 @use "../../styles/utils/variables.scss" as var;
 
 .footer {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -9,6 +10,8 @@
   position: relative;
   height: 10rem;
   padding: 1rem 1rem;
+  background-color: var(--footer--bg);
+  z-index: -1;
 
   @media screen and (max-width: 1530px) {
     flex-direction: column;
@@ -18,9 +21,10 @@
   }
 
   @media screen and (max-width: var.$breakpoint-mobile) {
-    width: 95%;
+    width: 100%;
     padding: 1rem 0;
     margin: 0 auto;
+    height: 8rem;
   }
 
   .infos {
@@ -29,5 +33,34 @@
     font-family: var(--fontFamily--oswald);
     color: var(--footer--infos--color);
     font-weight: var(--footer--infos--fontWeight);
+  }
+
+  .wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    fill: var(--header--wave);
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+    opacity: 0.2;
+  }
+
+  .wave svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 0.13rem);
+    height: 9rem;
+
+    @media screen and (max-width: var.$breakpoint-tablette) {
+      width: calc(100% + 0.13rem);
+      height: 7rem;
+    }
+
+    @media screen and (max-width: var.$breakpoint-mobile) {
+      width: calc(140% + 0.13rem);
+      height: 8rem;
+    }
   }
 }

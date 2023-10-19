@@ -7,6 +7,9 @@
   align-self: self-start;
   overflow: hidden;
   // border: 1px solid blueviolet;
+  filter: drop-shadow(
+    0.4rem 0.4rem 0.3rem var(--navbar--container--filterDropSHadow)
+  );
 
   @media screen and (max-width: var.$breakpoint-sup) {
     display: none;

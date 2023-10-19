@@ -1,11 +1,12 @@
 @use "../../styles/utils/variables.scss" as var;
 
 .chatbot {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   right: 0;
   font-family: var(--fontFamily--archivo);
   word-break: break-word;
+  z-index: 99999999;
 
   @media screen and (max-width: 1530px) {
     position: static;
