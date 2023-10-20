@@ -4,6 +4,8 @@ import { useEffect, useRef } from "react";
 import { Icon } from "@iconify/react";
 import Banner from "@components/Banner/Banner";
 import Link from "next/link";
+import Image from "next/image";
+import IntegratedCircuit from "@public/img/circuit.svg";
 
 const Header = (): JSX.Element => {
   const scrollToAnchor = () => {
@@ -28,7 +30,15 @@ const Header = (): JSX.Element => {
     <header ref={headerRef} id="header" className={styles.header}>
       {/* <Banner /> */}
       <div className={styles["text"]}>
-        <div className={styles.background}></div>
+        <div className={styles.background}>
+          <Image
+            src={IntegratedCircuit}
+            alt="circuit intégré"
+            priority={true}
+            fill={true}
+            style={{ objectFit: "contain" }}
+          ></Image>
+        </div>
         <p
           ref={headerProfession}
           id="headerProfession"

@@ -26,9 +26,9 @@ const About = (): JSX.Element => {
   //   animationSlideScrollToBottom("aboutDescription", 0.2, 0.3, 0, 75, 25);
   // }, []);
 
+  // A voir si priority true ou loading lazy
   return (
     <section id="about" className={styles.container}>
-      {/* <div id="background" className={styles.background}></div> */}
       <div id="background" className={styles.background}>
         <Image
           src={Parchment}
@@ -36,7 +36,7 @@ const About = (): JSX.Element => {
           fill={true}
           // objectFit="cover"
           style={{ objectFit: "cover" }}
-          priority={true}
+          loading="lazy"
         ></Image>
       </div>
       <h2 id="aboutTitle" className={styles.title}>
