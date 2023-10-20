@@ -34,7 +34,9 @@ const About = (): JSX.Element => {
           src={Parchment}
           alt="circuit intégré"
           fill={true}
-          objectFit="cover"
+          // objectFit="cover"
+          style={{ objectFit: "cover" }}
+          priority={true}
         ></Image>
       </div>
       <h2 id="aboutTitle" className={styles.title}>
