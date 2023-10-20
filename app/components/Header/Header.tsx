@@ -11,7 +11,7 @@ import IntegratedCircuit from "@public/img/circuit.webp";
 const Header = (): JSX.Element => {
   const { windowWidth } = useWindowSizeResize();
 
-  const isMobile = windowWidth <= 768;
+  const isDesktop = windowWidth > 768;
 
   const scrollToAnchor = () => {
     const projets = document.getElementById("projets");
@@ -35,9 +35,9 @@ const Header = (): JSX.Element => {
     <header ref={headerRef} id="header" className={styles.header}>
       {/* <Banner /> */}
       <div className={styles["text"]}>
-        <div className={styles.background}>
-          <picture className={styles["background__container"]}>
-            {typeof window !== "undefined" && windowWidth > 768 ? (
+        {isDesktop ? (
+          <div className={styles.background}>
+            <picture className={styles["background__container"]}>
               <Image
                 src={"/img/circuit.webp"}
                 alt="circuit intégré"
@@ -45,11 +45,12 @@ const Header = (): JSX.Element => {
                 priority={true}
                 style={{ objectFit: "contain" }}
               />
-            ) : (
-              ""
-            )}
-          </picture>
-          {/* <source
+            </picture>
+          </div>
+        ) : (
+          ""
+        )}
+        {/* <source
               media={`(max-width: 768px)`}
               srcSet={isMobile ? "" : "img/circuit.webp"}
             />
@@ -57,7 +58,7 @@ const Header = (): JSX.Element => {
               media={`(min-width: 769px)`}
               srcSet={isMobile ? "" : "img/circuit.webp"}
             /> */}
-          {/* <Image
+        {/* <Image
             src={IntegratedCircuit}
             alt="circuit intégré"
             // loading="lazy"
@@ -66,7 +67,6 @@ const Header = (): JSX.Element => {
             sizes="(min-width: 769px) 100vw"
             style={{ objectFit: "contain" }}
           ></Image> */}
-        </div>
         <p
           ref={headerProfession}
           id="headerProfession"
