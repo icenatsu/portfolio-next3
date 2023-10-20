@@ -31,7 +31,7 @@ a {
   --navbar--container--filterDropSHadow: #{var.$four-color};
   --navbar--link--fontSize: 1.7rem;
   --navbar--link--fontWeight: bold;
-  --navbar--link--color: #{var.$white-color};
+  --navbar--link--color: #{var.$light-color};
   --navbar--stars--color: #{var.$five-color};
   --navbar--stars--textShadow: #{var.$light-color};
   --navbar--burger--color: #{var.$light-color};
@@ -68,6 +68,8 @@ a {
   --about--container--bg: #{var.$white-color};
   --about--containerBorder--bg: #{var.$light-color};
   --about--containerBoxShadow--color: #{var.$black-color};
+  --about--containerFiler: grayscale(0%);
+  --about--backgroundFilter: grayscale(60%);
   --about--title--fontSize--desktop: #{var.$h2-title-desktop};
   --about--title--fontSize--tablet: #{var.$h2-title-tablet};
   --about--title--fontSize--mobile: #{var.$h2-title-mobile};
@@ -80,7 +82,7 @@ a {
   --about--shape--filterDropSHadow: #{var.$four-color};
   --about--waveFill: #{var.$white-color};
   /* Projets Caroussel */
-  --project--container--bg: #{var.$white-color};
+  --project--container--bg: linear-gradient(to bottom, #ddd, #ffff);
   --project--title--color: #{var.$primary-color};
   --project--title--fontSize--desktop: #{var.$h2-title-desktop};
   --project--title--fontSize--tablet: #{var.$h2-title-tablet};
@@ -124,7 +126,7 @@ a {
   --skills--title--fontWeight: 300;
   --skills--title--color: #{var.$primary-color};
   --skills--waveFill: #{var.$white-color};
-  --skills--shape--filterDropSHadow: red;
+  --skills--shapeFilterDropShadow: 0, 0, 0, 0.3;
   /* CardSkill */
   --cardSkill--bg: #{var.$white-color};
   --cardSkill--chevron--color: #{var.$primary-color};
@@ -217,12 +219,12 @@ a {
   /* Body */
   --body--bg--color: #{var.$dark-color};
   /* Navbar */
-  --navbar--container--bg: #{var.$second-color};
+  --navbar--container--bg: #{var.$black-color};
   --navbar--container--filterDropSHadow: #{var.$second-color};
   --navbar--link--color: #{var.$light-color};
   --navbar--stars--color: #{var.$dark-color};
   --navbar--stars--textShadow: #{var.$light-color};
-  --navbar--burger--color: #{var.$dark-color};
+  --navbar--burger--color: #{var.$light-color};
   /* Switch */
   --switch--sunmoon--bg: #{var.$light-color};
   --switch--bg--toogle: #{var.$primary-color};
@@ -247,13 +249,15 @@ a {
   --about--container--bg: #{var.$primary-color};
   --about--containerBorder--bg: #{var.$dark-color};
   --about--containerBoxShadow--color: #{var.$light-color};
+  --about--containerFiler: grayscale(100%);
+  --about--backgroundFilter: grayscale(100%);
   --about--title--color: #{var.$dark-color};
   --about--presentation--color: #{var.$dark-color};
-  --about--waveFill: #{var.$dark-color};
+  --about--waveFill: #{var.$second-color};
   --about--shape--filterDropSHadow: #{var.$black-color};
   /* Projets Caroussel */
-  --project--container--bg: #{var.$dark-color};
-  --project--title--color: #{var.$four-color};
+  --project--container--bg: linear-gradient(to bottom, #242424, #000f29);
+  --project--title--color: #{var.$light-color};
   --project--touch--color: #{var.$light-color};
   --project--error--color: #{var.$light-color};
   /* CardProject */
@@ -261,34 +265,34 @@ a {
   --cardProject--flip-card--borderColor: #{var.$transparent-color};
   --cardProject--flip-card-back--bg: #{var.$primary-color};
   /* Skills */
-  --skills--container--bg: #{var.$second-color};
-  --skills--title--color: #{var.$dark-color};
-  --skills--waveFill: #{var.$dark-color};
-  --skills--shape--filterDropSHadow: #{var.$black-color};
+  --skills--container--bg: #{var.$dark-color};
+  --skills--title--color: #{var.$light-color};
+  --skills--waveFill: #{var.$black-color};
+  --skills--shapeFilterDropShadow: 255, 255, 255, 0.3;
+  /* Download Button cv */
+  --downloadbutton--icon--color: #{var.$light-color};
+  --downloadbutton--button--color: #{var.$light-color};
   /* CardSkill */
-  --cardSkill--bg: #242424;
+  --cardSkill--bg: #{var.$light-color};
   --cardSkill--chevron--color: #{var.$light-color};
-  --cardSkill--iconTechno--color: #{var.$four-color};
-  --cardSkill--nameTechno--color: #{var.$light-color};
-  --cardSkill--descriptionTechno--color: #{var.$light-color};
-  --cardSkill--dividingBorder: #{var.$light-color};
+  --cardSkill--iconTechno--color: #{var.$second-color};
+  --cardSkill--nameTechno--color: #{var.$dark-color};
+  --cardSkill--descriptionTechno--color: #{var.$dark-color};
+  --cardSkill--dividingBorder: #{var.$dark-color};
   --cardSkill--iconArrow--color: #{var.$primary-color};
   /* Contact */
-  --contact--bg: #{var.$dark-color};
-  --contact--title--color: #{var.$four-color};
-  --contact--label--color: #{var.$four-color};
+  --contact--bg: linear-gradient(to bottom, #242424, #000000);
+  --contact--title--color: #{var.$five-color};
+  --contact--label--color: #{var.$light-color};
   --contact--errors--color: #{var.$light-color};
   --contact--input--color: #{var.$light-color};
-  --contact--input--bg: #{var.$second-color};
-  --contact--placeHolder--color: #{var.$light-color};
-  --contact--send--bg: #{var.$four-color};
+  --contact--input--bg: #{var.$light-color};
+  --contact--placeHolder--color: #{var.$dark-color};
+  --contact--send--bg: #{var.$five-color};
   --contact--send--color: #{var.$light-color};
   --contact--elipse--borderColor: #{var.$light-color};
-  /* Download Button cv */
-  --downloadbutton--button--color: #{var.$dark-color};
-  --downloadbutton--icon--color: #{var.$dark-color};
   /* Footer */
-  --footer--bg: #{var.$dark-color};
+  --footer--bg: #{var.$black-color};
   --footer--infos--color: #{var.$light-color};
   --footer--infos--fontWeight: 500;
   /* Loader */
@@ -305,12 +309,12 @@ a {
     /* Body */
     --body--bg--color: #{var.$dark-color};
     /* Navbar */
-    --navbar--container--bg: #{var.$second-color};
+    --navbar--container--bg: #{var.$black-color};
     --navbar--container--filterDropSHadow: #{var.$second-color};
     --navbar--link--color: #{var.$light-color};
     --navbar--stars--color: #{var.$dark-color};
     --navbar--stars--textShadow: #{var.$light-color};
-    --navbar--burger--color: #{var.$dark-color};
+    --navbar--burger--color: #{var.$light-color};
     /* Switch */
     --switch--sunmoon--bg: #{var.$light-color};
     --switch--bg--toogle: #{var.$primary-color};
@@ -334,12 +338,15 @@ a {
     /* About */
     --about--container--bg: #{var.$primary-color};
     --about--containerBorder--bg: #{var.$dark-color};
+    --about--containerBoxShadow--color: #{var.$light-color};
+    --about--backgroundFilter: grayscale(100%);
     --about--title--color: #{var.$dark-color};
     --about--presentation--color: #{var.$dark-color};
-    --about--waveFill: #{var.$dark-color};
+    --about--waveFill: #{var.$second-color};
+    --about--shape--filterDropSHadow: #{var.$black-color};
     /* Projets Caroussel */
-    --project--container--bg: #{var.$dark-color};
-    --project--title--color: #{var.$four-color};
+    --project--container--bg: linear-gradient(to bottom, #242424, #000000);
+    --project--title--color: #{var.$light-color};
     --project--touch--color: #{var.$light-color};
     --project--error--color: #{var.$light-color};
     /* CardProject */
@@ -347,33 +354,34 @@ a {
     --cardProject--flip-card--borderColor: #{var.$transparent-color};
     --cardProject--flip-card-back--bg: #{var.$primary-color};
     /* Skills */
-    --skills--container--bg: #{var.$second-color};
-    --skills--title--color: #{var.$dark-color};
-    --skills--waveFill: #{var.$dark-color};
+    --skills--container--bg: #{var.$dark-color};
+    --skills--title--color: #{var.$light-color};
+    --skills--waveFill: #{var.$black-color};
+    --skills--shape--filterDropSHadow: #{var.$black-color};
+    /* Download Button cv */
+    --downloadbutton--icon--color: #{var.$light-color};
+    --downloadbutton--button--color: #{var.$light-color};
     /* CardSkill */
-    --cardSkill--bg: #242424;
+    --cardSkill--bg: #{var.$light-color};
     --cardSkill--chevron--color: #{var.$light-color};
-    --cardSkill--iconTechno--color: #{var.$four-color};
-    --cardSkill--nameTechno--color: #{var.$light-color};
-    --cardSkill--descriptionTechno--color: #{var.$light-color};
-    --cardSkill--dividingBorder: #{var.$light-color};
+    --cardSkill--iconTechno--color: #{var.$second-color};
+    --cardSkill--nameTechno--color: #{var.$dark-color};
+    --cardSkill--descriptionTechno--color: #{var.$dark-color};
+    --cardSkill--dividingBorder: #{var.$dark-color};
     --cardSkill--iconArrow--color: #{var.$primary-color};
     /* Contact */
-    --contact--bg: #{var.$dark-color};
-    --contact--title--color: #{var.$four-color};
-    --contact--label--color: #{var.$four-color};
+    --contact--bg: linear-gradient(to bottom, #242424, #000000);
+    --contact--title--color: #{var.$five-color};
+    --contact--label--color: #{var.$light-color};
     --contact--errors--color: #{var.$light-color};
     --contact--input--color: #{var.$light-color};
-    --contact--input--bg: #{var.$second-color};
-    --contact--placeHolder--color: #{var.$light-color};
-    --contact--send--bg: #{var.$four-color};
+    --contact--input--bg: #{var.$light-color};
+    --contact--placeHolder--color: #{var.$dark-color};
+    --contact--send--bg: #{var.$five-color};
     --contact--send--color: #{var.$light-color};
     --contact--elipse--borderColor: #{var.$light-color};
-    /* Download Button cv */
-    --downloadbutton--button--color: #{var.$dark-color};
-    --downloadbutton--icon--color: #{var.$dark-color};
     /* Footer */
-    --footer--bg: #{var.$dark-color};
+    --footer--bg: #{var.$black-color};
     --footer--infos--color: #{var.$light-color};
     --footer--infos--fontWeight: 500;
     /* Loader */

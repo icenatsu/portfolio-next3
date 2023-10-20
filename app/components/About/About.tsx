@@ -1,13 +1,16 @@
 "use client";
 
 import styles from "./About.module.scss";
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
 import { animationSlideScrollToBottom } from "@animation/gsapAnimation";
 import Image from "next/image";
 import Splash from "@public/img/splash.svg";
 import Parchment from "@public/img/parchemin.webp";
+import { ThemeContext } from "@context/ThemeContext/ThemeContext";
 
 const About = (): JSX.Element => {
+  const themeContext = useContext(ThemeContext);
+
   // Animations gsap
   useEffect(() => {
     animationSlideScrollToBottom("background", 0, 0.5, 10, 85, 40);
@@ -74,9 +77,47 @@ const About = (): JSX.Element => {
           viewBox="0 0 1200 120"
           preserveAspectRatio="none"
         >
+          <defs>
+            {themeContext.isDarkMode ? (
+              <linearGradient
+                id="mon-degrade"
+                x1="0%"
+                y1="0%"
+                x2="0%"
+                y2="700%"
+              >
+                <stop
+                  offset="0%"
+                  style={{ stopColor: "#242424", stopOpacity: 1 }}
+                />
+                <stop
+                  offset="100%"
+                  style={{ stopColor: "#1e4481", stopOpacity: 1 }}
+                />
+              </linearGradient>
+            ) : (
+              <linearGradient
+                id="mon-degrade"
+                x1="0%"
+                y1="0%"
+                x2="0%"
+                y2="700%"
+              >
+                <stop
+                  offset="0%"
+                  style={{ stopColor: "#DDD", stopOpacity: 1 }}
+                />
+                <stop
+                  offset="100%"
+                  style={{ stopColor: "#FFFF", stopOpacity: 1 }}
+                />
+              </linearGradient>
+            )}
+          </defs>
           <path
             d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-            className={styles["shape-fill"]}
+            className={`${styles["shape-fill"]}`}
+            fill="url(#mon-degrade)"
           ></path>
         </svg>
       </div>

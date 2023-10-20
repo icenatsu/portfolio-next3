@@ -11,6 +11,7 @@
           var(--about--containerBoxShadow--color), $alpha: 0.2),
     inset 0px -11px 8px -10px
       rgba($color: var(--about--containerBoxShadow--color), $alpha: 0.2);
+  filter: var(--about--containerFiler);
 
   @media screen and (max-width: 1400px) {
     padding: 10rem 10rem;
@@ -32,7 +33,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    filter: grayscale(40%);
+    filter: var(--about--backgroundFilter);
     z-index: -1;
 
     &__container {
@@ -136,5 +137,6 @@
 }
 
 .shape .shape-fill {
-  fill: var(--about--waveFill);
+  // fill: var(--about--waveFill);
+  // background: linear-gradient(to top, #242424, #1e4481);
 }

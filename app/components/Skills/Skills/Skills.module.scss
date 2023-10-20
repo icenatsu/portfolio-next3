@@ -89,7 +89,11 @@
   width: calc(110% + 1.3px);
   height: 120px;
   transform: rotateY(180deg);
-  filter: drop-shadow(0rem 0.1rem 0.2rem rgba(0, 0, 0, 0.3));
+  filter: drop-shadow(
+    0rem 0.1rem 0.2rem rgba(var(--skills--shapeFilterDropShadow))
+  );
+  // blanc rgba(0, 0, 0, 0.3)
+  // noir rgba(255, 255, 255, 0.3)
 }
 
 .shape .shape-fill {

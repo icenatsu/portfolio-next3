@@ -3,7 +3,7 @@
 .contact {
   display: flex;
   padding: 5rem 20rem 0rem 20rem;
-  background-color: var(--contact--bg);
+  background: var(--contact--bg);
   // box-shadow: inset 0rem 0rem 6.5rem 1.5rem rgba($color: #242424, $alpha: 0.2);
 
   @media screen and (max-width: 1400px) {
