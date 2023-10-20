@@ -37,7 +37,14 @@ const Header = (): JSX.Element => {
       <div className={styles["text"]}>
         <div className={styles.background}>
           <picture className={styles["background__container"]}>
-            <source media={`(min-width: 769px)`} srcSet={"img/circuit.webp"} />
+            <source
+              media={`(max-width: 768px)`}
+              srcSet={isMobile ? "" : "img/circuit.webp"}
+            />
+            <source
+              media={`(min-width: 769px)`}
+              srcSet={isMobile ? "" : "img/circuit.webp"}
+            />
             <Image
               src={"/img/circuit.webp"}
               alt="circuit intégré"
