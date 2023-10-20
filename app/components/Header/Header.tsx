@@ -51,23 +51,6 @@ const Header = (): JSX.Element => {
         ) : (
           ""
         )}
-        {/* <source
-              media={`(max-width: 768px)`}
-              srcSet={isMobile ? "" : "img/circuit.webp"}
-            />
-            <source
-              media={`(min-width: 769px)`}
-              srcSet={isMobile ? "" : "img/circuit.webp"}
-            /> */}
-        {/* <Image
-            src={IntegratedCircuit}
-            alt="circuit intégré"
-            // loading="lazy"
-            priority={true}
-            fill={true}
-            sizes="(min-width: 769px) 100vw"
-            style={{ objectFit: "contain" }}
-          ></Image> */}
         <p
           ref={headerProfession}
           id="headerProfession"

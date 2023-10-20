@@ -9,35 +9,30 @@ import Parchment from "@public/img/parchemin.webp";
 
 const About = (): JSX.Element => {
   // Animations gsap
-  // animationSlideScrollToBottom(delay, durée, yfrom, topscroll, bottom scroll)
-  // useEffect(() => {
-  //   animationSlideScrollToBottom("about", 0, 1.1, 100, 85, 20);
-  // }, []);
+  useEffect(() => {
+    animationSlideScrollToBottom("background", 0, 0.5, 10, 85, 40);
+  }, []);
 
-  // useEffect(() => {
-  //   animationSlideScrollToBottom("background", 0, 0.5, 10, 85, 40);
-  // }, []);
+  useEffect(() => {
+    animationSlideScrollToBottom("aboutTitle", 0.1, 0.2, 0, 75, 25);
+  }, []);
 
-  // useEffect(() => {
-  //   animationSlideScrollToBottom("aboutTitle", 0.1, 0.2, 0, 75, 25);
-  // }, []);
+  useEffect(() => {
+    animationSlideScrollToBottom("aboutDescription", 0.2, 0.3, 0, 75, 25);
+  }, []);
 
-  // useEffect(() => {
-  //   animationSlideScrollToBottom("aboutDescription", 0.2, 0.3, 0, 75, 25);
-  // }, []);
-
-  // A voir si priority true ou loading lazy
   return (
     <section id="about" className={styles.container}>
       <div id="background" className={styles.background}>
-        <Image
-          src={Parchment}
-          alt="circuit intégré"
-          fill={true}
-          // objectFit="cover"
-          style={{ objectFit: "cover" }}
-          loading="lazy"
-        ></Image>
+        <picture className={styles["background__container"]}>
+          <Image
+            src={Parchment}
+            alt="circuit intégré"
+            fill={true}
+            style={{ objectFit: "cover" }}
+            loading="lazy"
+          ></Image>
+        </picture>
       </div>
       <h2 id="aboutTitle" className={styles.title}>
         A propos de moi
