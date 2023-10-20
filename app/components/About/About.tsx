@@ -78,7 +78,7 @@ const About = (): JSX.Element => {
           preserveAspectRatio="none"
         >
           <defs>
-            {themeContext.isDarkMode ? (
+            {themeContext?.isDarkMode ? (
               <linearGradient
                 id="mon-degrade"
                 x1="0%"

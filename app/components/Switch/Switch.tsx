@@ -13,8 +13,8 @@ const Switch = (): JSX.Element => {
       <input
         className={styles.input}
         type="checkbox"
-        checked={!themeContext.isDarkMode}
-        onChange={themeContext.switchTheme}
+        checked={!themeContext?.isDarkMode}
+        onChange={themeContext?.switchTheme}
         id="switch"
         name="switch"
         aria-label="switch theme"
