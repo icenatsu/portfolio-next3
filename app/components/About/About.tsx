@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { animationSlideScrollToBottom } from "@animation/gsapAnimation";
 import Image from "next/image";
 import Splash from "@public/img/splash.svg";
+import Parchment from "@public/img/parchemin.webp";
 
 const About = (): JSX.Element => {
   // Animations gsap
@@ -13,9 +14,9 @@ const About = (): JSX.Element => {
   //   animationSlideScrollToBottom("about", 0, 1.1, 100, 85, 20);
   // }, []);
 
-  useEffect(() => {
-    animationSlideScrollToBottom("background", 0, 0.5, 10, 85, 40);
-  }, []);
+  // useEffect(() => {
+  //   animationSlideScrollToBottom("background", 0, 0.5, 10, 85, 40);
+  // }, []);
 
   // useEffect(() => {
   //   animationSlideScrollToBottom("aboutTitle", 0.1, 0.2, 0, 75, 25);
@@ -27,8 +28,15 @@ const About = (): JSX.Element => {
 
   return (
     <section id="about" className={styles.container}>
-      <div id="background" className={styles.background}></div>
-      <div className={styles.boxShadowTop}></div>
+      {/* <div id="background" className={styles.background}></div> */}
+      <div id="background" className={styles.background}>
+        <Image
+          src={Parchment}
+          alt="circuit intégré"
+          fill={true}
+          objectFit="cover"
+        ></Image>
+      </div>
       <h2 id="aboutTitle" className={styles.title}>
         A propos de moi
       </h2>
