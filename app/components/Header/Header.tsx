@@ -34,8 +34,8 @@ const Header = (): JSX.Element => {
           <Image
             src={IntegratedCircuit}
             alt="circuit intégré"
-            // loading="lazy"
-            priority={true}
+            loading="lazy"
+            // priority={true}
             fill={true}
             style={{ objectFit: "contain" }}
           ></Image>
