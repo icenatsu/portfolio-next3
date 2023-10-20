@@ -41,6 +41,7 @@ const Header = (): JSX.Element => {
               <Image
                 src={"/img/circuit.webp"}
                 alt="circuit intégré"
+                sizes="100vh"
                 fill={true}
                 priority={true}
                 style={{ objectFit: "contain" }}
