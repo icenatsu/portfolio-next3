@@ -44,11 +44,7 @@
     }
 
     .background {
-      flex: 1;
-      position: absolute;
-      top: -3rem;
-      left: 3rem;
-      width: 100%;
+      width: 50%;
       height: 80%;
 
       @media screen and (max-width: var.$breakpoint-tablette) {
