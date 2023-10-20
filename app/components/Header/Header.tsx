@@ -5,9 +5,14 @@ import { Icon } from "@iconify/react";
 import Banner from "@components/Banner/Banner";
 import Link from "next/link";
 import Image from "next/image";
+import { useWindowSizeResize } from "@Hooks/Window/useWindowSizeResize";
 import IntegratedCircuit from "@public/img/circuit.webp";
 
 const Header = (): JSX.Element => {
+  const { windowWidth } = useWindowSizeResize();
+
+  const isMobile = windowWidth <= 768;
+
   const scrollToAnchor = () => {
     const projets = document.getElementById("projets");
     projets?.scrollIntoView({ behavior: "smooth" });
@@ -31,13 +36,30 @@ const Header = (): JSX.Element => {
       {/* <Banner /> */}
       <div className={styles["text"]}>
         <div className={styles.background}>
+          {/* <picture className={styles["flip-card-front__image"]}>
+            <source
+              media={`(max-width: 768px)`}
+              srcSet={isMobile ? inData.cover.mobile : inData.cover.tablette}
+            />
+            <source
+              media={`(min-width: 769px)`}
+              srcSet={isMobile ? inData.cover.mobile : inData.cover.tablette}
+            />
+            <Image
+              src={isMobile ? inData.cover.mobile : inData.cover.tablette}
+              alt={inData.title}
+              fill={true}
+              {...(inVisible ? { priority: true } : { loading: "lazy" })}
+              style={{ objectFit: "cover", borderRadius: "1rem" }}
+            />
+          </picture> */}
           <Image
             src={IntegratedCircuit}
             alt="circuit intégré"
             // loading="lazy"
             priority={true}
             fill={true}
-            sizes="100vw"
+            sizes="(min-width: 769px) 100vw"
             style={{ objectFit: "contain" }}
           ></Image>
         </div>
