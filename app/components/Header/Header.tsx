@@ -5,7 +5,7 @@ import { Icon } from "@iconify/react";
 import Banner from "@components/Banner/Banner";
 import Link from "next/link";
 import Image from "next/image";
-import IntegratedCircuit from "@public/img/circuit.svg";
+import IntegratedCircuit from "@public/img/circuit.webp";
 
 const Header = (): JSX.Element => {
   const scrollToAnchor = () => {
@@ -34,7 +34,8 @@ const Header = (): JSX.Element => {
           <Image
             src={IntegratedCircuit}
             alt="circuit intégré"
-            loading="lazy"
+            // loading="lazy"
+            priority={true}
             fill={true}
             style={{ objectFit: "contain" }}
           ></Image>
