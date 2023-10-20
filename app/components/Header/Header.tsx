@@ -36,24 +36,17 @@ const Header = (): JSX.Element => {
       {/* <Banner /> */}
       <div className={styles["text"]}>
         <div className={styles.background}>
-          {/* <picture className={styles["flip-card-front__image"]}>
-            <source
-              media={`(max-width: 768px)`}
-              srcSet={isMobile ? inData.cover.mobile : inData.cover.tablette}
-            />
-            <source
-              media={`(min-width: 769px)`}
-              srcSet={isMobile ? inData.cover.mobile : inData.cover.tablette}
-            />
+          <picture className={styles["background__container"]}>
+            <source media={`(min-width: 769px)`} srcSet={"img/circuit.webp"} />
             <Image
-              src={isMobile ? inData.cover.mobile : inData.cover.tablette}
-              alt={inData.title}
+              src={"/img/circuit.webp"}
+              alt="circuit intégré"
               fill={true}
-              {...(inVisible ? { priority: true } : { loading: "lazy" })}
-              style={{ objectFit: "cover", borderRadius: "1rem" }}
+              priority={true}
+              style={{ objectFit: "contain" }}
             />
-          </picture> */}
-          <Image
+          </picture>
+          {/* <Image
             src={IntegratedCircuit}
             alt="circuit intégré"
             // loading="lazy"
@@ -61,7 +54,7 @@ const Header = (): JSX.Element => {
             fill={true}
             sizes="(min-width: 769px) 100vw"
             style={{ objectFit: "contain" }}
-          ></Image>
+          ></Image> */}
         </div>
         <p
           ref={headerProfession}
