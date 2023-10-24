@@ -52,9 +52,10 @@ a {
   --header--title--fontSize--desktop: 6rem;
   --header--title--fontSize--tablet: 6.4rem;
   --header--title--fontWeight: 300;
-  --header--button--bg: #{var.$gray-500};
-  --header--button: #{var.$white-color};
+  --header--button--bg: #{var.$gray-200};
+  --header--button: #{var.$burgundy-color};
   --header--button--fontSize: 2.5rem;
+  --header--button--hover: brightness(90%);
   --header--button-icon--fontSize: 3.2rem;
   --header--button-icon--fontWeight: bold;
   /* Shape */
@@ -250,6 +251,7 @@ a {
   --header--button--hover: #{var.$light-color};
   --header--button--bg--hover: #{var.$four-color};
   --header--button: #{var.$light-color};
+  --header--button--hover: brightness(120%);
   /* Shape */
   --shape--bubble--opacity: 0.2;
   --shape--brightness: brightness(150%);
