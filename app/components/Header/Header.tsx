@@ -1,17 +1,21 @@
 "use client";
 import styles from "./Header.module.scss";
-import { useEffect, useRef } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { Icon } from "@iconify/react";
-import Banner from "@components/Banner/Banner";
 import Link from "next/link";
 import Image from "next/image";
 import { useWindowSizeResize } from "@Hooks/Window/useWindowSizeResize";
-import IntegratedCircuit from "@public/img/circuit.webp";
+import IntegratedCircuitDark from "@public/img/integercircuit_darkmode.webp";
+import IntegratedCircuitLight from "@public/img/integercircuit_lightmode.webp";
+import { ThemeContext } from "@context/ThemeContext/ThemeContext";
 
 const Header = (): JSX.Element => {
   const { windowWidth } = useWindowSizeResize();
 
   const isDesktop = windowWidth > 768;
+
+  const themeContext = useContext(ThemeContext);
+  console.log(themeContext);
 
   const scrollToAnchor = () => {
     const projets = document.getElementById("projets");
@@ -39,7 +43,11 @@ const Header = (): JSX.Element => {
           <div className={styles.background}>
             <picture className={styles["background__container"]}>
               <Image
-                src={"/img/circuit.webp"}
+                src={
+                  themeContext?.isDarkMode
+                    ? IntegratedCircuitDark
+                    : IntegratedCircuitLight
+                }
                 alt="circuit intégré"
                 sizes="100vh"
                 fill={true}

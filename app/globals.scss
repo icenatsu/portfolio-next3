@@ -27,12 +27,12 @@ a {
   /* body */
   --body--bg--color: #{var.$light-color};
   /* Navbar */
-  --navbar--container--bg: #{var.$four-color};
+  --navbar--container--bg: #{var.$gray-200};
   --navbar--container--filterDropSHadow: #{var.$four-color};
   --navbar--link--fontSize: 1.8rem;
-  --navbar--link--fontWeight: normal;
-  --navbar--link--color: rgb(7, 7, 103);
-  --navbar--stars--color: #{var.$five-color};
+  --navbar--link--fontWeight: bold;
+  --navbar--link--color: #{var.$burgundy-color};
+  --navbar--stars--color: #{var.$darken-color};
   --navbar--stars--textShadow: #{var.$light-color};
   --navbar--burger--color: #{var.$light-color};
   /* Switch */
@@ -41,9 +41,10 @@ a {
   --switch--fontSize--icon--mobile: 1.4rem;
   --switch--sunmoon--color: #{var.$dark-color};
   --switch--sunmoon--bg: #{var.$light-color};
-  --switch--bg--toogle: #{var.$four-color};
+  --switch--bg--toogle: #{var.$gray-500};
   /* Header */
-  --header--bg--color: #{var.$light-color};
+  --header--bg: #{var.$gray-150};
+  --header--IntegerCircuit: saturation(200deg);
   --header--profession--color: #{var.$black-color};
   --header--profession--border: #{var.$black-color};
   --header--profession--fontSize: 1.6rem;
@@ -51,9 +52,8 @@ a {
   --header--title--fontSize--desktop: 6rem;
   --header--title--fontSize--tablet: 6.4rem;
   --header--title--fontWeight: 300;
-  --header--button--bg: #{var.$four-color};
-  --header--button--bg--hover: #6b788e;
-  --header--button: rgb(7, 7, 103);
+  --header--button--bg: #{var.$gray-500};
+  --header--button: #{var.$white-color};
   --header--button--fontSize: 2.5rem;
   --header--button-icon--fontSize: 3.2rem;
   --header--button-icon--fontWeight: bold;
@@ -67,32 +67,34 @@ a {
   --about--container--bg: #{var.$white-color};
   --about--containerBoxShadow--color: #{var.$black-color};
   --about--containerFiler: none;
-  --about--containerBefore--bg: #{var.$light-color};
+  --about--containerBefore--bg: #{var.$gray-150};
   --about--backgroundFilter: hue-rotate(180deg) grayscale(0%);
   --about--title--fontSize--desktop: #{var.$h2-title-desktop};
   --about--title--fontSize--tablet: #{var.$h2-title-tablet};
   --about--title--fontSize--mobile: #{var.$h2-title-mobile};
   --about--title--fontWeight: 300;
-  --about--title--color: #{var.$dark-color};
+  --about--title--color: #{var.$darken-color};
   --about--presentation--fontSize--desktop: 2.2rem;
   --about--presentation--fontSize--tablet: 2.2rem;
   --about--presentation--fontSize--mobile: 2.2rem;
-  --about--presentation--color: rgb(7, 7, 103);
-  --about--shape--filterDropSHadow: #{var.$four-color};
-  --about--waveFill: #{var.$four-color};
+  --about--presentation--color: #{var.$dark-color};
+  --about--shape--filterDropSHadow: #{var.$burgundy-color};
+  --about--splashImgFilter: hue-rotate(150deg);
+
   /* Projets Caroussel */
   --project--container--bg: linear-gradient(
     to bottom,
-    #ddd,
-    #{var.$four-color}
+    #{var.$gray-100},
+    #{var.$burgundy-color},
+    #{var.$gray-100}
   );
-  --project--title--color: #{var.$primary-color};
+  --project--title--color: #{var.$darken-color};
   --project--title--fontSize--desktop: #{var.$h2-title-desktop};
   --project--title--fontSize--tablet: #{var.$h2-title-tablet};
   --project--title--fontSize--mobile: #{var.$h2-title-mobile};
   --project--title--fontWeight: 300;
   --project--touch--fontSize: 3rem;
-  --project--touch--color: #{var.$light-color};
+  --project--touch--color: #{var.$five-color};
   --project--error--fontSize: 2.5rem;
   --project--error--color: #{var.$primary-color};
   /* CardProject */
@@ -102,7 +104,7 @@ a {
   --cardProject--flip-card-back--bg: #{var.$transparent-color};
   --cardProject--flip-card-front: #{var.$dark-color};
   --cardProject--flip-card-inner--bg: #{var.$light-color};
-  --cardProject--flip-card-back--bg: #{var.$four-color};
+  --cardProject--flip-card-back--bg: #{var.$burgundy-color};
   --cardProject--source--fontSize--desktop: 3rem;
   --cardProject--source--fontSize--mobile: 3.2rem;
   --cardProject--title--fontSize--desktop: 2.5rem;
@@ -122,69 +124,70 @@ a {
   --cardProject--goBack--color: #{var.$dark-color};
   --cardProject--curve--fill: #{var.$light-color};
   /* Skills */
-  --skills--container--bg: #{var.$light-color};
+  --skills--container--bg: #{var.$gray-100};
   --skills--backgroundFilter: none;
   --skills--title--fontSize--desktop: #{var.$h2-title-desktop};
   --skills--title--fontSize--tablet: #{var.$h2-title-tablet};
   --skills--title--fontSize--mobile: #{var.$h2-title-mobile};
   --skills--title--fontWeight: 300;
-  --skills--title--color: #{var.$primary-color};
-  --skills--waveFill: #{var.$four-color};
+  --skills--title--color: #{var.$darken-color};
   --skills--shapeFilterDropShadow: 255, 255, 255, 1;
   /* CardSkill */
-  --cardSkill--bg: #{var.$white-color};
-  --cardSkill--chevron--color: #{var.$primary-color};
+  --cardSkill--bg: #{var.$gray-200};
+  --cardSkill--borderColor: #{var.$light-color};
+  --cardSkill--chevron--color: #{var.$gray-500};
   --cardSkill--icon--fontSize--desktop: 5rem;
   --cardSkill--icon--fontSize--tablet: 5rem;
   --cardSkill--icon--fontSize--mobile: 4rem;
-  --cardSkill--iconTechno--color: rgb(7, 7, 103);
+  --cardSkill--iconTechno--color: #{var.$darken-color};
   --cardSkill--nameTechno--fontSize--desktop: 1.8rem;
   --cardSkill--nameTechno--fontSize--tablet: 1.4rem;
   --cardSkill--nameTechno--fontSize--mobile: 1.3rem;
-  --cardSkill--nameTechno--color: #{var.$dark-color};
+  --cardSkill--nameTechno--color: #{var.$five-color};
   --cardSkill--description--fontSize--desktop: 1.5rem;
   --cardSkill--description--fontSize--mobile: 1.4rem;
   --cardSkill--descriptionTechno--color: #{var.$dark-color};
-  --cardSkill--dividingBorder: #{var.$primary-color};
+  --cardSkill--dividingBorder: #{var.$darken-color};
   --cardSkill--iconArrow--fontSize--desktop: 2.3rem;
   --cardSkill--iconArrow--fontSize--tablet: 2.2rem;
   --cardSkill--iconArrow--fontSize--mobile: 2.1rem;
-  --cardSkill--iconArrow--color: #{var.$four-color};
+  --cardSkill--iconArrow--color: #{var.$burgundy-color};
+  --cardskill--tiltFill: #{var.$gray-500};
   /* Contact */
-  --contact--bg: linear-gradient(to bottom, #ddd, #{var.$four-color});
-  --contact--containerBefore--bg: #{var.$light-color};
+  --contact--bg: linear-gradient(to bottom, #{var.$gray-400}, #{var.$gray-300});
+  --contact--containerBefore--bg: #{var.$gray-100};
   --contact--title--fontSize--desktop: #{var.$h2-title-desktop};
   --contact--title--fontSize--tablet: #{var.$h2-title-tablet};
   --contact--title--fontSize--mobile: #{var.$h2-title-mobile};
   --contact--title--fontWeight: 300;
-  --contact--title--color: #{var.$primary-color};
+  --contact--title--color: #{var.$darken-color};
   --contact--label--fontSize--desktop: 2rem;
   --contact--label--fontSize--tablet: 1.8rem;
-  --contact--label--color: #{var.$dark-color};
+  --contact--label--color: #{var.$burgundy-color};
   --contact--errors--fontSize: 1.6rem;
   --contact--errors--color: #{var.$dark-color};
   --contact--input--color: #{var.$dark-color};
-  --contact--input--bg: #{var.$white-color};
+  --contact--input--bg: #{var.$gray-200};
   --contact--inputBorder: 1px dashed grey;
   --contact--placeHolder--fontSize: 1.5rem;
   --contact--placeHolder--color: #{var.$dark-color};
   --contact--send--fontSize--desktop: 2.2rem;
   --contact--send--fontSize--mobile: 1.8rem;
-  --contact--send--bg: #{var.$light-color};
-  --contact--send--color: #{var.$four-color};
-  --contact--elipse--borderColor: #{var.$light-color};
+  --contact--send--bg: #{var.$burgundy-color};
+  --contact--send--color: #{var.$light-color};
+  --contact--elipse--borderColor: #{var.$burgundy-color};
   /* Download Button cv */
   --downloadbutton--button--fontSize: 2rem;
   --downloadbutton--button--bg: #{var.$transparent-color};
-  --downloadbutton--button--color: #{var.$four-color};
+  --downloadbutton--button--color: #{var.$burgundy-color};
   --downloadbutton--icon--fontSize: 4rem;
-  --downloadbutton--icon--color: #{var.$four-color};
+  --downloadbutton--icon--color: #{var.$burgundy-color};
   /* Footer */
-  --footer--bg: #{var.$four-color};
+  --footer--bg: #{var.$gray-300};
   --footer--infos--fontSize: 1.7rem;
-  --footer--infos--color: #{var.$light-color};
+  --footer--infos--color: #{var.$darken-color};
   --footer--infos--fontWeight: 600;
-  --footer--wave: #{var.$light-color};
+  --footer--wave: #{var.$burgundy-color};
   /* Notification du contact */
   --notify--boxShadow--color: rgba(0, 0, 0, 0.4);
   --notify--bg: #{var.$light-color};
@@ -201,6 +204,7 @@ a {
   --loader--icon--fontSize: 8rem;
   --loader--icon--colors: #{var.$primary-color};
   /* Chatbot */
+  --chatbot--openbot--color: #{var.$burgundy-color};
   --chatbot--container--boxShadow: rgba(0, 0, 0, 0.5);
   --chatbot--container--borderColor: #ccc;
   --chatbot--container--boxShadow--color: rgba(0, 0, 0, 0.1);
@@ -210,16 +214,16 @@ a {
   --chatbot--messagesScrollbar--handle: #{var.$four-color};
   --chatbot--messagesScrollbar--bg: #{var.$light-color};
   --chatbot--messageUserBot-fontSize: 1.5rem;
-  --chatbot--userQuestion--bg: #{var.$four-color};
+  --chatbot--userQuestion--bg: #{var.$five-color};
   --chatbot--userQuestion--color: #{var.$light-color};
-  --chatbot--botResponse--bg: #{var.$primary-color};
+  --chatbot--botResponse--bg: #{var.$burgundy-color};
   --chatbot--botResponse--color: #{var.$light-color};
   --chatbot--inputQuestion--borderColor: #ccc;
   --chatbot--inputAndFocus--fontSize: 1.6rem;
   --chatbot--sendButton--fontSize: 1.6rem;
   --chatbot--sendButton--bg: #{var.$five-color};
   --chatbot--sendButton--color: #{var.$light-color};
-  --chatbot--sendButton--hover--bg: #3160ac;
+  --chatbot--sendButton--hover--bg: brightness(110%);
 }
 
 .dark {
@@ -238,6 +242,7 @@ a {
   --switch--border--color: #{var.$dark-color};
   /* Header */
   --header--bg: #{var.$dark-color};
+  --header--IntegerCircuit: none;
   --header--profession--color: #{var.$black-color};
   --header--profession--border: #{var.$black-color};
   --header--title: #{var.$light-color};
@@ -262,6 +267,7 @@ a {
   --about--presentation--color: #{var.$light-color};
   --about--shape--filterDropSHadow: #{var.$black-color};
   --about--waveFill: #{var.$dark-color};
+  --about--splashImgFilter: hue-rotate(400deg);
   /* Projets Caroussel */
   --project--container--bg: linear-gradient(
     to bottom,
@@ -287,12 +293,14 @@ a {
   --downloadbutton--button--color: #{var.$primary-color};
   /* CardSkill */
   --cardSkill--bg: #{var.$darken-color};
+  --cardSkill--borderColor: #{var.$black-color};
   --cardSkill--chevron--color: #{var.$dark-color};
   --cardSkill--iconTechno--color: rgba(113, 116, 129, 1);
   --cardSkill--nameTechno--color: #{var.$light-color};
   --cardSkill--descriptionTechno--color: #{var.$light-color};
   --cardSkill--dividingBorder: #{var.$dark-color};
   --cardSkill--iconArrow--color: #{var.$gold-color};
+  --cardskill--tiltFill: #{var.$black-color};
   /* Contact */
   --contact--bg: linear-gradient(
     to bottom,
@@ -318,10 +326,14 @@ a {
   /* Loader */
   --loader--icon--colors: #{var.$light-color};
   /* Chatbot */
+  --chatbot--openbot--color: #{var.$white-color};
   --chatbot--container--boxShadow: #{var.$primary-color};
   --chatbot--container--borderColor: #{var.$primary-color};
   --chatbot--container--bg: rgba(255, 255, 255, 0.1);
+  --chatbot--userQuestion--bg: #{var.$darken-color};
+  --chatbot--botResponse--bg: #{var.$dark-color};
   --chatbot-entilted--color: #{var.$light-color};
+  --chatbot--sendButton--bg: #{var.$four-color};
 }
 
 @media (prefers-color-scheme: dark) {
@@ -329,25 +341,26 @@ a {
     /* Body */
     --body--bg--color: #{var.$dark-color};
     /* Navbar */
-    --navbar--container--bg: #{var.$black-color};
+    --navbar--container--bg: #{var.$dark-color};
     --navbar--container--filterDropSHadow: #{var.$second-color};
-    --navbar--link--color: #{var.$light-color};
-    --navbar--stars--color: #{var.$dark-color};
-    --navbar--stars--textShadow: #{var.$light-color};
+    --navbar--link--color: #{var.$primary-color};
+    --navbar--stars--color: #{var.$light-color};
+    --navbar--stars--textShadow: none;
     --navbar--burger--color: #{var.$light-color};
     /* Switch */
     --switch--sunmoon--bg: #{var.$light-color};
-    --switch--bg--toogle: #{var.$primary-color};
+    --switch--bg--toogle: #525151;
     --switch--border--color: #{var.$dark-color};
     /* Header */
-    --header--bg--color: #{var.$dark-color};
+    --header--bg: #{var.$dark-color};
+    --header--IntegerCircuit: none;
     --header--profession--color: #{var.$black-color};
     --header--profession--border: #{var.$black-color};
     --header--title: #{var.$light-color};
-    --header--button--bg: #{var.$second-color};
-    --header--button--bg--hover: #5a5c70;
+    --header--button--bg: #{var.$darken-color};
+    --header--button--hover: #{var.$light-color};
+    --header--button--bg--hover: #{var.$four-color};
     --header--button: #{var.$light-color};
-    --header--wave: #{var.$four-color};
     /* Shape */
     --shape--bubble--opacity: 0.2;
     --shape--brightness: brightness(150%);
@@ -356,61 +369,81 @@ a {
     --banner--tuyau--filterDropSHadow: #{var.$primary-color};
     --banner--pot--filterDropSHadow: #{var.$primary-color};
     /* About */
-    --about--container--bg: #{var.$primary-color};
-    --about--containerBorder--bg: #{var.$dark-color};
+    --about--container--bg: #{var.$darken-color};
     --about--containerBoxShadow--color: #{var.$light-color};
-    --about--backgroundFilter: grayscale(100%);
-    --about--title--color: #{var.$dark-color};
-    --about--presentation--color: #{var.$dark-color};
-    --about--waveFill: #{var.$second-color};
+    --about--containerBefore--bg: #{var.$dark-color};
+    --about--containerFiler: none;
+    --about--backgroundFilter: brightness(40%);
+    --about--title--color: rgba(113, 116, 129, 1);
+    --about--presentation--color: #{var.$light-color};
     --about--shape--filterDropSHadow: #{var.$black-color};
+    --about--waveFill: #{var.$dark-color};
+    --about--splashImgFilter: hue-rotate(400deg);
     /* Projets Caroussel */
-    --project--container--bg: linear-gradient(to bottom, #242424, #000000);
-    --project--title--color: #{var.$light-color};
+    --project--container--bg: linear-gradient(
+      to bottom,
+      #{var.$darken-color},
+      #{var.$dark-color},
+      #{var.$dark-color}
+    );
+    --project--title--color: rgba(113, 116, 129, 1);
     --project--touch--color: #{var.$light-color};
     --project--error--color: #{var.$light-color};
     /* CardProject */
+    --cardProject--bg: #525151;
     --cardProject--flip-card--filterDropShadow: rgba(255, 255, 255, 0.5);
     --cardProject--flip-card--borderColor: #{var.$transparent-color};
-    --cardProject--flip-card-back--bg: #{var.$primary-color};
+    --cardProject--flip-card-back--bg: #{var.$darken-color};
     /* Skills */
-    --skills--container--bg: linear-gradient(to bottom, #242424, #000000);
-    --skills--title--color: #{var.$light-color};
-    --skills--waveFill: #{var.$black-color};
-    --skills--shape--filterDropSHadow: #{var.$black-color};
+    --skills--container--bg: #{var.$dark-color};
+    --skills--title--color: rgba(113, 116, 129, 1);
+    --skills--waveFill: #{var.$dark-color};
+    --skills--shapeFilterDropShadow: 255, 255, 255, 1;
     /* Download Button cv */
-    --downloadbutton--icon--color: #{var.$light-color};
-    --downloadbutton--button--color: #{var.$light-color};
+    --downloadbutton--icon--color: #{var.$primary-color};
+    --downloadbutton--button--color: #{var.$primary-color};
     /* CardSkill */
-    --cardSkill--bg: #{var.$light-color};
-    --cardSkill--chevron--color: #{var.$light-color};
-    --cardSkill--iconTechno--color: #{var.$second-color};
-    --cardSkill--nameTechno--color: #{var.$dark-color};
-    --cardSkill--descriptionTechno--color: #{var.$dark-color};
+    --cardSkill--bg: #{var.$darken-color};
+    --cardSkill--borderColor: #{var.$black-color};
+    --cardSkill--chevron--color: #{var.$dark-color};
+    --cardSkill--iconTechno--color: rgba(113, 116, 129, 1);
+    --cardSkill--nameTechno--color: #{var.$light-color};
+    --cardSkill--descriptionTechno--color: #{var.$light-color};
     --cardSkill--dividingBorder: #{var.$dark-color};
-    --cardSkill--iconArrow--color: #{var.$primary-color};
+    --cardSkill--iconArrow--color: #{var.$gold-color};
     /* Contact */
-    --contact--bg: linear-gradient(to bottom, #242424, #000000);
-    --contact--title--color: #{var.$five-color};
-    --contact--label--color: #{var.$light-color};
+    --contact--bg: linear-gradient(
+      to bottom,
+      #{var.$darken-color},
+      #{var.$dark-color}
+    );
+    --contact--containerBefore--bg: #{var.$dark-color};
+    --contact--title--color: rgba(113, 116, 129, 1);
+    --contact--label--color: #{var.$primary-color};
     --contact--errors--color: #{var.$light-color};
     --contact--input--color: #{var.$light-color};
-    --contact--input--bg: #{var.$light-color};
-    --contact--placeHolder--color: #{var.$dark-color};
-    --contact--send--bg: #{var.$five-color};
+    --contact--input--bg: #{var.$darken-color};
+    --contact--inputBorder: 1px dashed rgba(113, 116, 129, 1);
+    --contact--placeHolder--color: #{var.$light-color};
+    --contact--send--bg: #{var.$darken-color};
     --contact--send--color: #{var.$light-color};
     --contact--elipse--borderColor: #{var.$light-color};
     /* Footer */
-    --footer--bg: #{var.$black-color};
+    --footer--bg: #{var.$dark-color};
     --footer--infos--color: #{var.$light-color};
     --footer--infos--fontWeight: 500;
+    --footer--wave: #{var.$primary-color};
     /* Loader */
-    --loader--icon--colors: #{var.$dark-color};
+    --loader--icon--colors: #{var.$light-color};
     /* Chatbot */
+    --chatbot--openbot--color: #{var.$white-color};
     --chatbot--container--boxShadow: #{var.$primary-color};
     --chatbot--container--borderColor: #{var.$primary-color};
     --chatbot--container--bg: rgba(255, 255, 255, 0.1);
+    --chatbot--userQuestion--bg: #{var.$darken-color};
+    --chatbot--botResponse--bg: #{var.$dark-color};
     --chatbot-entilted--color: #{var.$light-color};
+    --chatbot--sendButton--bg: #{var.$four-color};
   }
 }
 

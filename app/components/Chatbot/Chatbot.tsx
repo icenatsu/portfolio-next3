@@ -10,10 +10,24 @@ interface Message {
 }
 
 const ChatBot: React.FC = () => {
+  const [visible, setVisible] = useState<boolean>(false);
   const [input, setInput] = useState<string>("");
+
   const [messages, setMessages] = useState<Message[]>([]);
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  const showChatbot = () => {
+    setVisible((curr) => (curr = !visible));
+  };
+
+  useEffect(() => {
+    if (visible && document.getElementsByClassName("chatbot") !== null) {
+      document.getElementById("chatbot")?.classList.add(styles.visible);
+    } else {
+      document.getElementById("chatbot")?.classList.remove(styles.visible);
+    }
+  }, [visible]);
 
   const scrollToBottom = () => {
     if (messagesEndRef.current) {
@@ -180,41 +194,52 @@ const ChatBot: React.FC = () => {
   }, [messages]);
 
   return (
-    <div className={styles["chatbot"]}>
-      <div className={styles["chatbot-container"]}>
-        <div className={styles["chatbot-entilted"]}>
-          <Icon
-            className={styles["chatbot-entilted__icon"]}
-            icon="tabler:message-chatbot"
-          />
-          <h2 className={styles["chatbot-entilted__title"]}>ChatBot</h2>
-        </div>
-        <div className={styles["chatbot-messages"]} ref={messagesEndRef}>
-          {messages.map((message, index) => (
-            <div
-              key={index}
-              className={[styles["message"], styles[`${message.type}`]].join(
-                " "
-              )}
-              data-id={index}
-            >
-              {message.text}
-            </div>
-          ))}
-        </div>
-        <form onSubmit={handleFormSubmit} className={styles["chatbot-form"]}>
-          <span id="label"></span>
-          <input
-            aria-labelledby="label"
-            type="text"
-            value={input}
-            onChange={handleInputChange}
-            placeholder="Posez votre question..."
-          />
-          <button type="submit">Envoyer</button>
-        </form>
+    <>
+      <div className={styles.openBot} onClick={showChatbot}>
+        <Icon icon="fluent:chat-32-filled" />
       </div>
-    </div>
+      {visible ? (
+        <div id="chatbot" className={styles["chatbot"]}>
+          <div className={styles["chatbot-container"]}>
+            <div className={styles["chatbot-entilted"]}>
+              <Icon
+                className={styles["chatbot-entilted__icon"]}
+                icon="tabler:message-chatbot"
+              />
+              <h2 className={styles["chatbot-entilted__title"]}>ChatBot</h2>
+            </div>
+            <div className={styles["chatbot-messages"]} ref={messagesEndRef}>
+              {messages.map((message, index) => (
+                <div
+                  key={index}
+                  className={[
+                    styles["message"],
+                    styles[`${message.type}`],
+                  ].join(" ")}
+                  data-id={index}
+                >
+                  {message.text}
+                </div>
+              ))}
+            </div>
+            <form
+              onSubmit={handleFormSubmit}
+              className={styles["chatbot-form"]}
+            >
+              <span id="label"></span>
+              <input
+                aria-labelledby="label"
+                type="text"
+                value={input}
+                onChange={handleInputChange}
+                placeholder="Posez votre question..."
+              />
+              <button type="submit">Envoyer</button>
+            </form>
+          </div>
+        </div>
+      ) : null}
+    </>
   );
 };
 

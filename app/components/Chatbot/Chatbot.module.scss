@@ -1,12 +1,26 @@
 @use "../../styles/utils/variables.scss" as var;
 
+.openBot {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  color: var(--chatbot--openbot--color);
+  font-size: 5rem;
+  z-index: 9;
+}
+
+.visible {
+  right: 1rem !important;
+}
+
 .chatbot {
   position: fixed;
-  bottom: 0;
-  right: 0;
+  bottom: 10rem;
+  right: -100%;
   font-family: var(--fontFamily--archivo);
   word-break: break-word;
-  z-index: 99999999;
+  z-index: 9;
+  transition: right 1s ease-in-out;
 
   @media screen and (max-width: 1530px) {
     position: static;
@@ -135,12 +149,12 @@
     border: none;
     border-radius: 0.5rem;
     cursor: pointer;
-    -webkit-transition: background-color 0.3s;
-    -o-transition: background-color 0.3s;
-    transition: background-color 0.3s;
+    -webkit-transition: filter 0.3s;
+    -o-transition: filter 0.3s;
+    transition: filter 0.3s;
   }
 
   .chatbot-form button:hover {
-    background-color: var(--chatbot--sendButton--hover--bg);
+    filter: var(--chatbot--sendButton--hover--bg);
   }
 }

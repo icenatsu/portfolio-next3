@@ -112,11 +112,11 @@ const About = (): JSX.Element => {
               >
                 <stop
                   offset="0%"
-                  style={{ stopColor: "#661010", stopOpacity: 1 }}
+                  style={{ stopColor: "#f8f8f8", stopOpacity: 1 }}
                 />
                 <stop
                   offset="100%"
-                  style={{ stopColor: "#FFFF", stopOpacity: 1 }}
+                  style={{ stopColor: "#f8f8f8", stopOpacity: 1 }}
                 />
               </linearGradient>
             </defs>
