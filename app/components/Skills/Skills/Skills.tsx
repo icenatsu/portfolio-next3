@@ -1,13 +1,14 @@
 "use client";
 
 import styles from "./Skills.module.scss";
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
 import CardSkill from "@components/Skills/CardSkill/CardSkill";
 import DownloadButton from "@components/DownloadButton/DownloadButton";
-import {
-  animationSlideScrollToRight,
-  animationSlideScrollToBottom,
-} from "@animation/gsapAnimation";
+import { animationSlideScrollToBottom } from "@animation/gsapAnimation";
+import { ThemeContext } from "@context/ThemeContext/ThemeContext";
+import Image from "next/image";
+import Bg from "@public/img/bg.webp";
+import Parchment from "@public/img/parchemin.webp";
 
 interface IntSkill {
   name: string;
@@ -21,6 +22,8 @@ interface iconeDetails {
 }
 
 const Skills = (): JSX.Element => {
+  const themeContext = useContext(ThemeContext);
+
   // Données des compétences
   const dataSkills: IntSkill[] = [
     {
@@ -184,20 +187,6 @@ const Skills = (): JSX.Element => {
 
   return (
     <section id="skills" className={styles.container}>
-      <div className={styles.background}></div>
-      <div className={styles.shape}>
-        <svg
-          data-name="Layer 1"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1200 120"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
-            className={styles["shape-fill"]}
-          ></path>
-        </svg>
-      </div>
       <h2 id="skillsTitle" className={styles.title}>
         Mes compétences
       </h2>

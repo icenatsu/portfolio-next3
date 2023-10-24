@@ -7,6 +7,7 @@ import Image from "next/image";
 import Splash from "@public/img/splash.svg";
 import Parchment from "@public/img/parchemin.webp";
 import { ThemeContext } from "@context/ThemeContext/ThemeContext";
+import Bg from "@public/img/bg.webp";
 
 const About = (): JSX.Element => {
   const themeContext = useContext(ThemeContext);
@@ -29,10 +30,10 @@ const About = (): JSX.Element => {
       <div id="background" className={styles.background}>
         <picture className={styles["background__container"]}>
           <Image
-            src={Parchment}
+            src={Bg}
             alt="circuit intégré"
             fill={true}
-            style={{ objectFit: "cover" }}
+            style={{ objectFit: "cover", opacity: 0.1 }}
             loading="lazy"
           ></Image>
         </picture>
@@ -77,25 +78,31 @@ const About = (): JSX.Element => {
           viewBox="0 0 1200 120"
           preserveAspectRatio="none"
         >
-          <defs>
-            {themeContext?.isDarkMode ? (
+          {themeContext?.isDarkMode ? (
+            <defs>
               <linearGradient
                 id="mon-degrade"
+                fill="rgba(26, 32, 44, 1)"
                 x1="0%"
-                y1="0%"
+                y1="700%"
                 x2="0%"
-                y2="700%"
+                y2="0%"
               >
                 <stop
                   offset="0%"
-                  style={{ stopColor: "#242424", stopOpacity: 1 }}
+                  style={{
+                    stopColor: "rgb(15, 17, 19)",
+                    stopOpacity: 0.973,
+                  }}
                 />
                 <stop
                   offset="100%"
-                  style={{ stopColor: "#1e4481", stopOpacity: 1 }}
+                  style={{ stopColor: "rgba(26, 32, 44, 1)", stopOpacity: 1 }}
                 />
               </linearGradient>
-            ) : (
+            </defs>
+          ) : (
+            <defs>
               <linearGradient
                 id="mon-degrade"
                 x1="0%"
@@ -105,15 +112,15 @@ const About = (): JSX.Element => {
               >
                 <stop
                   offset="0%"
-                  style={{ stopColor: "#DDD", stopOpacity: 1 }}
+                  style={{ stopColor: "#661010", stopOpacity: 1 }}
                 />
                 <stop
                   offset="100%"
                   style={{ stopColor: "#FFFF", stopOpacity: 1 }}
                 />
               </linearGradient>
-            )}
-          </defs>
+            </defs>
+          )}
           <path
             d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
             className={`${styles["shape-fill"]}`}

@@ -6,7 +6,7 @@
   padding: 0rem 15rem 1rem 15rem;
   justify-content: space-between;
   align-items: center;
-
+  background-color: var(--header--bg);
   @media screen and (max-width: 1400px) {
     padding: 0rem 0rem 1rem 0rem;
   }
@@ -95,6 +95,7 @@
       @media screen and (max-width: var.$breakpoint-mobile) {
         background-color: white;
         font-size: 1.5rem;
+        margin-top: 2rem;
       }
     }
 
@@ -148,8 +149,7 @@
         transition: all 0.6s;
 
         &:hover {
-          // filter: brightness(110%);
-          background-color: var(--header--button--bg--hover);
+          filter: brightness(120%);
         }
 
         .icon {

@@ -24,24 +24,7 @@
 
   @media screen and (max-width: var.$breakpoint-mobile) {
     flex-direction: column;
-    padding: 5rem 1rem;
-  }
-
-  .background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    filter: var(--about--backgroundFilter);
-    z-index: -1;
-
-    &__container {
-      position: relative;
-      display: block;
-      width: 100%;
-      height: 100%;
-    }
+    padding: 10rem 1rem;
   }
 
   &::before {
@@ -51,8 +34,25 @@
     left: 0;
     width: 100%;
     height: 1rem;
-    background-color: var(--about--containerBorder--bg);
+    background-color: var(--about--containerBefore--bg);
     box-shadow: 2px 15px 5px rgba(0, 0, 0, 0.4);
+  }
+
+  .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: var(--about--backgroundFilter);
+    z-index: -2;
+
+    &__container {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
   }
 
   .title {
@@ -82,7 +82,6 @@
     border-radius: var.$radius--5;
     padding: 4rem 2rem;
     color: var(--about--presentation--color);
-    // text-shadow: 1px 1px 2px rgba(255, 255, 255, 1);
 
     & p {
       max-width: 95%;
@@ -95,7 +94,6 @@
       }
 
       @media screen and (max-width: var.$breakpoint-mobile) {
-        // text-align: center;
         font-size: var(--about--presentation--fontSize--mobile);
       }
     }
@@ -106,14 +104,19 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 60rem;
-    height: 60rem;
+    width: 55rem;
+    height: 55rem;
     z-index: -1;
-    opacity: 0.2;
+    opacity: 0.4;
+    filter: hue-rotate(400deg);
+
+    @media screen and (max-width: var.$breakpoint-tablette) {
+      width: 40rem;
+      height: 40rem;
+    }
 
     @media screen and (max-width: var.$breakpoint-mobile) {
-      width: 50rem;
-      height: 50rem;
+      display: none;
     }
   }
 }
@@ -136,7 +139,6 @@
   filter: drop-shadow(0rem 0.1rem 0.2rem var(--about--shape--filterDropSHadow));
 }
 
-.shape .shape-fill {
-  // fill: var(--about--waveFill);
-  // background: linear-gradient(to top, #242424, #1e4481);
+#mon-degrade {
+  background: linear-gradient(to right, #ff0000, #0000ff);
 }

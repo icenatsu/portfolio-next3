@@ -6,13 +6,13 @@
   background-repeat: no-repeat;
   background-size: 80% 90%;
   max-height: 60rem;
-  padding: 5em 20rem 0rem 20rem;
+  padding: 7em 20rem 2rem 20rem;
   background: var(--project--container--bg);
   z-index: 1;
   margin-top: -0.1rem;
 
   @media screen and (max-width: 1400px) {
-    padding: 5em 20rem 0rem 20rem;
+    padding: 5em 5rem 0rem 5rem;
   }
 
   @media screen and (max-width: var.$breakpoint-tablette) {
@@ -34,7 +34,7 @@
     font-family: var(--fontFamily--oswald);
     font-weight: var(--project--title--fontWeight);
     color: var(--project--title--color);
-    padding: 0 0 5rem 0;
+    padding: 0 0 10rem 0;
 
     @media screen and (max-width: var.$breakpoint-tablette) {
       font-size: var(--project--title--fontSize--tablet);
@@ -88,7 +88,7 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  padding-bottom: 10rem;
+  padding: 10rem;
   font-size: var(--project--error--fontSize);
   color: var(--project--error--color);
 }

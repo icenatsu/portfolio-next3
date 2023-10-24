@@ -24,7 +24,7 @@
   }
 
   @media screen and (max-width: var.$breakpoint-mobile) {
-    width: 100%;
+    width: 95%;
     height: 36.8rem;
   }
 }
@@ -87,7 +87,7 @@
 
     &__sources {
       & a {
-        padding-right: 0.5rem;
+        padding-right: 1.5rem;
         font-size: var(--cardProject--source--fontSize--desktop);
 
         @media screen and (max-width: var.$breakpoint-mobile) {
@@ -100,7 +100,6 @@
     &__title {
       border-radius: var.$radius--5;
       padding: 0.5rem;
-      opacity: 0.9;
       font-size: var(--cardProject--title--fontSize--desktop);
       font-family: var(--font--archivo);
 
@@ -120,7 +119,6 @@
     font-size: var(--cardProject--description--fontSize--desktop);
     color: var(--cardProject--description--color);
     background-color: var(--cardProject--description--bg);
-    opacity: 0.8;
     margin: 1rem 0;
     border-top: 0.1rem solid var(--cardProject--borderTop--color);
     border-bottom: 0.1rem solid var(--cardProject--borderBottom--color);
@@ -171,6 +169,7 @@
 
 .curve {
   opacity: 0.2;
+  z-index: -2;
   position: absolute;
   bottom: 0;
   left: 0;

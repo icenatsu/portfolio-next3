@@ -4,8 +4,8 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  background-color: var(--skills--container--bg);
-  padding: 15em 20rem 2rem 20rem;
+  background: var(--skills--container--bg);
+  padding: 15em 20rem 0rem 20rem;
   margin-top: -1rem;
 
   @media screen and (max-width: 1400px) {
@@ -81,6 +81,12 @@
   overflow: hidden;
   line-height: 0;
   transform: rotate(180deg);
+
+  .img {
+    position: relative;
+    width: 100vw;
+    height: 120rem;
+  }
 }
 
 .shape svg {
@@ -89,11 +95,6 @@
   width: calc(110% + 1.3px);
   height: 120px;
   transform: rotateY(180deg);
-  filter: drop-shadow(
-    0rem 0.1rem 0.2rem rgba(var(--skills--shapeFilterDropShadow))
-  );
-  // blanc rgba(0, 0, 0, 0.3)
-  // noir rgba(255, 255, 255, 0.3)
 }
 
 .shape .shape-fill {

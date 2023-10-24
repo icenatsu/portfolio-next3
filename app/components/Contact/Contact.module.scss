@@ -4,7 +4,17 @@
   display: flex;
   padding: 5rem 20rem 0rem 20rem;
   background: var(--contact--bg);
-  // box-shadow: inset 0rem 0rem 6.5rem 1.5rem rgba($color: #242424, $alpha: 0.2);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -0.2rem;
+    left: 0;
+    width: 100%;
+    height: 1rem;
+    background-color: var(--contact--containerBefore--bg);
+    box-shadow: 2px 15px 5px rgba(0, 0, 0, 0.4);
+  }
 
   @media screen and (max-width: 1400px) {
     padding: 10rem 10rem 0 10rem;
@@ -129,7 +139,7 @@
         width: 100%;
         height: 4rem;
         padding: 1rem;
-        border: none;
+        border: var(--contact--inputBorder);
         color: var(--contact--input--color);
         background-color: var(--contact--input--bg);
 
@@ -145,7 +155,7 @@
         resize: none;
         border-radius: var.$radius--10;
         width: 100%;
-        border: none;
+        border: var(--contact--inputBorder);
         height: 17rem;
         margin-bottom: 1rem;
         color: var(--contact--input--color);
