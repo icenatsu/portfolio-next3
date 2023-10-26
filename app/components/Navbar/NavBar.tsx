@@ -25,7 +25,7 @@ const NavBar = (): JSX.Element => {
       navbar.current !== null &&
       typeof window !== "undefined"
     ) {
-      if (windowSize.windowWidth <= 992) {
+      if (windowSize.windowWidth <= 992 && window.innerWidth <= 992) {
         if (showMenu) {
           navbar.current.style.display = "flex";
           setTimeout(() => {
@@ -45,9 +45,14 @@ const NavBar = (): JSX.Element => {
             }
           }, 100);
         }
-      } else {
-        setShowMenu(false);
-        navbar.current.style.display = "flex";
+      } else if (windowSize.windowWidth > 992 && window.innerWidth > 992) {
+        if (navbar.current !== null && container.current !== null) {
+          console.log(windowSize.windowWidth);
+          console.log("coucou");
+          navbar.current.style.display = "flex";
+          container.current.style.minHeight = "6rem";
+          setShowMenu(false);
+        }
       }
     }
   }, [showMenu, windowSize.windowWidth]);
