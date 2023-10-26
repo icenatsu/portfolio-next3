@@ -33,6 +33,8 @@ a {
   --navbar--link--color: #{var.$darken3-color};
   --navbar--stars--color: #{var.$white-color};
   --navbar--stars--fontsize: 1.9rem;
+  --navbar--langage--color: #{var.$white-color};
+  --navbar--langage--fontSize: 1.7rem;
   --navbar--burger--color: #{var.$darken3-color};
   --navbar--burger--fontsize: 3.5rem;
   /* Switch */
@@ -268,6 +270,7 @@ a {
   --navbar--link--color: #{var.$primary-color};
   --navbar--stars--color: #{var.$light-color};
   --navbar--stars--textShadow: none;
+  --navbar--langage--color: #{var.$primary-color};
   --navbar--burger--color: #{var.$light-color};
   /* Switch */
   --switch--sunmoon--bg: #{var.$light-color};

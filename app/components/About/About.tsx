@@ -5,12 +5,13 @@ import { useEffect, useContext } from "react";
 import { animationSlideScrollToBottom } from "@animation/gsapAnimation";
 import Image from "next/image";
 import Splash from "@public/img/splash.svg";
-import Parchment from "@public/img/parchemin.webp";
 import { ThemeContext } from "@context/ThemeContext/ThemeContext";
 import Bg from "@public/img/bg.webp";
+import { LanguageContext } from "@context/Language/Language";
 
 const About = (): JSX.Element => {
   const themeContext = useContext(ThemeContext);
+  const languageContext = useContext(LanguageContext);
 
   // Animations gsap
   useEffect(() => {

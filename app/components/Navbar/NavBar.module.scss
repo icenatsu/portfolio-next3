@@ -1,4 +1,3 @@
-@use "../../styles/utils/functions.scss" as fct;
 @use "../../styles/utils/variables.scss" as var;
 
 .container {
@@ -32,6 +31,8 @@
 
     @media screen and (max-width: var.$breakpoint-tablette) {
       opacity: 0;
+      margin-top: 5rem;
+      height: 0rem;
     }
 
     .list {

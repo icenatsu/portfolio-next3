@@ -1,11 +1,6 @@
 "use client";
 import { createContext, useState, useEffect, PropsWithChildren } from "react";
 
-interface ChangeDarkLightModeArg {
-  htmlElement: HTMLElement | HTMLLIElement | HTMLUListElement | null;
-  name: string | null;
-  scss: CSSModuleClasses;
-}
 export interface ThemeContext {
   isDarkMode: boolean;
   switchTheme: () => void;

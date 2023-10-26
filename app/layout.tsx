@@ -3,6 +3,7 @@ import "normalize.css/normalize.css";
 import type { Metadata } from "next";
 import { Inter, Archivo, Oswald, Noto_Sans_Symbols_2 } from "next/font/google";
 import dynamic from "next/dynamic";
+import Language from "@/app/context/Language/Language";
 
 export const metadata: Metadata = {
   title: "Portfolio Gaëlle",
@@ -66,7 +67,9 @@ export default function RootLayout({
       className={`${inter.variable} ${archivo.variable} ${oswald.variable} ${noto.variable}`}
     >
       <body>
-        <ThemeContextProvider>{children}</ThemeContextProvider>
+        <ThemeContextProvider>
+          <Language>{children}</Language>
+        </ThemeContextProvider>
       </body>
     </html>
   );

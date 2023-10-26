@@ -1,10 +1,12 @@
 "use client";
 import styles from "./NavBar.module.scss";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useContext } from "react";
 import { Icon } from "@iconify/react";
 import { useWindowSizeResize } from "@Hooks/Window/useWindowSizeResize";
-import Switch from "../Switch/Switch";
+import Switch from "@components/Switch/Switch";
+import SwitchLanguage from "@components/SwitchLanguage/SwitchLanguage";
+import { LanguageContext } from "@context/Language/Language";
 
 const NavBar = (): JSX.Element => {
   const windowSize = useWindowSizeResize();
@@ -13,6 +15,8 @@ const NavBar = (): JSX.Element => {
 
   const container = useRef<HTMLDivElement>(null);
   const navbar = useRef<HTMLElement>(null);
+
+  const languageContext = useContext(LanguageContext);
 
   // Déroulement de la navbar en version mobile et tablette
   const handleClick = () => {
@@ -67,7 +71,7 @@ const NavBar = (): JSX.Element => {
               scroll={false}
               href="/#projets"
             >
-              Projets
+              {languageContext?.isFrenchLanguage ? "Projets" : "Projects"}
             </Link>
           </li>
           <li className={styles.list__item}>
@@ -76,7 +80,7 @@ const NavBar = (): JSX.Element => {
               href="/#skills"
               scroll={false}
             >
-              Compétences
+              {languageContext?.isFrenchLanguage ? "Compétences" : "Skills"}
             </Link>
           </li>
           <li className={styles.list__item}>
@@ -90,6 +94,7 @@ const NavBar = (): JSX.Element => {
           </li>
         </ul>
       </nav>
+      <SwitchLanguage />
       <div className={styles.burger} onClick={handleClick}>
         <Icon
           aria-label="Afficher le menu"

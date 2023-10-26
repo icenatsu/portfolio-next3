@@ -1,11 +1,9 @@
 import styles from "./Switch.module.scss";
 import { Icon } from "@iconify/react";
-import { useState, useEffect, useContext } from "react";
-import Toogletheme from "@components/ToogleTheme/ToogleTheme";
+import { useContext } from "react";
 import { ThemeContext } from "@context/ThemeContext/ThemeContext";
 
 const Switch = (): JSX.Element => {
-  const { switchTheme } = Toogletheme();
   const themeContext = useContext(ThemeContext);
 
   return (
