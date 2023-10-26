@@ -31,9 +31,12 @@ const About = (): JSX.Element => {
         <picture className={styles["background__container"]}>
           <Image
             src={Bg}
-            alt="circuit intégré"
+            alt="hexagones"
             fill={true}
-            style={{ objectFit: "cover", opacity: 0.1 }}
+            style={{
+              objectFit: "cover",
+              opacity: themeContext?.isDarkMode ? 0.04 : 0.2,
+            }}
             loading="lazy"
           ></Image>
         </picture>
@@ -108,15 +111,15 @@ const About = (): JSX.Element => {
                 x1="0%"
                 y1="0%"
                 x2="0%"
-                y2="700%"
+                y2="100%"
               >
                 <stop
                   offset="0%"
-                  style={{ stopColor: "#f8f8f8", stopOpacity: 1 }}
+                  style={{ stopColor: "rgb(179, 201, 255)", stopOpacity: 1 }}
                 />
                 <stop
                   offset="100%"
-                  style={{ stopColor: "#f8f8f8", stopOpacity: 1 }}
+                  style={{ stopColor: "rgb(158, 187, 255)", stopOpacity: 1 }}
                 />
               </linearGradient>
             </defs>

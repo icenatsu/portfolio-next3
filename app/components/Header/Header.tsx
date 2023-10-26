@@ -37,7 +37,6 @@ const Header = (): JSX.Element => {
 
   return (
     <header ref={headerRef} id="header" className={styles.header}>
-      {/* <Banner /> */}
       <div className={styles["text"]}>
         {isDesktop ? (
           <div className={styles.background}>
@@ -89,7 +88,6 @@ const Header = (): JSX.Element => {
           </Link>
         </div>
         <div className={styles.round}></div>
-        {/* <Shape /> */}
       </div>
     </header>
   );

@@ -6,7 +6,7 @@
   padding: 0rem 15rem 1rem 15rem;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--header--bg);
+  background: var(--header--bg);
   @media screen and (max-width: 1400px) {
     padding: 0rem 0rem 1rem 0rem;
   }
@@ -75,7 +75,7 @@
       color: var(--header--profession--color);
       border: 0.1rem solid var(--header--profession--border);
       border-radius: var.$radius--30;
-      background-color: white;
+      background-color: var(--header--profession--bg);
       width: 20rem;
       padding: 1.5rem;
       display: flex;
@@ -94,7 +94,7 @@
       }
 
       @media screen and (max-width: var.$breakpoint-mobile) {
-        background-color: white;
+        background-color: var(--header--profession--bg);
         font-size: 1.5rem;
         margin-top: 2rem;
       }

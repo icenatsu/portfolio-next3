@@ -16,10 +16,6 @@
   transition: min-height 0.8s ease-in-out;
   background-color: var(--navbar--container--bg);
 
-  // filter: drop-shadow(
-  //   0 0.3rem 0.3rem var(--navbar--container--filterDropSHadow)
-  // );
-
   @media screen and (max-width: var.$breakpoint-tablette) {
     padding-top: 1rem;
     align-items: self-start;
@@ -52,7 +48,6 @@
         font-family: var(--fontFamily--archivo);
         font-weight: var(--navbar--link--fontWeight);
         color: var(--navbar--link--color);
-        // text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
 
         @media screen and (max-width: var.$breakpoint-tablette) {
           padding: 0.5rem 0;
@@ -61,9 +56,8 @@
         &:before {
           content: "\269D";
           color: var(--navbar--stars--color);
-          text-shadow: 0.1rem 0.1rem 0.1rem var(--navbar--stars--textShadow);
           margin-right: 1rem;
-          font-size: 1.9rem;
+          font-size: var(--navbar--stars--fontsize);
         }
 
         &:hover {
@@ -76,7 +70,7 @@
 
   .burger {
     display: none;
-    font-size: 3.5rem;
+    font-size: var(--navbar--burger--fontsize);
     padding: 0.5rem 0;
 
     @media screen and (max-width: var.$breakpoint-tablette) {

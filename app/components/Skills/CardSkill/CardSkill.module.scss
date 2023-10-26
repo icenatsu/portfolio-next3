@@ -10,7 +10,7 @@
   transition: max-height 0.8s ease-in-out;
   border-radius: var.$radius--10;
   padding: 1rem;
-  background-color: var(--cardSkill--bg);
+  background: var(--cardSkill--bg);
   border: 1px solid var(--cardSkill--borderColor);
 
   @media screen and (max-width: var.$breakpoint-tablette) {
