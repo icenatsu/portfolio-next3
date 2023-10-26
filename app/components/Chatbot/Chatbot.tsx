@@ -2,6 +2,7 @@
 import { useState, useEffect, useRef } from "react";
 import styles from "./Chatbot.module.scss";
 import { Icon } from "@iconify/react";
+import { useWindowSizeResize } from "@Hooks/Window/useWindowSizeResize";
 
 interface Message {
   text: string;
@@ -12,8 +13,9 @@ interface Message {
 const ChatBot: React.FC = () => {
   const [visible, setVisible] = useState<boolean>(false);
   const [input, setInput] = useState<string>("");
-
   const [messages, setMessages] = useState<Message[]>([]);
+
+  const { windowWidth } = useWindowSizeResize();
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
@@ -23,7 +25,14 @@ const ChatBot: React.FC = () => {
 
   useEffect(() => {
     if (visible && document.getElementsByClassName("chatbot") !== null) {
-      document.getElementById("chatbot")?.classList.add(styles.visible);
+      if (windowWidth <= 992) {
+        document.getElementById("chatbot")?.classList.add(styles.visible);
+        document
+          .getElementById("chatbot")
+          ?.scrollIntoView({ behavior: "smooth" });
+      } else {
+        document.getElementById("chatbot")?.classList.remove(styles.visible);
+      }
     } else {
       document.getElementById("chatbot")?.classList.remove(styles.visible);
     }

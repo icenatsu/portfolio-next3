@@ -11,6 +11,7 @@
 
 .visible {
   right: 1rem !important;
+  scroll-behavior: smooth !important;
 }
 
 .chatbot {
@@ -27,6 +28,10 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    justify-content: center;
+    background-color: var(--chatbot--bg);
+    margin-top: -0.1rem;
+    padding: 3rem;
   }
 
   &-container {

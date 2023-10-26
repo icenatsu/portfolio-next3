@@ -6,7 +6,6 @@
   flex-direction: column;
   background: var(--skills--container--bg);
   padding: 10em 20rem 0rem 20rem;
-  // margin-top: -1rem;
 
   @media screen and (max-width: 1400px) {
     padding: 10rem 10rem 2rem 10rem;
@@ -16,6 +15,7 @@
     flex-direction: column;
     padding: 15rem 5rem 3rem 5rem;
     scroll-margin: 18rem;
+    margin-top: -0.1rem;
   }
 
   @media screen and (max-width: var.$breakpoint-mobile) {

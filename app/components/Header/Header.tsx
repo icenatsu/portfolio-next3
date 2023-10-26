@@ -15,7 +15,6 @@ const Header = (): JSX.Element => {
   const isDesktop = windowWidth > 768;
 
   const themeContext = useContext(ThemeContext);
-  console.log(themeContext);
 
   const scrollToAnchor = () => {
     const projets = document.getElementById("projets");

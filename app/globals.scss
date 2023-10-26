@@ -33,7 +33,7 @@ a {
   --navbar--link--color: #{var.$darken3-color};
   --navbar--stars--color: #{var.$white-color};
   --navbar--stars--fontsize: 1.9rem;
-  --navbar--burger--color: #{var.$burgundy-color};
+  --navbar--burger--color: #{var.$darken3-color};
   --navbar--burger--fontsize: 3.5rem;
   /* Switch */
   --switch--fontSize--icon--desktop: 1.6rem;
@@ -62,12 +62,13 @@ a {
   --header--button--bg: #{var.$white-color};
   --header--button: #{var.$darken3-color};
   --header--button--fontSize: 2.5rem;
-  --header--button--hover: brightness(110%);
+  --header--button--hover: brightness(90%);
+  --header--buttonBorder: 1px dotted grey;
   --header--button-icon--fontSize: 3.2rem;
   --header--button-icon--fontWeight: bold;
   /* About */
   --about--container--bg: linear-gradient(
-    to bottom,
+    to left,
     #{var.$gray-100},
     #{var.$gray-150},
     #{var.$darken8-color}
@@ -92,7 +93,7 @@ a {
     to bottom,
     #{var.$gray-300},
     #{var.$gray-400},
-    #{var.$darken9-color},
+    #{var.$gray-500},
     #{var.$darken8-color},
     #{var.$darken9-color}
   );
@@ -136,9 +137,8 @@ a {
     to bottom,
     #{var.$darken9-color},
     #{var.$gray-100},
-    #{var.$gray-150},
     #{var.$gray-200},
-    #{var.$darken7-color}
+    #{var.$gray-300}
   );
   --skills--backgroundFilter: none;
   --skills--title--fontSize--desktop: #{var.$h2-title-desktop};
@@ -181,13 +181,13 @@ a {
     #{var.$gray-100},
     #{var.$gray-200},
     #{var.$gray-300},
+    #{var.$gray-400},
     #{var.$darken9-color},
     #{var.$darken8-color},
     #{var.$darken7-color},
-    #{var.$darken6-color},
-    #{var.$darken5-color}
+    #{var.$darken6-color}
   );
-  --contact--containerBefore--bg: #{var.$darken7-color};
+  --contact--containerBefore--bg: #{var.$gray-300};
   --contact--title--fontSize--desktop: #{var.$h2-title-desktop};
   --contact--title--fontSize--tablet: #{var.$h2-title-tablet};
   --contact--title--fontSize--mobile: #{var.$h2-title-mobile};
@@ -215,7 +215,7 @@ a {
   --downloadbutton--icon--fontSize: 4rem;
   --downloadbutton--icon--color: #{var.$darken3-color};
   /* Footer */
-  --footer--bg: #{var.$darken5-color};
+  --footer--bg: #{var.$darken6-color};
   --footer--infos--fontSize: 1.7rem;
   --footer--infos--color: #{var.$light-color};
   --footer--infos--fontWeight: normal;
@@ -236,9 +236,10 @@ a {
   --loader--icon--fontSize: 8rem;
   --loader--icon--colors: #{var.$primary-color};
   /* Chatbot */
-  --chatbot--openbot--color: #{var.$light-color};
+  --chatbot--openbot--color: #{var.$darken3-color};
   --chatbot--container--boxShadow: rgba(0, 0, 0, 0.5);
   --chatbot--container--borderColor: #ccc;
+  --chatbot--bg: #{var.$darken6-color};
   --chatbot--container--boxShadow--color: rgba(0, 0, 0, 0.1);
   --chatbot--container--bg: #{var.$transparent-color};
   --chatbot-entilted--color: #{var.$dark-color};
@@ -248,7 +249,7 @@ a {
   --chatbot--messageUserBot-fontSize: 1.5rem;
   --chatbot--userQuestion--bg: #{var.$five-color};
   --chatbot--userQuestion--color: #{var.$light-color};
-  --chatbot--botResponse--bg: #{var.$burgundy-color};
+  --chatbot--botResponse--bg: #{var.$darken3-color};
   --chatbot--botResponse--color: #{var.$light-color};
   --chatbot--inputQuestion--borderColor: #ccc;
   --chatbot--inputAndFocus--fontSize: 1.6rem;
@@ -282,6 +283,7 @@ a {
   --header--button--hover: #{var.$light-color};
   --header--button--bg--hover: #{var.$four-color};
   --header--button: #{var.$light-color};
+  --header--buttonBorder: 1px none;
   --header--button--hover: brightness(120%);
   /* About */
   --about--container--bg: #{var.$darken-color};
@@ -353,6 +355,7 @@ a {
   --loader--icon--colors: #{var.$light-color};
   /* Chatbot */
   --chatbot--openbot--color: #{var.$white-color};
+  --chatbot--bg: #{var.$dark-color};
   --chatbot--container--boxShadow: #{var.$primary-color};
   --chatbot--container--borderColor: #{var.$primary-color};
   --chatbot--container--bg: rgba(255, 255, 255, 0.1);
@@ -387,6 +390,7 @@ a {
     --header--button--hover: #{var.$light-color};
     --header--button--bg--hover: #{var.$four-color};
     --header--button: #{var.$light-color};
+    --header--buttonBorder: 1px none;
     /* Shape */
     --shape--bubble--opacity: 0.2;
     --shape--brightness: brightness(150%);

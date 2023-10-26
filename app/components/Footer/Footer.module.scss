@@ -12,12 +12,13 @@
   padding: 1rem 1rem;
   background-color: var(--footer--bg);
   z-index: -1;
+  margin-top: -2rem;
 
   @media screen and (max-width: 1530px) {
     flex-direction: column;
     align-items: center;
     gap: 3rem;
-    height: auto;
+    height: 10rem;
   }
 
   @media screen and (max-width: var.$breakpoint-mobile) {
@@ -59,8 +60,8 @@
     }
 
     @media screen and (max-width: var.$breakpoint-mobile) {
-      width: calc(140% + 0.13rem);
-      height: 8rem;
+      width: calc(160% + 0.13rem);
+      height: 7rem;
     }
   }
 }
