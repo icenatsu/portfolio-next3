@@ -4,7 +4,7 @@
   position: relative;
   display: flex;
   padding: 12rem 20rem;
-  background-color: var(--about--container--bg);
+  background: var(--about--container--bg);
   position: relative;
   z-index: -1;
   box-shadow: inset 0px 11px 8px -10px rgba($color:
@@ -107,7 +107,7 @@
     width: 55rem;
     height: 55rem;
     z-index: -1;
-    opacity: 0.4;
+    opacity: 0.3;
     filter: var(--about--splashImgFilter);
 
     @media screen and (max-width: var.$breakpoint-tablette) {

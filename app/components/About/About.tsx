@@ -35,7 +35,7 @@ const About = (): JSX.Element => {
             fill={true}
             style={{
               objectFit: "cover",
-              opacity: themeContext?.isDarkMode ? 0.04 : 0.2,
+              opacity: themeContext?.isDarkMode ? 0.04 : 0.08,
             }}
             loading="lazy"
           ></Image>
@@ -111,15 +111,15 @@ const About = (): JSX.Element => {
                 x1="0%"
                 y1="0%"
                 x2="0%"
-                y2="100%"
+                y2="700%"
               >
                 <stop
                   offset="0%"
-                  style={{ stopColor: "rgb(179, 201, 255)", stopOpacity: 1 }}
+                  style={{ stopColor: "#d4d4d4", stopOpacity: 1 }}
                 />
                 <stop
                   offset="100%"
-                  style={{ stopColor: "rgb(158, 187, 255)", stopOpacity: 1 }}
+                  style={{ stopColor: "#d4d4d4", stopOpacity: 1 }}
                 />
               </linearGradient>
             </defs>
