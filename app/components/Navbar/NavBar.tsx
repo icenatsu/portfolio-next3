@@ -26,32 +26,26 @@ const NavBar = (): JSX.Element => {
       typeof window !== "undefined"
     ) {
       if (windowSize.windowWidth <= 992 && window.innerWidth <= 992) {
+        container.current.classList.remove(styles.visible);
         if (showMenu) {
-          navbar.current.style.display = "flex";
+          navbar.current.style.transition = "opacity 1s 1s";
           setTimeout(() => {
-            if (navbar.current !== null && container.current !== null) {
-              container.current.style.minHeight = "21rem";
-              navbar.current.style.transition = "opacity 1s 0.8s";
-              navbar.current.style.opacity = "1";
+            if (container.current !== null) {
+              container.current.classList.add(styles.visible);
             }
           }, 100);
         } else {
           navbar.current.style.transition = "none";
-          container.current.style.minHeight = "6rem";
-          navbar.current.style.opacity = "0";
           setTimeout(() => {
-            if (navbar.current !== null) {
-              navbar.current.style.display = "none";
+            if (container.current !== null) {
+              container.current.classList.remove(styles.visible);
             }
-          }, 100);
+          }, 200);
         }
       } else if (windowSize.windowWidth > 992 && window.innerWidth > 992) {
-        if (navbar.current !== null && container.current !== null) {
-          console.log(windowSize.windowWidth);
-          console.log("coucou");
-          navbar.current.style.display = "flex";
-          container.current.style.minHeight = "6rem";
+        if (container.current !== null) {
           setShowMenu(false);
+          container.current.classList.add(styles.visible);
         }
       }
     }
