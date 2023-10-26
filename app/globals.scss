@@ -156,7 +156,7 @@ a {
   //   #{var.$darken2-color}
   // );
   --cardSkill--bg: #{var.$gray-100};
-  --cardSkill--borderColor: #{var.$darken5-color};
+  --cardSkill--borderColor: #{var.$gray-300};
   --cardSkill--chevron--color: #{var.$white-color};
   --cardSkill--icon--fontSize--desktop: 5rem;
   --cardSkill--icon--fontSize--tablet: 5rem;
@@ -174,7 +174,7 @@ a {
   --cardSkill--iconArrow--fontSize--tablet: 2.2rem;
   --cardSkill--iconArrow--fontSize--mobile: 2.1rem;
   --cardSkill--iconArrow--color: #{var.$burgundy-color};
-  --cardskill--tiltFill: #{var.$white-color};
+  --cardskill--tiltFill: #{var.$light-color};
   /* Contact */
   --contact--bg: linear-gradient(
     to bottom,

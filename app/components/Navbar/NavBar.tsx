@@ -27,18 +27,27 @@ const NavBar = (): JSX.Element => {
     ) {
       if (windowSize.windowWidth <= 992) {
         if (showMenu) {
-          container.current.style.minHeight = "21rem";
-          navbar.current.style.transition = "opacity 1s 0.8s";
-          navbar.current.style.opacity = "1";
+          navbar.current.style.display = "flex";
+          setTimeout(() => {
+            if (navbar.current !== null && container.current !== null) {
+              container.current.style.minHeight = "21rem";
+              navbar.current.style.transition = "opacity 1s 0.8s";
+              navbar.current.style.opacity = "1";
+            }
+          }, 100);
         } else {
           navbar.current.style.transition = "none";
           container.current.style.minHeight = "6rem";
           navbar.current.style.opacity = "0";
+          setTimeout(() => {
+            if (navbar.current !== null) {
+              navbar.current.style.display = "none";
+            }
+          }, 100);
         }
       } else {
         setShowMenu(false);
-        navbar.current.style.opacity = "1";
-        container.current.style.minHeight = "6rem";
+        navbar.current.style.display = "flex";
       }
     }
   }, [showMenu, windowSize.windowWidth]);

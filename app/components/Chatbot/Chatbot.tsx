@@ -24,8 +24,8 @@ const ChatBot: React.FC = () => {
   };
 
   useEffect(() => {
-    if (visible && document.getElementsByClassName("chatbot") !== null) {
-      if (windowWidth <= 992) {
+    if (windowWidth <= 992) {
+      if (visible && document.getElementsByClassName("chatbot") !== null) {
         document.getElementById("chatbot")?.classList.add(styles.visible);
         document
           .getElementById("chatbot")
@@ -34,7 +34,11 @@ const ChatBot: React.FC = () => {
         document.getElementById("chatbot")?.classList.remove(styles.visible);
       }
     } else {
-      document.getElementById("chatbot")?.classList.remove(styles.visible);
+      if (visible && document.getElementsByClassName("chatbot") !== null) {
+        document.getElementById("chatbot")?.classList.add(styles.visible);
+      } else {
+        document.getElementById("chatbot")?.classList.remove(styles.visible);
+      }
     }
   }, [visible]);
 
