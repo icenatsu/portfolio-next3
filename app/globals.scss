@@ -234,7 +234,7 @@ a {
   /* Chatbot */
   --chatbot--openbot--color: #{var.$blue-700};
   --chatbot--bg: #{var.$blue-400};
-  --chatbot--container--boxShadow--color: rgba(0, 0, 0, 0.1);
+  --chatbot--container--boxShadow--color: 2px 2px 18px 2px rgba(0, 0, 0, 0.3);
   --chatbot--container--borderColor: #ccc;
   --chatbot--container--bg: #{var.$transparent-color};
   --chatbot-entilted--color: #{var.$dark-color};
@@ -345,8 +345,8 @@ a {
   /* Chatbot */
   --chatbot--openbot--color: #{var.$white-color};
   --chatbot--bg: #{var.$dark-color};
-  --chatbot--container--boxShadow: #{var.$primary-color};
-  --chatbot--container--borderColor: #{var.$primary-color};
+  --chatbot--container--boxShadow--color: 1px 1px 12px 1px #{var.$dark-color};
+  --chatbot--container--borderColor: #{var.$dark-color};
   --chatbot--container--bg: rgba(255, 255, 255, 0.1);
   --chatbot-entilted--color: #{var.$light-color};
   --chatbot--messagesScrollbar--handle: #{var.$four-color};
@@ -446,8 +446,8 @@ a {
     /* Chatbot */
     --chatbot--openbot--color: #{var.$white-color};
     --chatbot--bg: #{var.$dark-color};
-    --chatbot--container--boxShadow: #{var.$primary-color};
-    --chatbot--container--borderColor: #{var.$primary-color};
+    --chatbot--container--boxShadow--color: 1px 1px 12px 1px #{var.$dark-color};
+    --chatbot--container--borderColor: #{var.$dark-color};
     --chatbot--container--bg: rgba(255, 255, 255, 0.1);
     --chatbot-entilted--color: #{var.$light-color};
     --chatbot--messagesScrollbar--handle: #{var.$four-color};

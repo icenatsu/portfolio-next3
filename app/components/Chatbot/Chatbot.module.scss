@@ -46,10 +46,10 @@
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    -webkit-box-shadow: 0 0 10rem var(--chatbot--container--boxShadow--color);
-    box-shadow: 0 0 10rem var(--chatbot--container--boxShadow--color);
-    -webkit-box-shadow: 2px 2px 18px 2px var(--chatbot--container--boxShadow);
-    box-shadow: 2px 2px 18px 2px var(--chatbot--container--boxShadow);
+    -webkit-box-shadow: var(--chatbot--container--boxShadow--color);
+    box-shadow: var(--chatbot--container--boxShadow--color);
+    -webkit-box-shadow: var(--chatbot--container--boxShadow--color);
+    box-shadow: var(--chatbot--container--boxShadow--color);
     border: 1px solid var(--chatbot--container--borderColor);
     border-radius: 0.8rem;
     background-color: var(--chatbot--container--bg);
