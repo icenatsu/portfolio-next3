@@ -34,6 +34,7 @@ const About = (): JSX.Element => {
             src={Bg}
             alt="hexagones"
             fill={true}
+            sizes="100vh"
             style={{
               objectFit: "cover",
               opacity: themeContext?.isDarkMode ? 0.04 : 0.08,
