@@ -378,6 +378,7 @@ a {
     --navbar--link--color: #{var.$primary-color};
     --navbar--stars--color: #{var.$light-color};
     --navbar--stars--textShadow: none;
+    --navbar--langage--color: #{var.$primary-color};
     --navbar--burger--color: #{var.$light-color};
     /* Switch */
     --switch--sunmoon--bg: #{var.$light-color};
@@ -394,13 +395,7 @@ a {
     --header--button--bg--hover: #{var.$four-color};
     --header--button: #{var.$light-color};
     --header--buttonBorder: 1px none;
-    /* Shape */
-    --shape--bubble--opacity: 0.2;
-    --shape--brightness: brightness(150%);
-    --shape--bubble--fill: #{var.$four-color};
-    /* Banner */
-    --banner--tuyau--filterDropSHadow: #{var.$primary-color};
-    --banner--pot--filterDropSHadow: #{var.$primary-color};
+    --header--button--hover: brightness(120%);
     /* About */
     --about--container--bg: #{var.$darken-color};
     --about--containerBoxShadow--color: #{var.$light-color};
@@ -444,6 +439,7 @@ a {
     --cardSkill--descriptionTechno--color: #{var.$light-color};
     --cardSkill--dividingBorder: #{var.$dark-color};
     --cardSkill--iconArrow--color: #{var.$gold-color};
+    --cardskill--tiltFill: #{var.$black-color};
     /* Contact */
     --contact--bg: linear-gradient(
       to bottom,
@@ -470,6 +466,7 @@ a {
     --loader--icon--colors: #{var.$light-color};
     /* Chatbot */
     --chatbot--openbot--color: #{var.$white-color};
+    --chatbot--bg: #{var.$dark-color};
     --chatbot--container--boxShadow: #{var.$primary-color};
     --chatbot--container--borderColor: #{var.$primary-color};
     --chatbot--container--bg: rgba(255, 255, 255, 0.1);
