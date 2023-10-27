@@ -4,8 +4,8 @@ import Link from "next/link";
 import { useEffect, useRef, useState, useContext } from "react";
 import { Icon } from "@iconify/react";
 import { useWindowSizeResize } from "@Hooks/Window/useWindowSizeResize";
-import Switch from "@components/Switch/Switch";
-import SwitchLanguage from "@components/SwitchLanguage/SwitchLanguage";
+import Switch from "@components/Switchs/SwitchTheme/Switch";
+import SwitchLanguage from "@components/Switchs/SwitchLanguage/SwitchLanguage";
 import { LanguageContext } from "@context/Language/Language";
 
 const NavBar = (): JSX.Element => {

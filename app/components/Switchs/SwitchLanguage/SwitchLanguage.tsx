@@ -6,7 +6,8 @@ const SwitchLanguage = () => {
   const language = useContext(LanguageContext);
 
   return (
-    <div className={styles.language}>
+    <fieldset className={styles.language}>
+      <legend aria-hidden="true"></legend>
       <input
         className={styles.input}
         type="radio"
@@ -31,7 +32,7 @@ const SwitchLanguage = () => {
       <label className={styles.label} htmlFor="english">
         ENG
       </label>
-    </div>
+    </fieldset>
   );
 };
 
