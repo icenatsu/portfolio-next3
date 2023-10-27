@@ -116,7 +116,11 @@ const Project = () => {
         </div>
       ) : (
         <div id="errors" className={styles["error"]}>
-          <p>Une erreur est survenue. Veuillez réessayer ultérieurement.</p>
+          <p>
+            {languageContext?.isFrenchLanguage
+              ? "Une erreur est survenue. Veuillez réessayer ultérieurement."
+              : "The error occurred. Please try again later"}
+          </p>
         </div>
       )}
     </section>
