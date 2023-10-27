@@ -33,17 +33,18 @@ a {
   --navbar--link--color: #{var.$darken3-color};
   --navbar--stars--color: #{var.$white-color};
   --navbar--stars--fontsize: 1.9rem;
-  --navbar--langage--color: #{var.$white-color};
-  --navbar--langage--fontSize: 1.7rem;
   --navbar--burger--color: #{var.$darken3-color};
   --navbar--burger--fontsize: 3.5rem;
-  /* Switch */
+  /* SwitchTheme */
   --switch--fontSize--icon--desktop: 1.6rem;
   --switch--fontSize--icon--tablet: 1.5rem;
   --switch--fontSize--icon--mobile: 1.4rem;
   --switch--sunmoon--color: #{var.$dark-color};
   --switch--sunmoon--bg: #{var.$light-color};
   --switch--bg--toogle: #{var.$darken5-color};
+  /* SwitchLanguage */
+  --switchLanguage--label--color: #{var.$darken3-color};
+  --switchLanguage--label--fontSize: 1.7rem;
   /* Header */
   --header--bg: linear-gradient(
     to bottom,
@@ -270,12 +271,13 @@ a {
   --navbar--link--color: #{var.$primary-color};
   --navbar--stars--color: #{var.$light-color};
   --navbar--stars--textShadow: none;
-  --navbar--langage--color: #{var.$primary-color};
   --navbar--burger--color: #{var.$light-color};
-  /* Switch */
+  /* SwitchTheme */
   --switch--sunmoon--bg: #{var.$light-color};
   --switch--bg--toogle: #525151;
   --switch--border--color: #{var.$dark-color};
+  /* SwitchLanguage */
+  --switchLanguage--label--color: #{var.$primary-color};
   /* Header */
   --header--bg: #{var.$dark-color};
   --header--IntegerCircuit: none;
