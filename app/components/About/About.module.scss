@@ -1,17 +1,16 @@
 @use "../../styles/utils/variables.scss" as var;
 
 .container {
-  position: relative;
   display: flex;
-  padding: 12rem 20rem;
-  background: var(--about--container--bg);
   position: relative;
   z-index: -1;
-  box-shadow: inset 0px 11px 8px -10px rgba($color:
+  box-shadow:
+    inset 0px 11px 8px -10px rgba($color:
           var(--about--containerBoxShadow--color), $alpha: 0.2),
     inset 0px -11px 8px -10px
       rgba($color: var(--about--containerBoxShadow--color), $alpha: 0.2);
-  filter: var(--about--containerFiler);
+  background: var(--about--container--bg);
+  padding: 12rem 20rem;
 
   @media screen and (max-width: 1400px) {
     padding: 10rem 10rem;
@@ -28,28 +27,28 @@
   }
 
   &::before {
-    content: "";
     position: absolute;
     top: -0.2rem;
     left: 0;
+    box-shadow: 2px 15px 5px var(--about--containerBefore--boxShadow);
+    background-color: var(--about--containerBefore--bg);
     width: 100%;
     height: 1rem;
-    background-color: var(--about--containerBefore--bg);
-    box-shadow: 2px 15px 5px rgba(0, 0, 0, 0.4);
+    content: "";
   }
 
   .background {
     position: absolute;
     top: 0;
     left: 0;
+    z-index: -2;
+    filter: var(--about--backgroundFilter);
     width: 100%;
     height: 100%;
-    filter: var(--about--backgroundFilter);
-    z-index: -2;
 
     &__container {
-      position: relative;
       display: block;
+      position: relative;
       width: 100%;
       height: 100%;
     }
@@ -57,45 +56,40 @@
 
   .title {
     flex: 1;
-    font-family: var(--fontFamily--oswald);
-    font-size: var(--about--title--fontSize--desktop);
-    font-weight: var(--about--title--fontWeight);
     color: var(--about--title--color);
+    font-weight: var(--about--title--fontWeight);
+    font-size: var(--about--title--fontSize--desktop);
+    font-family: var(--fontFamily--oswald);
 
     @media screen and (max-width: var.$breakpoint-tablette) {
-      font-size: var(--about--title--fontSize--tablet);
       padding-bottom: 2rem;
+      font-size: var(--about--title--fontSize--tablet);
     }
 
     @media screen and (max-width: var.$breakpoint-mobile) {
-      text-align: center;
-      font-size: var(--about--title--fontSize--mobile);
       padding-bottom: 3rem;
+      font-size: var(--about--title--fontSize--mobile);
+      text-align: center;
     }
   }
 
   .presentation {
     position: relative;
     flex: 1;
-    font-family: var(--fontFamily--inter);
-    font-size: var(--about--presentation--fontSize--desktop);
     border-radius: var.$radius--5;
     padding: 4rem 2rem;
     color: var(--about--presentation--color);
+    font-size: var(--about--presentation--fontSize);
+    font-family: var(--fontFamily--inter);
 
     & p {
-      max-width: 95%;
       margin: auto;
+      max-width: 95%;
       white-space: pre-line;
 
       @media screen and (max-width: var.$breakpoint-tablette) {
         margin: 0;
         max-width: 100%;
-        font-size: var(--about--presentation--fontSize--tablet);
-      }
-
-      @media screen and (max-width: var.$breakpoint-mobile) {
-        font-size: var(--about--presentation--fontSize--mobile);
       }
     }
   }
@@ -105,11 +99,11 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    opacity: 0.3;
+    z-index: -1;
+    filter: var(--about--splashImgFilter);
     width: 55rem;
     height: 55rem;
-    z-index: -1;
-    opacity: 0.3;
-    filter: var(--about--splashImgFilter);
 
     @media screen and (max-width: var.$breakpoint-tablette) {
       width: 40rem;
@@ -132,12 +126,12 @@
 }
 
 .shape svg {
-  position: relative;
   display: block;
-  width: calc(110% + 1.3px);
-  height: 120px;
+  position: relative;
   transform: rotateX(180deg);
   filter: drop-shadow(0rem 0.1rem 0.2rem var(--about--shape--filterDropSHadow));
+  width: calc(110% + 1.3px);
+  height: 120px;
 
   @media screen and (max-width: var.$breakpoint-tablette) {
     width: calc(110% + 1.3px);

@@ -2,18 +2,18 @@
 
 .contact {
   display: flex;
-  padding: 5rem 20rem 0rem 20rem;
   background: var(--contact--bg);
+  padding: 5rem 20rem 0rem 20rem;
 
   &::before {
-    content: "";
     position: absolute;
     top: -0.2rem;
     left: 0;
+    box-shadow: 2px 15px 5px rgba(0, 0, 0, 0.4);
+    background-color: var(--contact--containerBefore--bg);
     width: 100%;
     height: 1rem;
-    background-color: var(--contact--containerBefore--bg);
-    box-shadow: 2px 15px 5px rgba(0, 0, 0, 0.4);
+    content: "";
   }
 
   @media screen and (max-width: 1400px) {
@@ -34,22 +34,22 @@
 
   .container-formulaire {
     display: flex;
+    position: relative;
+    flex: 3;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    flex: 3;
-    position: relative;
 
     @media screen and (max-width: var.$breakpoint-tablette) {
-      justify-content: center;
       flex-direction: column;
+      justify-content: center;
     }
 
     .title {
-      font-size: var(--contact--title--fontSize--desktop);
-      font-weight: var(--contact--title--fontWeight);
-      font-family: var(--fontFamily--oswald);
       color: var(--contact--title--color);
+      font-weight: var(--contact--title--fontWeight);
+      font-size: var(--contact--title--fontSize--desktop);
+      font-family: var(--fontFamily--oswald);
 
       @media screen and (max-width: var.$breakpoint-tablette) {
         font-size: var(--contact--title--fontSize--tablet);
@@ -61,22 +61,22 @@
     }
 
     .form__contact {
-      position: relative;
       display: grid;
+      position: relative;
       grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
-      grid-area: form-contact;
       grid-template-areas:
         "lastname firstname"
         "email tel"
         "entilted entilted"
         "message message"
         "send send";
+      grid-area: form-contact;
+      align-items: center;
+      justify-items: center;
+      gap: 2rem;
+      border-radius: var.$radius--10;
 
       padding: 2rem;
-      border-radius: var.$radius--10;
-      justify-items: center;
-      align-items: center;
       width: 75rem;
 
       @media screen and (max-width: var.$breakpoint-tablette) {
@@ -84,10 +84,8 @@
       }
 
       @media screen and (max-width: var.$breakpoint-mobile) {
-        width: 100%;
-        grid-template-columns: repeat(1, minmax(20rem, 37rem));
         grid-template-rows: 7fr;
-        gap: 2rem;
+        grid-template-columns: repeat(1, minmax(20rem, 37rem));
         grid-template-areas:
           "lastname"
           "firstname"
@@ -96,6 +94,8 @@
           "entilted"
           "message"
           "send";
+        gap: 2rem;
+        width: 100%;
       }
 
       @mixin gridAreaLabels($gridAreaNames) {
@@ -109,12 +109,12 @@
 
       .label {
         display: flex;
-        align-items: center;
         flex-direction: column;
-        font-family: var(--fontFamily--archivo);
-        font-size: var(--contact--label--fontSize--desktop);
-        color: var(--contact--label--color);
+        align-items: center;
         gap: 0.5rem;
+        color: var(--contact--label--color);
+        font-size: var(--contact--label--fontSize--desktop);
+        font-family: var(--fontFamily--archivo);
 
         @media screen and (max-width: var.$breakpoint-tablette) {
           font-size: var(--contact--label--fontSize--tablet);
@@ -125,63 +125,63 @@
         );
 
         .errors {
-          margin-bottom: 1rem;
           margin-top: 0.5rem;
-          font-size: var(--contact--errors--fontSize);
-          font-style: italic;
-          text-align: center;
+          margin-bottom: 1rem;
           color: var(--contact--errors--color);
+          font-style: italic;
+          font-size: var(--contact--errors--fontSize);
+          text-align: center;
         }
       }
 
       .input {
+        border: var(--contact--inputBorder);
         border-radius: var.$radius--10;
+        background-color: var(--contact--input--bg);
+        padding: 1rem;
         width: 100%;
         height: 4rem;
-        padding: 1rem;
-        border: var(--contact--inputBorder);
         color: var(--contact--input--color);
-        background-color: var(--contact--input--bg);
 
         &::placeholder {
-          font-size: var(--contact--placeHolder--fontSize);
-          color: var(--contact--placeHolder--color);
           opacity: 1;
+          color: var(--contact--placeHolder--color);
+          font-size: var(--contact--placeHolder--fontSize);
         }
       }
 
       .textarea {
-        padding: 1rem;
-        resize: none;
-        border-radius: var.$radius--10;
-        width: 100%;
-        border: var(--contact--inputBorder);
-        height: 17rem;
         margin-bottom: 1rem;
-        color: var(--contact--input--color);
+        border: var(--contact--inputBorder);
+        border-radius: var.$radius--10;
         background-color: var(--contact--input--bg);
+        padding: 1rem;
+        width: 100%;
+        height: 17rem;
+        resize: none;
+        color: var(--contact--input--color);
 
         &::placeholder {
-          font-size: var(--contact--placeHolder--fontSize);
-          color: var(--contact--placeHolder--color);
           opacity: 1;
+          color: var(--contact--placeHolder--color);
+          font-size: var(--contact--placeHolder--fontSize);
         }
       }
 
       .send {
-        width: 20%;
-        height: 4rem;
-        font-family: var(--fontFamily--oswald);
-        font-size: var(--contact--send--fontSize--desktop);
-        border-radius: var.$radius--10;
-        margin-top: 1rem;
-        cursor: pointer;
         grid-area: send;
         transition: filter 0.6s;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
-        background-color: var(--contact--send--bg);
-        color: var(--contact--send--color);
+        cursor: pointer;
+        margin-top: 1rem;
         border: none;
+        border-radius: var.$radius--10;
+        background-color: var(--contact--send--bg);
+        width: 20%;
+        height: 4rem;
+        color: var(--contact--send--color);
+        font-size: var(--contact--send--fontSize--desktop);
+        font-family: var(--fontFamily--oswald);
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
 
         &:hover {
           filter: brightness(120%);
@@ -192,8 +192,8 @@
         }
 
         @media screen and (max-width: var.$breakpoint-mobile) {
-          font-size: var(--contact--send--fontSize--mobile);
           width: 40%;
+          font-size: var(--contact--send--fontSize--mobile);
         }
       }
     }
@@ -201,14 +201,14 @@
 
   .elipse {
     position: absolute;
-    z-index: -1;
     top: -6rem;
     left: -3rem;
+    transform: rotate(-30deg);
+    z-index: -1;
+    border: 0.1rem solid var(--contact--elipse--borderColor);
+    border-radius: var.$radius--circle;
     width: 20rem;
     height: 65rem;
-    border-radius: var.$radius--circle;
-    transform: rotate(-30deg);
-    border: 0.1rem solid var(--contact--elipse--borderColor);
 
     @media screen and (max-width: var.$breakpoint-tablette) {
       display: none;

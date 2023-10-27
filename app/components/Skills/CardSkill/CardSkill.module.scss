@@ -1,40 +1,40 @@
 @use "../../../styles/utils/variables.scss" as var;
 
 .cardSkill {
-  position: relative;
   display: flex;
+  position: relative;
   flex-direction: column;
-  overflow: hidden;
+  transition: max-height 0.8s ease-in-out;
+  border: 1px solid var(--cardSkill--borderColor);
+  border-radius: var.$radius--10;
+  background: var(--cardSkill--bg);
+  padding: 1rem;
   width: 40rem;
   max-height: 7.1rem;
-  transition: max-height 0.8s ease-in-out;
-  border-radius: var.$radius--10;
-  padding: 1rem;
-  background: var(--cardSkill--bg);
-  border: 1px solid var(--cardSkill--borderColor);
+  overflow: hidden;
 
   @media screen and (max-width: var.$breakpoint-tablette) {
-    max-height: 7rem;
     width: 35.5rem;
+    max-height: 7rem;
   }
 
   @media screen and (max-width: var.$breakpoint-mobile) {
-    width: 90%;
     margin: auto;
+    width: 90%;
     max-height: 6.5rem;
   }
 
   .container {
     display: flex;
-    padding-bottom: 0.5rem;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
+    padding-bottom: 0.5rem;
     height: auto;
 
     .slideToBottom {
-      font-size: 3rem;
       cursor: pointer;
       color: var(--cardSkill--chevron--color);
+      font-size: 3rem;
     }
 
     &__icones {
@@ -43,24 +43,24 @@
 
       .icone {
         padding: 0 0.5rem 0.5rem 0;
-        font-size: var(--cardSkill--icon--fontSize--desktop);
         color: var(--cardSkill--iconTechno--color);
+        font-size: var(--cardSkill--iconTechno--fontSize--desktop);
 
         @media screen and (max-width: var.$breakpoint-tablette) {
-          font-size: var(--cardSkill--icon--fontSize--tablet);
+          font-size: var(--cardSkill--iconTechno--fontSize--tablet);
         }
 
         @media screen and (max-width: var.$breakpoint-mobile) {
           padding-left: 0.5rem;
-          font-size: var(--cardSkill--icon--fontSize--mobile);
+          font-size: var(--cardSkill--iconTechno--fontSize--mobile);
         }
       }
 
       .nameTechno {
         padding-left: 2rem;
-        font-family: var(--fontFamily--inter);
-        font-size: var(--cardSkill--nameTechno--fontSize--desktop);
         color: var(--cardSkill--nameTechno--color);
+        font-size: var(--cardSkill--nameTechno--fontSize--desktop);
+        font-family: var(--fontFamily--inter);
 
         @media screen and (max-width: var.$breakpoint-tablette) {
           font-size: var(--cardSkill--nameTechno--fontSize--tablet);
@@ -76,32 +76,32 @@
   .descriptionTechno {
     opacity: 0;
     transition: opacity 1s ease-in-out;
+    color: var(--cardSkill--description--color);
     font-size: var(--cardSkill--description--fontSize--desktop);
     font-family: var(--fontFamily--inter);
-    color: var(--cardSkill--descriptionTechno--color);
 
     @media screen and (max-width: var.$breakpoint-mobile) {
       font-size: var(--cardSkill--description--fontSize--mobile);
     }
 
     .tilt {
-      z-index: -1;
       position: absolute;
       bottom: 0;
       left: 0;
+      transform: rotate(180deg);
+      z-index: -1;
+      transition: opacity 0.5s ease-in-out;
       width: 100%;
       overflow: hidden;
       line-height: 0;
-      transform: rotate(180deg);
-      transition: opacity 0.5s ease-in-out;
     }
 
     .tilt svg {
-      position: relative;
       display: block;
+      position: relative;
+      transform: rotateY(180deg);
       width: calc(100% + 0.13rem);
       height: 8rem;
-      transform: rotateY(180deg);
     }
 
     .tilt .tilt-fill {
@@ -114,16 +114,16 @@
     padding: 1rem 0rem 0.5rem 0.5rem;
 
     &:first-of-type {
-      padding: 1rem 0 0 0.5rem;
       border-top: 0.1rem solid var(--cardSkill--dividingBorder);
+      padding: 1rem 0 0 0.5rem;
     }
 
     &::before {
-      font-family: var(--font--noto);
-      content: "\2BB1";
       padding-right: 0.5rem;
-      font-size: var(--cardSkill--iconArrow--fontSize--desktop);
+      content: "\2BB1";
       color: var(--cardSkill--iconArrow--color);
+      font-size: var(--cardSkill--iconArrow--fontSize--desktop);
+      font-family: var(--font--noto);
 
       @media screen and (max-width: var.$breakpoint-tablette) {
         font-size: var(--cardSkill--iconArrow--fontSize--tablet);

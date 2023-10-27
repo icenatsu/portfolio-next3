@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState, useContext } from "react";
 import { Icon } from "@iconify/react";
 import { useWindowSizeResize } from "@Hooks/Window/useWindowSizeResize";
-import Switch from "@components/Switchs/SwitchTheme/Switch";
+import SwitchTheme from "@components/Switchs/SwitchTheme/SwitchTheme";
 import SwitchLanguage from "@components/Switchs/SwitchLanguage/SwitchLanguage";
 import { LanguageContext } from "@context/Language/Language";
 
@@ -62,7 +62,7 @@ const NavBar = (): JSX.Element => {
 
   return (
     <div id="navBar" className={styles.container} ref={container}>
-      <Switch />
+      <SwitchTheme />
       <nav className={styles.navbar} ref={navbar}>
         <ul className={styles.list}>
           <li className={styles.list__item}>

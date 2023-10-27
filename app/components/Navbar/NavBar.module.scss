@@ -1,32 +1,32 @@
 @use "../../styles/utils/variables.scss" as var;
 
 .container {
+  display: flex;
   position: sticky;
   top: 0;
   left: 0;
-  max-width: 100dvw;
-  z-index: 4;
-  width: 100%;
-  min-height: 6rem;
-  display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 1rem;
+  z-index: 4;
   transition: min-height 1s ease-in-out;
   background-color: var(--navbar--container--bg);
+  padding: 0 1rem;
+  width: 100%;
+  max-width: 100dvw;
+  min-height: 6rem;
 
   @media screen and (max-width: var.$breakpoint-tablette) {
-    padding-top: 1rem;
     align-items: self-start;
+    padding-top: 1rem;
   }
 
   .navbar {
-    flex: 2;
     display: flex;
+    flex: 2;
+    justify-content: center;
     align-items: center;
     opacity: 0;
     height: auto;
-    justify-content: center;
     height: 6rem;
 
     @media screen and (max-width: var.$breakpoint-tablette) {
@@ -46,25 +46,25 @@
 
       &__item {
         padding: 0 2rem;
+        color: var(--navbar--link--color);
+        font-weight: var(--navbar--link--fontWeight);
         font-size: var(--navbar--link--fontSize);
         font-family: var(--fontFamily--archivo);
-        font-weight: var(--navbar--link--fontWeight);
-        color: var(--navbar--link--color);
 
         @media screen and (max-width: var.$breakpoint-tablette) {
           padding: 0.5rem 0;
         }
 
         &:before {
+          margin-right: 1rem;
           content: "\269D";
           color: var(--navbar--stars--color);
-          margin-right: 1rem;
           font-size: var(--navbar--stars--fontsize);
         }
 
         &:hover {
-          animation: wobble-horizontal 1s ease-in-out 1;
           transform: perspective(0.1rem) translateZ(0);
+          animation: wobble-horizontal 1s ease-in-out 1;
         }
       }
     }
@@ -72,12 +72,12 @@
 
   .burger {
     display: none;
-    font-size: var(--navbar--burger--fontsize);
     padding: 0.5rem 0;
+    font-size: var(--navbar--burger--fontsize);
 
     @media screen and (max-width: var.$breakpoint-tablette) {
-      color: var(--navbar--burger--color);
       display: block;
+      color: var(--navbar--burger--color);
     }
   }
 }
@@ -109,8 +109,6 @@
 }
 
 .visible {
-  color: red;
-
   @media screen and (max-width: var.$breakpoint-tablette) {
     min-height: 21rem;
   }

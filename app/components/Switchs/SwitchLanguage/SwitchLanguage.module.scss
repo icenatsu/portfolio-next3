@@ -1,10 +1,10 @@
 @use "../../../styles/utils/variables.scss" as var;
 
 .language {
-  font-family: var(--fontFamily--archivo);
   display: flex;
   align-items: center;
   border: none;
+  font-family: var(--fontFamily--archivo);
 
   @media screen and (max-width: var.$breakpoint-tablette) {
     position: absolute;
@@ -14,8 +14,8 @@
   }
 
   .label {
+    padding: 1rem;
     color: var(--switchLanguage--label--color);
     font-size: var(--switchLanguage--label--fontSize);
-    padding: 1rem;
   }
 }

@@ -32,6 +32,7 @@
     "@types/react-dom": "^18.2.8",
     "eslint": "latest",
     "eslint-config-next": "latest",
+    "prettier-plugin-css-order": "^2.0.1",
     "sass": "^1.69.0",
     "sharp": "^0.32.6",
     "typescript": "latest"

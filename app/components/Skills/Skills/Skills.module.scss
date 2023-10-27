@@ -1,8 +1,8 @@
 @use "../../../styles/utils/variables.scss" as var;
 
 .container {
-  position: relative;
   display: flex;
+  position: relative;
   flex-direction: column;
   background: var(--skills--container--bg);
   padding: 10em 20rem 0rem 20rem;
@@ -13,9 +13,9 @@
 
   @media screen and (max-width: var.$breakpoint-tablette) {
     flex-direction: column;
+    margin-top: -0.1rem;
     padding: 15rem 5rem 3rem 5rem;
     scroll-margin: 18rem;
-    margin-top: -0.1rem;
   }
 
   @media screen and (max-width: var.$breakpoint-mobile) {
@@ -23,10 +23,10 @@
   }
 
   .title {
+    color: var(--skills--title--color);
+    font-weight: var(--skills--title--fontWeight);
     font-size: var(--skills--title--fontSize--desktop);
     font-family: var(--fontFamily--oswald);
-    font-weight: var(--skills--title--fontWeight);
-    color: var(--skills--title--color);
 
     @media screen and (max-width: var.$breakpoint-tablette) {
       font-size: var(--skills--title--fontSize--tablet);
@@ -41,10 +41,10 @@
   &__Accordeons {
     display: flex;
     justify-content: center;
-    min-height: 50rem;
-    height: auto;
     gap: 2rem;
     margin-top: 3rem;
+    height: auto;
+    min-height: 50rem;
 
     @media screen and (max-width: 1400px) {
       min-height: 45rem;
@@ -59,44 +59,16 @@
       flex-direction: column;
       justify-content: start;
       align-items: center;
-      min-height: 70rem;
-      height: auto;
       margin-top: 4rem;
+      height: auto;
+      min-height: 70rem;
     }
 
     .dataAccordeon {
       display: flex;
       flex-direction: column;
-      height: auto;
       gap: 2rem;
+      height: auto;
     }
   }
-}
-
-.shape {
-  position: absolute;
-  top: 0rem;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-  transform: rotate(180deg);
-
-  .img {
-    position: relative;
-    width: 100vw;
-    height: 120rem;
-  }
-}
-
-.shape svg {
-  position: relative;
-  display: block;
-  width: calc(110% + 1.3px);
-  height: 120px;
-  transform: rotateY(180deg);
-}
-
-.shape .shape-fill {
-  fill: var(--skills--waveFill);
 }

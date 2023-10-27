@@ -1,4 +1,4 @@
-import styles from "./Switch.module.scss";
+import styles from "./SwitchTheme.module.scss";
 import { Icon } from "@iconify/react";
 import { useContext } from "react";
 import { ThemeContext } from "@context/ThemeContext/ThemeContext";

@@ -1,15 +1,15 @@
 @use "../../../styles/utils/variables.scss" as var;
 .container {
-  position: relative;
   display: flex;
+  position: relative;
   flex-direction: column;
-  background-repeat: no-repeat;
-  background-size: 80% 90%;
-  max-height: 70rem;
-  padding: 7em 20rem 20rem 20rem;
-  background: var(--project--container--bg);
   z-index: 1;
   margin-top: -0.1rem;
+  background-size: 80% 90%;
+  background-repeat: no-repeat;
+  background: var(--project--container--bg);
+  padding: 7em 20rem 20rem 20rem;
+  max-height: 70rem;
 
   @media screen and (max-width: 1400px) {
     padding: 5em 5rem 0rem 5rem;
@@ -17,32 +17,32 @@
 
   @media screen and (max-width: var.$breakpoint-tablette) {
     filter: none;
+    padding: 0em 5rem 0rem 5rem;
     max-width: 100%;
     max-height: 70rem;
-    padding: 0em 5rem 0rem 5rem;
     scroll-margin: 18rem;
   }
 
   @media screen and (max-width: var.$breakpoint-mobile) {
     flex-direction: column;
-    max-height: 70rem;
     padding: 5rem 0rem 0rem 0rem;
+    max-height: 70rem;
   }
 
   &__title {
+    padding: 0 0 10rem 0;
+    color: var(--project--title--color);
+    font-weight: var(--project--title--fontWeight);
     font-size: var(--project--title--fontSize--desktop);
     font-family: var(--fontFamily--oswald);
-    font-weight: var(--project--title--fontWeight);
-    color: var(--project--title--color);
-    padding: 0 0 10rem 0;
 
     @media screen and (max-width: var.$breakpoint-tablette) {
       font-size: var(--project--title--fontSize--tablet);
     }
 
     @media screen and (max-width: var.$breakpoint-mobile) {
-      text-align: center;
       font-size: var(--project--title--fontSize--mobile);
+      text-align: center;
     }
   }
 
@@ -53,29 +53,29 @@
     max-width: 100%;
 
     .swiper {
-      width: 100%;
       padding: 2rem 0;
+      width: 100%;
       @media screen and (max-width: var.$breakpoint-tablette) {
         padding: 2rem 0rem;
       }
 
       &__slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
         width: 20rem;
         min-width: 20rem;
         min-height: 19rem;
-        margin: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
       }
     }
   }
 
   .touch {
-    text-align: center;
     padding: 3rem 0 0 0;
-    font-size: var(--project--touch--fontSize);
     color: var(--project--touch--color);
+    font-size: var(--project--touch--fontSize);
+    text-align: center;
 
     @media screen and (max-width: var.$breakpoint-tablette) {
       display: block;
@@ -85,10 +85,10 @@
 
 .error {
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   padding: 10rem;
-  font-size: var(--project--error--fontSize);
   color: var(--project--error--color);
+  font-size: var(--project--error--fontSize);
 }

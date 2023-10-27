@@ -2,20 +2,20 @@
 
 .notify {
   display: flex;
-  align-items: center;
   flex-direction: column;
-  width: 33rem;
-  height: 10rem;
+  align-items: center;
+  margin-top: 1rem;
   box-shadow: 0 0 0.5rem var(--notify--boxShadow--color);
   border-radius: var.$radius--10;
-  overflow: hidden;
   background-color: var(--notify--bg);
-  margin-top: 1rem;
+  width: 33rem;
+  height: 10rem;
+  overflow: hidden;
 
   @media screen and (max-width: var.$breakpoint-tablette) {
+    align-self: center;
     width: 32rem;
     height: 9.5rem;
-    align-self: center;
   }
 
   @media screen and (max-width: var.$breakpoint-mobile) {
@@ -25,10 +25,10 @@
 
   & p {
     flex: 4;
-    color: var(--notify--text--color);
     padding: 0.5rem 0.5rem 0 0.5rem;
-    font-family: var(--fontFamily--inter);
+    color: var(--notify--text--color);
     font-size: var(--notify--text--fontSize--desktop);
+    font-family: var(--fontFamily--inter);
 
     @media screen and (max-width: var.$breakpoint-tablette) {
       font-size: var(--notify--text--fontSize--tablet);
@@ -42,9 +42,9 @@
   .close {
     flex: 1.5;
     align-self: flex-end;
+    cursor: pointer;
     padding-top: 0.2rem;
     padding-right: 0.1rem;
-    cursor: pointer;
     font-size: var(--notify--close--fontSize);
 
     &:hover {
@@ -62,8 +62,8 @@
 
   .bar {
     flex: 1;
-    width: 100%;
     animation: SlideLeft 5s forwards;
+    width: 100%;
 
     &--error {
       background-color: var(--notify--barError--bg);

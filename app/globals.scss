@@ -3,10 +3,10 @@
 *,
 ::before,
 ::after {
-  margin: 0;
-  padding: 0;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
   list-style: none;
 }
 
@@ -15,8 +15,8 @@ html {
 }
 
 a {
-  text-decoration: none;
   color: inherit;
+  text-decoration: none;
 }
 
 :root,
@@ -28,156 +28,152 @@ a {
   --body--bg--color: #{var.$light-color};
   /* Navbar */
   --navbar--container--bg: rgba(114, 152, 228, 0.98);
-  --navbar--link--fontSize: 1.8rem;
+  --navbar--link--color: #{var.$blue-700};
   --navbar--link--fontWeight: bold;
-  --navbar--link--color: #{var.$darken3-color};
+  --navbar--link--fontSize: 1.8rem;
   --navbar--stars--color: #{var.$white-color};
   --navbar--stars--fontsize: 1.9rem;
-  --navbar--burger--color: #{var.$darken3-color};
+  --navbar--burger--color: #{var.$blue-700};
   --navbar--burger--fontsize: 3.5rem;
   /* SwitchTheme */
-  --switch--fontSize--icon--desktop: 1.6rem;
-  --switch--fontSize--icon--tablet: 1.5rem;
-  --switch--fontSize--icon--mobile: 1.4rem;
-  --switch--sunmoon--color: #{var.$dark-color};
-  --switch--sunmoon--bg: #{var.$light-color};
-  --switch--bg--toogle: #{var.$darken5-color};
+  --switchTheme--sunmoon--bg: #{var.$light-color};
+  --switchTheme--sunmoon--color: #{var.$dark-color};
+  --switchTheme--bg--toogle: #{var.$blue-500};
+  --switchTheme--fontSize--icon--desktop: 1.6rem;
+  --switchTheme--fontSize--icon--tablet: 1.5rem;
+  --switchTheme--fontSize--icon--mobile: 1.4rem;
   /* SwitchLanguage */
-  --switchLanguage--label--color: #{var.$darken3-color};
+  --switchLanguage--label--color: #{var.$blue-700};
   --switchLanguage--label--fontSize: 1.7rem;
   /* Header */
   --header--bg: linear-gradient(
     to bottom,
-    #{var.$darken9-color},
+    #{var.$blue-100},
     #{var.$gray-200},
     #{var.$gray-100},
     #{var.$gray-150}
   );
   --header--IntegerCircuit: hue-rotate(220deg);
-  --header--profession--color: #{var.$black-color};
   --header--profession--border: #{var.$black-color};
   --header--profession--bg: #{var.$white-color};
-  --header--profession--fontSize: 1.6rem;
+  --header--profession--color: #{var.$black-color};
+  --header--profession--fontSize--desktop: 1.6rem;
+  --header--profession--fontSize-tablet: 1.4rem;
+  --header--profession--fontSize-mobile: 1.5rem;
   --header--title: #{var.$black-color};
+  --header--title--fontWeight: 300;
   --header--title--fontSize--desktop: 6rem;
   --header--title--fontSize--tablet: 6.4rem;
-  --header--title--fontWeight: 300;
+  --header--buttonBorder: 1px dotted grey;
   --header--button--bg: #{var.$white-color};
-  --header--button: #{var.$darken3-color};
+  --header--button--color: #{var.$blue-700};
   --header--button--fontSize: 2.5rem;
   --header--button--hover: brightness(90%);
-  --header--buttonBorder: 1px dotted grey;
   --header--button-icon--fontSize: 3.2rem;
-  --header--button-icon--fontWeight: bold;
   /* About */
+  --about--containerBoxShadow--color: #{var.$black-color};
   --about--container--bg: linear-gradient(
     to left,
     #{var.$gray-100},
     #{var.$gray-150},
-    #{var.$darken8-color}
+    #{var.$blue-200}
   );
-  --about--containerBoxShadow--color: #{var.$black-color};
-  --about--containerFiler: none;
+  --about--containerBefore--boxShadow: rgba(0, 0, 0, 0.4);
   --about--containerBefore--bg: #{var.$gray-150};
   --about--backgroundFilter: hue-rotate(150deg);
+  --about--title--color: #{var.$dark-blue-color};
+  --about--title--fontWeight: 300;
   --about--title--fontSize--desktop: #{var.$h2-title-desktop};
   --about--title--fontSize--tablet: #{var.$h2-title-tablet};
   --about--title--fontSize--mobile: #{var.$h2-title-mobile};
-  --about--title--fontWeight: 300;
-  --about--title--color: #{var.$darken-color};
-  --about--presentation--fontSize--desktop: 2.2rem;
-  --about--presentation--fontSize--tablet: 2.2rem;
-  --about--presentation--fontSize--mobile: 2.2rem;
-  --about--presentation--color: rgb(80, 19, 71);
-  --about--shape--filterDropSHadow: #{var.$darken-color};
+  --about--presentation--color: #{var.$burgundy-color};
+  --about--presentation--fontSize: 2.2rem;
   --about--splashImgFilter: hue-rotate(10deg);
+  --about--shape--filterDropSHadow: #{var.$dark-blue-color};
   /* Projets Caroussel */
   --project--container--bg: linear-gradient(
     to bottom,
     #{var.$gray-300},
     #{var.$gray-400},
     #{var.$gray-500},
-    #{var.$darken8-color},
-    #{var.$darken9-color}
+    #{var.$blue-200},
+    #{var.$blue-100}
   );
-  --project--title--color: #{var.$darken-color};
+  --project--title--color: #{var.$dark-blue-color};
+  --project--title--fontWeight: 300;
   --project--title--fontSize--desktop: #{var.$h2-title-desktop};
   --project--title--fontSize--tablet: #{var.$h2-title-tablet};
   --project--title--fontSize--mobile: #{var.$h2-title-mobile};
-  --project--title--fontWeight: 300;
+  --project--touch--color: #{var.$blue-700};
   --project--touch--fontSize: 3rem;
-  --project--touch--color: #{var.$darken3-color};
-  --project--error--fontSize: 2.5rem;
   --project--error--color: #{var.$primary-color};
+  --project--error--fontSize: 2.5rem;
   /* CardProject */
-  --cardProject--bg: #{var.$light-color};
-  --cardProject--flip-card--borderColor: #{var.$transparent-color};
   --cardProject--flip-card--filterDropShadow: rgba(0, 0, 0, 0.5);
-  --cardProject--flip-card-back--bg: #{var.$transparent-color};
-  --cardProject--flip-card-front: #{var.$dark-color};
+  --cardProject--flip-card--borderColor: #{var.$transparent-color};
+  --cardProject--bg: #{var.$light-color};
   --cardProject--flip-card-inner--bg: #{var.$light-color};
-  --cardProject--flip-card-back--bg: rgb(80, 19, 71);
+  --cardProject--flip-card-front: #{var.$dark-color};
+  --cardProject--flip-card-back--bg: #{var.$burgundy-color};
+  --cardProject--flip-card-back--color: #{var.$white-color};
   --cardProject--source--fontSize--desktop: 3rem;
   --cardProject--source--fontSize--mobile: 3.2rem;
   --cardProject--title--fontSize--desktop: 2.5rem;
   --cardProject--title--fontSize--1400: 2rem;
   --cardProject--title--fontSize--mobile: 3.2rem;
-  --cardProject--description--fontSize--desktop: 1.8rem;
-  --cardProject--description--color: #{var.$dark-color};
-  --cardProject--description--bg: #{var.$white-color};
   --cardProject--borderTop--color: #{var.$dark-color};
   --cardProject--borderBottom--color: #{var.$dark-color};
+  --cardProject--description--bg: #{var.$white-color};
+  --cardProject--description--color: #{var.$dark-color};
+  --cardProject--description--fontSize--desktop: 1.8rem;
   --cardProject--description--fontSize--1400: 1.5rem;
   --cardProject--description--fontSize--mobile: 1.8rem;
   --cardProject--iconeTechno--fontSize--desktop: 3rem;
   --cardProject--iconeTechno--fontSize--tablet: 3rem;
   --cardProject--iconeTechno--fontSize--mobile: 3.2rem;
-  --cardProject--goBack--fontSize: 2rem;
+  --cardProject--goBack--bg: #{var.$white-color};
   --cardProject--goBack--color: #{var.$dark-color};
+  --cardProject--goBack--fontSize: 2rem;
   --cardProject--curve--fill: #{var.$light-color};
+  /* Loader */
+  --loader--icon--colors: #{var.$primary-color};
+  --loader--icon--fontSize: 8rem;
   /* Skills */
   --skills--container--bg: linear-gradient(
     to bottom,
-    #{var.$darken9-color},
+    #{var.$blue-100},
     #{var.$gray-100},
     #{var.$gray-200},
     #{var.$gray-300}
   );
   --skills--backgroundFilter: none;
+  --skills--title--color: #{var.$dark-blue-color};
+  --skills--title--fontWeight: 300;
   --skills--title--fontSize--desktop: #{var.$h2-title-desktop};
   --skills--title--fontSize--tablet: #{var.$h2-title-tablet};
   --skills--title--fontSize--mobile: #{var.$h2-title-mobile};
-  --skills--title--fontWeight: 300;
-  --skills--title--color: #{var.$darken-color};
-  --skills--shapeFilterDropShadow: 255, 255, 255, 1;
+
   /* CardSkill */
-  // --cardSkill--bg: linear-gradient(
-  //   to bottom,
-  //   #{var.$white-color},
-  //   #{var.$light-color},
-  //   #{var.$gray-700},
-  //   #{var.$darken2-color}
-  // );
-  --cardSkill--bg: #{var.$gray-100};
   --cardSkill--borderColor: #{var.$gray-300};
+  --cardSkill--bg: #{var.$gray-100};
   --cardSkill--chevron--color: #{var.$white-color};
-  --cardSkill--icon--fontSize--desktop: 5rem;
-  --cardSkill--icon--fontSize--tablet: 5rem;
-  --cardSkill--icon--fontSize--mobile: 4rem;
-  --cardSkill--iconTechno--color: rgb(80, 19, 71);
+  --cardSkill--iconTechno--color: #{var.$burgundy-color};
+  --cardSkill--iconTechno--fontSize--desktop: 5rem;
+  --cardSkill--iconTechno--fontSize--tablet: 5rem;
+  --cardSkill--iconTechno--fontSize--mobile: 4rem;
+  --cardSkill--nameTechno--color: #{var.$dark-color};
   --cardSkill--nameTechno--fontSize--desktop: 1.8rem;
   --cardSkill--nameTechno--fontSize--tablet: 1.4rem;
   --cardSkill--nameTechno--fontSize--mobile: 1.3rem;
-  --cardSkill--nameTechno--color: #{var.$dark-color};
+  --cardSkill--description--color: #{var.$dark-color};
   --cardSkill--description--fontSize--desktop: 1.5rem;
   --cardSkill--description--fontSize--mobile: 1.4rem;
-  --cardSkill--descriptionTechno--color: #{var.$dark-color};
-  --cardSkill--dividingBorder: #{var.$darken-color};
+  --cardskill--tiltFill: #{var.$light-color};
+  --cardSkill--dividingBorder: #{var.$dark-blue-color};
+  --cardSkill--iconArrow--color: #{var.$burgundy-color};
   --cardSkill--iconArrow--fontSize--desktop: 2.3rem;
   --cardSkill--iconArrow--fontSize--tablet: 2.2rem;
   --cardSkill--iconArrow--fontSize--mobile: 2.1rem;
-  --cardSkill--iconArrow--color: #{var.$burgundy-color};
-  --cardskill--tiltFill: #{var.$light-color};
   /* Contact */
   --contact--bg: linear-gradient(
     to bottom,
@@ -185,43 +181,43 @@ a {
     #{var.$gray-200},
     #{var.$gray-300},
     #{var.$gray-400},
-    #{var.$darken9-color},
-    #{var.$darken8-color},
-    #{var.$darken7-color},
-    #{var.$darken6-color}
+    #{var.$blue-100},
+    #{var.$blue-200},
+    #{var.$blue-300},
+    #{var.$blue-400}
   );
   --contact--containerBefore--bg: #{var.$gray-300};
+  --contact--title--color: #{var.$dark-blue-color};
+  --contact--title--fontWeight: 300;
   --contact--title--fontSize--desktop: #{var.$h2-title-desktop};
   --contact--title--fontSize--tablet: #{var.$h2-title-tablet};
   --contact--title--fontSize--mobile: #{var.$h2-title-mobile};
-  --contact--title--fontWeight: 300;
-  --contact--title--color: #{var.$darken-color};
+  --contact--label--color: #{var.$burgundy-color};
   --contact--label--fontSize--desktop: 2rem;
   --contact--label--fontSize--tablet: 1.8rem;
-  --contact--label--color: #{var.$burgundy-color};
-  --contact--errors--fontSize: 1.6rem;
   --contact--errors--color: #{var.$dark-color};
-  --contact--input--color: #{var.$dark-color};
-  --contact--input--bg: #{var.$white-color};
+  --contact--errors--fontSize: 1.6rem;
   --contact--inputBorder: 1px dashed grey;
-  --contact--placeHolder--fontSize: 1.5rem;
+  --contact--input--bg: #{var.$white-color};
+  --contact--input--color: #{var.$dark-color};
   --contact--placeHolder--color: #{var.$dark-color};
+  --contact--placeHolder--fontSize: 1.5rem;
+  --contact--send--bg: #{var.$blue-600};
+  --contact--send--color: #{var.$light-color};
   --contact--send--fontSize--desktop: 2.2rem;
   --contact--send--fontSize--mobile: 1.8rem;
-  --contact--send--bg: #{var.$darken4-color};
-  --contact--send--color: #{var.$light-color};
   --contact--elipse--borderColor: #{var.$burgundy-color};
   /* Download Button cv */
-  --downloadbutton--button--fontSize: 2rem;
   --downloadbutton--button--bg: #{var.$transparent-color};
-  --downloadbutton--button--color: #{var.$darken3-color};
+  --downloadbutton--button--color: #{var.$blue-700};
+  --downloadbutton--button--fontSize: 2rem;
+  --downloadbutton--icon--color: #{var.$blue-700};
   --downloadbutton--icon--fontSize: 4rem;
-  --downloadbutton--icon--color: #{var.$darken3-color};
   /* Footer */
-  --footer--bg: #{var.$darken6-color};
-  --footer--infos--fontSize: 1.7rem;
+  --footer--bg: #{var.$blue-400};
   --footer--infos--color: #{var.$light-color};
   --footer--infos--fontWeight: normal;
+  --footer--infos--fontSize: 1.7rem;
   --footer--wave: #{var.$light-color};
   /* Notification du contact */
   --notify--boxShadow--color: rgba(0, 0, 0, 0.4);
@@ -235,30 +231,27 @@ a {
   --notify--closeSuccess--color: green;
   --notify--barError--bg: tomato;
   --notify--barSuccess--bg: green;
-  /* Loader */
-  --loader--icon--fontSize: 8rem;
-  --loader--icon--colors: #{var.$primary-color};
   /* Chatbot */
-  --chatbot--openbot--color: #{var.$darken3-color};
-  --chatbot--container--boxShadow: rgba(0, 0, 0, 0.5);
-  --chatbot--container--borderColor: #ccc;
-  --chatbot--bg: #{var.$darken6-color};
+  --chatbot--openbot--color: #{var.$blue-700};
+  --chatbot--bg: #{var.$blue-400};
   --chatbot--container--boxShadow--color: rgba(0, 0, 0, 0.1);
+  --chatbot--container--borderColor: #ccc;
   --chatbot--container--bg: #{var.$transparent-color};
   --chatbot-entilted--color: #{var.$dark-color};
   --chatbot-entilted__icon--fontSize: 4rem;
   --chatbot--messagesScrollbar--handle: #{var.$four-color};
   --chatbot--messagesScrollbar--bg: #{var.$light-color};
+  --chatbot--messageTextShadow: rgba(0, 0, 0, 1);
   --chatbot--messageUserBot-fontSize: 1.5rem;
   --chatbot--userQuestion--bg: #{var.$five-color};
   --chatbot--userQuestion--color: #{var.$light-color};
-  --chatbot--botResponse--bg: #{var.$darken3-color};
+  --chatbot--botResponse--bg: #{var.$blue-700};
   --chatbot--botResponse--color: #{var.$light-color};
   --chatbot--inputQuestion--borderColor: #ccc;
   --chatbot--inputAndFocus--fontSize: 1.6rem;
-  --chatbot--sendButton--fontSize: 1.6rem;
   --chatbot--sendButton--bg: #{var.$five-color};
   --chatbot--sendButton--color: #{var.$light-color};
+  --chatbot--sendButton--fontSize: 1.6rem;
   --chatbot--sendButton--hover--bg: brightness(110%);
 }
 
@@ -267,88 +260,81 @@ a {
   --body--bg--color: #{var.$dark-color};
   /* Navbar */
   --navbar--container--bg: #{var.$dark-color};
-  --navbar--container--filterDropSHadow: #{var.$second-color};
   --navbar--link--color: #{var.$primary-color};
   --navbar--stars--color: #{var.$light-color};
-  --navbar--stars--textShadow: none;
   --navbar--burger--color: #{var.$light-color};
   /* SwitchTheme */
-  --switch--sunmoon--bg: #{var.$light-color};
-  --switch--bg--toogle: #525151;
-  --switch--border--color: #{var.$dark-color};
+  --switchTheme--sunmoon--bg: #{var.$light-color};
+  --switchTheme--bg--toogle: #{var.$six-color};
   /* SwitchLanguage */
   --switchLanguage--label--color: #{var.$primary-color};
   /* Header */
   --header--bg: #{var.$dark-color};
   --header--IntegerCircuit: none;
-  --header--profession--color: #{var.$black-color};
   --header--profession--border: #{var.$black-color};
+  --header--profession--color: #{var.$black-color};
   --header--title: #{var.$light-color};
-  --header--button--bg: #{var.$darken-color};
-  --header--button--hover: #{var.$light-color};
-  --header--button--bg--hover: #{var.$four-color};
-  --header--button: #{var.$light-color};
-  --header--buttonBorder: 1px none;
+  --header--button--border: none;
+  --header--button--bg: #{var.$dark-blue-color};
+  --header--button--color: #{var.$light-color};
   --header--button--hover: brightness(120%);
   /* About */
-  --about--container--bg: #{var.$darken-color};
   --about--containerBoxShadow--color: #{var.$light-color};
+  --about--container--bg: #{var.$dark-blue-color};
   --about--containerBefore--bg: #{var.$dark-color};
-  --about--containerFiler: none;
   --about--backgroundFilter: brightness(40%);
-  --about--title--color: rgba(113, 116, 129, 1);
+  --about--title--color: #{var.$second-color};
   --about--presentation--color: #{var.$light-color};
-  --about--shape--filterDropSHadow: #{var.$black-color};
-  --about--waveFill: #{var.$dark-color};
   --about--splashImgFilter: hue-rotate(400deg);
+  --about--shape--filterDropSHadow: #{var.$black-color};
   /* Projets Caroussel */
   --project--container--bg: linear-gradient(
     to bottom,
-    #{var.$darken-color},
+    #{var.$dark-blue-color},
     #{var.$dark-color},
     #{var.$dark-color}
   );
-  --project--title--color: rgba(113, 116, 129, 1);
+  --project--title--color: #{var.$second-color};
   --project--touch--color: #{var.$light-color};
   --project--error--color: #{var.$light-color};
   /* CardProject */
-  --cardProject--bg: #525151;
   --cardProject--flip-card--filterDropShadow: rgba(255, 255, 255, 0.5);
   --cardProject--flip-card--borderColor: #{var.$transparent-color};
-  --cardProject--flip-card-back--bg: #{var.$darken-color};
+  --cardProject--bg: #{var.$six-color};
+  --cardProject--flip-card-back--bg: #{var.$dark-blue-color};
+  /* Loader */
+  --loader--icon--colors: #{var.$light-color};
   /* Skills */
   --skills--container--bg: #{var.$dark-color};
-  --skills--title--color: rgba(113, 116, 129, 1);
-  --skills--waveFill: #{var.$dark-color};
-  --skills--shapeFilterDropShadow: 255, 255, 255, 1;
+  --skills--title--color: #{var.$second-color};
   /* Download Button cv */
   --downloadbutton--icon--color: #{var.$primary-color};
   --downloadbutton--button--color: #{var.$primary-color};
   /* CardSkill */
-  --cardSkill--bg: #{var.$darken-color};
   --cardSkill--borderColor: #{var.$black-color};
+  --cardSkill--bg: #{var.$dark-blue-color};
   --cardSkill--chevron--color: #{var.$dark-color};
-  --cardSkill--iconTechno--color: rgba(113, 116, 129, 1);
+  --cardSkill--iconTechno--color: #{var.$second-color};
   --cardSkill--nameTechno--color: #{var.$light-color};
-  --cardSkill--descriptionTechno--color: #{var.$light-color};
+  --cardSkill--description--color: #{var.$light-color};
   --cardSkill--dividingBorder: #{var.$dark-color};
   --cardSkill--iconArrow--color: #{var.$gold-color};
   --cardskill--tiltFill: #{var.$black-color};
   /* Contact */
   --contact--bg: linear-gradient(
     to bottom,
-    #{var.$darken-color},
+    #{var.$dark-blue-color},
     #{var.$dark-color}
   );
   --contact--containerBefore--bg: #{var.$dark-color};
-  --contact--title--color: rgba(113, 116, 129, 1);
+  --contact--title--color: #{var.$second-color};
   --contact--label--color: #{var.$primary-color};
   --contact--errors--color: #{var.$light-color};
+  --contact--inputBorder: 1px dashed #{var.$second-color};
+  --contact--input--bg: #{var.$dark-blue-color};
   --contact--input--color: #{var.$light-color};
-  --contact--input--bg: #{var.$darken-color};
-  --contact--inputBorder: 1px dashed rgba(113, 116, 129, 1);
   --contact--placeHolder--color: #{var.$light-color};
-  --contact--send--bg: #{var.$darken-color};
+  --contact--send--bg: #{var.$dark-blue-color};
   --contact--send--color: #{var.$light-color};
   --contact--elipse--borderColor: #{var.$light-color};
   /* Footer */
@@ -356,17 +342,15 @@ a {
   --footer--infos--color: #{var.$light-color};
   --footer--infos--fontWeight: 500;
   --footer--wave: #{var.$primary-color};
-  /* Loader */
-  --loader--icon--colors: #{var.$light-color};
   /* Chatbot */
   --chatbot--openbot--color: #{var.$white-color};
   --chatbot--bg: #{var.$dark-color};
   --chatbot--container--boxShadow: #{var.$primary-color};
   --chatbot--container--borderColor: #{var.$primary-color};
   --chatbot--container--bg: rgba(255, 255, 255, 0.1);
-  --chatbot--userQuestion--bg: #{var.$darken-color};
-  --chatbot--botResponse--bg: #{var.$dark-color};
   --chatbot-entilted--color: #{var.$light-color};
+  --chatbot--userQuestion--bg: #{var.$dark-blue-color};
+  --chatbot--botResponse--bg: #{var.$dark-color};
   --chatbot--sendButton--bg: #{var.$four-color};
 }
 
@@ -376,87 +360,81 @@ a {
     --body--bg--color: #{var.$dark-color};
     /* Navbar */
     --navbar--container--bg: #{var.$dark-color};
-    --navbar--container--filterDropSHadow: #{var.$second-color};
     --navbar--link--color: #{var.$primary-color};
     --navbar--stars--color: #{var.$light-color};
-    --navbar--stars--textShadow: none;
-    --navbar--langage--color: #{var.$primary-color};
     --navbar--burger--color: #{var.$light-color};
-    /* Switch */
-    --switch--sunmoon--bg: #{var.$light-color};
-    --switch--bg--toogle: #525151;
-    --switch--border--color: #{var.$dark-color};
+    /* SwitchTheme */
+    --switchTheme--sunmoon--bg: #{var.$light-color};
+    --switchTheme--bg--toogle: #{var.$six-color};
+    /* SwitchLanguage */
+    --switchLanguage--label--color: #{var.$primary-color};
     /* Header */
     --header--bg: #{var.$dark-color};
     --header--IntegerCircuit: none;
-    --header--profession--color: #{var.$black-color};
     --header--profession--border: #{var.$black-color};
+    --header--profession--color: #{var.$black-color};
     --header--title: #{var.$light-color};
-    --header--button--bg: #{var.$darken-color};
-    --header--button--hover: #{var.$light-color};
-    --header--button--bg--hover: #{var.$four-color};
-    --header--button: #{var.$light-color};
-    --header--buttonBorder: 1px none;
+    --header--button--border: none;
+    --header--button--bg: #{var.$dark-blue-color};
+    --header--button--color: #{var.$light-color};
     --header--button--hover: brightness(120%);
     /* About */
-    --about--container--bg: #{var.$darken-color};
     --about--containerBoxShadow--color: #{var.$light-color};
+    --about--container--bg: #{var.$dark-blue-color};
     --about--containerBefore--bg: #{var.$dark-color};
-    --about--containerFiler: none;
     --about--backgroundFilter: brightness(40%);
-    --about--title--color: rgba(113, 116, 129, 1);
+    --about--title--color: #{var.$second-color};
     --about--presentation--color: #{var.$light-color};
-    --about--shape--filterDropSHadow: #{var.$black-color};
-    --about--waveFill: #{var.$dark-color};
     --about--splashImgFilter: hue-rotate(400deg);
+    --about--shape--filterDropSHadow: #{var.$black-color};
     /* Projets Caroussel */
     --project--container--bg: linear-gradient(
       to bottom,
-      #{var.$darken-color},
+      #{var.$dark-blue-color},
       #{var.$dark-color},
       #{var.$dark-color}
     );
-    --project--title--color: rgba(113, 116, 129, 1);
+    --project--title--color: #{var.$second-color};
     --project--touch--color: #{var.$light-color};
     --project--error--color: #{var.$light-color};
     /* CardProject */
-    --cardProject--bg: #525151;
     --cardProject--flip-card--filterDropShadow: rgba(255, 255, 255, 0.5);
     --cardProject--flip-card--borderColor: #{var.$transparent-color};
-    --cardProject--flip-card-back--bg: #{var.$darken-color};
+    --cardProject--bg: #{var.$six-color};
+    --cardProject--flip-card-back--bg: #{var.$dark-blue-color};
+    /* Loader */
+    --loader--icon--colors: #{var.$light-color};
     /* Skills */
     --skills--container--bg: #{var.$dark-color};
-    --skills--title--color: rgba(113, 116, 129, 1);
-    --skills--waveFill: #{var.$dark-color};
-    --skills--shapeFilterDropShadow: 255, 255, 255, 1;
+    --skills--title--color: #{var.$second-color};
     /* Download Button cv */
     --downloadbutton--icon--color: #{var.$primary-color};
     --downloadbutton--button--color: #{var.$primary-color};
     /* CardSkill */
-    --cardSkill--bg: #{var.$darken-color};
     --cardSkill--borderColor: #{var.$black-color};
+    --cardSkill--bg: #{var.$dark-blue-color};
     --cardSkill--chevron--color: #{var.$dark-color};
-    --cardSkill--iconTechno--color: rgba(113, 116, 129, 1);
+    --cardSkill--iconTechno--color: #{var.$second-color};
     --cardSkill--nameTechno--color: #{var.$light-color};
-    --cardSkill--descriptionTechno--color: #{var.$light-color};
+    --cardSkill--description--color: #{var.$light-color};
     --cardSkill--dividingBorder: #{var.$dark-color};
     --cardSkill--iconArrow--color: #{var.$gold-color};
     --cardskill--tiltFill: #{var.$black-color};
     /* Contact */
     --contact--bg: linear-gradient(
       to bottom,
-      #{var.$darken-color},
+      #{var.$dark-blue-color},
       #{var.$dark-color}
     );
     --contact--containerBefore--bg: #{var.$dark-color};
-    --contact--title--color: rgba(113, 116, 129, 1);
+    --contact--title--color: #{var.$second-color};
     --contact--label--color: #{var.$primary-color};
     --contact--errors--color: #{var.$light-color};
+    --contact--inputBorder: 1px dashed #{var.$second-color};
+    --contact--input--bg: #{var.$dark-blue-color};
     --contact--input--color: #{var.$light-color};
-    --contact--input--bg: #{var.$darken-color};
-    --contact--inputBorder: 1px dashed rgba(113, 116, 129, 1);
     --contact--placeHolder--color: #{var.$light-color};
-    --contact--send--bg: #{var.$darken-color};
+    --contact--send--bg: #{var.$dark-blue-color};
     --contact--send--color: #{var.$light-color};
     --contact--elipse--borderColor: #{var.$light-color};
     /* Footer */
@@ -464,17 +442,15 @@ a {
     --footer--infos--color: #{var.$light-color};
     --footer--infos--fontWeight: 500;
     --footer--wave: #{var.$primary-color};
-    /* Loader */
-    --loader--icon--colors: #{var.$light-color};
     /* Chatbot */
     --chatbot--openbot--color: #{var.$white-color};
     --chatbot--bg: #{var.$dark-color};
     --chatbot--container--boxShadow: #{var.$primary-color};
     --chatbot--container--borderColor: #{var.$primary-color};
     --chatbot--container--bg: rgba(255, 255, 255, 0.1);
-    --chatbot--userQuestion--bg: #{var.$darken-color};
-    --chatbot--botResponse--bg: #{var.$dark-color};
     --chatbot-entilted--color: #{var.$light-color};
+    --chatbot--userQuestion--bg: #{var.$dark-blue-color};
+    --chatbot--botResponse--bg: #{var.$dark-color};
     --chatbot--sendButton--bg: #{var.$four-color};
   }
 }
