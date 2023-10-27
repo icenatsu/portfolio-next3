@@ -1,10 +1,18 @@
 "use client";
 import styles from "./Footer.module.scss";
+import { LanguageContext } from "@context/Language/Language";
+import { useContext } from "react";
 
 const Footer = (): JSX.Element => {
+  const languageContext = useContext(LanguageContext);
+
   return (
     <footer id="footer" className={styles.footer}>
-      <p className={styles.infos}>@Design fait maison - Marseille</p>
+      <p className={styles.infos}>
+        {languageContext?.isFrenchLanguage
+          ? "@Design fait maison - Marseille"
+          : "Home Design - Marseille"}
+      </p>
       <div className={styles.wave}>
         <svg
           data-name="Layer 1"
