@@ -43,29 +43,13 @@ const About = (): JSX.Element => {
         </picture>
       </div>
       <h2 id="aboutTitle" className={styles.title}>
-        A propos de moi
+        {languageContext?.isFrenchLanguage ? "A propos de moi" : "About Me"}
       </h2>
       <div id="aboutDescription" className={styles.presentation}>
-        <p>
-          Je me nomme Gaëlle et suis passionnée par la création de sites web et
-          de nouvelles technologies.
-          <br />
-          <br />
-          Vous trouverez ici les projets que j&apos;ai pu mener autant lors de
-          ma formation qu&apos;à titre personnel ainsi que les compétences que
-          j&apos;ai pu acquérir au fil du temps.
-          <br />
-          J&apos;éprouve un réel plaisir à apprendre de nouveaux langages de
-          programmation.
-          <br />
-          <br />
-          Ces derniers étant en constante évolution, je pratique une veille
-          technologique à la fois pour rester à la page, mais aussi pour
-          approfondir mes connaissances.
-          <br />
-          <br />
-          Si vous êtes intéressés par mon travail, n&apos;hésitez pas à me
-          contacter !
+        <p className={styles.paragraph}>
+          {languageContext?.isFrenchLanguage
+            ? "Je me nomme Gaëlle et suis passionnée par la création de sites web et de nouvelles technologies.\nVous trouverez ici les projets que j'ai pu mener autant lors de ma formation qu'à titre personnel ainsi que les compétences que j'ai pu acquérir au fil du temps.\nJ'éprouve un réel plaisir à apprendre de nouveaux langages de programmation.\n\nCes derniers étant en constante évolution, je pratique une veille technologique à la fois pour rester à la page, mais aussi pour approfondir mes connaissances.\nSi vous êtes intéressés par mon travail, n'hésitez pas à me contacter !"
+            : "My name is Gaëlle, and I am passionate about web development and new technologies.\n\nHere, you will find the projects I have worked on, both during my training and on a personal level, as well as the skills I have acquired over time.\n\nI thoroughly enjoy learning new programming languages. Since these technologies are constantly evolving, I engage in technological watch to stay up-to-date and deepen my knowledge.\n\nIf you are interested in my work, feel free to contact me!"}
         </p>
         <div>
           <Image

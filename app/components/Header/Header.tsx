@@ -8,6 +8,7 @@ import { useWindowSizeResize } from "@Hooks/Window/useWindowSizeResize";
 import IntegratedCircuitDark from "@public/img/integercircuit_darkmode.webp";
 import IntegratedCircuitLight from "@public/img/integercircuit_lightmode.webp";
 import { ThemeContext } from "@context/ThemeContext/ThemeContext";
+import { LanguageContext } from "@context/Language/Language";
 
 const Header = (): JSX.Element => {
   const { windowWidth } = useWindowSizeResize();
@@ -15,6 +16,7 @@ const Header = (): JSX.Element => {
   const isDesktop = windowWidth > 768;
 
   const themeContext = useContext(ThemeContext);
+  const languageContext = useContext(LanguageContext);
 
   const scrollToAnchor = () => {
     const projets = document.getElementById("projets");
@@ -62,7 +64,9 @@ const Header = (): JSX.Element => {
           id="headerProfession"
           className={styles.profession}
         >
-          Développeuse Web
+          {languageContext?.isFrenchLanguage
+            ? "Développeuse Web"
+            : "Web Developer"}
         </p>
         <h1 ref={headerTitle} id="headerTitle" className={styles.title}>
           Gaëlle Blanchard
@@ -74,7 +78,9 @@ const Header = (): JSX.Element => {
             href="/#projets"
             scroll={false}
           >
-            Voir projets
+            {languageContext?.isFrenchLanguage
+              ? "Voir projets"
+              : "See projects"}
           </Link>
           <Link
             className={styles.button}

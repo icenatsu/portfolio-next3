@@ -1,10 +1,11 @@
 "use client";
 
 import styles from "./CardSkill.module.scss";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useContext } from "react";
 import { Icon } from "@iconify/react";
 import { animationSlideScrollToBottom } from "@animation/gsapAnimation";
 import { useWindowSizeResize } from "@Hooks/Window/useWindowSizeResize";
+import { LanguageContext } from "@context/Language/Language";
 
 interface CardSkill {
   inParagraphs: string[];
@@ -22,13 +23,15 @@ const CardSkill = ({
   inIcones,
   inClassList,
 }: CardSkill): JSX.Element => {
-  const { windowWidth } = useWindowSizeResize();
-
-  const cardSkill = useRef<HTMLDivElement>(null);
+  const languageContext = useContext(LanguageContext);
 
   const [showSkillDetails, setShowSkillDetails] = useState<boolean>(false);
   const [toggleShowSkillDetails, setTooggleShowSkillDetails] =
     useState<boolean>(false);
+
+  const { windowWidth } = useWindowSizeResize();
+
+  const cardSkill = useRef<HTMLDivElement>(null);
 
   // Gestion des états controlés par chaque évenements selon le format destinée à l'affichage des descriptions des compétences
   useEffect(() => {

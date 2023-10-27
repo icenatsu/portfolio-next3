@@ -86,6 +86,7 @@
     & p {
       max-width: 95%;
       margin: auto;
+      white-space: pre-line;
 
       @media screen and (max-width: var.$breakpoint-tablette) {
         margin: 0;

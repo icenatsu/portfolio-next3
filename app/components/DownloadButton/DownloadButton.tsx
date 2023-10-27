@@ -1,11 +1,14 @@
 "use client";
 
 import styles from "./DownloadButton.module.scss";
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
 import { Icon } from "@iconify/react";
 import { animationSlideScrollToBottom } from "@animation/gsapAnimation";
+import { LanguageContext } from "@context/Language/Language";
 
 const DownloadButton = (): JSX.Element => {
+  const languageContext = useContext(LanguageContext);
+
   // Création du lien du téléchargement
   const handleDownload = () => {
     const fileUrl = "/cv/cv.pdf";
@@ -29,7 +32,9 @@ const DownloadButton = (): JSX.Element => {
         icon="line-md:download-loop"
       />
       <button onClick={handleDownload} className={styles.button}>
-        Télécharger mon CV
+        {languageContext?.isFrenchLanguage
+          ? "Télécharger mon CV"
+          : "Download CV"}
       </button>
     </div>
   );

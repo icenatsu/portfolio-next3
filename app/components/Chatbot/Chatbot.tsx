@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import styles from "./Chatbot.module.scss";
 import { Icon } from "@iconify/react";
 import { useWindowSizeResize } from "@Hooks/Window/useWindowSizeResize";
+import { LanguageContext } from "@context/Language/Language";
 
 interface Message {
   text: string;

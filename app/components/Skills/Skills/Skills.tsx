@@ -5,10 +5,7 @@ import { useEffect, useContext } from "react";
 import CardSkill from "@components/Skills/CardSkill/CardSkill";
 import DownloadButton from "@components/DownloadButton/DownloadButton";
 import { animationSlideScrollToBottom } from "@animation/gsapAnimation";
-import { ThemeContext } from "@context/ThemeContext/ThemeContext";
-import Image from "next/image";
-import Bg from "@public/img/bg.webp";
-import Parchment from "@public/img/parchemin.webp";
+import { LanguageContext } from "@context/Language/Language";
 
 interface IntSkill {
   name: string;
@@ -22,7 +19,7 @@ interface iconeDetails {
 }
 
 const Skills = (): JSX.Element => {
-  const themeContext = useContext(ThemeContext);
+  const languageContext = useContext(LanguageContext);
 
   // Données des compétences
   const dataSkills: IntSkill[] = [
@@ -188,7 +185,7 @@ const Skills = (): JSX.Element => {
   return (
     <section id="skills" className={styles.container}>
       <h2 id="skillsTitle" className={styles.title}>
-        Mes compétences
+        {languageContext?.isFrenchLanguage ? "Mes compétences" : "Skills"}
       </h2>
       <DownloadButton />
       <div className={styles["container__Accordeons"]}>
