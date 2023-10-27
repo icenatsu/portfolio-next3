@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useContext } from "react";
 import styles from "./Chatbot.module.scss";
 import { Icon } from "@iconify/react";
 import { useWindowSizeResize } from "@Hooks/Window/useWindowSizeResize";
@@ -8,7 +8,6 @@ import { LanguageContext } from "@context/Language/Language";
 interface Message {
   text: string;
   type: "user" | "bot";
-  id: string;
 }
 
 const ChatBot: React.FC = () => {
@@ -17,6 +16,7 @@ const ChatBot: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([]);
 
   const { windowWidth } = useWindowSizeResize();
+  const languageContext = useContext(LanguageContext);
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
@@ -24,6 +24,7 @@ const ChatBot: React.FC = () => {
     setVisible((curr) => (curr = !visible));
   };
 
+  // Style du chatbot
   useEffect(() => {
     if (windowWidth <= 992) {
       if (visible && document.getElementsByClassName("chatbot") !== null) {
@@ -68,6 +69,7 @@ const ChatBot: React.FC = () => {
     setInput(e.target.value);
   };
 
+  // Normalisation du message entrée par l'utilisateur
   const normalizeString = (input: string) => {
     return input
       .toLowerCase()
@@ -82,7 +84,6 @@ const ChatBot: React.FC = () => {
     const userMessage: Message = {
       text: input,
       type: "user",
-      id: new Date().toISOString(),
     };
     setMessages((prevMessages) => [...prevMessages, userMessage]);
     setInput("");
@@ -92,115 +93,211 @@ const ChatBot: React.FC = () => {
 
   useEffect(() => {
     const welcomeMessage: Message = {
-      text: "Bonjour, Je serai ravie de répondre à toutes les questions que vous pourriez avoir à mon sujet.",
+      text: languageContext?.isFrenchLanguage
+        ? "Bonjour, Je serai ravie de répondre à toutes les questions que vous pourriez avoir à mon sujet."
+        : "Hello, I'll be delighted to answer any questions you might have about me.",
       type: "bot",
-      id: new Date().toISOString(),
     };
     setMessages([welcomeMessage]);
-  }, []);
+  }, [languageContext?.isFrenchLanguage]);
 
   const handleBotResponse = (input: string) => {
     const normalizedInput = normalizeString(input);
-
     let response: string;
-    if (
-      normalizedInput.includes("bonjour") ||
-      normalizedInput.includes("salut") ||
-      normalizedInput.includes("coucou")
-    ) {
-      response =
-        "Bonjour et enchantée, bienvenue sur mon portfolio, si vous avez des questions n'hésitez pas";
-    } else if (
-      normalizedInput.includes("teletravail") ||
-      normalizedInput.includes("presentiel")
-    ) {
-      response =
-        "Je suis ouverte à travailler aussi bien en présentiel qu'en télétravail.";
-    } else if (
-      normalizedInput.includes("habite") ||
-      normalizedInput.includes("reside")
-    ) {
-      response = "J'habite à Marseille.";
-    } else if (
-      normalizedInput.includes("age") &&
-      !normalizedInput.includes("demenagement")
-    ) {
-      response = "J'ai 38ans.";
-    } else if (
-      normalizedInput.includes("mobilite") ||
-      normalizedInput.includes("demenagement") ||
-      normalizedInput.includes("deplace") ||
-      normalizedInput.includes("emplacement")
-    ) {
-      response =
-        "Si le travail se fait en présentiel, je suis particulièrement intéressée par des opportunités à Marseille. C'est là que je souhaite travailler.";
-    } else if (
-      normalizedInput.includes("appelle") ||
-      normalizedInput.includes("nomme")
-    ) {
-      response = "Enchantée, Je m'appelle Gaëlle Blanchard.";
-    } else if (normalizedInput.includes("prenom")) {
-      response = "Enchantée, je me nomme Gaëlle.";
-    } else if (normalizedInput.includes("nom")) {
-      response = "Enchantée, mon nom de famille est Blanchard.";
-    } else if (
-      normalizedInput.includes("contrat") ||
-      normalizedInput.includes("emploi")
-    ) {
-      response =
-        "Je recherche un emploi en développement web, de préférence un CDI mais ne suis pas contre un CDD, du moment que je peux vous être utile :)";
-    } else if (
-      normalizedInput.includes("ville") ||
-      normalizedInput.includes("habite")
-    ) {
-      response = "J'habite à Marseille.";
-    } else if (
-      normalizedInput.includes("technologie") ||
-      normalizedInput.includes("stack") ||
-      normalizedInput.includes("competence") ||
-      normalizedInput.includes("skill")
-    ) {
-      response =
-        "Je connais le HTML, CSS, JavaScript, TypeScript, Nodesjs, React et Next.js. Je suis également compétente en SEO.";
-    } else if (
-      normalizedInput.includes("hobby") ||
-      normalizedInput.includes("loisir")
-    ) {
-      response =
-        "J'aime par-dessus tout coder, mais j'aime aussi les randonnées et l'éducation canine.";
-    } else if (
-      normalizedInput.includes("qualite") ||
-      normalizedInput.includes("defaut") ||
-      normalizedInput.includes("fort") ||
-      normalizedInput.includes("faible")
-    ) {
-      response =
-        "Je suis passionnée par le développement web et j'apprécie particulièrement résoudre des problèmes. Je considère que cette qualité est essentielle dans notre domaine.\n Cependant, parfois, cette passion peut devenir accablante.\n Si je ne parviens pas à résoudre un problème à la fin de la journée, il occupe mes pensées et peut même me hanter pendant la nuit. Je suis consciente qu'il est parfois nécessaire de prendre du recul pour mieux aborder les défis, mais cela peut être difficile pour moi.\n Néanmoins, je travaille constamment sur cette capacité d'accepter les situations et de trouver un équilibre entre la persévérance et le lâcher-prise.\n Je suis également perfectionniste, une caractéristique que je possède, bien que cela puisse parfois être un défaut.\n Pour remédier à cela, j'apprends à évaluer les priorités afin de ne pas investir inutilement du temps sur des détails moins importants.";
-    } else if (
-      normalizedInput.includes("parcour") ||
-      normalizedInput.includes("parlez") ||
-      normalizedInput.includes("experience") ||
-      normalizedInput.includes("precedent")
-    ) {
-      response =
-        "J'ai suivi des études en informatique et acquis de l'expérience dans le domaine technique. Durant mon dernier emploi, j'avais la responsabilité d'un enfant en situation de handicap. Bien que ce travail fût enrichissant, mon désir de stimuler mon esprit et d'acquérir de nouvelles compétences était plus fort.\n C'est cette aspiration qui a motivé ma décision de me tourner vers le développement web.";
-    } else if (
-      normalizedInput.includes("salaire") ||
-      normalizedInput.includes("pretention") ||
-      normalizedInput.includes("salarial")
-    ) {
-      response =
-        "Avant d'aborder le sujet du salaire, je tiens à souligner mon profond intérêt pour rejoindre une entreprise.\n Mon aspiration principale est de partager mes connaissances, d'apprendre continuellement et surtout de mettre mes compétences au service d'une entreprise pour y épanouir mon potentiel.\n Je suis passionnée par le travail d'équipe et je crois fermement en l'importance de collaborer harmonieusement.\n Cependant, comme tout individu, il est essentiel de trouver un équilibre entre passion et réalité financière. C'est donc pourquoi c'est un sujet qu'il vaudra mieux aborder lors de l'entretien.\n Je suis convaincue que cette démarche nous permettra de bâtir une collaboration fructueuse et enrichissante pour les deux parties.";
-    } else {
-      response = "Je ne comprends pas la question.";
-    }
 
-    const botMessage: Message = {
-      text: response,
-      type: "bot",
-      id: new Date().toISOString(),
-    };
-    setMessages((prevMessages) => [...prevMessages, botMessage]);
+    if (languageContext?.isFrenchLanguage) {
+      if (
+        normalizedInput.includes("bonjour") ||
+        normalizedInput.includes("salut") ||
+        normalizedInput.includes("coucou")
+      ) {
+        response =
+          "Bonjour et enchantée, bienvenue sur mon portfolio, si vous avez des questions n'hésitez pas";
+      } else if (
+        normalizedInput.includes("teletravail") ||
+        normalizedInput.includes("presentiel")
+      ) {
+        response =
+          "Je suis ouverte à travailler aussi bien en présentiel qu'en télétravail.";
+      } else if (
+        normalizedInput.includes("habite") ||
+        normalizedInput.includes("reside")
+      ) {
+        response = "J'habite à Marseille.";
+      } else if (
+        normalizedInput.includes("age") &&
+        !normalizedInput.includes("demenagement")
+      ) {
+        response = "J'ai 38ans.";
+      } else if (
+        normalizedInput.includes("mobilite") ||
+        normalizedInput.includes("demenagement") ||
+        normalizedInput.includes("deplace") ||
+        normalizedInput.includes("emplacement")
+      ) {
+        response =
+          "Si le travail se fait en présentiel, je suis particulièrement intéressée par des opportunités à Marseille. C'est là que je souhaite travailler.";
+      } else if (
+        normalizedInput.includes("appelle") ||
+        normalizedInput.includes("nomme")
+      ) {
+        response = "Enchantée, Je m'appelle Gaëlle Blanchard.";
+      } else if (normalizedInput.includes("prenom")) {
+        response = "Enchantée, je me nomme Gaëlle.";
+      } else if (normalizedInput.includes("nom")) {
+        response = "Enchantée, mon nom de famille est Blanchard.";
+      } else if (
+        normalizedInput.includes("contrat") ||
+        normalizedInput.includes("emploi")
+      ) {
+        response =
+          "Je recherche un emploi en développement web, de préférence un CDI mais ne suis pas contre un CDD, du moment que je peux vous être utile :)";
+      } else if (
+        normalizedInput.includes("ville") ||
+        normalizedInput.includes("habite")
+      ) {
+        response = "J'habite à Marseille.";
+      } else if (
+        normalizedInput.includes("technologie") ||
+        normalizedInput.includes("stack") ||
+        normalizedInput.includes("competence") ||
+        normalizedInput.includes("skill")
+      ) {
+        response =
+          "Je connais le HTML, CSS, JavaScript, TypeScript, Nodesjs, React et Next.js. Je suis également compétente en SEO.";
+      } else if (
+        normalizedInput.includes("hobby") ||
+        normalizedInput.includes("loisir")
+      ) {
+        response =
+          "J'aime par-dessus tout coder, mais j'aime aussi les randonnées et l'éducation canine.";
+      } else if (
+        normalizedInput.includes("qualite") ||
+        normalizedInput.includes("defaut") ||
+        normalizedInput.includes("fort") ||
+        normalizedInput.includes("faible")
+      ) {
+        response =
+          "Je suis passionnée par le développement web et j'apprécie particulièrement résoudre des problèmes. Je considère que cette qualité est essentielle dans notre domaine.\n Cependant, parfois, cette passion peut devenir accablante.\n Si je ne parviens pas à résoudre un problème à la fin de la journée, il occupe mes pensées et peut même me hanter pendant la nuit. Je suis consciente qu'il est parfois nécessaire de prendre du recul pour mieux aborder les défis, mais cela peut être difficile pour moi.\n Néanmoins, je travaille constamment sur cette capacité d'accepter les situations et de trouver un équilibre entre la persévérance et le lâcher-prise.\n Je suis également perfectionniste, une caractéristique que je possède, bien que cela puisse parfois être un défaut.\n Pour remédier à cela, j'apprends à évaluer les priorités afin de ne pas investir inutilement du temps sur des détails moins importants.";
+      } else if (
+        normalizedInput.includes("parcour") ||
+        normalizedInput.includes("parlez") ||
+        normalizedInput.includes("experience") ||
+        normalizedInput.includes("precedent")
+      ) {
+        response =
+          "J'ai suivi des études en informatique et acquis de l'expérience dans le domaine technique. Durant mon dernier emploi, j'avais la responsabilité d'un enfant en situation de handicap. Bien que ce travail fût enrichissant, mon désir de stimuler mon esprit et d'acquérir de nouvelles compétences était plus fort.\n C'est cette aspiration qui a motivé ma décision de me tourner vers le développement web.";
+      } else if (
+        normalizedInput.includes("salaire") ||
+        normalizedInput.includes("pretention") ||
+        normalizedInput.includes("salarial")
+      ) {
+        response =
+          "Avant d'aborder le sujet du salaire, je tiens à souligner mon profond intérêt pour rejoindre une entreprise.\n Mon aspiration principale est de partager mes connaissances, d'apprendre continuellement et surtout de mettre mes compétences au service d'une entreprise pour y épanouir mon potentiel.\n Je suis passionnée par le travail d'équipe et je crois fermement en l'importance de collaborer harmonieusement.\n Cependant, comme tout individu, il est essentiel de trouver un équilibre entre passion et réalité financière. C'est donc pourquoi c'est un sujet qu'il vaudra mieux aborder lors de l'entretien.\n Je suis convaincue que cette démarche nous permettra de bâtir une collaboration fructueuse et enrichissante pour les deux parties.";
+      } else {
+        response = "Je ne comprends pas la question.";
+      }
+
+      const botMessage: Message = {
+        text: response,
+        type: "bot",
+      };
+      setMessages((prevMessages) => [...prevMessages, botMessage]);
+    } else {
+      if (normalizedInput.includes("hello") || normalizedInput.includes("Hi")) {
+        response =
+          "Hello and delighted, welcome to my portfolio. If you have any questions, feel free to ask.";
+      } else if (
+        normalizedInput.includes("teletravail") ||
+        normalizedInput.includes("presentiel")
+      ) {
+        response =
+          "Je suis ouverte à travailler aussi bien en présentiel qu'en télétravail.";
+      } else if (
+        normalizedInput.includes("habite") ||
+        normalizedInput.includes("reside")
+      ) {
+        response = "J'habite à Marseille.";
+      } else if (
+        normalizedInput.includes("age") &&
+        !normalizedInput.includes("demenagement")
+      ) {
+        response = "J'ai 38ans.";
+      } else if (
+        normalizedInput.includes("mobilite") ||
+        normalizedInput.includes("demenagement") ||
+        normalizedInput.includes("deplace") ||
+        normalizedInput.includes("emplacement")
+      ) {
+        response =
+          "Si le travail se fait en présentiel, je suis particulièrement intéressée par des opportunités à Marseille. C'est là que je souhaite travailler.";
+      } else if (
+        normalizedInput.includes("appelle") ||
+        normalizedInput.includes("nomme")
+      ) {
+        response = "Enchantée, Je m'appelle Gaëlle Blanchard.";
+      } else if (normalizedInput.includes("prenom")) {
+        response = "Enchantée, je me nomme Gaëlle.";
+      } else if (normalizedInput.includes("nom")) {
+        response = "Enchantée, mon nom de famille est Blanchard.";
+      } else if (
+        normalizedInput.includes("contrat") ||
+        normalizedInput.includes("emploi")
+      ) {
+        response =
+          "Je recherche un emploi en développement web, de préférence un CDI mais ne suis pas contre un CDD, du moment que je peux vous être utile :)";
+      } else if (
+        normalizedInput.includes("ville") ||
+        normalizedInput.includes("habite")
+      ) {
+        response = "J'habite à Marseille.";
+      } else if (
+        normalizedInput.includes("technologie") ||
+        normalizedInput.includes("stack") ||
+        normalizedInput.includes("competence") ||
+        normalizedInput.includes("skill")
+      ) {
+        response =
+          "Je connais le HTML, CSS, JavaScript, TypeScript, Nodesjs, React et Next.js. Je suis également compétente en SEO.";
+      } else if (
+        normalizedInput.includes("hobby") ||
+        normalizedInput.includes("loisir")
+      ) {
+        response =
+          "J'aime par-dessus tout coder, mais j'aime aussi les randonnées et l'éducation canine.";
+      } else if (
+        normalizedInput.includes("qualite") ||
+        normalizedInput.includes("defaut") ||
+        normalizedInput.includes("fort") ||
+        normalizedInput.includes("faible")
+      ) {
+        response =
+          "Je suis passionnée par le développement web et j'apprécie particulièrement résoudre des problèmes. Je considère que cette qualité est essentielle dans notre domaine.\n Cependant, parfois, cette passion peut devenir accablante.\n Si je ne parviens pas à résoudre un problème à la fin de la journée, il occupe mes pensées et peut même me hanter pendant la nuit. Je suis consciente qu'il est parfois nécessaire de prendre du recul pour mieux aborder les défis, mais cela peut être difficile pour moi.\n Néanmoins, je travaille constamment sur cette capacité d'accepter les situations et de trouver un équilibre entre la persévérance et le lâcher-prise.\n Je suis également perfectionniste, une caractéristique que je possède, bien que cela puisse parfois être un défaut.\n Pour remédier à cela, j'apprends à évaluer les priorités afin de ne pas investir inutilement du temps sur des détails moins importants.";
+      } else if (
+        normalizedInput.includes("parcour") ||
+        normalizedInput.includes("parlez") ||
+        normalizedInput.includes("experience") ||
+        normalizedInput.includes("precedent")
+      ) {
+        response =
+          "J'ai suivi des études en informatique et acquis de l'expérience dans le domaine technique. Durant mon dernier emploi, j'avais la responsabilité d'un enfant en situation de handicap. Bien que ce travail fût enrichissant, mon désir de stimuler mon esprit et d'acquérir de nouvelles compétences était plus fort.\n C'est cette aspiration qui a motivé ma décision de me tourner vers le développement web.";
+      } else if (
+        normalizedInput.includes("salaire") ||
+        normalizedInput.includes("pretention") ||
+        normalizedInput.includes("salarial")
+      ) {
+        response =
+          "Avant d'aborder le sujet du salaire, je tiens à souligner mon profond intérêt pour rejoindre une entreprise.\n Mon aspiration principale est de partager mes connaissances, d'apprendre continuellement et surtout de mettre mes compétences au service d'une entreprise pour y épanouir mon potentiel.\n Je suis passionnée par le travail d'équipe et je crois fermement en l'importance de collaborer harmonieusement.\n Cependant, comme tout individu, il est essentiel de trouver un équilibre entre passion et réalité financière. C'est donc pourquoi c'est un sujet qu'il vaudra mieux aborder lors de l'entretien.\n Je suis convaincue que cette démarche nous permettra de bâtir une collaboration fructueuse et enrichissante pour les deux parties.";
+      } else {
+        response = "Je ne comprends pas la question.";
+      }
+
+      const botMessage: Message = {
+        text: response,
+        type: "bot",
+      };
+      setMessages((prevMessages) => [...prevMessages, botMessage]);
+    }
   };
 
   useEffect(() => {

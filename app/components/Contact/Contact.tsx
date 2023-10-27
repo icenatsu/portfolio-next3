@@ -1,7 +1,7 @@
 "use client";
 
 import styles from "./Contact.module.scss";
-import { RefObject, useEffect, useRef, useContext } from "react";
+import { RefObject, useEffect, useRef, useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
@@ -38,7 +38,7 @@ const Contact = (): JSX.Element => {
         )
         .required(
           languageContext?.isFrenchLanguage
-            ? "Veuillez saisir votre nom."
+            ? "Veuillez saisir votre nom"
             : "Please enter your name."
         ),
       firstname: yup
@@ -52,7 +52,7 @@ const Contact = (): JSX.Element => {
         .required(
           languageContext?.isFrenchLanguage
             ? "Veuillez saisir votre prénom"
-            : "Please enter your first name."
+            : "Please enter your first name"
         ),
       email: yup
         .string()
@@ -72,8 +72,8 @@ const Contact = (): JSX.Element => {
         .string()
         .matches(/^(?:(?:\+|00)33|0)\d{9}$/, {
           message: languageContext?.isFrenchLanguage
-            ? "Veuillez saisir un numéro de téléphone."
-            : "Please enter a valid phone number.",
+            ? "Veuillez saisir votre numéro de téléphone."
+            : "Please enter your phone number.",
           excludeEmptyString: true,
         })
         .required(
@@ -92,7 +92,7 @@ const Contact = (): JSX.Element => {
         .required(
           languageContext?.isFrenchLanguage
             ? "Veuillez entrer un objet."
-            : "Please enter a subject."
+            : "Please enter a subject"
         ),
       message: yup
         .string()
@@ -105,7 +105,7 @@ const Contact = (): JSX.Element => {
         .required(
           languageContext?.isFrenchLanguage
             ? "Veuillez entrer votre message."
-            : "Please enter your message containing between 1 and 500 characters"
+            : "Please enter your message"
         ),
     })
     .required();
@@ -116,12 +116,16 @@ const Contact = (): JSX.Element => {
     handleSubmit,
     getValues,
     reset,
-  } = useForm<FormValues>({ resolver: yupResolver(schema) });
+  } = useForm<FormValues>({
+    resolver: yupResolver(schema),
+  });
 
   const onSubmit = () => {
     showNotification(
       "success",
-      "Votre message a bien été envoyé. Vous recevrez une réponse prochainement. Merci."
+      languageContext?.isFrenchLanguage
+        ? "Votre message a bien été envoyé. Vous recevrez une réponse prochainement. Merci."
+        : "Your message has been sent successfully. You will receive a response shortly. Thank you."
     );
     reset();
   };
@@ -138,10 +142,16 @@ const Contact = (): JSX.Element => {
     } catch (e) {
       showNotification(
         "error",
-        "Vos informations sont incorrectes, veuillez les corriger afin de pouvoir envoyer votre message."
+        languageContext?.isFrenchLanguage
+          ? "Vos informations sont incorrectes, veuillez les corriger afin de pouvoir envoyer votre message."
+          : "Your information is incorrect, please correct it in order to send your message."
       );
     }
   };
+
+  useEffect(() => {
+    reset();
+  }, [languageContext?.isFrenchLanguage]);
 
   // Animations gsap
   useEffect(() => {

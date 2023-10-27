@@ -35,7 +35,6 @@ const Project = () => {
   const { items, error } = useFetch<IntItems[]>();
   const { windowWidth } = useWindowSizeResize();
   const languageContext = useContext(LanguageContext);
-  console.log(items);
 
   const touchDevice = windowWidth <= 992;
 

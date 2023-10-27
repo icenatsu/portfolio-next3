@@ -37,8 +37,6 @@ const CardProject = ({
 
   const flipCard = useRef<HTMLElement>(null);
 
-  console.log(inData.description);
-
   useEffect(() => {
     if (flipCard.current !== null) {
       if (windowWidth > 992) {

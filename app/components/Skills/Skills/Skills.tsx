@@ -25,10 +25,15 @@ const Skills = (): JSX.Element => {
   const dataSkills: IntSkill[] = [
     {
       name: "htmlCss",
-      paragraphs: [
-        "Intégrer du contenu conformément à une maquette",
-        "Implémenter une interface responsive",
-      ],
+      paragraphs: languageContext?.isFrenchLanguage
+        ? [
+            "Intégrer du contenu conformément à une maquette",
+            "Implémenter une interface responsive",
+          ]
+        : [
+            "Integrate content according to a layout.",
+            "Implement a responsive interface.",
+          ],
       icones: [
         {
           name: "html",
@@ -43,12 +48,19 @@ const Skills = (): JSX.Element => {
     },
     {
       name: "css",
-      paragraphs: [
-        "Mettre en œuvre des effets CSS graphiques avancés",
-        "Assurer la cohérence graphique d'un site web",
-        "Mettre en place une structure de navigation pour un site web",
-        "Utilisation du préprocesseur Sass",
-      ],
+      paragraphs: languageContext?.isFrenchLanguage
+        ? [
+            "Mettre en œuvre des effets CSS graphiques avancés",
+            "Assurer la cohérence graphique d'un site web",
+            "Mettre en place une structure de navigation pour un site web",
+            "Utilisation du préprocesseur Sass",
+          ]
+        : [
+            "Implement advanced graphical CSS effects",
+            "Ensure the visual consistency of a website",
+            "Establish a navigation structure for a website",
+            "Utilize the Sass preprocessor",
+          ],
       icones: [
         {
           name: "css",
@@ -63,9 +75,13 @@ const Skills = (): JSX.Element => {
     },
     {
       name: "github",
-      paragraphs: [
-        "Utiliser un système de gestion de versions pour le suivi du projet et son hébergement",
-      ],
+      paragraphs: languageContext?.isFrenchLanguage
+        ? [
+            "Utiliser un système de gestion de versions pour le suivi du projet et son hébergement",
+          ]
+        : [
+            "Use a version control system for project tracking and hosting purposes.",
+          ],
       icones: [
         {
           name: "github",
@@ -76,11 +92,17 @@ const Skills = (): JSX.Element => {
     },
     {
       name: "seo",
-      paragraphs: [
-        "Assurer l'accessibilité d'un site web",
-        "Optimiser la taille et la vitesse d’un site web",
-        "Optimiser le référencement d'un site web",
-      ],
+      paragraphs: languageContext?.isFrenchLanguage
+        ? [
+            "Assurer l'accessibilité d'un site web",
+            "Optimiser la taille et la vitesse d’un site web",
+            "Optimiser le référencement d'un site web",
+          ]
+        : [
+            "Ensure the accessibility of a website",
+            "Optimize the size and speed of a website",
+            "Optimize the SEO of a website",
+          ],
       icones: [
         {
           name: "seo",
@@ -91,12 +113,19 @@ const Skills = (): JSX.Element => {
     },
     {
       name: "javascript",
-      paragraphs: [
-        "Créer un plan de test pour une application",
-        "Valider des données issues de sources externes",
-        "Interagir avec un web service avec JavaScript",
-        "Gérer des événements JavaScript",
-      ],
+      paragraphs: languageContext?.isFrenchLanguage
+        ? [
+            "Créer un plan de test pour une application",
+            "Valider des données issues de sources externes",
+            "Interagir avec un web service avec JavaScript",
+            "Gérer des événements JavaScript",
+          ]
+        : [
+            "Create a test plan for an application",
+            "Validate data from external sources",
+            "Interact with a web service using JavaScript",
+            "Manage JavaScript events",
+          ],
       icones: [
         {
           name: "javascript",
@@ -107,13 +136,21 @@ const Skills = (): JSX.Element => {
     },
     {
       name: "nodejs",
-      paragraphs: [
-        "Mettre en œuvre des opérations CRUD de manière sécurisée",
-        "Implémenter un modèle logique de données conformément à la réglementation",
-        "Stocker des données de manière sécurisée",
-        "Authentifier un utilisateur et maintenir sa session",
-        "Implémenter un stockage de données sécurisé en utilisant une base de données noSQL",
-      ],
+      paragraphs: languageContext?.isFrenchLanguage
+        ? [
+            "Mettre en œuvre des opérations CRUD de manière sécurisée",
+            "Implémenter un modèle logique de données conformément à la réglementation",
+            "Stocker des données de manière sécurisée",
+            "Authentifier un utilisateur et maintenir sa session",
+            "Implémenter un stockage de données sécurisé en utilisant une base de données noSQL",
+          ]
+        : [
+            "Implement CRUD operations securely",
+            "Implement a logical data model in compliance with regulations",
+            "Store data securely",
+            "Authenticate a user and maintain their session",
+            "Implement secure data storage using a NoSQL database",
+          ],
       icones: [
         {
           name: "nodejs",
@@ -128,11 +165,17 @@ const Skills = (): JSX.Element => {
     },
     {
       name: "react",
-      paragraphs: [
-        "Initialiser une application",
-        "Configurer la navigation entre les pages de l'application avec React Router",
-        "Développer des éléments de l'interface d'un site web grâce à des composants React",
-      ],
+      paragraphs: languageContext?.isFrenchLanguage
+        ? [
+            "Initialiser une application",
+            "Configurer la navigation entre les pages de l'application avec React Router",
+            "Développer des éléments de l'interface d'un site web grâce à des composants React",
+          ]
+        : [
+            "Initialize an application",
+            "Configure navigation between application pages using React Router",
+            "Develop interface elements of a website using React components",
+          ],
       icones: [
         {
           name: "react",
@@ -147,10 +190,15 @@ const Skills = (): JSX.Element => {
     },
     {
       name: "typescript",
-      paragraphs: [
-        "Arborer un typage statique pour détecter et prévenir les erreurs de type",
-        "Améliorer la robustesse et la maintenabilité du code JavaScript",
-      ],
+      paragraphs: languageContext?.isFrenchLanguage
+        ? [
+            "Arborer un typage statique pour détecter et prévenir les erreurs de type",
+            "Améliorer la robustesse et la maintenabilité du code JavaScript",
+          ]
+        : [
+            "Adopt static typing to detect and prevent type errors",
+            "Enhance the robustness and maintainability of JavaScript code",
+          ],
       icones: [
         {
           name: "typescript",
@@ -172,11 +220,6 @@ const Skills = (): JSX.Element => {
       dataSecondBlockAccordeon.push(dataSkills[index]);
     }
   }
-
-  // Animations gsap
-  // useEffect(() => {
-  //   animationSlideScrollToBottom("skills", 0, 0.1, 20, 85, 40);
-  // }, []);
 
   useEffect(() => {
     animationSlideScrollToBottom("skillsTitle", 0.1, 0.3, 0, 75, 25);
