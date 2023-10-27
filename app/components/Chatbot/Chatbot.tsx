@@ -47,7 +47,7 @@ const ChatBot: React.FC = () => {
   const scrollToBottom = () => {
     if (messagesEndRef.current) {
       const lastBotMessage: HTMLDivElement | null = document.querySelector(
-        `.${styles.bot}:last-child`
+        `.${styles.bot}:last-child`,
       );
       if (lastBotMessage) {
         const containerHeight = messagesEndRef.current.clientHeight;
@@ -209,6 +209,8 @@ const ChatBot: React.FC = () => {
           "Hello and delighted, welcome to my portfolio. If you have any questions, feel free to ask.";
       } else if (
         normalizedInput.includes("telecommuting") ||
+        normalizedInput.includes("teleworking") ||
+        normalizedInput.includes("remote") ||
         normalizedInput.includes("onsite")
       ) {
         response = "I am open to working both onsite and remotely.";
@@ -217,10 +219,7 @@ const ChatBot: React.FC = () => {
         normalizedInput.includes("reside")
       ) {
         response = "I live in Marseille.";
-      } else if (
-        normalizedInput.includes("age") &&
-        !normalizedInput.includes("moving")
-      ) {
+      } else if (normalizedInput.includes("age")) {
         response = "I am 38 years old.";
       } else if (
         normalizedInput.includes("mobility") ||
@@ -232,13 +231,11 @@ const ChatBot: React.FC = () => {
           "If the work is onsite, I am particularly interested in opportunities in Marseille. That's where I want to work.";
       } else if (
         normalizedInput.includes("call") ||
-        normalizedInput.includes("name")
+        normalizedInput.includes("name") ||
+        normalizedInput.includes("first") ||
+        normalizedInput.includes("last")
       ) {
         response = "Nice to meet you, my name is Gaëlle Blanchard.";
-      } else if (normalizedInput.includes("first name")) {
-        response = "Nice to meet you, my first name is Gaëlle.";
-      } else if (normalizedInput.includes("last name")) {
-        response = "Nice to meet you, my last name is Blanchard.";
       } else if (
         normalizedInput.includes("contract") ||
         normalizedInput.includes("job")
@@ -282,8 +279,7 @@ const ChatBot: React.FC = () => {
           "I studied computer science and gained experience in the technical field. In my last job, I was responsible for a child with disabilities. Although this job was rewarding, my desire to stimulate my mind and acquire new skills was stronger.\n It is this aspiration that motivated my decision to turn to web development.";
       } else if (
         normalizedInput.includes("salary") ||
-        normalizedInput.includes("expectation") ||
-        normalizedInput.includes("salary")
+        normalizedInput.includes("expectation")
       ) {
         response =
           "Before discussing the topic of salary, I want to emphasize my deep interest in joining a company.\n My main aspiration is to share my knowledge, continuously learn, and above all, put my skills at the service of a company to fulfill my potential there.\n I am passionate about teamwork and firmly believe in the importance of collaborating harmoniously.\n However, like every individual, it is essential to find a balance between passion and financial reality. That's why it's a topic best discussed during the interview.\n I am convinced that this approach will enable us to build a fruitful and mutually enriching collaboration.";
