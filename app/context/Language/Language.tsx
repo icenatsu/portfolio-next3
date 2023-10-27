@@ -12,7 +12,8 @@ const LanguageContextProvider = ({
   children,
 }: PropsWithChildren): JSX.Element => {
   const [isFrenchLanguage, setIsFrenchLanguage] = useState<boolean>(
-    navigator.language === "fr-FR" && true
+    navigator.languages.includes("fr-FR") ||
+      (navigator.languages.includes("fr") && true),
   );
 
   const switchLanguage = () => {
