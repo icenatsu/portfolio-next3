@@ -1,7 +1,8 @@
 "use client";
 
-import { useReducer, useRef, useEffect } from "react";
+import { useReducer, useRef, useEffect, useContext } from "react";
 import Notify from "./Notify";
+import { LanguageContext } from "@context/Language/Language";
 
 interface NotifyState {
   isOpen: boolean;
@@ -15,7 +16,7 @@ type NotifyAction =
 
 const notifyReducer = (
   state: NotifyState,
-  action: NotifyAction
+  action: NotifyAction,
 ): NotifyState => {
   switch (action.type) {
     case "OPEN_MODAL":
@@ -46,6 +47,9 @@ const useNotify = (): {
   NotificationComponent: () => JSX.Element;
 } => {
   const [state, dispatch] = useReducer(notifyReducer, initialState);
+
+  const languageContext = useContext(LanguageContext);
+
   const notificationTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   const showNotification = (variant: "error" | "success", message: string) => {
@@ -65,6 +69,10 @@ const useNotify = (): {
       clearTimeout(notificationTimerRef.current);
     }
   };
+
+  useEffect(() => {
+    closeNotification();
+  }, [languageContext?.isFrenchLanguage]);
 
   useEffect(() => {
     return () => {

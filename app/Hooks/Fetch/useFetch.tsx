@@ -12,11 +12,11 @@ export const useFetch = <T,>(): {
   const fetchDatas = async (): Promise<void> => {
     try {
       const response = await (await fetch("/projets.json")).json();
-      setItems(response);
       setloading(true);
+      setItems(response);
     } catch (e: any) {
       setError(e);
-      setloading(false);
+      setloading(true);
     }
   };
 

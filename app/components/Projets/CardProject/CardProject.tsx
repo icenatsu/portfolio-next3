@@ -3,12 +3,13 @@ import { Icon } from "@iconify/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useWindowSizeResize } from "@Hooks/Window/useWindowSizeResize";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useContext } from "react";
+import { LanguageContext } from "@context/Language/Language";
 
 interface IntData {
   id: number;
   title: string;
-  description: string;
+  description: string[];
   cover: { [key: string]: string };
   technologies: { [key: string]: string };
   site: string;
@@ -31,6 +32,9 @@ const CardProject = ({
   const { windowWidth } = useWindowSizeResize();
 
   const isMobile = windowWidth <= 768;
+
+  const languageContext = useContext(LanguageContext);
+
   const flipCard = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -97,7 +101,9 @@ const CardProject = ({
             </div>
           </div>
           <p className={styles["flip-card-back__description"]}>
-            {inData.description}
+            {languageContext?.isFrenchLanguage
+              ? inData.description[0]
+              : inData.description[1]}
           </p>
           <div className={styles["flip-card-back__technologies"]}>
             {Object.entries(inData.technologies).map((techno, idx: number) => {

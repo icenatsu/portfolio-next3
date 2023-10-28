@@ -2,30 +2,31 @@
 
 .container {
   display: flex;
+  position: relative;
   flex-direction: column;
-  background-color: var(--skills--container--bg);
-
-  padding: 10rem 20rem 2rem 20rem;
+  background: var(--skills--container--bg);
+  padding: 10em 20rem 0rem 20rem;
 
   @media screen and (max-width: 1400px) {
-    padding: 10rem 10rem 1rem 10rem;
+    padding: 10rem 10rem 2rem 10rem;
   }
 
   @media screen and (max-width: var.$breakpoint-tablette) {
     flex-direction: column;
-    padding: 10rem 5rem 1rem 5rem;
+    margin-top: -0.1rem;
+    padding: 15rem 5rem 3rem 5rem;
     scroll-margin: 18rem;
   }
 
   @media screen and (max-width: var.$breakpoint-mobile) {
-    padding: 5rem 0 3rem 0;
+    padding: 15rem 0rem 3rem 0rem;
   }
 
   .title {
+    color: var(--skills--title--color);
+    font-weight: var(--skills--title--fontWeight);
     font-size: var(--skills--title--fontSize--desktop);
     font-family: var(--fontFamily--oswald);
-    font-weight: var(--skills--title--fontWeight);
-    color: var(--skills--title--color);
 
     @media screen and (max-width: var.$breakpoint-tablette) {
       font-size: var(--skills--title--fontSize--tablet);
@@ -40,10 +41,10 @@
   &__Accordeons {
     display: flex;
     justify-content: center;
-    min-height: 50rem;
-    height: auto;
     gap: 2rem;
     margin-top: 3rem;
+    height: auto;
+    min-height: 50rem;
 
     @media screen and (max-width: 1400px) {
       min-height: 45rem;
@@ -58,16 +59,16 @@
       flex-direction: column;
       justify-content: start;
       align-items: center;
-      min-height: 70rem;
-      height: auto;
       margin-top: 4rem;
+      height: auto;
+      min-height: 70rem;
     }
 
     .dataAccordeon {
       display: flex;
       flex-direction: column;
-      height: auto;
       gap: 2rem;
+      height: auto;
     }
   }
 }

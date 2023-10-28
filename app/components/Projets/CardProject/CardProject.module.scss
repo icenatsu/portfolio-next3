@@ -1,17 +1,17 @@
 @use "../../../styles/utils/variables.scss" as var;
 
 .flip-card {
-  width: 35.5rem;
-  height: 25.8rem;
   perspective: 100rem;
-  border-radius: var.$radius--10;
-  overflow: hidden;
-  font-size: var(--fontFamily--inter);
-  background-color: var(--cardProject--bg);
-  border: 0.1rem solid var(--cardProject--flip-card--borderColor);
   filter: drop-shadow(
     5px 5px 5px (var(--cardProject--flip-card--filterDropShadow))
   );
+  border: 0.1rem solid var(--cardProject--flip-card--borderColor);
+  border-radius: var.$radius--10;
+  background-color: var(--cardProject--bg);
+  width: 35.5rem;
+  height: 25.8rem;
+  overflow: hidden;
+  font-size: var(--fontFamily--inter);
 
   @media screen and (max-width: "1320px") {
     width: 30rem;
@@ -24,19 +24,19 @@
   }
 
   @media screen and (max-width: var.$breakpoint-mobile) {
-    width: 100%;
+    width: 95%;
     height: 36.8rem;
   }
 }
 
 .flip-card-inner {
   position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+  border-radius: var.$radius--10;
+  background-color: var(--cardProject--flip-card-inner--bg);
   width: 100%;
   height: 100%;
-  background-color: var(--cardProject--flip-card-inner--bg);
-  border-radius: var.$radius--10;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
 }
 
 .flip-card:hover .flip-card-inner {
@@ -46,11 +46,11 @@
 .flip-card-front,
 .flip-card-back {
   position: absolute;
-  width: 100%;
-  height: 100%;
   -webkit-backface-visibility: hidden; /* Safari */
   backface-visibility: hidden;
   border-radius: var.$radius--10;
+  width: 100%;
+  height: 100%;
 }
 
 .flip-card-front {
@@ -64,13 +64,13 @@
 }
 
 .flip-card-back {
-  color: white;
-  transform: rotateY(180deg);
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
   justify-content: center;
+  gap: 0.5rem;
+  transform: rotateY(180deg);
   background-color: var(--cardProject--flip-card-back--bg);
+  color: var(--cardProject--flip-card-back--color);
 
   @media screen and (max-width: var.$breakpoint-tablette) {
     gap: 0.1rem;
@@ -87,7 +87,7 @@
 
     &__sources {
       & a {
-        padding-right: 0.5rem;
+        padding-right: 1.5rem;
         font-size: var(--cardProject--source--fontSize--desktop);
 
         @media screen and (max-width: var.$breakpoint-mobile) {
@@ -100,7 +100,6 @@
     &__title {
       border-radius: var.$radius--5;
       padding: 0.5rem;
-      opacity: 0.9;
       font-size: var(--cardProject--title--fontSize--desktop);
       font-family: var(--font--archivo);
 
@@ -115,15 +114,14 @@
   }
 
   &__description {
-    padding: 1rem;
-    font-family: var(--fontFamily--inter);
-    font-size: var(--cardProject--description--fontSize--desktop);
-    color: var(--cardProject--description--color);
-    background-color: var(--cardProject--description--bg);
-    opacity: 0.8;
     margin: 1rem 0;
     border-top: 0.1rem solid var(--cardProject--borderTop--color);
     border-bottom: 0.1rem solid var(--cardProject--borderBottom--color);
+    background-color: var(--cardProject--description--bg);
+    padding: 1rem;
+    color: var(--cardProject--description--color);
+    font-size: var(--cardProject--description--fontSize--desktop);
+    font-family: var(--fontFamily--inter);
 
     @media screen and (max-width: 1400px) {
       margin: 0 0;
@@ -160,29 +158,30 @@
 
 .go-back {
   position: absolute;
-  font-size: var(--cardProject--goBack--fontSize);
   top: 0.5rem;
   right: 0.5rem;
-  color: var(--cardProject--goBack--color);
   cursor: pointer;
-  background-color: white;
   border-radius: var.$radius--circle;
+  background-color: var(--cardProject--goBack--bg);
+  color: var(--cardProject--goBack--color);
+  font-size: var(--cardProject--goBack--fontSize);
 }
 
 .curve {
-  opacity: 0.2;
   position: absolute;
   bottom: 0;
   left: 0;
+  transform: rotate(180deg);
+  opacity: 0.2;
+  z-index: -2;
   width: 100%;
   overflow: hidden;
   line-height: 0;
-  transform: rotate(180deg);
 }
 
 .curve svg {
-  position: relative;
   display: block;
+  position: relative;
   width: calc(300% + 0.13rem);
   height: 23rem;
 }

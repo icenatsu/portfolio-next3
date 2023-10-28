@@ -1,7 +1,7 @@
 "use client";
 
 import styles from "./Contact.module.scss";
-import { RefObject, useEffect, useRef } from "react";
+import { RefObject, useEffect, useRef, useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
@@ -9,6 +9,7 @@ import emailjs from "@emailjs/browser";
 import useNotify from "@components/Notify/UseNotify";
 import { animationSlideScrollToBottom } from "@animation/gsapAnimation";
 import { Icon } from "@iconify/react";
+import { LanguageContext } from "@context/Language/Language";
 
 interface FormValues {
   firstname: string;
@@ -21,6 +22,7 @@ interface FormValues {
 
 const Contact = (): JSX.Element => {
   const { showNotification, NotificationComponent } = useNotify();
+  const languageContext = useContext(LanguageContext);
 
   const form: RefObject<HTMLFormElement> = useRef<HTMLFormElement>(null);
 
@@ -30,45 +32,81 @@ const Contact = (): JSX.Element => {
         .string()
         .matches(
           /^([a-zA-Z àâäéèêëïîôöùûüç,.'-]{1,20}-{0,1})?([a-zA-Z àâäéèêëïîôöùûüç,.'-]{3,20})$/,
-          "Veuillez saisir un nom valide"
+          languageContext?.isFrenchLanguage
+            ? "Veuillez saisir un nom valide."
+            : "Please enter a valid name."
         )
-        .required("Veuillez saisir votre nom."),
+        .required(
+          languageContext?.isFrenchLanguage
+            ? "Veuillez saisir votre nom"
+            : "Please enter your name."
+        ),
       firstname: yup
         .string()
         .matches(
           /^([a-zA-Z àâäéèêëïîôöùûüç,.'-]{1,20}-{0,1})?([a-zA-Z àâäéèêëïîôöùûüç,.'-]{3,20})$/,
-          "Veuillez saisir un prénom valide"
+          languageContext?.isFrenchLanguage
+            ? "Veuillez saisir un prénom valide."
+            : "Please enter a valid first name."
         )
-        .required("Veuillez saisir votre prénom."),
+        .required(
+          languageContext?.isFrenchLanguage
+            ? "Veuillez saisir votre prénom"
+            : "Please enter your first name"
+        ),
       email: yup
         .string()
         .email("Veuillez entrer un email valide.")
         .matches(
           /^[a-z0-9.-_]+[@]{1}[a-z0-9.-_]+[.]{1}[a-z]{2,10}$/,
-          "Veuillez saisir un email valide"
+          languageContext?.isFrenchLanguage
+            ? "Veuillez saisir un email valide."
+            : "Please enter a valid email."
         )
-        .required("Veuillez saisir votre email."),
+        .required(
+          languageContext?.isFrenchLanguage
+            ? "Veuillez saisir votre email."
+            : "Please enter your email."
+        ),
       tel: yup
         .string()
         .matches(/^(?:(?:\+|00)33|0)\d{9}$/, {
-          message: "Veuillez saisir un numéro de téléphone valide",
+          message: languageContext?.isFrenchLanguage
+            ? "Veuillez saisir votre numéro de téléphone."
+            : "Please enter your phone number.",
           excludeEmptyString: true,
         })
-        .required("Veuillez saisir votre numéro de téléphone."),
+        .required(
+          languageContext?.isFrenchLanguage
+            ? "Veuillez saisir votre numéro de téléphone."
+            : "Please enter your phone number."
+        ),
       objet: yup
         .string()
         .matches(
           /^.{1,50}$/,
-          "Veuillez saisir un objet comportant entre 1 et 50 caractères."
+          languageContext?.isFrenchLanguage
+            ? "Veuillez saisir un objet comportant entre 1 et 50 caractères."
+            : "Please enter a subject containing between 1 and 50 characters."
         )
-        .required("Veuillez entrer un objet."),
+        .required(
+          languageContext?.isFrenchLanguage
+            ? "Veuillez entrer un objet."
+            : "Please enter a subject"
+        ),
       message: yup
         .string()
         .matches(
           /^[\s\S]{0,500}$/,
-          "Veuillez saisir un message comportant entre 1 et 500 caractères."
+          languageContext?.isFrenchLanguage
+            ? "Veuillez saisir un message comportant entre 1 et 500 caractères."
+            : "Please enter a message containing between 1 and 500 characters."
         )
-        .required("Veuillez entrer votre message."),
+        .required(
+          languageContext?.isFrenchLanguage
+            ? "Veuillez entrer votre message."
+            : "Please enter your message"
+        ),
     })
     .required();
 
@@ -78,15 +116,19 @@ const Contact = (): JSX.Element => {
     handleSubmit,
     getValues,
     reset,
-  } = useForm<FormValues>({ resolver: yupResolver(schema) });
+  } = useForm<FormValues>({
+    resolver: yupResolver(schema),
+  });
 
-  function onSubmit() {
+  const onSubmit = () => {
     showNotification(
       "success",
-      "Votre message a bien été envoyé. Vous recevrez une réponse prochainement. Merci."
+      languageContext?.isFrenchLanguage
+        ? "Votre message a bien été envoyé. Vous recevrez une réponse prochainement. Merci."
+        : "Your message has been sent successfully. You will receive a response shortly. Thank you."
     );
     reset();
-  }
+  };
 
   const sendEmail = async () => {
     try {
@@ -100,10 +142,16 @@ const Contact = (): JSX.Element => {
     } catch (e) {
       showNotification(
         "error",
-        "Vos informations sont incorrectes, veuillez les corriger afin de pouvoir envoyer votre message."
+        languageContext?.isFrenchLanguage
+          ? "Vos informations sont incorrectes, veuillez les corriger afin de pouvoir envoyer votre message."
+          : "Your information is incorrect, please correct it in order to send your message."
       );
     }
   };
+
+  useEffect(() => {
+    reset();
+  }, [languageContext?.isFrenchLanguage]);
 
   // Animations gsap
   useEffect(() => {
@@ -123,10 +171,14 @@ const Contact = (): JSX.Element => {
           onSubmit={handleSubmit(onSubmit)}
         >
           <label className={styles.label} htmlFor="lastName">
-            Nom:
+            {languageContext?.isFrenchLanguage ? "Nom:" : "Name"}
             <input
               className={styles.input}
-              placeholder="&#128100; Saisir votre nom"
+              placeholder={
+                languageContext?.isFrenchLanguage
+                  ? "\u{1F464} Saisir votre nom"
+                  : "\u{1F464} Enter your name"
+              }
               type="text"
               id="lastName"
               {...register("lastname")}
@@ -136,10 +188,14 @@ const Contact = (): JSX.Element => {
             )}
           </label>
           <label className={styles.label} htmlFor="firstName">
-            Prénom:
+            {languageContext?.isFrenchLanguage ? "Prénom:" : "First Name:"}
             <input
               className={styles.input}
-              placeholder="&#128100; Saisir votre prénom"
+              placeholder={
+                languageContext?.isFrenchLanguage
+                  ? "\u{1F464} Saisir votre prénom"
+                  : "\u{1F464} Enter your first name"
+              }
               type="text"
               id="firstName"
               {...register("firstname")}
@@ -152,7 +208,11 @@ const Contact = (): JSX.Element => {
             E-mail:
             <input
               className={styles.input}
-              placeholder="&#128234; Saisir votre email"
+              placeholder={
+                languageContext?.isFrenchLanguage
+                  ? "\u{2709} Saisir votre email"
+                  : "\u{2709} Enter your email"
+              }
               type="email"
               id="email"
               {...register("email")}
@@ -162,10 +222,14 @@ const Contact = (): JSX.Element => {
             )}
           </label>
           <label className={styles.label} htmlFor="tel">
-            Téléphone :
+            {languageContext?.isFrenchLanguage ? "Téléphone:" : "Phone Number:"}
             <input
               className={styles.input}
-              placeholder="&#128241; Saisir votre téléphone"
+              placeholder={
+                languageContext?.isFrenchLanguage
+                  ? "\u{1F4F1} Saisir votre téléphone"
+                  : "\u{1F4F1} Enter your phone number"
+              }
               type="text"
               id="tel"
               {...register("tel")}
@@ -175,10 +239,14 @@ const Contact = (): JSX.Element => {
             )}
           </label>
           <label className={styles.label} htmlFor="objet">
-            Objet :
+            {languageContext?.isFrenchLanguage ? "Objet:" : "Subject:"}
             <input
               className={styles.input}
-              placeholder="&#10002; Saisir l'objet de votre message"
+              placeholder={
+                languageContext?.isFrenchLanguage
+                  ? "\u{2712} Saisir l'objet de votre message"
+                  : "\u{2712} Enter the subject of your message"
+              }
               type="text"
               id="objet"
               {...register("objet")}
@@ -190,7 +258,11 @@ const Contact = (): JSX.Element => {
           <label className={styles.label}>
             Message :
             <textarea
-              placeholder="&#10002; Saisir ici votre message"
+              placeholder={
+                languageContext?.isFrenchLanguage
+                  ? "\u{2712} Saisir ici votre message"
+                  : "\u{2712} Enter your message here"
+              }
               className={styles.textarea}
               {...register("message")}
             />

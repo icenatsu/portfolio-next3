@@ -1,13 +1,13 @@
 @use "../../styles/utils/variables.scss" as var;
 
 .container {
-  z-index: 1;
-  width: 100%;
-  margin: auto;
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1;
+  margin: auto;
   padding: 5rem 0 2rem 0;
+  width: 100%;
 
   @media screen and (max-width: var.$breakpoint-tablette) {
     padding: 5rem 0 0 0;
@@ -16,17 +16,15 @@
   .button {
     cursor: pointer;
     border: none;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
-    font-size: var(--downloadbutton--button--fontSize);
-    font-family: var(--fontFamily--inter);
     background-color: var(--downloadbutton--button--bg);
     color: var(--downloadbutton--button--color);
+    font-size: var(--downloadbutton--button--fontSize);
+    font-family: var(--fontFamily--inter);
   }
 
   .icone {
     cursor: pointer;
-    font-size: var(--downloadbutton--icon--fontSize);
-    filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.6));
     color: var(--downloadbutton--icon--color);
+    font-size: var(--downloadbutton--icon--fontSize);
   }
 }

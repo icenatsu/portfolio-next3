@@ -1,27 +1,18 @@
-import styles from "./Switch.module.scss";
+import styles from "./SwitchTheme.module.scss";
 import { Icon } from "@iconify/react";
-import { useState, useEffect } from "react";
-import Toogletheme from "@components/ToogleTheme/ToogleTheme";
+import { useContext } from "react";
+import { ThemeContext } from "@context/ThemeContext/ThemeContext";
 
 const Switch = (): JSX.Element => {
-  const { switchTheme } = Toogletheme();
-  const [darkModeActive, setDarkModeActive] = useState<boolean>(false);
-
-  useEffect(() => {
-    if (document.body.classList.contains("dark")) {
-      setDarkModeActive(true);
-    } else {
-      setDarkModeActive(false);
-    }
-  }, [switchTheme]);
+  const themeContext = useContext(ThemeContext);
 
   return (
     <label className={styles.switch} htmlFor="switch" aria-label="switch">
       <input
         className={styles.input}
         type="checkbox"
-        checked={!darkModeActive}
-        onChange={switchTheme}
+        checked={!themeContext?.isDarkMode}
+        onChange={themeContext?.switchTheme}
         id="switch"
         name="switch"
         aria-label="switch theme"

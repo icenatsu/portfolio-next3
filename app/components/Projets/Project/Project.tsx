@@ -1,7 +1,7 @@
 "use client";
 
 import styles from "./Project.module.scss";
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
 import { useFetch } from "@Hooks/Fetch/useFetch";
 import Loader from "@components/Loader/Loader";
 import CardProject from "@/app/components/Projets/CardProject/CardProject";
@@ -19,11 +19,12 @@ import "swiper/scss/navigation";
 import "swiper/scss/pagination";
 import { animationSlideScrollToBottom } from "@animation/gsapAnimation";
 import { useWindowSizeResize } from "@Hooks/Window/useWindowSizeResize";
+import { LanguageContext } from "@context/Language/Language";
 
 interface IntItems {
   id: number;
   title: string;
-  description: string;
+  description: string[];
   cover: { [key: string]: string };
   technologies: { [key: string]: string };
   site: string;
@@ -33,6 +34,7 @@ interface IntItems {
 const Project = () => {
   const { items, error } = useFetch<IntItems[]>();
   const { windowWidth } = useWindowSizeResize();
+  const languageContext = useContext(LanguageContext);
 
   const touchDevice = windowWidth <= 992;
 
@@ -53,8 +55,7 @@ const Project = () => {
   return (
     <section id="projets" className={styles.container}>
       <h2 id="projetTitle" className={styles["container__title"]}>
-        {" "}
-        Mes projets
+        {languageContext?.isFrenchLanguage ? "Mes projets" : "Projects"}
       </h2>
       {error === undefined ? (
         <div id="caroussel" className={styles["container__caroussel"]}>
@@ -115,7 +116,11 @@ const Project = () => {
         </div>
       ) : (
         <div id="errors" className={styles["error"]}>
-          <p>Une erreur est survenue. Veuillez réessayer ultérieurement.</p>
+          <p>
+            {languageContext?.isFrenchLanguage
+              ? "Une erreur est survenue. Veuillez réessayer ultérieurement."
+              : "The error occurred. Please try again later"}
+          </p>
         </div>
       )}
     </section>

@@ -1,15 +1,20 @@
 @use "../../styles/utils/variables.scss" as var;
 
 .header {
-  height: 94vh;
   display: flex;
-  padding: 0rem 15rem 1rem 15rem;
   justify-content: space-between;
   align-items: center;
-  opacity: 0;
+  background: var(--header--bg);
+  padding: 0rem 15rem 1rem 15rem;
+  height: 94vh;
+
+  @media screen and (max-width: 1400px) {
+    padding: 0rem 0rem 1rem 0rem;
+  }
 
   @media screen and (max-width: var.$breakpoint-tablette) {
-    padding: 10rem 10rem;
+    margin-top: -0.1rem;
+    padding: 0rem 0rem 1rem 0rem;
   }
 
   @media screen and (max-width: var.$breakpoint-mobile) {
@@ -17,48 +22,97 @@
     justify-content: center;
     align-items: center;
     gap: 3rem;
+    padding: 0rem 0rem 1rem 0rem;
     height: 90rem;
-    padding: 5rem 1rem;
   }
 
   .text {
-    position: relative;
-    max-width: 90rem;
-    margin: auto;
     display: flex;
+    position: relative;
+    flex: 2;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 5rem;
+    gap: 8rem;
+    opacity: 0.7;
+    margin-top: 15rem;
+    padding: 8rem;
+    height: 70rem;
+
+    @media screen and (max-width: var.$breakpoint-mobile) {
+      gap: 10rem;
+      margin-top: 0rem;
+      height: 40rem;
+    }
+
+    .background {
+      position: absolute;
+      top: -5rem;
+      filter: var(--header--IntegerCircuit);
+      width: 100%;
+      height: 80%;
+
+      &__container {
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+
+      @media screen and (max-width: var.$breakpoint-mobile) {
+        display: none;
+      }
+
+      &:hover {
+        animation: IntegratedCircuit 1s both linear;
+      }
+    }
 
     @media screen and (max-width: var.$breakpoint-mobile) {
       align-items: center;
     }
 
     .profession {
-      font-size: var(--header--profession--fontSize);
-      font-family: var(--fontFamily--archivo);
-      color: var(--header--profession--color);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1;
+      animation: translateBottom 0.8s 0.5s ease-in-out backwards;
+      transition: background-color 1s;
+      margin-top: 15rem;
       border: 0.1rem solid var(--header--profession--border);
       border-radius: var.$radius--30;
-      width: 20rem;
+      background-color: var(--header--profession--bg);
       padding: 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 1;
-      transition: filter 1s;
-      animation: translateBottom 0.8s 0.5s ease-in-out backwards;
+      width: 20rem;
+      color: var(--header--profession--color);
+      font-size: var(--header--profession--fontSize--desktop);
+      font-family: var(--fontFamily--archivo);
+
+      @media screen and (max-width: var.$breakpoint-tablette) {
+        margin-top: 16rem;
+        border: none;
+        background-color: transparent;
+        font-size: 1.4rem var(--header--profession--fontSize--tablet);
+      }
+
+      @media screen and (max-width: var.$breakpoint-mobile) {
+        margin-top: 2rem;
+        background-color: var(--header--profession--bg);
+        font-size: 1.5rem var(--header--profession--fontSize--mobile);
+      }
     }
 
     .title {
       display: flex;
       flex-wrap: wrap;
-      font-family: var(--fontFamily--oswald);
-      font-size: var(--header--title--fontSize--desktop);
-      font-weight: var(--header--title--fontWeight);
-      color: var(--header--title);
+      z-index: 1;
       animation: translateBottom 0.9s 0.5s ease-in-out forwards;
+      margin: 1.5rem 0;
+      color: var(--header--title);
+      font-weight: var(--header--title--fontWeight);
+      font-size: var(--header--title--fontSize--desktop);
+      font-family: var(--fontFamily--oswald);
 
       @media screen and (max-width: var.$breakpoint-tablette) {
         font-size: var(--header--title--fontSize--tablet);
@@ -72,65 +126,39 @@
     .link {
       display: flex;
       flex-wrap: wrap;
-      align-items: center;
       justify-content: center;
-      z-index: 2;
+      align-items: center;
+      z-index: 3;
       animation: translateBottom 1s 0.5s ease-in-out forwards;
 
+      @media screen and (max-width: var.$breakpoint-mobile) {
+        gap: 2rem;
+      }
+
       .button {
-        cursor: pointer;
         display: flex;
-        align-items: center;
         justify-content: space-evenly;
-        color: var(--header--button);
-        background-color: var(--header--button--bg);
-        font-family: var(--fontFamily--archivo);
-        font-size: var(--header--button--fontSize);
-        font-weight: var(--header--button--fontWeight);
+        align-items: center;
+        transition: all 0.6s;
+        cursor: pointer;
+        margin: 0.2rem;
+        border: var(--header--button--border);
         border-radius: var.$radius--30;
-        border: none;
-        width: 19rem;
-        height: 5.5rem;
-        margin: 2rem 1rem;
-        transition: filter 0.6s;
+        background-color: var(--header--button--bg);
+        width: 18rem;
+        height: 5rem;
+        color: var(--header--button--color);
+        font-size: var(--header--button--fontSize);
+        font-family: var(--fontFamily--archivo);
 
         &:hover {
-          // filter: brightness(110%);
-          background-color: var(--header--button--bg--hover);
+          filter: var(--header--button--hover);
         }
 
         .icon {
           font-size: var(--header--button-icon--fontSize);
         }
       }
-    }
-  }
-
-  .wave {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    fill: var(--header--wave);
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-    transform: rotate(180deg);
-    opacity: 0.2;
-
-    @media screen and (max-width: var.$breakpoint-mobile) {
-      display: none;
-    }
-  }
-
-  .wave svg {
-    position: relative;
-    display: block;
-    width: calc(100% + 0.13rem);
-    height: 9rem;
-
-    @media screen and (max-width: var.$breakpoint-tablette) {
-      width: calc(100% + 0.13rem);
-      height: 7rem;
     }
   }
 }
@@ -145,5 +173,15 @@
   }
   from {
     transform: translateY(-40px);
+  }
+}
+
+@keyframes IntegratedCircuit {
+  16.65% {
+    filter: hue-rotate(200deg);
+  }
+
+  83.25% {
+    filter: hue-rotate(10deg);
   }
 }

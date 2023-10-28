@@ -4,10 +4,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 10rem;
   width: 100%;
 
   .icon {
-    font-size: var(--loader--icon--fontSize);
     color: var(--loader--icon--colors);
+    font-size: var(--loader--icon--fontSize);
   }
 }

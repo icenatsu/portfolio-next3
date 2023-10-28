@@ -1,10 +1,12 @@
 "use client";
 import styles from "./NavBar.module.scss";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useContext } from "react";
 import { Icon } from "@iconify/react";
 import { useWindowSizeResize } from "@Hooks/Window/useWindowSizeResize";
-import Switch from "../Switch/Switch";
+import SwitchTheme from "@components/Switchs/SwitchTheme/SwitchTheme";
+import SwitchLanguage from "@components/Switchs/SwitchLanguage/SwitchLanguage";
+import { LanguageContext } from "@context/Language/Language";
 
 const NavBar = (): JSX.Element => {
   const windowSize = useWindowSizeResize();
@@ -13,6 +15,8 @@ const NavBar = (): JSX.Element => {
 
   const container = useRef<HTMLDivElement>(null);
   const navbar = useRef<HTMLElement>(null);
+
+  const languageContext = useContext(LanguageContext);
 
   // Déroulement de la navbar en version mobile et tablette
   const handleClick = () => {
@@ -25,20 +29,28 @@ const NavBar = (): JSX.Element => {
       navbar.current !== null &&
       typeof window !== "undefined"
     ) {
-      if (windowSize.windowWidth <= 992) {
+      if (windowSize.windowWidth <= 992 && window.innerWidth <= 992) {
+        container.current.classList.remove(styles.visible);
         if (showMenu) {
-          container.current.style.minHeight = "21rem";
-          navbar.current.style.transition = "opacity 1s 0.8s";
-          navbar.current.style.opacity = "1";
+          navbar.current.style.transition = "opacity 1s 1s";
+          setTimeout(() => {
+            if (container.current !== null) {
+              container.current.classList.add(styles.visible);
+            }
+          }, 100);
         } else {
           navbar.current.style.transition = "none";
-          container.current.style.minHeight = "6rem";
-          navbar.current.style.opacity = "0";
+          setTimeout(() => {
+            if (container.current !== null) {
+              container.current.classList.remove(styles.visible);
+            }
+          }, 200);
         }
-      } else {
-        setShowMenu(false);
-        navbar.current.style.opacity = "1";
-        container.current.style.minHeight = "6rem";
+      } else if (windowSize.windowWidth > 992 && window.innerWidth > 992) {
+        if (container.current !== null) {
+          setShowMenu(false);
+          container.current.classList.add(styles.visible);
+        }
       }
     }
   }, [showMenu, windowSize.windowWidth]);
@@ -50,7 +62,7 @@ const NavBar = (): JSX.Element => {
 
   return (
     <div id="navBar" className={styles.container} ref={container}>
-      <Switch />
+      <SwitchTheme />
       <nav className={styles.navbar} ref={navbar}>
         <ul className={styles.list}>
           <li className={styles.list__item}>
@@ -59,7 +71,7 @@ const NavBar = (): JSX.Element => {
               scroll={false}
               href="/#projets"
             >
-              Projets
+              {languageContext?.isFrenchLanguage ? "Projets" : "Projects"}
             </Link>
           </li>
           <li className={styles.list__item}>
@@ -68,7 +80,7 @@ const NavBar = (): JSX.Element => {
               href="/#skills"
               scroll={false}
             >
-              Compétences
+              {languageContext?.isFrenchLanguage ? "Compétences" : "Skills"}
             </Link>
           </li>
           <li className={styles.list__item}>
@@ -82,6 +94,7 @@ const NavBar = (): JSX.Element => {
           </li>
         </ul>
       </nav>
+      <SwitchLanguage />
       <div className={styles.burger} onClick={handleClick}>
         <Icon
           aria-label="Afficher le menu"

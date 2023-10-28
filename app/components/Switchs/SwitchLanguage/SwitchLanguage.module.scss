@@ -1,0 +1,21 @@
+@use "../../../styles/utils/variables.scss" as var;
+
+.language {
+  display: flex;
+  align-items: center;
+  border: none;
+  font-family: var(--fontFamily--archivo);
+
+  @media screen and (max-width: var.$breakpoint-tablette) {
+    position: absolute;
+    top: 1.5rem;
+    left: 50%;
+    transform: translate(-50%);
+  }
+
+  .label {
+    padding: 1rem;
+    color: var(--switchLanguage--label--color);
+    font-size: var(--switchLanguage--label--fontSize);
+  }
+}
