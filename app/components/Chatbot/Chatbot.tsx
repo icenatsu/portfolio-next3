@@ -153,11 +153,6 @@ const ChatBot: React.FC = () => {
         response =
           "Je recherche un emploi en développement web, de préférence un CDI mais ne suis pas contre un CDD, du moment que je peux vous être utile :)";
       } else if (
-        normalizedInput.includes("ville") ||
-        normalizedInput.includes("habite")
-      ) {
-        response = "J'habite à Marseille.";
-      } else if (
         normalizedInput.includes("technologie") ||
         normalizedInput.includes("stack") ||
         normalizedInput.includes("competence") ||
@@ -209,44 +204,43 @@ const ChatBot: React.FC = () => {
           "Hello and delighted, welcome to my portfolio. If you have any questions, feel free to ask.";
       } else if (
         normalizedInput.includes("telecommuting") ||
-        normalizedInput.includes("teleworking") ||
+        normalizedInput.includes("telework") ||
         normalizedInput.includes("remote") ||
-        normalizedInput.includes("onsite")
+        normalizedInput.includes("onsite") ||
+        normalizedInput.includes("on the spot")
       ) {
         response = "I am open to working both onsite and remotely.";
       } else if (
         normalizedInput.includes("live") ||
-        normalizedInput.includes("reside")
+        normalizedInput.includes("reside") ||
+        normalizedInput.includes("stay")
       ) {
         response = "I live in Marseille.";
-      } else if (normalizedInput.includes("age")) {
+      } else if (
+        normalizedInput.includes("age") ||
+        normalizedInput.includes("old")
+      ) {
         response = "I am 38 years old.";
       } else if (
         normalizedInput.includes("mobility") ||
-        normalizedInput.includes("relocation") ||
-        normalizedInput.includes("move") ||
+        normalizedInput.includes("mov") ||
         normalizedInput.includes("location")
       ) {
         response =
           "If the work is onsite, I am particularly interested in opportunities in Marseille. That's where I want to work.";
       } else if (
-        normalizedInput.includes("call") ||
         normalizedInput.includes("name") ||
         normalizedInput.includes("first") ||
         normalizedInput.includes("last")
       ) {
         response = "Nice to meet you, my name is Gaëlle Blanchard.";
       } else if (
+        normalizedInput.includes("condition") ||
         normalizedInput.includes("contract") ||
         normalizedInput.includes("job")
       ) {
         response =
           "I am looking for a job in web development, preferably a permanent position (CDI) but I am open to a fixed-term contract (CDD) as long as I can be of help :)";
-      } else if (
-        normalizedInput.includes("city") ||
-        normalizedInput.includes("live")
-      ) {
-        response = "I live in Marseille.";
       } else if (
         normalizedInput.includes("technology") ||
         normalizedInput.includes("stack") ||

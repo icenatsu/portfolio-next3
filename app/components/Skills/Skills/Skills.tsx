@@ -27,11 +27,11 @@ const Skills = (): JSX.Element => {
       name: "htmlCss",
       paragraphs: languageContext?.isFrenchLanguage
         ? [
-            "Intégrer du contenu conformément à une maquette",
+            "Intégrer du contenu conformément à une maquette graphique",
             "Implémenter une interface responsive",
           ]
         : [
-            "Integrate content according to a layout.",
+            "Integrate content according to a graphic mockup.",
             "Implement a responsive interface.",
           ],
       icones: [
@@ -122,7 +122,7 @@ const Skills = (): JSX.Element => {
           ]
         : [
             "Create a test plan for an application",
-            "Validate data from external sources",
+            "Validating data from external sources",
             "Interact with a web service using JavaScript",
             "Manage JavaScript events",
           ],
