@@ -26,7 +26,7 @@ const ChatBot: React.FC = () => {
 
   // Style du chatbot
   useEffect(() => {
-    if (windowWidth <= 992) {
+    if (windowWidth <= 1530) {
       if (visible && document.getElementsByClassName("chatbot") !== null) {
         document.getElementById("chatbot")?.classList.add(styles.visible);
         document
@@ -245,19 +245,20 @@ const ChatBot: React.FC = () => {
         normalizedInput.includes("technology") ||
         normalizedInput.includes("stack") ||
         normalizedInput.includes("competence") ||
-        normalizedInput.includes("skill")
+        normalizedInput.includes("skill") ||
+        normalizedInput.includes("ability")
       ) {
         response =
           "I know HTML, CSS, JavaScript, TypeScript, Node.js, React, and Next.js. I am also proficient in SEO.";
       } else if (
         normalizedInput.includes("hobby") ||
-        normalizedInput.includes("leisure")
+        normalizedInput.includes("leisure") ||
+        normalizedInput.includes("pastime")
       ) {
         response =
           "I love coding above all, but I also enjoy hiking and dog training.";
       } else if (
         normalizedInput.includes("strength") ||
-        normalizedInput.includes("weakness") ||
         normalizedInput.includes("strong") ||
         normalizedInput.includes("weak")
       ) {
@@ -273,7 +274,8 @@ const ChatBot: React.FC = () => {
           "I studied computer science and gained experience in the technical field. In my last job, I was responsible for a child with disabilities. Although this job was rewarding, my desire to stimulate my mind and acquire new skills was stronger.\n It is this aspiration that motivated my decision to turn to web development.";
       } else if (
         normalizedInput.includes("salary") ||
-        normalizedInput.includes("expectation")
+        normalizedInput.includes("requirement") ||
+        (normalizedInput.includes("wage") && !normalizedInput.includes("age"))
       ) {
         response =
           "Before discussing the topic of salary, I want to emphasize my deep interest in joining a company.\n My main aspiration is to share my knowledge, continuously learn, and above all, put my skills at the service of a company to fulfill my potential there.\n I am passionate about teamwork and firmly believe in the importance of collaborating harmoniously.\n However, like every individual, it is essential to find a balance between passion and financial reality. That's why it's a topic best discussed during the interview.\n I am convinced that this approach will enable us to build a fruitful and mutually enriching collaboration.";
