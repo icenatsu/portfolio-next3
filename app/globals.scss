@@ -261,7 +261,7 @@ a {
   /* Body */
   --body--bg--color: #{var.$dark-color};
   /* Navbar */
-  --navbar--container--bg: #{var.$dark-color};
+  --navbar--container--bg: rgba(15, 17, 19, 0.973);
   --navbar--link--color: #{var.$primary-color};
   --navbar--stars--color: #{var.$light-color};
   --navbar--burger--color: #{var.$light-color};
