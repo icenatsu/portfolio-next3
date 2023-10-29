@@ -58,8 +58,8 @@ a {
   --header--profession--bg: #{var.$white-color};
   --header--profession--color: #{var.$black-color};
   --header--profession--fontSize--desktop: 1.6rem;
-  --header--profession--fontSize-tablet: 1.4rem;
-  --header--profession--fontSize-mobile: 1.5rem;
+  --header--profession--fontSize--tablet: 1.5rem;
+  --header--profession--fontSize--mobile: 2rem;
   --header--title: #{var.$black-color};
   --header--title--fontWeight: 300;
   --header--title--fontSize--desktop: 6rem;
@@ -233,6 +233,8 @@ a {
   --notify--barSuccess--bg: green;
   /* Chatbot */
   --chatbot--openbot--color: #{var.$blue-700};
+  --chatbot--openbot--fontSize--desktop: 5rem;
+  --chatbot--openbot--fontSize--mobile: 4rem;
   --chatbot--bg: #{var.$blue-400};
   --chatbot--container--boxShadow--color: 2px 2px 18px 2px rgba(0, 0, 0, 0.3);
   --chatbot--container--borderColor: #ccc;

@@ -31,7 +31,7 @@
 
     @media screen and (max-width: var.$breakpoint-tablette) {
       opacity: 0;
-      margin-top: 10rem;
+      margin-top: 5rem;
       height: 0rem;
     }
 
@@ -110,7 +110,7 @@
 
 .visible {
   @media screen and (max-width: var.$breakpoint-tablette) {
-    min-height: 25rem;
+    min-height: 21rem;
   }
 
   & > .navbar {
