@@ -6,7 +6,11 @@
   bottom: 2rem;
   z-index: 9;
   color: var(--chatbot--openbot--color);
-  font-size: 5rem;
+  font-size: var(--chatbot--openbot--fontSize--desktop);
+
+  @media screen and (max-width: var.$breakpoint-mobile) {
+    font-size: var(--chatbot--openbot--fontSize--mobile);
+  }
 }
 
 .visible {

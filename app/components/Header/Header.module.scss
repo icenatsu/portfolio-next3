@@ -93,13 +93,13 @@
         margin-top: 16rem;
         border: none;
         background-color: transparent;
-        font-size: 1.4rem var(--header--profession--fontSize--tablet);
+        font-size: var(--header--profession--fontSize--tablet);
       }
 
       @media screen and (max-width: var.$breakpoint-mobile) {
         margin-top: 2rem;
         background-color: var(--header--profession--bg);
-        font-size: 1.5rem var(--header--profession--fontSize--mobile);
+        font-size: var(--header--profession--fontSize--mobile);
       }
     }
 
