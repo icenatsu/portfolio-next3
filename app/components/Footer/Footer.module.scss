@@ -9,8 +9,9 @@
   background-color: var(--footer--bg);
   padding: 1rem 1rem;
   width: 100%;
-  margin-top: -1rem;
+  margin-top: -0.5rem;
   max-width: 100%;
+  z-index: -1;
   height: 11rem;
 
   @media screen and (max-width: 1530px) {
