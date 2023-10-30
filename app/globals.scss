@@ -3,7 +3,6 @@
 *,
 ::before,
 ::after {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -64,7 +63,7 @@ a {
   --header--title--fontWeight: 300;
   --header--title--fontSize--desktop: 6rem;
   --header--title--fontSize--tablet: 6.4rem;
-  --header--buttonBorder: 1px dotted grey;
+  --header--button--border: 1px dotted grey;
   --header--button--bg: #{var.$white-color};
   --header--button--color: #{var.$blue-700};
   --header--button--fontSize: 2.5rem;
@@ -359,103 +358,103 @@ a {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    /* Body */
-    --body--bg--color: #{var.$dark-color};
-    /* Navbar */
-    --navbar--container--bg: #{var.$dark-color};
-    --navbar--link--color: #{var.$primary-color};
-    --navbar--stars--color: #{var.$light-color};
-    --navbar--burger--color: #{var.$light-color};
-    /* SwitchTheme */
-    --switchTheme--sunmoon--bg: #{var.$light-color};
-    --switchTheme--bg--toogle: #{var.$six-color};
-    /* SwitchLanguage */
-    --switchLanguage--label--color: #{var.$primary-color};
-    /* Header */
-    --header--bg: #{var.$dark-color};
-    --header--IntegerCircuit: none;
-    --header--profession--border: #{var.$black-color};
-    --header--profession--color: #{var.$black-color};
-    --header--title: #{var.$light-color};
-    --header--button--border: none;
-    --header--button--bg: #{var.$dark-blue-color};
-    --header--button--color: #{var.$light-color};
-    --header--button--hover: brightness(120%);
-    /* About */
-    --about--containerBoxShadow--color: #{var.$light-color};
-    --about--container--bg: #{var.$dark-blue-color};
-    --about--containerBefore--bg: #{var.$dark-color};
-    --about--backgroundFilter: brightness(40%);
-    --about--title--color: #{var.$second-color};
-    --about--presentation--color: #{var.$light-color};
-    --about--splashImgFilter: hue-rotate(400deg);
-    --about--shape--filterDropSHadow: #{var.$black-color};
-    /* Projets Caroussel */
-    --project--container--bg: linear-gradient(
-      to bottom,
-      #{var.$dark-blue-color},
-      #{var.$dark-color},
-      #{var.$dark-color}
-    );
-    --project--title--color: #{var.$second-color};
-    --project--touch--color: #{var.$light-color};
-    --project--error--color: #{var.$light-color};
-    /* CardProject */
-    --cardProject--flip-card--filterDropShadow: rgba(255, 255, 255, 0.5);
-    --cardProject--flip-card--borderColor: #{var.$transparent-color};
-    --cardProject--bg: #{var.$six-color};
-    --cardProject--flip-card-back--bg: #{var.$dark-blue-color};
-    /* Loader */
-    --loader--icon--colors: #{var.$light-color};
-    /* Skills */
-    --skills--container--bg: #{var.$dark-color};
-    --skills--title--color: #{var.$second-color};
-    /* Download Button cv */
-    --downloadbutton--icon--color: #{var.$primary-color};
-    --downloadbutton--button--color: #{var.$primary-color};
-    /* CardSkill */
-    --cardSkill--borderColor: #{var.$black-color};
-    --cardSkill--bg: #{var.$dark-blue-color};
-    --cardSkill--chevron--color: #{var.$dark-color};
-    --cardSkill--iconTechno--color: #{var.$second-color};
-    --cardSkill--nameTechno--color: #{var.$light-color};
-    --cardSkill--description--color: #{var.$light-color};
-    --cardSkill--dividingBorder: #{var.$dark-color};
-    --cardSkill--iconArrow--color: #{var.$gold-color};
-    --cardskill--tiltFill: #{var.$black-color};
-    /* Contact */
-    --contact--bg: linear-gradient(
-      to bottom,
-      #{var.$dark-blue-color},
-      #{var.$dark-color}
-    );
-    --contact--containerBefore--bg: #{var.$dark-color};
-    --contact--title--color: #{var.$second-color};
-    --contact--label--color: #{var.$primary-color};
-    --contact--errors--color: #{var.$light-color};
-    --contact--inputBorder: 1px dashed #{var.$second-color};
-    --contact--input--bg: #{var.$dark-blue-color};
-    --contact--input--color: #{var.$light-color};
-    --contact--placeHolder--color: #{var.$light-color};
-    --contact--send--bg: #{var.$dark-blue-color};
-    --contact--send--color: #{var.$light-color};
-    --contact--elipse--borderColor: #{var.$light-color};
-    /* Footer */
-    --footer--bg: #{var.$dark-color};
-    --footer--infos--color: #{var.$light-color};
-    --footer--infos--fontWeight: 500;
-    --footer--wave: #{var.$primary-color};
-    /* Chatbot */
-    --chatbot--openbot--color: #{var.$white-color};
-    --chatbot--bg: #{var.$dark-color};
-    --chatbot--container--boxShadow--color: 1px 1px 12px 1px #{var.$dark-color};
-    --chatbot--container--borderColor: #{var.$dark-color};
-    --chatbot--container--bg: rgba(255, 255, 255, 0.1);
-    --chatbot-entilted--color: #{var.$light-color};
-    --chatbot--messagesScrollbar--handle: #{var.$four-color};
-    --chatbot--userQuestion--bg: #{var.$dark-blue-color};
-    --chatbot--botResponse--bg: #{var.$dark-color};
-    --chatbot--sendButton--bg: #{var.$four-color};
+   /* Body */
+   --body--bg--color: #{var.$dark-color};
+   /* Navbar */
+   --navbar--container--bg: rgba(15, 17, 19, 0.973);
+   --navbar--link--color: #{var.$primary-color};
+   --navbar--stars--color: #{var.$light-color};
+   --navbar--burger--color: #{var.$light-color};
+   /* SwitchTheme */
+   --switchTheme--sunmoon--bg: #{var.$light-color};
+   --switchTheme--bg--toogle: #{var.$six-color};
+   /* SwitchLanguage */
+   --switchLanguage--label--color: #{var.$primary-color};
+   /* Header */
+   --header--bg: #{var.$dark-color};
+   --header--IntegerCircuit: none;
+   --header--profession--border: #{var.$black-color};
+   --header--profession--color: #{var.$black-color};
+   --header--title: #{var.$light-color};
+   --header--button--border: none;
+   --header--button--bg: #{var.$dark-blue-color};
+   --header--button--color: #{var.$light-color};
+   --header--button--hover: brightness(120%);
+   /* About */
+   --about--containerBoxShadow--color: #{var.$light-color};
+   --about--container--bg: #{var.$dark-blue-color};
+   --about--containerBefore--bg: #{var.$dark-color};
+   --about--backgroundFilter: brightness(40%);
+   --about--title--color: #{var.$second-color};
+   --about--presentation--color: #{var.$light-color};
+   --about--splashImgFilter: hue-rotate(400deg);
+   --about--shape--filterDropSHadow: #{var.$black-color};
+   /* Projets Caroussel */
+   --project--container--bg: linear-gradient(
+     to bottom,
+     #{var.$dark-blue-color},
+     #{var.$dark-color},
+     #{var.$dark-color}
+   );
+   --project--title--color: #{var.$second-color};
+   --project--touch--color: #{var.$light-color};
+   --project--error--color: #{var.$light-color};
+   /* CardProject */
+   --cardProject--flip-card--filterDropShadow: rgba(255, 255, 255, 0.5);
+   --cardProject--flip-card--borderColor: #{var.$transparent-color};
+   --cardProject--bg: #{var.$six-color};
+   --cardProject--flip-card-back--bg: #{var.$dark-blue-color};
+   /* Loader */
+   --loader--icon--colors: #{var.$light-color};
+   /* Skills */
+   --skills--container--bg: #{var.$dark-color};
+   --skills--title--color: #{var.$second-color};
+   /* Download Button cv */
+   --downloadbutton--icon--color: #{var.$primary-color};
+   --downloadbutton--button--color: #{var.$primary-color};
+   /* CardSkill */
+   --cardSkill--borderColor: #{var.$black-color};
+   --cardSkill--bg: #{var.$dark-blue-color};
+   --cardSkill--chevron--color: #{var.$dark-color};
+   --cardSkill--iconTechno--color: #{var.$second-color};
+   --cardSkill--nameTechno--color: #{var.$light-color};
+   --cardSkill--description--color: #{var.$light-color};
+   --cardSkill--dividingBorder: #{var.$dark-color};
+   --cardSkill--iconArrow--color: #{var.$gold-color};
+   --cardskill--tiltFill: #{var.$black-color};
+   /* Contact */
+   --contact--bg: linear-gradient(
+     to bottom,
+     #{var.$dark-blue-color},
+     #{var.$dark-color}
+   );
+   --contact--containerBefore--bg: #{var.$dark-color};
+   --contact--title--color: #{var.$second-color};
+   --contact--label--color: #{var.$primary-color};
+   --contact--errors--color: #{var.$light-color};
+   --contact--inputBorder: 1px dashed #{var.$second-color};
+   --contact--input--bg: #{var.$dark-blue-color};
+   --contact--input--color: #{var.$light-color};
+   --contact--placeHolder--color: #{var.$light-color};
+   --contact--send--bg: #{var.$dark-blue-color};
+   --contact--send--color: #{var.$light-color};
+   --contact--elipse--borderColor: #{var.$light-color};
+   /* Footer */
+   --footer--bg: #{var.$dark-color};
+   --footer--infos--color: #{var.$light-color};
+   --footer--infos--fontWeight: 500;
+   --footer--wave: #{var.$primary-color};
+   /* Chatbot */
+   --chatbot--openbot--color: #{var.$white-color};
+   --chatbot--bg: #{var.$dark-color};
+   --chatbot--container--boxShadow--color: 1px 1px 12px 1px #{var.$dark-color};
+   --chatbot--container--borderColor: #{var.$dark-color};
+   --chatbot--container--bg: rgba(255, 255, 255, 0.1);
+   --chatbot-entilted--color: #{var.$light-color};
+   --chatbot--messagesScrollbar--handle: #{var.$four-color};
+   --chatbot--userQuestion--bg: #{var.$dark-blue-color};
+   --chatbot--botResponse--bg: #{var.$dark-color};
+   --chatbot--sendButton--bg: #{var.$four-color};
   }
 }
 
