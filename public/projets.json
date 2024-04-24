@@ -1,23 +1,23 @@
 [
   {
     "id": "1",
-    "title": "Booki",
+    "title": "Course directory",
     "description": [
-      "Pendant la formation j'ai pu découvrir le langage HTML et CSS au travers d'une mise en oeuvre d'un site Web à partir de maquettes graphiques aux formats desktop et mobile.",
-      "During the training, I was able to explore HTML and CSS languages by implementing a website based on graphic mockups in both desktop and mobile formats."
+      "La création de ce site m'a permis d'apprendre et pratiquer le framework nextJS ainsi que ses concepts mais également le balisage Markdown.",
+      "The creation of this website has allowed me to learn and practice the Next.js framework as well as its concepts, but also Markdown markup."
     ],
     "cover": {
-      "mobile": "./img/projects_img/covers/mobile/booki_mob.svg",
-      "tablette": "./img/projects_img/covers/tablette/booki_tab.svg",
+      "mobile": "./img/projects_img/covers/mobile/course_directory_mob.svg",
+      "tablette": "./img/projects_img/covers/tablette/course_directory_tab.svg",
       "desktop": "./img/projects_img/covers/desktop/booki.svg"
     },
     "technologies": {
-      "HTML": "icomoon-free:html-five",
-      "CSS": "uiw:css3"
+      "NextJS": "teenyicons:nextjs-outline",
+      "Typescript": "akar-icons:typescript-fill"
     },
 
-    "site": "https://icenatsu.github.io/projet2_booki/",
-    "code": "https://github.com/icenatsu/projet2_booki"
+    "site": "https://www.xicex.net",
+    "code": "https://github.com/icenatsu/notions_typescript"
   },
   {
     "id": "2",
