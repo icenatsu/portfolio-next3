@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useWindowSizeResize } from "@Hooks/Window/useWindowSizeResize";
 import { useEffect, useRef, useContext } from "react";
 import { LanguageContext } from "@context/Language/Language";
+import { animationSlideScrollToBottom } from "@animation/gsapAnimation";
 
 interface IntData {
   id: number;
@@ -50,6 +51,10 @@ const CardProject = ({
       }
     }
   }, [inActive, windowWidth]);
+
+  useEffect(() => {
+    animationSlideScrollToBottom(inData.title, 0.3, 0.5, 100, 85, 20);
+  }, [inData.title]);
 
   return (
     <article ref={flipCard} id={inData.title} className={styles["flip-card"]}>

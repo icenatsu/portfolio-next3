@@ -41,15 +41,11 @@ const Project = () => {
   //Animations gsap
   // animationSlideScrollToBottom(delay, durée, yfrom, topscroll, bottom scroll)
   useEffect(() => {
-    animationSlideScrollToBottom("projets", 0, 0.1, 20, 85, 40);
+    animationSlideScrollToBottom("projetTitle", 0.1, 0.2, 0, 85, 25);
   }, []);
 
   useEffect(() => {
-    animationSlideScrollToBottom("projetTitle", 0.1, 0.2, 0, 75, 25);
-  }, []);
-
-  useEffect(() => {
-    animationSlideScrollToBottom("caroussel", 0.2, 0.3, 0, 85, 40);
+    animationSlideScrollToBottom("caroussel", 0.1, 0.2, 0, 85, 40);
   }, []);
 
   return (

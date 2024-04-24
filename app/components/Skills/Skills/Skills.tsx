@@ -70,6 +70,10 @@ const Skills = (): JSX.Element => {
           name: "sass",
           img: "fa6-brands:sass",
         },
+        {
+          name: "tailwind",
+          img: "mdi:tailwind",
+        },
       ],
       classList: "css",
     },
@@ -167,14 +171,14 @@ const Skills = (): JSX.Element => {
       name: "react",
       paragraphs: languageContext?.isFrenchLanguage
         ? [
-            "Initialiser une application",
-            "Configurer la navigation entre les pages de l'application avec React Router",
+            "Créer des applications web dynamiques et évolutives.",
+            "Intégrer des données externes via des APIs dans les applications",
             "Développer des éléments de l'interface d'un site web grâce à des composants React",
           ]
         : [
-            "Initialize an application",
-            "Configure navigation between application pages using React Router",
-            "Develop interface elements of a website using React components",
+          "Creating dynamic and scalable web applications.",
+          "Integrating external data via APIs into applications.",
+          "Developing website interface elements using React components."
           ],
       icones: [
         {

@@ -58,7 +58,9 @@ export const animationSlideScrollToRight = (
   elem: HTMLElement | string,
   delay: number,
   duration: number,
-  xfrom: number
+  xfrom: number,
+  leftScroll: number,
+  rightScroll: number
 ) => {
   gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
@@ -79,8 +81,8 @@ export const animationSlideScrollToRight = (
           duration: duration,
           scrollTrigger: {
             trigger: typeOfElem,
-            start: "top 25%",
-            end: "bottom 25%",
+            start: `left ${leftScroll}%`,
+            end: `right ${rightScroll}%`,
           },
         }
       );

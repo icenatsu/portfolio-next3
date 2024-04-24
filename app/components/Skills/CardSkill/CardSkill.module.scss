@@ -40,11 +40,13 @@
     &__icones {
       display: flex;
       align-items: center;
+      justify-content: center;
+  
 
       .icone {
         padding: 0 0.5rem 0.5rem 0;
         color: var(--cardSkill--iconTechno--color);
-        font-size: var(--cardSkill--iconTechno--fontSize--desktop);
+        font-size: var(--cardSkill--iconTechno--fontSize--mobile);
 
         @media screen and (max-width: var.$breakpoint-tablette) {
           font-size: var(--cardSkill--iconTechno--fontSize--tablet);
@@ -57,7 +59,7 @@
       }
 
       .nameTechno {
-        padding-left: 2rem;
+        padding-left: 0.5rem;
         color: var(--cardSkill--nameTechno--color);
         font-size: var(--cardSkill--nameTechno--fontSize--desktop);
         font-family: var(--fontFamily--inter);

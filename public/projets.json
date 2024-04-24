@@ -1,26 +1,6 @@
 [
   {
     "id": "1",
-    "title": "Course directory",
-    "description": [
-      "La création de ce site m'a permis d'apprendre et pratiquer le framework nextJS ainsi que ses concepts mais également le balisage Markdown.",
-      "The creation of this website has allowed me to learn and practice the Next.js framework as well as its concepts, but also Markdown markup."
-    ],
-    "cover": {
-      "mobile": "./img/projects_img/covers/mobile/course_directory_mob.svg",
-      "tablette": "./img/projects_img/covers/tablette/course_directory_tab.svg",
-      "desktop": "./img/projects_img/covers/desktop/booki.svg"
-    },
-    "technologies": {
-      "NextJS": "teenyicons:nextjs-outline",
-      "Typescript": "akar-icons:typescript-fill"
-    },
-
-    "site": "https://www.xicex.net",
-    "code": "https://github.com/icenatsu/notions_typescript"
-  },
-  {
-    "id": "2",
     "title": "Oh my Food",
     "description": [
       "En formation nous avons eu à réaliser un site Web à partir de maquettes graphiques ciblé principalement pour l'utilisation mobile en y intégrant des animations CSS.",
@@ -40,7 +20,7 @@
     "code": "https://github.com/icenatsu/projet3_ohmyfood"
   },
   {
-    "id": "3",
+    "id": "2",
     "title": "Piiquante",
     "description": [
       "Lors de la formation il a fallut construire une API sécurisée pour une application d'avis gastronomiques. J'ai pu découvrir NodeJS associé à la base de données noSQL MongoDB.",
@@ -58,26 +38,7 @@
     "code": "https://github.com/icenatsu/projet6_piquante"
   },
   {
-    "id": "4",
-    "title": "Kasa",
-    "description": [
-      "Le dernier projet de la formation consistait à créer une application web de location immobilière en utilisant la bibliothèque React.",
-      "The final project of the training involved creating a real estate rental web application using the React library."
-    ],
-    "cover": {
-      "mobile": "./img/projects_img/covers/mobile/kasa_mob.svg",
-      "tablette": "./img/projects_img/covers/tablette/kasa_tab.svg",
-      "desktop": "./img/projects_img/covers/desktop/kasa.svg"
-    },
-    "technologies": {
-      "REACT": "akar-icons:react-fill",
-      "SASS": "fa6-brands:sass"
-    },
-    "site": "https://projet7-kasa.vercel.app/",
-    "code": "https://github.com/icenatsu/projet7_kasa"
-  },
-  {
-    "id": "5",
+    "id": "3",
     "title": "Portfolio",
     "description": [
       "Création de mon portfolio en React, j'ai découvert l'utilisation de Typescript qui m'a permis de rendre le code plus robuste. Je l'ai ensuite migré sur NextJS.",
@@ -95,5 +56,44 @@
     },
     "site": "https://portfolio-next-icenatsu.vercel.app/",
     "code": "https://github.com/icenatsu/portfolio_next"
+  },
+  {
+    "id": "4",
+    "title": "Course directory",
+    "description": [
+      "La création de ce site m'a permis d'apprendre et pratiquer le framework nextJS ainsi que ses concepts mais également le balisage Markdown.",
+      "The creation of this website has allowed me to learn and practice the Next.js framework as well as its concepts, but also Markdown markup."
+    ],
+    "cover": {
+      "mobile": "./img/projects_img/covers/mobile/course_directory_mob.svg",
+      "tablette": "./img/projects_img/covers/tablette/course_directory_tab.svg",
+      "desktop": "./img/projects_img/covers/desktop/booki.svg"
+    },
+    "technologies": {
+      "NextJS": "teenyicons:nextjs-outline",
+      "Typescript": "akar-icons:typescript-fill"
+    },
+
+    "site": "https://www.xicex.net",
+    "code": "https://github.com/icenatsu/notions_typescript"
+  },
+  {
+    "id": "5",
+    "title": "Kasa",
+    "description": [
+      "Le dernier projet de la formation consistait à créer une application web de location immobilière en utilisant la bibliothèque React.",
+      "The final project of the training involved creating a real estate rental web application using the React library."
+    ],
+    "cover": {
+      "mobile": "./img/projects_img/covers/mobile/kasa_mob.svg",
+      "tablette": "./img/projects_img/covers/tablette/kasa_tab.svg",
+      "desktop": "./img/projects_img/covers/desktop/kasa.svg"
+    },
+    "technologies": {
+      "REACT": "akar-icons:react-fill",
+      "SASS": "fa6-brands:sass"
+    },
+    "site": "https://projet7-kasa.vercel.app/",
+    "code": "https://github.com/icenatsu/projet7_kasa"
   }
 ]

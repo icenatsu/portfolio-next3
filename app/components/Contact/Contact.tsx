@@ -155,7 +155,13 @@ const Contact = (): JSX.Element => {
 
   // Animations gsap
   useEffect(() => {
-    animationSlideScrollToBottom("contact", 0.3, 0.5, 0, 75, 25);
+    animationSlideScrollToBottom("contact", 0.3, 0.5, 0, 100, 25);
+  }, []);
+  useEffect(() => {
+    animationSlideScrollToBottom("contactTitle", 0.3, 0.5, 0, 85, 25);
+  }, []);
+  useEffect(() => {
+    animationSlideScrollToBottom("contactForm", 0.3, 0.5, 0, 80, 25);
   }, []);
 
   return (
@@ -169,6 +175,7 @@ const Contact = (): JSX.Element => {
           ref={form}
           className={styles.form__contact}
           onSubmit={handleSubmit(onSubmit)}
+          id="contactForm"
         >
           <label className={styles.label} htmlFor="lastName">
             {languageContext?.isFrenchLanguage ? "Nom:" : "Name"}
